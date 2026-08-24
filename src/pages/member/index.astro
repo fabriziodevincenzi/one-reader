@@ -500,10 +500,23 @@ const currentYear = new Date().getUTCFullYear();
       return saved;
     };
 
-    const setWritingReady = (ready: boolean, canStartOpening: boolean) => {
+    const setWritingReady = (ready: boolean, status: string, canStartOpening: boolean) => {
+      const action = status === 'closed'
+        ? { href: '#close-account', label: 'Account closed' }
+        : status === 'delivery_paused'
+          ? { href: '#profile', label: 'Review delivery details' }
+          : status === 'waitlisted'
+            ? { href: '/', label: 'View your place' }
+            : !ready
+              ? { href: '#profile', label: 'Complete your profile' }
+              : canStartOpening
+                ? { href: 'mailto:write@onereader.co?subject=One%20Reader', label: 'Write a letter' }
+                : status === 'checkout_pending'
+                  ? { href: '#checkout', label: 'Complete payment to become a Writer' }
+                  : { href: '#checkout', label: 'Become a Writer to write again' };
       document.querySelectorAll<HTMLAnchorElement>('[data-write-letter]').forEach((link) => {
-        link.href = !ready ? '#profile' : canStartOpening ? 'mailto:write@onereader.co?subject=One%20Reader' : '#checkout';
-        link.textContent = !ready ? 'Complete your profile' : canStartOpening ? 'Write a letter' : 'Become a Writer to write again';
+        link.href = action.href;
+        link.textContent = action.label;
       });
       if (!ready && membershipPrimary?.href.startsWith('mailto:')) {
         membershipPrimary.href = '#profile';
@@ -562,12 +575,12 @@ const currentYear = new Date().getUTCFullYear();
         membershipRefund?.classList.remove('hidden');
         if (membershipNote) membershipNote.textContent = 'Writer is billed annually. Manage payment details and cancellation through Stripe; refund requests are reviewed by One Reader.';
       } else if (status === 'checkout_pending') {
-        membershipLabel.textContent = 'Writer';
-        membershipCopy.textContent = 'Your Reader account is ready. Complete payment to activate Writer and start a new correspondence every 24 hours.';
-        membershipPace.textContent = 'One new letter every 24 hours after payment';
-        membershipPrimary.textContent = 'Activate Writer';
+        membershipLabel.textContent = 'Reader';
+        membershipCopy.textContent = 'Your Writer payment is waiting to be completed. Until then, your Reader access stays active.';
+        membershipPace.textContent = 'Complete payment to start a new correspondence every 24 hours';
+        membershipPrimary.textContent = 'Complete payment to become a Writer';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `Writer is ${annualPriceLabel} per year. The secure payment step opens through Stripe.`;
+        if (membershipNote) membershipNote.textContent = `Complete payment to become a Writer. Writer is ${annualPriceLabel} per year.`;
       } else if (status === 'closed') {
         membershipLabel.textContent = 'Account closed';
         membershipCopy.textContent = 'Your account is closed and no new letters will be delivered.';
@@ -699,7 +712,7 @@ const currentYear = new Date().getUTCFullYear();
       const market = marketForCountry(marketCountry);
       annualPriceLabel = formatAnnualPrice(market.amount, market.currency, navigator.language || 'en');
       setMembership(profile, stats?.correspondences_started_count ?? 0);
-      setWritingReady(birthDetailsSaved, canStartOpening);
+      setWritingReady(birthDetailsSaved, profile?.account_status ?? 'free', canStartOpening);
       if (languageList && savedLanguages?.length) {
         languageList.innerHTML = '';
         savedLanguages.forEach((language) => addLanguageRow(language.language_code));
@@ -756,7 +769,7 @@ const currentYear = new Date().getUTCFullYear();
             adult_pool_eligible_at: birthResult?.adultPoolEligibleAt,
           });
           setMembership(profile, stats?.correspondences_started_count ?? 0);
-          setWritingReady(birthDetailsSaved, canStartOpening);
+          setWritingReady(birthDetailsSaved, profile?.account_status ?? 'free', canStartOpening);
         }
         const { data: existingLanguages } = await client.from('member_languages').select('language_code').eq('user_id', session.user.id);
         const selectedCodes = new Set(languagesToSave.map((language) => language.language_code));
