@@ -64,6 +64,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   let captchaWidgetId: string | null = null;
   let captchaToken: string | null = null;
   let pendingEmail: string | null = null;
+  let signInRequestInFlight = false;
+  const signInRequestKey = 'one-reader:last-sign-in-link-request';
+  const signInRequestCooldownMs = 60_000;
 
   if (isChangeEmail) {
     document.title = 'Change email — One Reader';
@@ -125,12 +128,25 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     showNote(message);
   };
 
+  const hasRecentSignInRequest = () => {
+    const lastRequestedAt = Number(window.localStorage.getItem(signInRequestKey) || '0');
+    return Date.now() - lastRequestedAt < signInRequestCooldownMs;
+  };
+
   const sendSignInLink = async () => {
-    if (!pendingEmail || !supabase) return;
+    if (!pendingEmail || !supabase || signInRequestInFlight) return;
+    if (hasRecentSignInRequest()) {
+      resetCaptcha();
+      showSuccessState('A sign-in link was just requested. Please use the most recent email, or wait a minute before requesting another.');
+      return;
+    }
+
+    signInRequestInFlight = true;
     const email = pendingEmail;
     const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
     if (submitButton) submitButton.disabled = true;
     showNote('Sending your sign-in link…');
+    window.localStorage.setItem(signInRequestKey, String(Date.now()));
 
     const { error } = await supabase.auth.signInWithOtp({
       email,
@@ -140,8 +156,10 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         captchaToken: captchaToken ?? undefined,
       },
     });
+    signInRequestInFlight = false;
     if (submitButton) submitButton.disabled = false;
     if (error) {
+      window.localStorage.removeItem(signInRequestKey);
       const isUnknownAccount = /signups? not allowed|user not found|no user|user_not_found/i.test(error.message);
       if (isUnknownAccount) {
         const { error: leadError } = await supabase.from('leads').insert({ email_address: email, source: 'sign_in' });
@@ -239,6 +257,11 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     if (!captchaWidget || !captchaStep) {
       if (submitButton) submitButton.disabled = false;
       showNote('The security check is not available. Please try again later.', true);
+      return;
+    }
+    if (hasRecentSignInRequest()) {
+      if (submitButton) submitButton.disabled = false;
+      showNote('A sign-in link was just requested. Please use the most recent email, or wait a minute before requesting another.');
       return;
     }
     pendingEmail = email;
