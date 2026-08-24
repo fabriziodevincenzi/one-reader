@@ -99,17 +99,30 @@ const steps = [
       <div class="shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         <div>
           <p class="eyebrow mb-5">Start free</p>
-          <h2 class="section-title balance">One letter to send. Then a room to receive from.</h2>
+          <h2 class="section-title balance">One letter to send. Then a rhythm to receive from.</h2>
         </div>
         <div>
-          <p class="max-w-xl text-lg leading-8">Create your free Reader account to use the service. We verify your email and keep it private from the person you write to, so your correspondence can remain anonymous. Your first letter is included; afterwards, you can keep receiving letters and replying to conversations already open. Annual membership is available when you want to write to someone new again.</p>
+          <div class="max-w-xl space-y-5 text-lg leading-8">
+            <p>Your Reader account is free. Write your first letter anytime — we'll find someone who can read your language, and the correspondence begins.</p>
+            <p>After that, a new letter finds its way to you roughly every three months, at no cost, for as long as you keep your account open. Replying to conversations already open is always free and unlimited.</p>
+            <p>Want to start writing to someone new more often? Annual membership removes the wait, letting you open a new correspondence whenever you're ready.</p>
+          </div>
           <form class="relative mt-8 overflow-hidden border border-accent/60 bg-surface p-6 sm:p-10" data-start-free-form>
             <div data-start-free-fields>
-              <p class="eyebrow mb-5">Create your Reader account</p>
+              <h3 class="font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Create your free Reader account</h3>
+              <div class="mt-5 max-w-xl space-y-4 leading-7 text-muted-foreground">
+                <p>We verify your email and keep it private from whoever you write to — your correspondence stays anonymous on both sides.</p>
+                <p>Your first letter is on us. From there, a new one finds you roughly every three months, and replying to open conversations is always free. If you'd rather start a new correspondence whenever you like, annual membership removes the wait.</p>
+              </div>
+              <div class="mt-8">
               <label class="mb-2 block text-sm font-medium" for="start-free-email">Email address</label>
               <div class="grid gap-3 sm:grid-cols-[1fr_auto]">
                 <Input id="start-free-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required aria-describedby="start-free-note" className="bg-background" />
-                <Button type="submit" size="large">Sign up</Button>
+                <div>
+                  <Button type="submit" size="large">Sign up</Button>
+                  <p class="mt-2 text-xs leading-5 text-muted-foreground">No card required to start writing.</p>
+                </div>
+              </div>
               </div>
               <label class="mt-6 flex items-start gap-3 text-sm leading-6">
                 <input class="mt-1" type="checkbox" name="termsAccepted" required />
