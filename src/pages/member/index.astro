@@ -40,8 +40,10 @@ const currentYear = new Date().getUTCFullYear();
         <h1 class="section-title balance max-w-3xl">Everything practical, in one place.</h1>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Your letters stay in your inbox. This is the small account space for your pace, preferences, consents, payments and privacy.</p>
       </div>
-      <div class="account-action-skeleton" data-account-action-loading aria-hidden="true"></div>
-      <a class={buttonVariants({ size: 'large' }) + ' pointer-events-none opacity-0'} href="mailto:write@onereader.co?subject=One%20Reader" data-write-letter>Write to someone</a>
+      <div class="account-action-slot">
+        <div class="account-action-skeleton" data-account-action-loading aria-hidden="true"></div>
+        <a class={buttonVariants({ size: 'large' }) + ' pointer-events-none opacity-0'} href="mailto:write@onereader.co?subject=One%20Reader" data-write-letter>Write to someone</a>
+      </div>
     </section>
 
     <section id="membership" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="membership-heading">
@@ -260,9 +262,25 @@ const currentYear = new Date().getUTCFullYear();
     }
 
     .account-action-skeleton {
-      width: min(100%, 15rem);
       min-height: 3.85rem;
       border-radius: var(--radius-control);
+    }
+
+    .account-action-slot {
+      position: relative;
+      width: min(100%, 22.5rem);
+      min-height: 3.85rem;
+    }
+
+    .account-action-slot > * {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+    }
+
+    .account-action-slot > a {
+      display: inline-flex;
+      justify-content: center;
     }
 
     .account-membership-skeleton {
@@ -351,6 +369,12 @@ const currentYear = new Date().getUTCFullYear();
     .account-skeleton-lines span:nth-child(2) { width: 92%; }
     .account-skeleton-lines span:nth-child(3) { width: 66%; }
 
+    .account-inline-skeleton.account-loader-hidden,
+    .account-action-skeleton.account-loader-hidden,
+    .account-membership-skeleton.account-loader-hidden {
+      display: none;
+    }
+
     @keyframes account-shimmer {
       0%, 100% { background-position: 100% 50%; }
       50% { background-position: 0% 50%; }
@@ -415,10 +439,10 @@ const currentYear = new Date().getUTCFullYear();
     let annualPriceLabel = formatAnnualPrice(fallbackMarket.amount, fallbackMarket.currency);
 
     const finishAccountLoading = () => {
-      document.querySelectorAll<HTMLElement>('[data-account-email-loading], [data-profile-email-loading], [data-account-action-loading]').forEach((element) => element.classList.add('hidden'));
+      document.querySelectorAll<HTMLElement>('[data-account-email-loading], [data-profile-email-loading], [data-account-action-loading]').forEach((element) => element.classList.add('account-loader-hidden'));
       document.querySelectorAll<HTMLElement>('[data-account-email], [data-profile-email]').forEach((element) => element.classList.remove('hidden'));
       document.querySelectorAll<HTMLAnchorElement>('[data-write-letter]').forEach((link) => link.classList.remove('pointer-events-none', 'opacity-0'));
-      membershipSkeleton?.classList.add('hidden');
+      membershipSkeleton?.classList.add('account-loader-hidden');
       membershipContent?.classList.remove('hidden');
       membershipPanel?.setAttribute('aria-busy', 'false');
     };
