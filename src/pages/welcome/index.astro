@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { buttonVariants } from '../../components/ui/Button';
 ---
 
-<Layout title="Welcome to One Reader" description="A short guide to starting your first One Reader correspondence." indexable={false}>
+<Layout title="Welcome to One Reader" description="One real reader, with no profile, no audience and no past to perform for." indexable={false}>
   <header class="border-b border-border">
     <div class="shell flex min-h-20 items-center justify-between gap-6">
       <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
@@ -13,45 +13,74 @@ import { buttonVariants } from '../../components/ui/Button';
 
   <main id="main-content" class="shell py-16 sm:py-24">
     <article class="mx-auto max-w-3xl">
-      <p class="eyebrow mb-5">Welcome to One Reader</p>
-      <h1 class="section-title max-w-2xl">A small note before you begin.</h1>
-      <p class="mt-8 max-w-2xl text-xl leading-9 text-muted-foreground">Thank you for joining One Reader. This is a service for writing to one person you do not know, without turning the exchange into a public performance. Here is how the room works.</p>
+      <header class="border-b border-border pb-14 sm:pb-20">
+        <p class="eyebrow mb-5">Welcome to One Reader</p>
+        <h1 class="section-title max-w-3xl balance">Write to one person. Be unknown again.</h1>
+        <p class="mt-8 max-w-2xl font-serif text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">One Reader is a place to write letters to strangers by email. Not to yourself, and not to a crowd—just to one real reader.</p>
+      </header>
 
-      <div class="mt-16 space-y-12 text-lg leading-8 text-muted-foreground sm:mt-20">
-        <section aria-labelledby="start-heading">
-          <h2 id="start-heading" class="font-serif text-2xl font-normal tracking-[-0.025em] text-foreground">Start with your account</h2>
-          <p class="mt-4">Open your account and add the languages in which you are comfortable writing and reading. We also ask for your month and year of birth so younger and adult members remain in separate matching pools. Receiving letters is part of being an active member, whether you are Free or an annual member: everyone can receive up to one new letter every 24 hours, and everyone can reply to conversations already open.</p>
-          <a class={buttonVariants({ size: 'large' }) + ' mt-6'} href="/member/">Open your account</a>
+      <div class="space-y-16 py-14 text-lg leading-8 text-muted-foreground sm:space-y-20 sm:py-20">
+        <section aria-labelledby="why-heading">
+          <p class="eyebrow mb-4">Why it exists</p>
+          <h2 id="why-heading" class="max-w-2xl font-serif text-3xl font-normal leading-tight tracking-[-0.035em] text-foreground sm:text-4xl">Some things need a reader—but not an audience.</h2>
+          <div class="mt-6 max-w-2xl space-y-5">
+            <p>A diary has only one reader: you. A social network has too many, and your face or familiar name stays attached to every word. Both can make it hard to say what you actually mean.</p>
+            <p>One Reader sits in between. Someone real is there to read you, but no one knows you, no history follows you and no future needs protecting. That freedom is the point—before any reply arrives.</p>
+          </div>
         </section>
 
-        <section aria-labelledby="how-heading">
-          <h2 id="how-heading" class="font-serif text-2xl font-normal tracking-[-0.025em] text-foreground">How a letter travels</h2>
-          <p class="mt-4">You write an email to <a class="underline underline-offset-4" href="mailto:write@onereader.co">write@onereader.co</a>. We remove the address you wrote from the letter, then look for one person who can read the language you chose and is available to receive a new correspondence. The matching system considers language, age group and recent activity, and avoids repeating recent pairs.</p>
-          <p class="mt-6">The letter arrives from One Reader. The reader does not see your real email address. Each correspondence has its own private reply address: a randomly generated alias that belongs only to that conversation. Another conversation gets another alias.</p>
-          <p class="mt-6">Replies keep using that same conversation-specific address. It remains active while the exchange is alive, and expires after 30 days without a reply. Either person can also click <em>End this correspondence</em> at the bottom of any conversation email. Ending one exchange does not affect another.</p>
+        <section class="border-y border-border py-10 sm:py-12" aria-labelledby="how-heading">
+          <p class="eyebrow mb-4">How it works</p>
+          <h2 id="how-heading" class="font-serif text-3xl font-normal leading-tight tracking-[-0.035em] text-foreground sm:text-4xl">Every correspondence starts clean.</h2>
+          <ol class="mt-10 grid gap-8 sm:gap-10">
+            <li class="grid gap-3 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
+              <span class="metadata pt-1">01 / Write</span>
+              <p class="m-0">Send your letter to <a class="text-foreground underline underline-offset-4" href="mailto:write@onereader.co">write@onereader.co</a>. We find one available person who can read the language you chose.</p>
+            </li>
+            <li class="grid gap-3 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
+              <span class="metadata pt-1">02 / Be unknown</span>
+              <p class="m-0">Each conversation uses a new name and a private reply address. The person who knows you from one letter cannot trace you into another. Your real email address stays private.</p>
+            </li>
+            <li class="grid gap-3 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
+              <span class="metadata pt-1">03 / Continue, or let go</span>
+              <p class="m-0">If they reply, a correspondence begins: letter, reply, letter, reply. It closes permanently after 30 days without a reply, or sooner if either person chooses <em>End this conversation</em> in the email.</p>
+            </li>
+          </ol>
         </section>
 
-        <section aria-labelledby="privacy-heading">
-          <h2 id="privacy-heading" class="font-serif text-2xl font-normal tracking-[-0.025em] text-foreground">What stays private</h2>
-          <p class="mt-4">There is no public profile, follower count or feed. We use your email address to deliver the service, not to build an advertising audience or sell personal data. Letter contents are encrypted before they are stored, and real email addresses are kept away from the person on the other side.</p>
-          <p class="mt-6">The annual membership is a small contribution to operating the service: <span data-membership-price>€18 a year, just under five cents a day</span>. It pays for delivery, storage, moderation and the work of keeping the room quiet. If two people decide they would rather continue outside One Reader, we are happy for the correspondence to become their own.</p>
+        <section aria-labelledby="plans-heading">
+          <p class="eyebrow mb-4">Two ways to belong</p>
+          <h2 id="plans-heading" class="font-serif text-3xl font-normal leading-tight tracking-[-0.035em] text-foreground sm:text-4xl">Reading and replying are always open.</h2>
+          <div class="mt-10 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
+            <section class="bg-background p-7 sm:p-8" aria-labelledby="reader-heading">
+              <p class="metadata mb-5">Free</p>
+              <h3 id="reader-heading" class="font-serif text-3xl font-normal tracking-[-0.035em] text-foreground">Reader</h3>
+              <p class="mt-5 text-base leading-7">Receive letters and reply to every conversation that reaches you. You can also write first once—whenever it feels right.</p>
+            </section>
+            <section class="bg-surface p-7 sm:p-8" aria-labelledby="writer-heading">
+              <p class="metadata mb-5">Paid · billed annually</p>
+              <h3 id="writer-heading" class="font-serif text-3xl font-normal tracking-[-0.035em] text-foreground">Writer</h3>
+              <p class="mt-5 text-base leading-7">Write first again and again: one new letter every 24 hours. <span data-membership-price>€18 a year, about five cents a day</span>.</p>
+            </section>
+          </div>
+          <p class="mt-6 max-w-2xl text-base leading-7">Writing first is different from replying: you choose when to begin, who might receive it, and what to say without being prompted. That is the small, essential act Writer makes possible again.</p>
         </section>
 
-        <section aria-labelledby="advice-heading">
-          <h2 id="advice-heading" class="font-serif text-2xl font-normal tracking-[-0.025em] text-foreground">A few things worth knowing</h2>
-          <ul class="mt-4 grid gap-4">
-            <li><strong class="font-medium text-foreground">A reply is not a debt.</strong> Write when you have something to say, and allow the other person the same freedom. Silence is sometimes part of the exchange.</li>
-            <li><strong class="font-medium text-foreground">Keep the room safe.</strong> Do not include passwords, financial details, exact addresses or anything you would not want a stranger to know. No sexual content, harassment, hate, spam or requests for personal information.</li>
-            <li><strong class="font-medium text-foreground">Use the links in the email.</strong> You can end a correspondence or report a letter without replying to the other person.</li>
-            <li><strong class="font-medium text-foreground">Membership is about new openings.</strong> One first letter is free. Annual membership lets you start one new correspondence every 24 hours, while receiving and replying remain available to active free accounts.</li>
+        <section class="max-w-2xl" aria-labelledby="before-heading">
+          <p class="eyebrow mb-4">Before your first letter</p>
+          <h2 id="before-heading" class="font-serif text-3xl font-normal leading-tight tracking-[-0.035em] text-foreground">Keep the room kind and safe.</h2>
+          <ul class="mt-6 grid gap-4 text-base leading-7">
+            <li><strong class="font-medium text-foreground">A reply is never owed.</strong> Write when you have something to say, and give the other person the same freedom.</li>
+            <li><strong class="font-medium text-foreground">Keep personal details personal.</strong> Do not share passwords, financial details, exact addresses, or requests for someone else's private information.</li>
+            <li><strong class="font-medium text-foreground">Use the email links if you need them.</strong> You can end or report a correspondence without replying.</li>
           </ul>
         </section>
       </div>
 
-      <div class="mt-14 flex flex-wrap items-center gap-5 border-t border-border pt-8">
-        <a class={buttonVariants({ size: 'large' })} href="/member/">Set up my languages</a>
+      <footer class="flex flex-wrap items-center gap-5 border-t border-border pt-8">
+        <a class={buttonVariants({ size: 'large' })} href="/member/">Set up my account</a>
         <a class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" href="/terms">Read the full terms</a>
-      </div>
+      </footer>
     </article>
   </main>
 
