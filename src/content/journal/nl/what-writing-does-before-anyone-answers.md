@@ -30,5 +30,3 @@ Niets hiervan betekent dat een antwoord er niet toe doet. Natuurlijk doet het da
 We hebben One Reader met precies dit in gedachten gebouwd, meer dan eens. Er is geen leesbevestiging. Er is geen manier om te weten of iemand je brief heeft geopend en simpelweg nog niet heeft besloten wat te antwoorden. Je eigen brieven worden, in je account, bewaard als een privéarchief — geen prestatie, niets met een score — want wat er gebeurde terwijl je ze schreef, wordt niet kleiner door wat er daarna gebeurt.
 
 Een brief kan eindigen met een antwoord. Hij kan eindigen met een klein teken dat hij is aangekomen. Hij kan simpelweg eindigen, onbeantwoord, en toch precies gedaan hebben wat schrijven doet: iets vormloos nemen en het een vorm geven waar je naar kon kijken. Dat is niet niets. Voor veel mensen, op veel dagen, is dat bijna alles wat ze zochten.
-
-[Schrijf naar iemand](https://onereader.co/)

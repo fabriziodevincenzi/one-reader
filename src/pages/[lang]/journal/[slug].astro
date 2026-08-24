@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, lang, redirectTo } = Astro.props as { entry: JournalEntry; lang: SiteLocale; redirectTo?: string };
-if (redirectTo) return Astro.redirect(redirectTo, 301);
+if (redirectTo) return Astro.redirect(encodeURI(redirectTo), 301);
 const allEntries: JournalEntry[] = (await Promise.all(siteLocales.map((locale) => getJournalEntries(locale)))).flat();
 const { Content } = await render(entry);
 const slug = getJournalSlug(entry);

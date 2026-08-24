@@ -1,6 +1,6 @@
 ---
 lang: pl
-key: a-letter-is-a-small-room
+slug: list-jest-małym-pokojem
 title: List jest małym pokojem
 meta-description: Listy wracają nie tylko z nostalgii, lecz także jako sposób bycia blisko bez ciągłej dostępności.
 publishedAt: '2026-08-16'
@@ -17,5 +17,3 @@ Nie trzeba odpowiadać od razu. Nie trzeba być widocznym podczas myślenia. Wia
 List przerywa ten rytm. Przywraca zwyczajność czekaniu. Badania i projekty korespondencyjne sugerują, że wymiana listów może tworzyć więź i mierzyć się z samotnością poprzez prosty, dostępny gest. Wartość nie leży w szybkości, lecz w obecności konkretnej osoby po drugiej stronie.
 
 One Reader zaczyna właśnie tutaj: jedna osoba pisze do jednej osoby, bez publiczności, punktów i obowiązku trwania. List nie rozwiązuje świata na zewnątrz. Ale przez chwilę pozwala dwóm osobom spotkać się w spokojniejszym miejscu.
-
-[Napisz do kogoś](https://onereader.co/)

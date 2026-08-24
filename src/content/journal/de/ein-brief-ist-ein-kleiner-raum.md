@@ -1,6 +1,6 @@
 ---
 lang: de
-key: a-letter-is-a-small-room
+slug: ein-brief-ist-ein-kleiner-raum
 title: Ein Brief ist ein kleiner Raum
 meta-description: Briefe kehren nicht nur aus Nostalgie zurück, sondern als Möglichkeit, verbunden zu sein, ohne ständig verfügbar zu bleiben.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Ein Brief unterbricht diesen Rhythmus. Er macht Warten wieder normal. Forschunge
 Ein öffentlicher Beitrag richtet sich an eine Menge. Eine Direktnachricht gehört oft zu einem Strom. Ein Brief richtet sich an eine Person. Er darf ein gewöhnliches Detail, einen unfertigen Gedanken oder eine zu kleine Frage enthalten. Er fragt nicht: Wird das gut funktionieren? Er fragt: Wird es jemanden erreichen?
 
 One Reader beginnt dort. Eine Person schreibt einer Person. Ohne Publikum, ohne sichtbare Punktzahl, ohne Pflicht, dauerhaft zu werden. Ein Brief löst die Welt draußen nicht. Aber für eine Weile lässt er zwei Menschen an einem ruhigeren Ort zusammentreffen.
-
-[Jemandem schreiben](https://onereader.co/)

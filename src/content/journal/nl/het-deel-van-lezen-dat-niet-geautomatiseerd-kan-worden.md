@@ -1,6 +1,6 @@
 ---
 lang: nl
-key: the-part-of-reading-that-cannot-be-automated
+slug: het-deel-van-lezen-dat-niet-geautomatiseerd-kan-worden
 title: Het deel van lezen dat niet geautomatiseerd kan worden
 meta-description: In een tijd van samenvattingen en directe antwoorden blijft lezen een manier om contact te houden met je eigen denken.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Schrijven maakt dit zichtbaar: weten wat we bedoelen is niet hetzelfde als het k
 Geen enkel hulpmiddel kan de laatste stap voor ons doen: een zin ontmoeten en haar even onvoltooid laten. One Reader ontstaat uit zo’n aandacht. Een brief is geen efficiënte overdracht van informatie, maar een ruimte waarin iemand iets waar genoeg maakt om het naar een ander te sturen.
 
 Er zijn al genoeg plekken die ons vragen sneller te gaan. Soms is het rustigere leven te beginnen met iets dat niet hoeft te worden ingekort voordat het beleefd is. Soms is dat een boek. Soms een brief.
-
-[Schrijf aan iemand](https://onereader.co/)

@@ -1,6 +1,6 @@
 ---
 lang: en
-key: what-writing-does-before-anyone-answers
+slug: what-writing-does-before-anyone-answers
 title: What writing does, before anyone answers
 meta-description: A note on why the act of writing carries its own value, long before a reply arrives — or doesn't.
 publishedAt: '2026-08-15'
@@ -29,5 +29,3 @@ None of this means a reply doesn't matter. Of course it does — being read, and
 We built One Reader with this in mind, more than once. There is no read receipt. There is no way to know if someone has opened your letter and simply hasn't decided what to write back. Your own letters, in your account, are kept as a private record — not a performance, not something with a score attached — because what happened when you wrote them isn't diminished by what happens after.
 
 A letter can end with a reply. It can end with a small sign that it arrived. It can simply end, unanswered, and still have done exactly what writing does: it took something shapeless and gave it a shape you could look at. That's not nothing. For a lot of people, on a lot of days, that's most of what they were looking for.
-
-[Write to someone](https://onereader.co/)

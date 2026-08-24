@@ -1,6 +1,6 @@
 ---
 lang: en
-key: what-an-inbox-can-still-be-for
+slug: what-an-inbox-can-still-be-for
 title: What an inbox can still be for
 meta-description: A note on the quiet possibilities of an email that has no commercial reason to exist.
 publishedAt: '2026-08-08'
@@ -15,5 +15,3 @@ One Reader begins with a smaller possibility: one person writes to one person th
 The letter may receive a reply. It may receive a simple sign that it was read. It may end there. None of those outcomes needs to become a score for the person who wrote or the person who received it.
 
 We are building the service around that restraint: private aliases, careful delivery, a slow cadence, and enough room for the people involved to decide what happens next.
-
-[Write to someone](https://onereader.co/)

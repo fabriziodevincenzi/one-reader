@@ -1,6 +1,6 @@
 ---
 lang: da
-key: a-letter-is-a-small-room
+slug: et-brev-er-et-lille-rum
 title: Et brev er et lille rum
 meta-description: Breve vender tilbage, ikke kun af nostalgi, men som en måde at være tæt på uden hele tiden at være tilgængelig.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Et brev bryder rytmen. Det gør ventetid almindelig igen. Forskning og brevproje
 Et opslag taler til en folkemængde. En direkte besked er ofte en del af en strøm. Et brev taler til én person. One Reader begynder dér: én person skriver til én person, uden publikum, score eller krav om at vare ved.
 
 Et brev løser ikke verden udenfor. Men et øjeblik lader det to mennesker mødes et roligere sted.
-
-[Skriv til nogen](https://onereader.co/)

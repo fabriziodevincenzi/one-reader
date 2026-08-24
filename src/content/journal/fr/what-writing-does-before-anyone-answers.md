@@ -30,5 +30,3 @@ Rien de tout cela ne signifie qu'une réponse n'a pas d'importance. Bien sûr qu
 Nous avons construit One Reader en gardant cela à l'esprit, à plusieurs reprises. Il n'y a pas d'accusé de lecture. Aucun moyen de savoir si quelqu'un a ouvert votre lettre et n'a simplement pas encore décidé quoi répondre. Vos propres lettres, dans votre compte, sont conservées comme un registre privé — pas une performance, pas quelque chose assorti d'un score — parce que ce qui s'est passé pendant que vous les écriviez n'est pas diminué par ce qui se passe ensuite.
 
 Une lettre peut se terminer par une réponse. Elle peut se terminer par un petit signe qu'elle est arrivée. Elle peut simplement se terminer, sans réponse, et avoir tout de même accompli exactement ce que fait l'écriture : prendre quelque chose d'informe et lui donner une forme que l'on pouvait regarder. Ce n'est pas rien. Pour beaucoup de gens, beaucoup de jours, c'est presque tout ce qu'ils cherchaient.
-
-[Écris à quelqu'un](https://onereader.co/)

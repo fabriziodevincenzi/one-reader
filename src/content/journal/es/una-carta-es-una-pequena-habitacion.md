@@ -1,6 +1,6 @@
 ---
 lang: es
-key: a-letter-is-a-small-room
+slug: una-carta-es-una-pequena-habitacion
 title: Una carta es una pequeña habitación
 meta-description: Escribir cartas vuelve no solo por nostalgia, sino como una forma de estar cerca sin estar siempre disponible.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Una carta rompe ese ritmo. Hace que esperar vuelva a ser normal. Las investigaci
 Una publicación habla a una multitud. Un mensaje directo suele formar parte de un flujo. Una carta habla a una sola persona. Puede contener un detalle cotidiano, un pensamiento incompleto o una pregunta demasiado pequeña para el espacio público. No pregunta: ¿funcionará bien? Pregunta: ¿llegará a alguien?
 
 One Reader empieza ahí. Una persona escribe a una persona. Sin público, sin puntuación visible y sin obligación de convertirse en algo permanente. Una carta no resuelve el mundo exterior. Pero durante un rato permite que dos personas se encuentren en un lugar más tranquilo.
-
-[Escribe a alguien](https://onereader.co/)

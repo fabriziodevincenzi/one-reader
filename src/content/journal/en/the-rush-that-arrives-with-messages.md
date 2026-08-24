@@ -1,6 +1,6 @@
 ---
 lang: en
-key: the-rush-that-arrives-with-messages
+slug: the-rush-that-arrives-with-messages
 title: The rush that arrives with messages
 meta-description: Communication does not only take time; it changes the speed at which we feel expected to live.
 publishedAt: '2026-08-17'
@@ -17,5 +17,3 @@ Research in *Frontiers in Psychology* reaches a similar conclusion: parallel mes
 A letter has different boundaries. It does not show whether someone is online, record the exact moment it is opened, or turn delay into a judgment. One Reader is built around that separation: communication that does not interrupt, monitor, or demand first place in someone’s day.
 
 Technology can speed up sending a message. It should not decide how quickly two people must be present for each other.
-
-[Write to someone](https://onereader.co/)

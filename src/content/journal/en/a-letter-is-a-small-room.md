@@ -1,6 +1,6 @@
 ---
 lang: en
-key: a-letter-is-a-small-room
+slug: a-letter-is-a-small-room
 title: A letter is a small room
 meta-description: Letter writing is returning not only as nostalgia, but as a way to connect without being continuously available.
 publishedAt: '2026-08-16'
@@ -27,5 +27,3 @@ This is why a letter can make honesty easier. The writer is not speaking into an
 One Reader begins there. One person writes to one person. The connection has no audience, no visible score, and no requirement to become permanent. It may develop. It may remain brief. It may simply give someone a place to put a thought that had been waiting for a reader.
 
 A letter is a small room. It does not solve the world outside. But for a little while, it lets two people meet somewhere quieter.
-
-[Write to someone](https://onereader.co/)

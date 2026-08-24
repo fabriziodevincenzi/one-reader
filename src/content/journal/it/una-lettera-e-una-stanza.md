@@ -1,6 +1,6 @@
 ---
 lang: it
-key: a-letter-is-a-small-room
+slug: una-lettera-e-una-piccola-stanza
 title: Una lettera è una piccola stanza
 meta-description: La scrittura epistolare torna non solo come nostalgia, ma come modo di essere vicini senza essere sempre disponibili.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Una lettera spezza quel ritmo. Rende di nuovo normale aspettare. Progetti di cor
 Un post parla a una folla. Un messaggio diretto spesso fa parte di un flusso. Una lettera parla a una persona sola. Può contenere un dettaglio ordinario, un pensiero incompleto, una domanda troppo piccola per lo spazio pubblico. Non chiede: funzionerà bene? Chiede: arriverà a qualcuno?
 
 One Reader comincia da qui. Una persona scrive a una persona. Nessun pubblico, nessun punteggio visibile, nessun obbligo di trasformare il rapporto in qualcosa di permanente. Una lettera non risolve il mondo fuori. Ma per un po’ permette a due persone di incontrarsi in un luogo più quieto.
-
-[Scrivi a qualcuno](https://onereader.co/)

@@ -30,5 +30,3 @@ Ingenting av dette betyr at et svar ikke betyr noe. Selvfølgelig gjør det det 
 Vi bygde One Reader med nettopp dette i tankene, mer enn én gang. Det finnes ingen lesekvittering. Det finnes ingen måte å vite om noen har åpnet brevet ditt og rett og slett ennå ikke har bestemt seg for hva de skal svare. Ens egne brev, i egen konto, oppbevares som et privat arkiv — ikke en prestasjon, ikke noe med en poengsum — for det som skjedde mens man skrev dem, blir ikke mindre av det som skjer etterpå.
 
 Et brev kan ende med et svar. Det kan ende med et lite tegn på at det kom fram. Det kan rett og slett ta slutt, ubesvart, og likevel ha gjort nøyaktig det skriving gjør: tatt noe formløst og gitt det en form man kunne se på. Det er ikke ingenting. For mange mennesker, mange dager, er det nesten alt de lette etter.
-
-[Skriv til noen](https://onereader.co/)

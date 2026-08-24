@@ -1,6 +1,6 @@
 ---
 lang: de
-key: the-part-of-reading-that-cannot-be-automated
+slug: der-teil-des-lesens-der-nicht-automatisiert-werden-kann
 title: Der Teil des Lesens, der nicht automatisiert werden kann
 meta-description: Im Zeitalter von Zusammenfassungen und sofortigen Antworten bleibt Lesen eine Verbindung zum eigenen Denken.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Schreiben macht das sichtbar: Zu wissen, was man meint, ist nicht dasselbe, wie 
 Kein Werkzeug kann den letzten Schritt für uns erledigen: einen Satz zu treffen und ihn einen Moment lang unvollendet zu lassen. One Reader entsteht aus einer ähnlichen Aufmerksamkeit. Ein Brief ist kein effizienter Informationstransfer, sondern ein Raum, in dem jemand etwas wahr genug macht, um es einem anderen zu schicken.
 
 Es gibt bereits genug Orte, die uns schneller machen wollen. Ein ruhigeres Leben kann damit beginnen, eine Sache zu wählen, die nicht verkürzt werden muss, bevor wir sie erlebt haben. Manchmal ist es ein Buch. Manchmal ein Brief.
-
-[Jemandem schreiben](https://onereader.co/)

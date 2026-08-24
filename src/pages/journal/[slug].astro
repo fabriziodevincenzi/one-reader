@@ -8,10 +8,18 @@ import { siteLocales } from '../../lib/i18n';
 
 export async function getStaticPaths() {
   const entries = await getJournalEntries('en');
-  return entries.map((entry) => ({ params: { slug: getJournalSlug(entry) }, props: { entry } }));
+  return entries.flatMap((entry) => {
+    const slug = getJournalSlug(entry);
+    const legacySlug = getJournalKey(entry);
+    return [
+      { params: { slug }, props: { entry } },
+      ...(legacySlug !== slug ? [{ params: { slug: legacySlug }, props: { entry, redirectTo: `/journal/${slug}/` } }] : []),
+    ];
+  });
 }
 
-const { entry } = Astro.props as { entry: JournalEntry };
+const { entry, redirectTo } = Astro.props as { entry: JournalEntry; redirectTo?: string };
+if (redirectTo) return Astro.redirect(encodeURI(redirectTo), 301);
 const allEntries: JournalEntry[] = (await Promise.all(siteLocales.map((locale) => getJournalEntries(locale)))).flat();
 const { Content } = await render(entry);
 const slug = getJournalSlug(entry);

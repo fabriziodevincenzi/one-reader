@@ -1,6 +1,6 @@
 ---
 lang: sv
-key: a-letter-is-a-small-room
+slug: ett-brev-ar-ett-litet-rum
 title: Ett brev är ett litet rum
 meta-description: Brevskrivandet återkommer inte bara av nostalgi, utan som ett sätt att vara nära utan att ständigt vara tillgänglig.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Ett brev bryter rytmen. Det gör väntan normal igen. Forskning och brevprojekt 
 Ett inlägg talar till en folkmassa. Ett direktmeddelande är ofta en del av ett flöde. Ett brev talar till en person. One Reader börjar där: en person skriver till en person, utan publik, poäng eller krav på att det måste bestå.
 
 Ett brev löser inte världen utanför. Men en stund låter det två människor mötas på en lugnare plats.
-
-[Skriv till någon](https://onereader.co/)

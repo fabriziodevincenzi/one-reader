@@ -1,6 +1,6 @@
 ---
 lang: pl
-key: the-part-of-reading-that-cannot-be-automated
+slug: ta-czesc-czytania-ktorej-nie-da-sie-zautomatyzowac
 title: Ta część czytania, której nie da się zautomatyzować
 meta-description: W epoce streszczeń i natychmiastowych odpowiedzi czytanie nadal pozwala pozostawać w kontakcie z własnym myśleniem.
 publishedAt: '2026-08-16'
@@ -17,5 +17,3 @@ Streszczenie mówi, co zawiera tekst. Nie zawsze daje doświadczenie zmiany wła
 Żadne narzędzie nie wykona za nas ostatniego kroku: spotkania ze zdaniem i pozwolenia mu przez chwilę pozostać niedokończonym. One Reader wyrasta z podobnej uważności. List nie jest sprawnym przekazem informacji, lecz przestrzenią, w której ktoś czyni coś dość prawdziwym, by wysłać to drugiej osobie.
 
 Jest już dość miejsc, które każą nam się spieszyć. Spokojniejsze życie może zacząć się od wyboru czegoś, czego nie trzeba skracać, zanim się tego doświadczy. Czasem to książka. Czasem list.
-
-[Napisz do kogoś](https://onereader.co/)

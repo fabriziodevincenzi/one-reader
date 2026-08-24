@@ -1,6 +1,6 @@
 ---
 lang: fr
-key: a-letter-is-a-small-room
+slug: une-lettre-est-une-petite-piece
 title: Une lettre est une petite pièce
 meta-description: La correspondance revient non seulement par nostalgie, mais comme une manière d’être proche sans être constamment disponible.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Une lettre brise ce rythme. Elle rend l’attente ordinaire. Des projets de corr
 Un post s’adresse à une foule. Un message privé appartient souvent à un flux. Une lettre s’adresse à une seule personne. Elle peut contenir un détail banal, une pensée inachevée, une question trop petite pour l’espace public. Elle ne demande pas : est-ce que cela marchera ? Elle demande : est-ce que cela atteindra quelqu’un ?
 
 One Reader commence là. Une personne écrit à une personne. Sans public, sans score visible, sans obligation de devenir une relation durable. Une lettre ne résout pas le monde extérieur. Mais pendant un moment, elle permet à deux personnes de se retrouver dans un endroit plus calme.
-
-[Écrire à quelqu’un](https://onereader.co/)

@@ -1,6 +1,6 @@
 ---
 lang: en
-key: a-stranger-not-an-assistant
+slug: a-stranger-not-an-assistant
 title: A stranger, not an assistant
 meta-description: Why a real stranger can offer something that an always-available artificial companion cannot.
 publishedAt: '2026-08-17'
@@ -17,5 +17,3 @@ This is not an argument that AI is useless. It is an argument that artificial av
 One Reader begins there: one person writes to one person they do not know. No perfect compatibility, no audience, no promise that every letter becomes a lasting friendship. Just the possibility that a real human being will decide to be present for the length of a message.
 
 A chatbot can always be available. A stranger can choose to be there. The second kind of presence is more fragile, and for that reason it can mean more.
-
-[Write to someone](https://onereader.co/)

@@ -1,6 +1,6 @@
 ---
 lang: pt
-key: the-part-of-reading-that-cannot-be-automated
+slug: a-parte-da-leitura-que-nao-pode-ser-automatizada
 title: A parte da leitura que não pode ser automatizada
 meta-description: Em uma época de resumos e respostas instantâneas, ler continua sendo uma forma de permanecer em contato com o próprio pensamento.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Escrever torna isso visível: saber o que queremos dizer não é o mesmo que con
 Nenhuma ferramenta pode fazer por nós o último gesto: encontrar uma frase e deixá-la, por um instante, inacabada. One Reader nasce de uma atenção parecida. Uma carta não é uma transferência eficiente de informação, mas um espaço em que alguém torna algo verdadeiro o bastante para enviá-lo a outra pessoa.
 
 Já existem lugares demais nos pedindo para ir mais rápido. Uma vida mais tranquila pode começar escolhendo algo que não precise ser reduzido antes de ser vivido. Às vezes é um livro. Às vezes é uma carta.
-
-[Escreva para alguém](https://onereader.co/)

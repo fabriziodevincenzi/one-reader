@@ -1,6 +1,6 @@
 ---
 lang: en
-key: the-part-of-reading-that-cannot-be-automated
+slug: the-part-of-reading-that-cannot-be-automated
 title: The part of reading that cannot be automated
 meta-description: In an age of summaries and instant answers, reading remains a way to stay in contact with your own thinking.
 publishedAt: '2026-08-16'
@@ -27,5 +27,3 @@ No tool can do that last part on our behalf. A machine can shorten a text or cla
 One Reader is built around a related kind of attention. A letter is not an efficient transfer of information. It is a space in which one person tries to make something true enough to send to another person. The writing may be assisted by tools. The attention cannot be outsourced so easily. Someone still has to decide what matters, what can be left unsaid, and which sentence deserves to remain.
 
 There are already enough places asking us to move faster. A quieter life may begin with choosing one thing that does not need to be reduced before we have lived through it. Sometimes that thing is a book. Sometimes it is a letter.
-
-[Write to someone](https://onereader.co/)

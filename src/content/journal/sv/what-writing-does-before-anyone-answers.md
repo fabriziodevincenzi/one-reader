@@ -30,5 +30,3 @@ Inget av detta betyder att ett svar inte spelar roll. Naturligtvis gör det det 
 Vi byggde One Reader med detta i åtanke, mer än en gång. Det finns ingen läskvittens. Det finns inget sätt att veta om någon öppnat ens brev och helt enkelt ännu inte bestämt sig för vad de ska svara. Ens egna brev, i det egna kontot, sparas som ett privat register — inte en prestation, inte något med ett poäng — för det som hände medan man skrev dem minskar inte av vad som händer efteråt.
 
 Ett brev kan sluta med ett svar. Det kan sluta med ett litet tecken på att det kommit fram. Det kan helt enkelt ta slut, obesvarat, och ändå ha gjort exakt det som skrivande gör: tagit något formlöst och gett det en form man kunde betrakta. Det är inte ingenting. För många människor, många dagar, är det nästan allt de sökte.
-
-[Skriv till någon](https://onereader.co/)

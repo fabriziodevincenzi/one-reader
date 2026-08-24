@@ -30,5 +30,3 @@ Nulla di tutto questo significa che una risposta non conti. Certo che conta — 
 Abbiamo costruito One Reader tenendo questo a mente, più di una volta. Non c'è conferma di lettura. Non c'è modo di sapere se qualcuno ha aperto la tua lettera e semplicemente non ha ancora deciso cosa rispondere. Le tue lettere, nel tuo account, restano come un registro privato — non una prestazione, non qualcosa con un punteggio — perché ciò che è accaduto mentre le scrivevi non è diminuito da ciò che accade dopo.
 
 Una lettera può finire con una risposta. Può finire con un piccolo segno che è arrivata. Può semplicemente finire, senza risposta, e aver comunque fatto esattamente ciò che la scrittura fa: ha preso qualcosa di informe e gli ha dato una forma che potevi guardare. Non è poco. Per molte persone, in molti giorni, è quasi tutto quello che stavano cercando.
-
-[Scrivi a qualcuno](https://onereader.co/)

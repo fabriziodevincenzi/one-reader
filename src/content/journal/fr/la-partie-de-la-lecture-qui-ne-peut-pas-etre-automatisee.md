@@ -1,6 +1,6 @@
 ---
 lang: fr
-key: the-part-of-reading-that-cannot-be-automated
+slug: la-part-de-la-lecture-qu-on-ne-peut-pas-automatiser
 title: La part de la lecture qu’on ne peut pas automatiser
 meta-description: À l’ère des résumés et des réponses instantanées, lire reste une façon de rester en contact avec sa propre pensée.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Un résumé nous indique ce qu’un texte contient. Il ne nous fait pas toujours
 Aucun outil ne peut faire à notre place le dernier geste : rencontrer une phrase et la laisser, un instant, inachevée. One Reader repose sur une attention de ce genre. Une lettre n’est pas un transfert efficace d’informations, mais un espace où quelqu’un rend une chose assez vraie pour l’envoyer à quelqu’un d’autre.
 
 Il existe déjà assez d’endroits qui nous demandent d’aller plus vite. Une vie plus calme peut commencer par le choix d’une chose qui n’a pas besoin d’être réduite avant d’être vécue. Parfois, c’est un livre. Parfois, une lettre.
-
-[Écrire à quelqu’un](https://onereader.co/)

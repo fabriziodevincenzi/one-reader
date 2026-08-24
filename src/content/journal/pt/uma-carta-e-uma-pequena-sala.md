@@ -1,6 +1,6 @@
 ---
 lang: pt
-key: a-letter-is-a-small-room
+slug: uma-carta-e-uma-pequena-sala
 title: Uma carta é uma pequena sala
 meta-description: As cartas voltam não apenas como nostalgia, mas como uma maneira de estar perto sem estar sempre disponível.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Uma carta quebra esse ritmo. Torna a espera normal novamente. Pesquisas e projet
 Uma publicação fala com uma multidão. Uma mensagem direta costuma fazer parte de um fluxo. Uma carta fala com uma pessoa. Pode conter um detalhe comum, um pensamento inacabado ou uma pergunta pequena demais para o espaço público.
 
 One Reader começa aí. Uma pessoa escreve para uma pessoa, sem público, sem pontuação visível e sem obrigação de durar. Uma carta não resolve o mundo lá fora. Mas, por algum tempo, permite que duas pessoas se encontrem em um lugar mais tranquilo.
-
-[Escreva para alguém](https://onereader.co/)

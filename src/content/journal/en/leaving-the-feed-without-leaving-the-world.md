@@ -1,6 +1,6 @@
 ---
 lang: en
-key: leaving-the-feed-without-leaving-the-world
+slug: leaving-the-feed-without-leaving-the-world
 title: Leaving the feed without leaving the world
 meta-description: Social fatigue may be less a rejection of connection than a rejection of constant visibility.
 publishedAt: '2026-08-17'
@@ -17,5 +17,3 @@ The feed has no natural ending. Every thought can become content, every gesture 
 Letter-writing offers one answer. Recent reporting describes a renewed interest in pen-pal programs despite the decline of traditional mail. [The Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca) suggests that the desire to write to someone has not disappeared; it needs a less public and less accelerated form.
 
 One Reader keeps connection without reproducing the feed: one person writes to one person, without an audience, score, or endless stream. Leaving the feed does not have to mean leaving the world. It can mean choosing more carefully where our words go.
-
-[Write to someone](https://onereader.co/)

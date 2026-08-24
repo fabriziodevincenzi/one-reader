@@ -11,7 +11,7 @@ const journal = defineCollection({
   schema: z.object({
     lang: z.string(),
     key: z.string().min(1).optional(),
-    slug: z.string().min(1).optional(),
+    slug: z.string().min(1),
     title: z.string(),
     'meta-description': z.string(),
        publishedAt: dateField,

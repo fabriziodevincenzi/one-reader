@@ -30,5 +30,3 @@ Nada de esto significa que una respuesta no importe. Claro que importa —ser le
 Construimos One Reader teniendo esto presente, más de una vez. No hay confirmación de lectura. No hay forma de saber si alguien ha abierto tu carta y simplemente aún no ha decidido qué responder. Tus propias cartas, en tu cuenta, se guardan como un registro privado —no una actuación, no algo con una puntuación— porque lo que ocurrió mientras las escribías no disminuye por lo que ocurra después.
 
 Una carta puede terminar con una respuesta. Puede terminar con una pequeña señal de que llegó. Puede simplemente terminar, sin respuesta, y aun así haber hecho exactamente lo que hace la escritura: tomar algo sin forma y darle una forma que pudieras mirar. Eso no es poco. Para mucha gente, en muchos días, es casi todo lo que estaban buscando.
-
-[Escribe a alguien](https://onereader.co/)

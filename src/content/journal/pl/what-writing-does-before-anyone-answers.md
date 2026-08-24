@@ -30,5 +30,3 @@ Nic z tego nie oznacza, że odpowiedź nie ma znaczenia. Oczywiście, że ma —
 Zbudowaliśmy One Reader, mając to na uwadze, nie raz. Nie ma potwierdzenia odczytania. Nie ma sposobu, by wiedzieć, czy ktoś otworzył twój list i po prostu jeszcze nie zdecydował, co odpowiedzieć. Twoje własne listy, na twoim koncie, są przechowywane jako prywatny zapis — nie jako występ, nie jako coś z wynikiem — bo to, co wydarzyło się podczas ich pisania, nie traci na znaczeniu przez to, co dzieje się później.
 
 List może zakończyć się odpowiedzią. Może zakończyć się małym znakiem, że dotarł. Może po prostu się skończyć, bez odpowiedzi, i mimo to dokonać dokładnie tego, co robi pisanie: wziąć coś bezkształtnego i nadać temu formę, na którą można było spojrzeć. To nie jest nic. Dla wielu ludzi, wiele dni, to niemal wszystko, czego szukali.
-
-[Napisz do kogoś](https://onereader.co/)

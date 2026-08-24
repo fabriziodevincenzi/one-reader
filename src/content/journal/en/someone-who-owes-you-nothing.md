@@ -1,6 +1,6 @@
 ---
 lang: en
-key: someone-who-owes-you-nothing
+slug: someone-who-owes-you-nothing
 title: Someone who owes you nothing
 meta-description: A note on why a stranger's attention can feel clearer than a friend's.
 publishedAt: '2026-08-15'
@@ -25,5 +25,3 @@ There's a plausible reason a stranger's attention lands differently than a frien
 This is also, not coincidentally, close to what a random correspondence tries to offer. When the person on the other end of a letter is chosen at random rather than sought out, there is no possibility of picking someone likely to agree with you, or someone who already knows enough about your situation to have an opinion about it. The distance that might look, on paper, like a limitation — a stranger who knows nothing about you — is closer to the actual point.
 
 We built One Reader around that distance rather than trying to shrink it. There are no shared interests to match on, no profile to browse before deciding whether someone seems worth writing to. A letter goes to one person you don't know, and whatever understanding happens has to happen through the words themselves, not through anything either of you already assumed. It won't replace the people who already know you. It isn't meant to. It offers something adjacent: the particular, uncomplicated relief of being read by someone who owes you nothing, and reads you carefully anyway.
-
-[Write to someone](https://onereader.co/)

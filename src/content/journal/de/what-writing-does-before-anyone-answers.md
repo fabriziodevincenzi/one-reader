@@ -30,5 +30,3 @@ Nichts davon bedeutet, dass eine Antwort nicht zählt. Natürlich zählt sie —
 Wir haben One Reader mit genau diesem Gedanken gebaut, mehr als einmal. Es gibt keine Lesebestätigung. Es gibt keine Möglichkeit zu wissen, ob jemand den eigenen Brief geöffnet hat und sich einfach noch nicht entschieden hat, was er antworten soll. Die eigenen Briefe werden im Konto als privates Archiv aufbewahrt — keine Vorführung, nichts mit einem Punktestand — denn das, was beim Schreiben geschah, wird nicht dadurch geschmälert, was danach geschieht.
 
 Ein Brief kann mit einer Antwort enden. Er kann mit einem kleinen Zeichen enden, dass er angekommen ist. Er kann einfach enden, unbeantwortet, und trotzdem genau das getan haben, was Schreiben tut: etwas Formloses genommen und ihm eine Form gegeben haben, die man betrachten konnte. Das ist nicht nichts. Für viele Menschen, an vielen Tagen, ist es fast alles, wonach sie gesucht haben.
-
-[Schreib jemandem](https://onereader.co/)

@@ -1,6 +1,6 @@
 ---
 lang: sv
-key: the-part-of-reading-that-cannot-be-automated
+slug: den-del-av-lasningen-som-inte-kan-automatiseras
 title: Den del av läsningen som inte kan automatiseras
 meta-description: I en tid av sammanfattningar och omedelbara svar är läsning fortfarande ett sätt att hålla kontakt med sitt eget tänkande.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Skrivandet visar detta: att veta vad man menar är inte samma sak som att kunna 
 Inget verktyg kan göra det sista åt oss: möta en mening och låta den vara ofärdig en stund. One Reader bygger på en liknande uppmärksamhet. Ett brev är inte en effektiv informationsöverföring, utan ett rum där någon gör något tillräckligt sant för att skicka till en annan.
 
 Det finns redan tillräckligt många platser som ber oss skynda. Ibland börjar ett lugnare liv med att välja något som inte behöver förkortas innan det har upplevts. Ibland är det en bok. Ibland ett brev.
-
-[Skriv till någon](https://onereader.co/)

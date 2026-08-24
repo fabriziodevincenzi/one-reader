@@ -26,5 +26,3 @@ Det finnes en plausibel grunn til at en fremmeds oppmerksomhet føles annerledes
 Dette ligger, ikke tilfeldig, nær det en tilfeldig korrespondanse forsøker å tilby. Når personen på den andre siden av et brev velges tilfeldig i stedet for oppsøkt, finnes det ingen mulighet til å velge noen som sannsynligvis er enig med deg, eller noen som allerede vet nok om situasjonen din til å ha en mening om den. Avstanden som på papiret kan virke som en begrensning — en fremmed som ikke vet noe om deg — ligger nærmere selve poenget.
 
 Vi bygde One Reader rundt nettopp den avstanden, i stedet for å prøve å redusere den. Det finnes ingen felles interesser å matche på, ingen profil å bla gjennom før man bestemmer om noen er verdt å skrive til. Et brev går til en person du ikke kjenner, og all forståelse som oppstår, må oppstå gjennom ordene alene, ikke gjennom noe begge parter allerede tok for gitt. Det vil ikke erstatte menneskene som allerede kjenner deg. Det er ikke meningen. Det tilbyr noe beslektet: den særegne, enkle lettelsen ved å bli lest av noen som ikke skylder deg noe — og likevel leser deg med omhu.
-
-[Skriv til noen](https://onereader.co/)

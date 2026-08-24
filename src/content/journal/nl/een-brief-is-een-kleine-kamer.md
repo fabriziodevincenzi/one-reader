@@ -1,6 +1,6 @@
 ---
 lang: nl
-key: a-letter-is-a-small-room
+slug: een-brief-is-een-kleine-kamer
 title: Een brief is een kleine kamer
 meta-description: Brieven keren terug, niet alleen uit nostalgie, maar als manier om verbonden te zijn zonder voortdurend beschikbaar te zijn.
 publishedAt: '2026-08-16'
@@ -19,5 +19,3 @@ Een brief onderbreekt dat ritme. Wachten wordt weer gewoon. Onderzoek en corresp
 Een bericht aan een publiek spreekt tot een menigte. Een direct bericht is vaak onderdeel van een stroom. Een brief is voor één persoon. One Reader begint daar: één persoon schrijft aan één persoon, zonder publiek, zonder score en zonder verplichting om blijvend te worden.
 
 Een brief lost de wereld buiten niet op. Maar even laat hij twee mensen elkaar ontmoeten op een rustigere plek.
-
-[Schrijf aan iemand](https://onereader.co/)
