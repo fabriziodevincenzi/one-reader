@@ -3,11 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 
-const isChangeEmail = new URL(Astro.request.url).searchParams.get('mode') === 'change-email';
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
-<Layout title={isChangeEmail ? 'Change email — One Reader' : 'Sign in — One Reader'} description="Sign in to your private One Reader account with a one-time email link." turnstileSiteKey={turnstileSiteKey} indexable={false}>
+<Layout title="Sign in — One Reader" description="Sign in to your private One Reader account with a one-time email link." turnstileSiteKey={turnstileSiteKey} indexable={false}>
   <header class="border-b border-border">
     <div class="shell flex min-h-20 items-center justify-between gap-6">
       <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
@@ -16,32 +15,29 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
   <main class="shell min-h-[82vh] max-w-xl py-20 sm:py-28 lg:py-36">
     <div class="mx-auto max-w-lg">
-      <p class="eyebrow mb-6">{isChangeEmail ? 'Account details' : 'Sign in'}</p>
-      <h1 class="section-title balance">{isChangeEmail ? 'Confirm a new address.' : 'Welcome back.'}</h1>
-      <p class="mt-8 text-lg leading-8 text-muted-foreground">
-        {isChangeEmail
-          ? 'Enter the new email address for your One Reader account. We will send a confirmation link before changing it.'
-          : 'Enter your email and we’ll send a one-time sign-in link. There is no password to remember.'}
-      </p>
+      <p class="eyebrow mb-6" data-auth-eyebrow>Sign in</p>
+      <h1 class="section-title balance" data-auth-heading>Welcome back.</h1>
+      <p class="mt-8 text-lg leading-8 text-muted-foreground" data-auth-intro>Enter your email and we’ll send a one-time sign-in link. There is no password to remember.</p>
 
       <form class="mt-12" data-magic-link-form>
         <div data-sign-in-fields>
           <label class="mb-2 block text-sm font-medium" for="sign-in-email">Email address</label>
           <div class="grid gap-3 sm:grid-cols-[1fr_auto]">
             <Input id="sign-in-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required />
-            <Button type="submit" size="large" data-submit-label>{isChangeEmail ? 'Send confirmation' : 'Send sign-in link'}</Button>
+            <Button type="submit" size="large" data-submit-label>Send sign-in link</Button>
           </div>
         </div>
         <p class="mt-4 text-xs leading-5 text-muted-foreground" data-flow-helper>
-          {isChangeEmail ? 'Your current address stays active until you confirm the new one.' : 'The link is single-use and expires shortly.'}
+          The link is single-use and expires shortly.
         </p>
-        {!isChangeEmail && turnstileSiteKey && (
+        {turnstileSiteKey && (
           <div class="mt-6 hidden rounded-sm bg-muted/40 p-5" data-sign-in-captcha-step>
             <div class="w-full max-w-full" data-sign-in-turnstile data-sitekey={turnstileSiteKey} aria-label="Security check"></div>
           </div>
         )}
         <p class="mt-5 hidden text-sm leading-6 text-accent" data-magic-link-note aria-live="polite"></p>
       </form>
+      <p class="mt-8 hidden text-sm" data-change-email-back><a class="underline underline-offset-4" href="/member/#profile">Return to your account</a></p>
     </div>
   </main>
 </Layout>
@@ -53,6 +49,11 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   const form = document.querySelector<HTMLFormElement>('[data-magic-link-form]')!;
   const fields = document.querySelector<HTMLElement>('[data-sign-in-fields]');
   const flowHelper = document.querySelector<HTMLElement>('[data-flow-helper]');
+  const eyebrow = document.querySelector<HTMLElement>('[data-auth-eyebrow]');
+  const heading = document.querySelector<HTMLElement>('[data-auth-heading]');
+  const intro = document.querySelector<HTMLElement>('[data-auth-intro]');
+  const submitLabel = document.querySelector<HTMLElement>('[data-submit-label]');
+  const changeEmailBack = document.querySelector<HTMLElement>('[data-change-email-back]');
   const captchaStep = document.querySelector<HTMLElement>('[data-sign-in-captcha-step]');
   const captchaWidget = document.querySelector<HTMLElement>('[data-sign-in-turnstile]');
   const note = document.querySelector<HTMLElement>('[data-magic-link-note]');
@@ -63,6 +64,16 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   let captchaWidgetId: string | null = null;
   let captchaToken: string | null = null;
   let pendingEmail: string | null = null;
+
+  if (isChangeEmail) {
+    document.title = 'Change email — One Reader';
+    eyebrow!.textContent = 'Account security';
+    heading!.textContent = 'Change your email address.';
+    intro!.textContent = 'Enter the new address for your One Reader account. Your current address remains active until you confirm the change from the new inbox.';
+    submitLabel!.textContent = 'Send confirmation';
+    flowHelper!.textContent = 'For your security, this page only works while you are signed in.';
+    changeEmailBack?.classList.remove('hidden');
+  }
   const showNote = (message: string, error = false) => {
     if (!note) return;
     note.textContent = message;
@@ -80,6 +91,18 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     note.append(link);
     note.classList.remove('hidden', 'text-accent', 'text-destructive');
     note.classList.add('text-accent');
+  };
+
+  const showExpiredSessionNote = () => {
+    if (!note) return;
+    note.textContent = 'Your session has expired. ';
+    const link = document.createElement('a');
+    link.href = '/sign-in/';
+    link.textContent = 'Sign in again before changing your email';
+    link.className = 'underline underline-offset-4';
+    note.append(link);
+    note.classList.remove('hidden', 'text-accent', 'text-destructive');
+    note.classList.add('text-destructive');
   };
 
   const resetCaptcha = () => {
@@ -163,6 +186,18 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     });
     captchaWidget.dataset.rendered = 'true';
   };
+
+  const verifyChangeEmailSession = async () => {
+    if (!isChangeEmail || !supabase) return;
+    const { data, error } = await supabase.auth.getSession();
+    if (error || !data.session) {
+      fields?.classList.add('hidden');
+      flowHelper?.classList.add('hidden');
+      showExpiredSessionNote();
+    }
+  };
+
+  void verifyChangeEmailSession();
 
   supabase?.auth.onAuthStateChange((event, session) => {
     const hasCallbackToken = window.location.hash.includes('access_token');
