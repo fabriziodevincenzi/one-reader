@@ -8,13 +8,15 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 
+const supportedPriceCurrencies = new Set([
+  'EUR', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'DKK', 'GBP', 'ILS',
+  'ISK', 'JPY', 'KRW', 'NOK', 'PLN', 'SEK', 'TWD', 'UAH', 'USD',
+]);
+
+const defaultStripePriceId = 'price_1U6ohsBA5ijGzHgSVgD6vq4g';
+
 const response = (body: Record<string, unknown>, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-
-function priceIds() {
-  const parsed = JSON.parse(requireEnvironment('STRIPE_PRICE_IDS_JSON')) as Record<string, unknown>;
-  return Object.fromEntries(Object.entries(parsed).filter(([currency, id]) => /^[A-Z]{3}$/.test(currency) && typeof id === 'string')) as Record<string, string>;
-}
 
 Deno.serve(async (request) => {
   if (request.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
@@ -37,19 +39,18 @@ Deno.serve(async (request) => {
       .single();
     if (profileError) throw profileError;
     if (profile.account_status === 'closed') return response({ error: 'This account is closed' }, 409);
-    if (profile.plan === 'annual' || profile.account_status === 'annual') return response({ error: 'Annual membership is already active' }, 409);
+    if (profile.plan === 'annual' || profile.account_status === 'annual') return response({ error: 'Writer is already active' }, 409);
 
     const preferences = await admin.from('member_preferences').select('country_code, market_currency').eq('user_id', userData.user.id).maybeSingle();
     if (preferences.error) throw preferences.error;
     const body = await request.json().catch(() => ({}));
     const requestedCurrency = typeof body.currency === 'string' ? body.currency.toUpperCase() : null;
-    const currency = requestedCurrency || preferences.data?.market_currency || 'EUR';
-    const configuredPrices = priceIds();
-    // A Stripe Price with currency_options has one Price ID for all its
-    // currencies. Keep EUR as a fallback when the JSON stores only the
-    // default currency entry.
-    const priceId = configuredPrices[currency] ?? configuredPrices.EUR;
-    if (!priceId) return response({ error: `Stripe price is not configured for ${currency}` }, 422);
+    const preferredCurrency = requestedCurrency || preferences.data?.market_currency || 'EUR';
+    const currency = supportedPriceCurrencies.has(preferredCurrency) ? preferredCurrency : 'EUR';
+    // Price IDs are public identifiers. This Price contains all supported
+    // currency_options; the optional environment value allows future swaps
+    // without a code deployment.
+    const priceId = Deno.env.get('STRIPE_PRICE_ID')?.trim() || defaultStripePriceId;
 
     const stripe = new Stripe(requireEnvironment('STRIPE_SECRET_KEY'), { apiVersion: '2025-03-31.basil' });
     let customerId = profile.stripe_customer_id as string | null;
@@ -66,10 +67,12 @@ Deno.serve(async (request) => {
     const siteUrl = (Deno.env.get('SITE_URL') ?? 'https://onereader.co').replace(/\/$/, '');
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
+      currency: currency.toLowerCase() as Stripe.Checkout.SessionCreateParams.Currency,
       customer: customerId,
       client_reference_id: userData.user.id,
       line_items: [{ price: priceId, quantity: 1 }],
       payment_method_types: ['card'],
+      allow_promotion_codes: true,
       success_url: `${siteUrl}/member/?stripe=success`,
       cancel_url: `${siteUrl}/member/?stripe=cancelled`,
       billing_address_collection: 'auto',

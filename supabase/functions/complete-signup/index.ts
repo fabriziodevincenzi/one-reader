@@ -94,13 +94,15 @@ Deno.serve(async (request) => {
   const nextStatus = existingProfile && protectedStatuses.has(existingProfile.account_status)
     ? existingProfile.account_status
     : accountStatus;
+  const nextPlan = existingProfile?.plan === 'annual' || nextStatus === 'annual' ? 'annual' : 'free';
 
   const { error: profileError } = await admin.from('profiles').upsert({
     id: user.id,
     account_status: nextStatus,
-    // Paid access is granted only by the payment webhook. An annual intent
-    // remains checkout_pending until that server-side confirmation exists.
-    plan: 'free',
+    // Paid access is granted only by the payment webhook. Preserve existing
+    // Writer access when a signed-in member completes the signup flow again.
+    // A new annual intent remains checkout_pending until Stripe confirms it.
+    plan: nextPlan,
     email_address: user.email.trim().toLowerCase(),
     waitlist_joined_at: source === 'waitlist' ? new Date().toISOString() : undefined,
     email_verified_at: user.email_confirmed_at ?? new Date().toISOString(),

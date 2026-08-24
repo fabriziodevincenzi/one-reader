@@ -27,40 +27,46 @@ const currentYear = new Date().getUTCFullYear();
     <div class="shell flex min-h-20 items-center justify-between gap-6">
       <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
       <div class="flex items-center gap-4 text-sm">
-        <p class="max-w-[12rem] truncate text-muted-foreground" data-account-email>you@example.com</p>
+        <p class="max-w-[12rem] truncate text-muted-foreground"><span class="account-inline-skeleton" data-account-email-loading aria-label="Loading account"></span><span class="hidden" data-account-email></span></p>
         <button class="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline" type="button" data-sign-out>Log out</button>
       </div>
     </div>
   </header>
 
-  <main id="main-content" class="shell py-12 sm:py-16">
+  <main id="main-content" class="shell py-12 sm:py-16" data-account-main>
     <section id="account" class="flex flex-col justify-between gap-8 border-b border-border pb-10 sm:flex-row sm:items-end">
       <div>
         <p class="eyebrow mb-5">Account</p>
         <h1 class="section-title balance max-w-3xl">Everything practical, in one place.</h1>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Your letters stay in your inbox. This is the small account space for your pace, preferences, consents, payments and privacy.</p>
       </div>
-      <a class={buttonVariants({ size: 'large' })} href="mailto:write@onereader.co?subject=One%20Reader" data-write-letter>Write to someone</a>
+      <div class="account-action-skeleton" data-account-action-loading aria-hidden="true"></div>
+      <a class={buttonVariants({ size: 'large' }) + ' pointer-events-none opacity-0'} href="mailto:write@onereader.co?subject=One%20Reader" data-write-letter>Write to someone</a>
     </section>
 
     <section id="membership" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="membership-heading">
       <div>
         <p class="eyebrow mb-4">Your access</p>
-        <h2 id="membership-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Membership</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">Your plan controls how often you can start a new correspondence. Receiving letters and replying to conversations already open are available to everyone.</p>
+        <h2 id="membership-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Your plan</h2>
+        <p class="mt-3 text-sm leading-6 text-muted-foreground">Reader is free: receive letters, reply freely, and write first once. Writer is the annual plan: start one new correspondence every 24 hours. Receiving letters and replying stay open to everyone.</p>
       </div>
-      <div>
-        <div class="border-b border-border pb-6">
-          <p class="m-0 font-serif text-3xl tracking-[-0.04em]" data-membership-label>Free plan</p>
+      <div class="relative" data-membership-panel aria-busy="true">
+        <div class="account-membership-skeleton" data-membership-skeleton role="status" aria-label="Loading your plan">
+          <div class="account-skeleton-art" aria-hidden="true"><span></span><i></i></div>
+          <div class="account-skeleton-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="hidden" data-membership-content>
+          <div class="border-b border-border pb-6">
+          <p class="m-0 font-serif text-3xl tracking-[-0.04em]" data-membership-label>Reader</p>
           <p class="mt-3 max-w-xl text-lg leading-8 text-muted-foreground" data-membership-copy>One first opening is included. You can always receive letters from strangers and reply to conversations already open.</p>
           <p class="mt-4 text-sm leading-6" data-membership-pace>You still have your free first opening.</p>
           <p class="mt-3 hidden text-sm leading-6 text-muted-foreground" data-membership-period></p>
         </div>
 
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6" data-membership-actions>
-          <a class={buttonVariants({ size: 'small' })} href="#checkout" data-membership-primary>Become a member</a>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6" data-membership-actions>
+          <a class={buttonVariants({ size: 'small' })} href="#checkout" data-membership-primary>Become a Writer</a>
           <a class="hidden border-b border-border px-1 pb-1 text-sm underline-offset-4 hover:border-foreground" href="#refund-request" data-membership-refund>Request a refund</a>
-          <p class="mt-1 basis-full max-w-xl text-sm leading-6 text-muted-foreground" data-membership-note>Annual membership opens one new correspondence every 24 hours. The price is shown in your local currency at checkout.</p>
+          <p class="mt-1 basis-full max-w-xl text-sm leading-6 text-muted-foreground" data-membership-note>Writer opens one new correspondence every 24 hours. The price is shown in your local currency at checkout.</p>
           <form id="refund-request" class="mt-6 hidden max-w-xl border-t border-border pt-6" data-refund-form>
             <p class="m-0 text-sm font-medium">Refund request</p>
             <p class="mt-2 text-sm leading-6 text-muted-foreground" data-refund-policy>Choose the reason and tell us what happened. Submitting it does not issue an automatic refund.</p>
@@ -69,6 +75,7 @@ const currentYear = new Date().getUTCFullYear();
             <div class="mt-4 flex flex-wrap items-center gap-4"><button class={buttonVariants({ size: 'small' })} type="submit">Send request</button><button class="text-sm underline underline-offset-4" type="button" data-refund-cancel>Cancel</button></div>
             <p class="mt-4 hidden text-sm leading-6" data-refund-note></p>
           </form>
+          </div>
         </div>
       </div>
     </section>
@@ -83,7 +90,7 @@ const currentYear = new Date().getUTCFullYear();
         <div class="grid gap-2">
           <p class="m-0 text-sm font-medium">Email address</p>
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-            <p class="m-0 text-sm text-muted-foreground" data-profile-email>you@example.com</p>
+            <p class="m-0 text-sm text-muted-foreground"><span class="account-inline-skeleton account-inline-skeleton-wide" data-profile-email-loading aria-label="Loading email address"></span><span class="hidden" data-profile-email></span></p>
             <a class="text-xs underline underline-offset-4" href="/sign-in/?mode=change-email">Change email</a>
           </div>
         </div>
@@ -230,6 +237,142 @@ const currentYear = new Date().getUTCFullYear();
 
   <SiteFooter />
 
+  <style>
+    .account-inline-skeleton,
+    .account-action-skeleton,
+    .account-membership-skeleton {
+      overflow: hidden;
+      background: linear-gradient(105deg, #e5ddd0 18%, #f6f1e8 42%, #e5ddd0 66%);
+      background-size: 240% 100%;
+      animation: account-shimmer 2.8s ease-in-out infinite;
+    }
+
+    .account-inline-skeleton {
+      display: inline-block;
+      width: 9.5rem;
+      height: 0.85rem;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    .account-inline-skeleton-wide {
+      width: 13.25rem;
+    }
+
+    .account-action-skeleton {
+      width: min(100%, 15rem);
+      min-height: 3.85rem;
+      border-radius: var(--radius-control);
+    }
+
+    .account-membership-skeleton {
+      display: grid;
+      min-height: 16.5rem;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+    }
+
+    .account-skeleton-art {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+      background: #d9ccbc;
+    }
+
+    .account-skeleton-art::before,
+    .account-skeleton-art::after,
+    .account-skeleton-art span,
+    .account-skeleton-art i {
+      position: absolute;
+      display: block;
+      content: '';
+    }
+
+    .account-skeleton-art::before {
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      top: -2.4rem;
+      right: -2.2rem;
+      background: #f4e8d3;
+      box-shadow: 0 0 3rem 1rem rgba(255, 249, 237, 0.62);
+      animation: account-light 3.6s ease-in-out infinite;
+    }
+
+    .account-skeleton-art::after {
+      inset: auto -2.2rem -3.1rem 1.8rem;
+      height: 8rem;
+      border-radius: 50% 50% 0 0;
+      background: #a96b53;
+      opacity: 0.74;
+    }
+
+    .account-skeleton-art span {
+      z-index: 1;
+      width: 5.15rem;
+      height: 3.6rem;
+      top: 45%;
+      left: 16%;
+      border: 1px solid rgba(88, 64, 51, 0.22);
+      background: #f8f2e7;
+      box-shadow: 0 0.55rem 1.1rem rgba(87, 60, 43, 0.13);
+      transform: rotate(-7deg);
+    }
+
+    .account-skeleton-art i {
+      z-index: 2;
+      width: 3.7rem;
+      height: 1px;
+      top: 58%;
+      left: 29%;
+      background: #bba998;
+      box-shadow: 0 0.5rem 0 #bba998, 0 1rem 0 #bba998;
+      transform: rotate(-7deg);
+    }
+
+    .account-skeleton-lines {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .account-skeleton-lines span {
+      display: block;
+      height: 0.78rem;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--muted-foreground) 15%, transparent);
+    }
+
+    .account-skeleton-lines span:nth-child(1) { width: 38%; height: 2rem; }
+    .account-skeleton-lines span:nth-child(2) { width: 92%; }
+    .account-skeleton-lines span:nth-child(3) { width: 66%; }
+
+    @keyframes account-shimmer {
+      0%, 100% { background-position: 100% 50%; }
+      50% { background-position: 0% 50%; }
+    }
+
+    @keyframes account-light {
+      0%, 100% { opacity: 0.52; transform: scale(0.88); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    @media (max-width: 40rem) {
+      .account-membership-skeleton { grid-template-columns: 5.6rem minmax(0, 1fr); gap: 1.25rem; padding: 1.1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .account-inline-skeleton,
+      .account-action-skeleton,
+      .account-membership-skeleton,
+      .account-skeleton-art::before { animation: none; }
+    }
+  </style>
+
   <script>
     import { supabase } from '../../lib/supabase';
     import { fallbackMarket, formatAnnualPrice, marketForCountry } from '../../lib/market-pricing';
@@ -266,7 +409,19 @@ const currentYear = new Date().getUTCFullYear();
     const statStarted = document.querySelector<HTMLElement>('[data-stat-started]');
     const statOpen = document.querySelector<HTMLElement>('[data-stat-open]');
     const statLast = document.querySelector<HTMLElement>('[data-stat-last]');
+    const membershipPanel = document.querySelector<HTMLElement>('[data-membership-panel]');
+    const membershipSkeleton = document.querySelector<HTMLElement>('[data-membership-skeleton]');
+    const membershipContent = document.querySelector<HTMLElement>('[data-membership-content]');
     let annualPriceLabel = formatAnnualPrice(fallbackMarket.amount, fallbackMarket.currency);
+
+    const finishAccountLoading = () => {
+      document.querySelectorAll<HTMLElement>('[data-account-email-loading], [data-profile-email-loading], [data-account-action-loading]').forEach((element) => element.classList.add('hidden'));
+      document.querySelectorAll<HTMLElement>('[data-account-email], [data-profile-email]').forEach((element) => element.classList.remove('hidden'));
+      document.querySelectorAll<HTMLAnchorElement>('[data-write-letter]').forEach((link) => link.classList.remove('pointer-events-none', 'opacity-0'));
+      membershipSkeleton?.classList.add('hidden');
+      membershipContent?.classList.remove('hidden');
+      membershipPanel?.setAttribute('aria-busy', 'false');
+    };
 
     const startStripeFlow = async (functionName: 'create-checkout' | 'create-portal') => {
       if (!supabase) return;
@@ -324,7 +479,7 @@ const currentYear = new Date().getUTCFullYear();
     const setWritingReady = (ready: boolean, canStartOpening: boolean) => {
       document.querySelectorAll<HTMLAnchorElement>('[data-write-letter]').forEach((link) => {
         link.href = !ready ? '#profile' : canStartOpening ? 'mailto:write@onereader.co?subject=One%20Reader' : '#checkout';
-        link.textContent = !ready ? 'Complete your profile' : canStartOpening ? 'Write a letter' : 'Become a member to write again';
+        link.textContent = !ready ? 'Complete your profile' : canStartOpening ? 'Write a letter' : 'Become a Writer to write again';
       });
       if (!ready && membershipPrimary?.href.startsWith('mailto:')) {
         membershipPrimary.href = '#profile';
@@ -332,7 +487,7 @@ const currentYear = new Date().getUTCFullYear();
       }
     };
 
-    const setMembership = (profile: { account_status?: string; founding_season_ends_at?: string | null; subscription_renews_at?: string | null; subscription_current_period_start?: string | null; subscription_current_period_end?: string | null } | null | undefined, startedCount = 0) => {
+    const setMembership = (profile: { account_status?: string; plan?: string; founding_season_ends_at?: string | null; subscription_renews_at?: string | null; subscription_current_period_start?: string | null; subscription_current_period_end?: string | null } | null | undefined, startedCount = 0) => {
       membershipRefund?.classList.add('hidden');
       membershipPeriod?.classList.add('hidden');
       membershipCopy?.classList.remove('hidden');
@@ -340,9 +495,8 @@ const currentYear = new Date().getUTCFullYear();
 
       const status = profile?.account_status ?? 'free';
       const seasonEnd = formatDate(profile?.founding_season_ends_at);
-      const renewal = formatDate(profile?.subscription_renews_at);
       membershipPrimary.href = '#checkout';
-      membershipPrimary.textContent = 'Move to annual membership';
+      membershipPrimary.textContent = 'Become a Writer';
 
       if (status === 'waitlisted') {
         membershipLabel.textContent = 'Founding waitlist';
@@ -352,16 +506,15 @@ const currentYear = new Date().getUTCFullYear();
         membershipPrimary.href = '/';
         if (membershipNote) membershipNote.textContent = 'Waitlist members go first and receive the eight-week founding season free, followed by the founding price for their first three paid years.';
       } else if (status === 'founding') {
-        membershipLabel.textContent = 'Founding season';
-        membershipCopy.textContent = seasonEnd ? `Founding season — you can start a new letter once a day, free, until ${seasonEnd}.` : 'Founding season — you can start a new letter once a day, free, while the season is open.';
+        membershipLabel.textContent = 'Founding Writer';
+        membershipCopy.textContent = seasonEnd ? `Your founding Writer access lets you start a new letter once a day, free, until ${seasonEnd}.` : 'Your founding Writer access lets you start a new letter once a day, free, while the season is open.';
         membershipPace.textContent = 'One new letter every 24 hours';
         membershipPrimary.textContent = 'Write a letter';
         membershipPrimary.href = 'mailto:write@onereader.co?subject=One%20Reader';
-        if (membershipNote) membershipNote.textContent = 'After the season, choose Free or annual at the founding price for your first three paid years.';
+        if (membershipNote) membershipNote.textContent = 'After the season, choose Reader or Writer at the founding price for your first three paid years.';
       } else if (status === 'annual') {
-        membershipLabel.textContent = 'Annual membership';
-        membershipCopy.textContent = '';
-        membershipCopy.classList.add('hidden');
+        membershipLabel.textContent = 'Writer';
+        membershipCopy.textContent = 'You can start one new correspondence every 24 hours. You can also receive letters and reply without limits.';
         membershipPace.textContent = 'One new letter every 24 hours';
         const periodStart = formatDate(profile?.subscription_current_period_start);
         const periodEnd = formatDate(profile?.subscription_current_period_end || profile?.subscription_renews_at);
@@ -380,17 +533,17 @@ const currentYear = new Date().getUTCFullYear();
             ? 'Requests within 14 days may qualify as statutory withdrawal; One Reader also reviews commercial refund requests within 30 days of activation. Submitting a request does not issue an automatic refund.'
             : 'After 30 days, refund requests are reviewed only for a service problem, failure to provide the service, or an incorrect charge. Submitting a request does not issue an automatic refund.';
         }
-        membershipPrimary.textContent = 'Manage subscription';
+        membershipPrimary.textContent = 'Manage Writer';
         membershipPrimary.href = '#billing-portal';
         membershipRefund?.classList.remove('hidden');
-        if (membershipNote) membershipNote.textContent = 'Manage payment details and cancellation through Stripe. Refund requests are reviewed by One Reader.';
+        if (membershipNote) membershipNote.textContent = 'Writer is billed annually. Manage payment details and cancellation through Stripe; refund requests are reviewed by One Reader.';
       } else if (status === 'checkout_pending') {
-        membershipLabel.textContent = 'Annual membership';
-        membershipCopy.textContent = 'Your account is ready. Complete payment to remove the limit on starting new letters.';
+        membershipLabel.textContent = 'Writer';
+        membershipCopy.textContent = 'Your Reader account is ready. Complete payment to activate Writer and start a new correspondence every 24 hours.';
         membershipPace.textContent = 'One new letter every 24 hours after payment';
-        membershipPrimary.textContent = 'Complete membership';
+        membershipPrimary.textContent = 'Activate Writer';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `The secure payment step will open through Stripe at ${annualPriceLabel} per year.`;
+        if (membershipNote) membershipNote.textContent = `Writer is ${annualPriceLabel} per year. The secure payment step opens through Stripe.`;
       } else if (status === 'closed') {
         membershipLabel.textContent = 'Account closed';
         membershipCopy.textContent = 'Your account is closed and no new letters will be delivered.';
@@ -398,21 +551,21 @@ const currentYear = new Date().getUTCFullYear();
         membershipPrimary.textContent = 'Read the privacy notice';
         membershipPrimary.href = '/privacy#rights';
       } else if (status === 'delivery_paused') {
-        membershipLabel.textContent = 'Delivery paused';
+        membershipLabel.textContent = profile?.plan === 'annual' ? 'Writer — delivery paused' : 'Reader — delivery paused';
         membershipCopy.textContent = 'Your account is kept, but new openings are paused until you choose to resume.';
         membershipPace.textContent = 'No new openings while paused';
         membershipPrimary.textContent = 'Review delivery details';
         membershipPrimary.href = '#profile';
       } else {
-        membershipLabel.textContent = 'Free plan';
+        membershipLabel.textContent = 'Reader';
         const freeOpeningAvailable = startedCount === 0;
         membershipCopy.textContent = freeOpeningAvailable
           ? 'Your first opening is free. You can always receive letters from strangers and reply to conversations already open.'
           : 'Your free opening has been used. You can still receive letters from strangers and reply to conversations already open.';
         membershipPace.textContent = freeOpeningAvailable ? 'Your free first opening is still available.' : 'Your free first opening has been used.';
-        membershipPrimary.textContent = 'Become a member to write again';
+        membershipPrimary.textContent = 'Become a Writer to write again';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `Annual membership lets you start a new correspondence every 24 hours. The current price is ${annualPriceLabel} per year.`;
+        if (membershipNote) membershipNote.textContent = `Writer lets you start a new correspondence every 24 hours. The current price is ${annualPriceLabel} per year.`;
       }
     };
 
@@ -506,7 +659,7 @@ const currentYear = new Date().getUTCFullYear();
       await client.functions.invoke('reconcile-billing');
 
       const [{ data: profile }, { data: preferences }, { data: savedLanguages }, { data: stats }, { data: journalConsent }, { data: activeDeletionRequest }] = await Promise.all([
-        client.from('profiles').select('account_status, founding_season_ends_at, subscription_renews_at, subscription_current_period_start, subscription_current_period_end, birth_month, birth_year, service_eligible_at, adult_pool_eligible_at').eq('id', session.user.id).maybeSingle(),
+        client.from('profiles').select('account_status, plan, founding_season_ends_at, subscription_renews_at, subscription_current_period_start, subscription_current_period_end, birth_month, birth_year, service_eligible_at, adult_pool_eligible_at').eq('id', session.user.id).maybeSingle(),
         client.from('member_preferences').select('country_code, market_currency, language_code, is_available_to_receive').eq('user_id', session.user.id).maybeSingle(),
         client.from('member_languages').select('language_code, sort_order').eq('user_id', session.user.id).order('sort_order', { ascending: true }),
         client.from('member_stats').select('correspondences_started_count, correspondences_open_count, last_letter_sent_at, last_letter_received_at').eq('user_id', session.user.id).maybeSingle(),
@@ -544,6 +697,8 @@ const currentYear = new Date().getUTCFullYear();
         setNote(deleteNote, 'Your account is closed and new deliveries are stopped. We will retain only the minimum records needed for up to 30 days, then remove them unless a longer legal obligation applies.');
         void client.functions.invoke('privacy-request', { body: { request_type: 'deletion' } });
       }
+
+      finishAccountLoading();
 
       profileForm?.addEventListener('submit', async (event) => {
         event.preventDefault();
