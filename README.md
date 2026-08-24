@@ -51,6 +51,14 @@ The Supabase identity layer is live. The repository now contains the first produ
 - `resend-webhook` verifies Resend signatures, deduplicates events and enqueues inbound messages before acknowledging them.
 - `mail-worker` retrieves parsed content from Resend, rejects automatic or unauthenticated mail, removes quoted history and attachments, reserves a reader atomically, and sends a newly rendered HTML/plain-text message.
 - Transactional outcomes use a separate durable, idempotent outbox. In the default `preview` mode, the worker renders and stores the final HTML/plain-text message without sending it; `resend` mode is an explicit release-time switch.
+- Service emails and delivered letters now use one minimal, tracking-free design shell. Active Supabase Auth templates are versioned in `supabase/templates/` and must be synchronized to the hosted Auth template settings.
+- Annual memberships queue an automatic-renewal notice 31 days before the current period ends so a daily worker delivers it no later than the 30-day legal threshold. Stripe receipts remain provider-owned; One Reader's notice records the renewal date, charge and cancellation deadline in the transactional outbox.
+
+### Scheduled transactional delivery
+
+Before enabling annual renewals in production, create a Supabase Cron job that invokes `transactional-worker` at least once per day. Store the project URL and worker credential in Supabase Vault rather than embedding them in SQL. Immediate product events also wake the worker directly; the daily job guarantees that future-dated renewal reminders are claimed on time.
+
+Keep Resend click/open tracking disabled for Auth and transactional messages. Configure Resend as Supabase Auth's custom SMTP provider, then publish the subjects and HTML listed in `supabase/templates/README.md`.
 - The MVP outcome catalogue covers unknown senders without creating accounts, inactive or incomplete profiles, age eligibility, Free/daily cadence, empty or oversized letters, removed attachments, reader matching delays, final delivery failures, closed replies and privacy-request receipts.
 - Every delivered letter includes signed, letter-specific Stop and Report links. Both require an explicit confirmation page; reporting records a fixed category and closes the aliases without automatically suspending an account.
 - Alias tokens are directional, derived with an HMAC secret and stored only as SHA-256 hashes. They expire 30 days after the latest valid exchange.

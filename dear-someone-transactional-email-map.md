@@ -18,6 +18,8 @@
 8. Il silenzio del destinatario non genera solleciti, giudizi o penalizzazioni.
 9. Errori temporanei vengono ritentati in silenzio; si scrive all'utente solo quando deve fare qualcosa o quando l'esito è definitivo.
 10. Ogni template deve avere versione HTML e testo semplice, oggetto sobrio, preheader non sensibile e un solo invito principale.
+11. L'oggetto vive nella casella di posta e non viene ripetuto come titolo nel corpo. L'eventuale titolo interno completa l'oggetto o viene omesso.
+12. Tutte le email di servizio condividono un unico layout minimale; solo il testo delle lettere conserva una resa editoriale serif.
 
 ### Priorità
 
@@ -202,7 +204,7 @@ Questi flussi diventano effettivi solo quando Stripe o un provider equivalente �
 | BILL-02 | Pagamento riuscito | Membro | Annual attivo, prezzo/valuta, data rinnovo e cadenza di 24 ore; ricevuta fiscale dal provider | Rilascio |
 | BILL-03 | Pagamento fallito in checkout | Membro | Esito nella pagina; email solo se il provider ha creato una sessione recuperabile | Decisione |
 | BILL-04 | Upgrade da Free durante finestra bloccata | Membro | Annual attivo; può reinviare subito la lettera non accettata | Rilascio |
-| BILL-05 | Rinnovo imminente | Membro | Data, importo, valuta e gestione abbonamento; tempistica secondo legge/mercato | Rilascio |
+| BILL-05 | Rinnovo imminente | Membro | Avviso scritto 30 giorni prima della scadenza con data del rinnovo automatico, importo/valuta, termine per la disdetta e gestione abbonamento | MVP, implementato |
 | BILL-06 | Rinnovo riuscito | Membro | Conferma servizio; evitare duplicazione inutile della ricevuta Stripe | Decisione |
 | BILL-07 | Primo pagamento di rinnovo fallito | Membro | Aggiorna metodo di pagamento, data prossimo tentativo, nessun effetto sulle conversazioni | Rilascio |
 | BILL-08 | Ultimo tentativo fallito | Membro | Data passaggio a Free e prossima apertura disponibile | Rilascio |
@@ -291,3 +293,5 @@ Questi flussi diventano effettivi solo quando Stripe o un provider equivalente �
 5. Aggiungere billing e founding solo insieme allo stato Stripe deterministico.
 6. Aggiungere console moderazione e alert interni prima di aprire Report al pubblico reale.
 7. Revisionare copy, lingua e date locali dopo aver chiuso le decisioni residue del §12.
+8. **Implementato:** layout email minimale condiviso, template Auth attivi versionati, conferma membership e ricevuta rimborso nella coda comune.
+9. **Implementato:** BILL-05 viene pianificata a 30 giorni dalla scadenza, deduplicata per periodo e annullata se il rinnovo non è più attivo; il worker ricontrolla lo stato prima dell'invio.

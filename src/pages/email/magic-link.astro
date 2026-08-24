@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { buttonVariants } from '../../components/ui/Button';
+---
+
+<Layout title="Magic link email — One Reader" description="A preview of the minimal One Reader authentication email." indexable={false}>
+  <main class="min-h-[85vh] bg-surface px-5 py-12 sm:px-8 sm:py-20">
+    <div class="mx-auto max-w-[35rem]">
+      <p class="eyebrow mb-5 text-center">Email preview · no tracking pixels</p>
+      <article class="bg-surface py-6">
+        <header class="pb-10">
+          <p class="m-0 font-serif text-lg">One Reader</p>
+        </header>
+        <div>
+          <h1 class="m-0 text-2xl font-medium tracking-[-0.015em]">Use this link to continue.</h1>
+          <p class="mt-6 text-base leading-7">It signs you in to One Reader and can only be used once. If you did not request it, you can ignore this message.</p>
+          <a class={`${buttonVariants({ size: 'small' })} mt-5`} href="/welcome/">Continue to One Reader</a>
+        </div>
+        <footer class="pt-10 text-xs leading-5 text-muted-foreground">A security message from One Reader. No tracking pixel.</footer>
+      </article>
+      <p class="mt-6 text-center text-xs text-muted-foreground">Subject: Your link to One Reader</p>
+    </div>
+  </main>
+</Layout>

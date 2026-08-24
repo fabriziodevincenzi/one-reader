@@ -1,5 +1,6 @@
 import { Resend } from 'npm:resend@6.18.1';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.55.0';
+import { enqueueTransactionalEmail } from '../_shared/transactional-outbox.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -33,12 +34,19 @@ Deno.serve(async (request) => {
     if (requestType === 'goodwill' && ageDays > 30) return response({ error: 'The 30-day commercial refund window has passed. You can still request a review for a service problem or incorrect charge.' }, 422);
     const { data: refundRequest, error: insertError } = await admin.from('refund_requests').insert({ user_id: userData.user.id, request_type: requestType, reason, stripe_customer_id: profile.stripe_customer_id, stripe_subscription_id: profile.stripe_subscription_id }).select('id, created_at').single();
     if (insertError) throw insertError;
+    await enqueueTransactionalEmail(admin, {
+      eventType: 'refund_request_received',
+      recipientEmail: userData.user.email,
+      memberId: userData.user.id,
+      dedupeKey: `refund-request/${refundRequest.id}`,
+      payload: { requestId: refundRequest.id, requestType },
+    });
+    triggerTransactionalWorker();
     try {
       const resend = new Resend(env('RESEND_API_KEY'));
       const from = Deno.env.get('SERVICE_FROM_ADDRESS')?.trim() || 'One Reader <letters@onereader.co>';
       const summary = `Type: ${requestType}\nAccount: ${userData.user.email}\nRequest: ${reason}\nRequest ID: ${refundRequest.id}`;
       await resend.emails.send({ from, to: ['customers@onereader.co'], subject: `Refund request from ${userData.user.email}`, text: summary });
-      await resend.emails.send({ from, to: [userData.user.email], subject: 'Your One Reader refund request was received', text: `We received your request and will review it. No refund is automatic.\n\nRequest ID: ${refundRequest.id}\n\n${summary}` });
     } catch (notificationError) { console.error('Refund notification failed', notificationError); }
     return response({ request_id: refundRequest.id, request_status: 'requested' });
   } catch (error) {
@@ -46,3 +54,13 @@ Deno.serve(async (request) => {
     return response({ error: error instanceof Error ? error.message : 'Refund request failed' }, 400);
   }
 });
+
+function triggerTransactionalWorker() {
+  const secret = Deno.env.get('WORKER_SECRET');
+  const supabaseUrl = Deno.env.get('SUPABASE_URL');
+  if (!secret || !supabaseUrl) return;
+  EdgeRuntime.waitUntil(fetch(`${supabaseUrl}/functions/v1/transactional-worker`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${secret}` },
+  }));
+}

@@ -1,4 +1,7 @@
-import { escapeHtml } from './email-content.ts';
+import {
+  renderServiceEmail,
+  type EmailDetail,
+} from './email-layout.ts';
 
 export const TRANSACTIONAL_EMAIL_EVENTS = [
   'unknown_sender',
@@ -18,6 +21,10 @@ export const TRANSACTIONAL_EMAIL_EVENTS = [
   'opening_delivered',
   'reply_not_delivered',
   'privacy_request_received',
+  'letter_report_received',
+  'membership_activated',
+  'renewal_upcoming',
+  'refund_request_received',
 ] as const;
 
 export type TransactionalEmailEvent = typeof TRANSACTIONAL_EMAIL_EVENTS[number];
@@ -31,14 +38,12 @@ export type TransactionalEmailInput = {
 type EmailCopy = {
   subject: string;
   preheader: string;
-  heading: string;
+  heading?: string;
   paragraphs: string[];
+  details?: EmailDetail[];
   action?: { label: string; href: string };
   secondary?: { label: string; href: string };
 };
-
-const serif = `"Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif`;
-const sans = `Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
 
 export function isTransactionalEmailEvent(value: string): value is TransactionalEmailEvent {
   return (TRANSACTIONAL_EMAIL_EVENTS as readonly string[]).includes(value);
@@ -47,50 +52,8 @@ export function isTransactionalEmailEvent(value: string): value is Transactional
 export function renderTransactionalEmail(input: TransactionalEmailInput) {
   const siteUrl = (input.siteUrl ?? 'https://onereader.co').replace(/\/+$/, '');
   const copy = emailCopy(input.eventType, input.payload ?? {}, siteUrl);
-  const paragraphs = copy.paragraphs
-    .map((paragraph) => `<p style="margin:0 0 18px;font-family:${serif};font-size:19px;line-height:1.65;color:#211f1b">${escapeHtml(paragraph)}</p>`)
-    .join('');
-  const action = copy.action
-    ? `<p style="margin:28px 0 0"><a href="${escapeHtml(copy.action.href)}" style="display:inline-block;border:1px solid #211f1b;background:#211f1b;color:#faf7f0;padding:12px 18px;font-family:${sans};font-size:13px;text-decoration:none">${escapeHtml(copy.action.label)}</a></p>`
-    : '';
-  const secondary = copy.secondary
-    ? `<p style="margin:18px 0 0;font-family:${sans};font-size:12px;line-height:1.6"><a href="${escapeHtml(copy.secondary.href)}" style="color:#6c665d;text-decoration:underline">${escapeHtml(copy.secondary.label)}</a></p>`
-    : '';
-
-  const html = `<!doctype html>
-<html lang="en">
-  <body style="margin:0;padding:0;background:#e9e2d6;color:#211f1b">
-    <div style="display:none;max-height:0;overflow:hidden">${escapeHtml(copy.preheader)}</div>
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#e9e2d6;padding:32px 12px">
-      <tr><td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#faf7f0;border:1px solid #cec5b7">
-          <tr><td style="padding:22px 32px;border-bottom:1px solid #cec5b7;font-family:${sans}">
-            <span style="font-family:${serif};font-size:20px">One Reader</span>
-            <span style="float:right;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6c665d">A practical note</span>
-          </td></tr>
-          <tr><td style="padding:40px 32px">
-            <h1 style="margin:0 0 28px;font-family:${serif};font-size:34px;font-weight:400;line-height:1.15">${escapeHtml(copy.heading)}</h1>
-            ${paragraphs}${action}${secondary}
-          </td></tr>
-          <tr><td style="padding:22px 32px;border-top:1px solid #cec5b7;font-family:${sans};font-size:12px;line-height:1.6;color:#6c665d">
-            This is a service message from One Reader. It contains no tracking pixel.
-          </td></tr>
-        </table>
-      </td></tr>
-    </table>
-  </body>
-</html>`;
-
-  const text = [
-    copy.heading,
-    '',
-    ...copy.paragraphs.flatMap((paragraph) => [paragraph, '']),
-    ...(copy.action ? [`${copy.action.label}: ${copy.action.href}`, ''] : []),
-    ...(copy.secondary ? [`${copy.secondary.label}: ${copy.secondary.href}`, ''] : []),
-    'One Reader — this service message contains no tracking pixel.',
-  ].join('\n').trim();
-
-  return { subject: copy.subject, html, text };
+  const rendered = renderServiceEmail(copy);
+  return { subject: copy.subject, ...rendered };
 }
 
 function emailCopy(eventType: TransactionalEmailEvent, payload: Record<string, unknown>, siteUrl: string): EmailCopy {
@@ -296,6 +259,78 @@ function emailCopy(eventType: TransactionalEmailEvent, payload: Record<string, u
         action: { label: 'View privacy requests', href: `${memberUrl}#privacy` },
       };
     }
+    case 'letter_report_received': {
+      const reportId = string(payload.reportId) || 'not available';
+      const letterId = string(payload.letterId) || 'not available';
+      const correspondenceId = string(payload.correspondenceId) || 'not available';
+      const reporterId = string(payload.reporterId) || 'not available';
+      const reporterEmail = string(payload.reporterEmail) || 'not available';
+      const senderId = string(payload.senderId) || 'not available';
+      const category = readableReportCategory(string(payload.category));
+      return {
+        subject: 'New letter report received',
+        preheader: `Report ${reportId}: ${category}`,
+        heading: 'A letter needs review.',
+        paragraphs: [
+          `Category: ${category}. Report reference: ${reportId}.`,
+          `Letter: ${letterId}. Correspondence: ${correspondenceId}.`,
+          `Reported by: ${reporterEmail} (member ${reporterId}). Sender member: ${senderId}.`,
+          'The correspondence has been closed and its reply addresses disabled. The letter remains encrypted; review the report in the protected operator environment.',
+        ],
+      };
+    }
+    case 'membership_activated': {
+      const renewalAt = formatDateOnly(payload.renewalAt);
+      const amount = formatMoney(payload.unitAmount, payload.currency);
+      return {
+        subject: 'Your One Reader membership is active',
+        preheader: `Your next renewal is scheduled for ${renewalAt}.`,
+        heading: 'Your annual membership is active.',
+        paragraphs: [
+          'You can now begin a new correspondence every 24 hours. Receiving letters and replying to open correspondences remain available as before.',
+          'Your membership renews automatically unless you cancel it before the renewal date.',
+        ],
+        details: [
+          ...(amount ? [{ label: 'Renewal amount', value: amount }] : []),
+          { label: 'Next renewal', value: renewalAt },
+        ],
+        action: { label: 'Manage membership', href: `${memberUrl}#membership` },
+      };
+    }
+    case 'renewal_upcoming': {
+      const renewalAt = formatDateOnly(payload.renewalAt);
+      const cancellationDeadlineAt = formatDateOnly(payload.cancellationDeadlineAt ?? payload.renewalAt);
+      const amount = formatMoney(payload.unitAmount, payload.currency);
+      return {
+        subject: `Your One Reader membership renews on ${formatDateOnly(payload.renewalAt)}`,
+        preheader: amount ? `${amount} will be charged automatically unless you cancel before renewal.` : 'Your annual membership is approaching its automatic renewal.',
+        heading: 'Your annual membership is approaching renewal.',
+        paragraphs: [
+          `Your One Reader membership will renew automatically on ${renewalAt}.`,
+          `If you do not want it to renew, cancel before ${cancellationDeadlineAt}. You can do this from your membership settings.`,
+          'Cancelling stops the next charge. Your current membership remains active until the end of the paid period, and your open correspondences remain available.',
+        ],
+        details: [
+          ...(amount ? [{ label: 'Renewal amount', value: amount }] : []),
+          { label: 'Renewal date', value: renewalAt },
+          { label: 'Cancel before', value: cancellationDeadlineAt },
+        ],
+        action: { label: 'Manage or cancel membership', href: `${memberUrl}#membership` },
+      };
+    }
+    case 'refund_request_received': {
+      const requestId = string(payload.requestId) || 'not available';
+      return {
+        subject: 'We received your One Reader refund request',
+        preheader: `Request ${requestId} is ready for review.`,
+        heading: 'Your request is recorded.',
+        paragraphs: [
+          'We received your refund request and will review it. No refund is automatic, and we will write again when the review is complete or if more information is needed.',
+        ],
+        details: [{ label: 'Request reference', value: requestId }],
+        action: { label: 'View membership', href: `${memberUrl}#membership` },
+      };
+    }
   }
 }
 
@@ -316,10 +351,40 @@ function readableRequestType(value: string) {
   return 'privacy request';
 }
 
+function readableReportCategory(value: string) {
+  if (value === 'sexual_explicit') return 'sexual or explicit content';
+  if (value === 'harassment_threats') return 'harassment or threats';
+  if (value === 'hate_discrimination') return 'hate or discrimination';
+  if (value === 'personal_data') return 'request for or exposure of personal information';
+  if (value === 'spam_fraud') return 'spam, fraud or promotion';
+  if (value === 'other') return 'other rule violation';
+  return 'uncategorised';
+}
+
 function string(value: unknown) {
   return typeof value === 'string' ? value.trim() : '';
 }
 
 function integer(value: unknown, fallback: number) {
   return typeof value === 'number' && Number.isSafeInteger(value) && value > 0 ? value : fallback;
+}
+
+function formatDateOnly(value: unknown) {
+  const parsed = new Date(string(value));
+  if (Number.isNaN(parsed.getTime())) return 'its next renewal date';
+  return new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  }).format(parsed);
+}
+
+function formatMoney(value: unknown, currencyValue: unknown) {
+  const amount = typeof value === 'number' && Number.isSafeInteger(value) ? value : Number.NaN;
+  const currency = string(currencyValue).toUpperCase();
+  if (!Number.isFinite(amount) || !/^[A-Z]{3}$/.test(currency)) return '';
+  try {
+    return new Intl.NumberFormat('en-GB', { style: 'currency', currency }).format(amount / 100);
+  } catch {
+    return `${(amount / 100).toFixed(2)} ${currency}`;
+  }
 }

@@ -66,5 +66,16 @@ Deno.serve(async (request) => {
     return response({ error: 'action_failed' }, 500);
   }
 
+  if (payload.a === 'report') kickTransactionalWorker();
   return response({ ok: true, action: payload.a, state: outcome.correspondence_status });
 });
+
+function kickTransactionalWorker() {
+  const secret = Deno.env.get('WORKER_SECRET');
+  const supabaseUrl = Deno.env.get('SUPABASE_URL');
+  if (!secret || !supabaseUrl) return;
+  EdgeRuntime.waitUntil(fetch(`${supabaseUrl}/functions/v1/transactional-worker`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${secret}` },
+  }).catch(() => undefined));
+}

@@ -16,6 +16,17 @@ test('every MVP transactional event renders complete HTML and plain text', () =>
         nextAvailableAt: '2026-08-15T10:30:00.000Z',
         requestId: 'request-123',
         requestType: 'access',
+        reportId: 'report-123',
+        letterId: 'letter-123',
+        correspondenceId: 'correspondence-123',
+        reporterId: 'member-123',
+        reporterEmail: 'reader@example.com',
+        senderId: 'member-456',
+        category: 'harassment_threats',
+        renewalAt: '2027-08-15T10:30:00.000Z',
+        cancellationDeadlineAt: '2027-08-15T10:30:00.000Z',
+        currency: 'eur',
+        unitAmount: 1800,
       },
     });
     assert.ok(rendered.subject.length > 5, eventType);
@@ -24,6 +35,31 @@ test('every MVP transactional event renders complete HTML and plain text', () =>
     assert.doesNotMatch(rendered.html, /undefined|null/);
     assert.doesNotMatch(rendered.text, /undefined|null/);
   }
+});
+
+test('service emails use the minimal shared shell', () => {
+  const rendered = renderTransactionalEmail({ eventType: 'opening_delivered' });
+  assert.match(rendered.html, /max-width:560px/);
+  assert.match(rendered.html, /background:#faf7f0/);
+  assert.doesNotMatch(rendered.html, /background:#e9e2d6|box-shadow|A practical note/);
+  assert.doesNotMatch(rendered.html, /font-size:3[4-9]px/);
+});
+
+test('renewal notice states charge, date and cancellation path', () => {
+  const rendered = renderTransactionalEmail({
+    eventType: 'renewal_upcoming',
+    payload: {
+      renewalAt: '2027-08-15T10:30:00.000Z',
+      cancellationDeadlineAt: '2027-08-14T10:30:00.000Z',
+      currency: 'eur',
+      unitAmount: 1800,
+    },
+  });
+  assert.match(rendered.subject, /15 August 2027/);
+  assert.match(rendered.text, /€18\.00/);
+  assert.match(rendered.text, /renew automatically/i);
+  assert.match(rendered.text, /cancel before 14 August 2027/i);
+  assert.match(rendered.text, /Manage or cancel membership/);
 });
 
 test('unknown senders are told that consent was not inferred', () => {
@@ -59,6 +95,26 @@ test('transactional payload values are escaped in HTML', () => {
   });
   assert.doesNotMatch(rendered.html, /<img src=x/);
   assert.match(rendered.html, /&lt;img src=x onerror=alert\(1\)&gt;/);
+});
+
+test('letter report notifications identify the report without including letter content', () => {
+  const rendered = renderTransactionalEmail({
+    eventType: 'letter_report_received',
+    payload: {
+      reportId: 'report-123',
+      letterId: 'letter-123',
+      correspondenceId: 'correspondence-123',
+      reporterId: 'member-123',
+      reporterEmail: 'reader@example.com',
+      senderId: 'member-456',
+      category: 'harassment_threats',
+    },
+  });
+  assert.match(rendered.subject, /letter report/i);
+  assert.match(rendered.text, /harassment or threats/i);
+  assert.match(rendered.text, /reader@example\.com/);
+  assert.match(rendered.text, /letter-123/);
+  assert.match(rendered.text, /remains encrypted/i);
 });
 
 test('over-limit letters are detected without silently accepting the shortened text', () => {

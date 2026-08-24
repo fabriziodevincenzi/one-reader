@@ -10,13 +10,14 @@ type TransactionalEmailJob = {
   id: string;
   event_type: string;
   recipient_email: string;
+  member_id: string | null;
   payload: Record<string, unknown>;
   attempts: number;
 };
 
 Deno.serve(async (request) => {
   if (request.method !== 'POST') return jsonResponse({ error: 'Method not allowed' }, 405);
-  if (!authorized(request)) return jsonResponse({ error: 'Unauthorized' }, 401);
+  if (!(await authorized(request))) return jsonResponse({ error: 'Unauthorized' }, 401);
 
   const admin = createAdminClient();
   const { data, error } = await admin.rpc('claim_transactional_emails', { p_limit: 10 });
@@ -25,10 +26,12 @@ Deno.serve(async (request) => {
   let previewed = 0;
   let sent = 0;
   let retried = 0;
+  let cancelled = 0;
   for (const job of (data ?? []) as TransactionalEmailJob[]) {
     try {
       const result = await processTransactionalEmail(job);
       if (result === 'previewed') previewed += 1;
+      else if (result === 'cancelled') cancelled += 1;
       else sent += 1;
     } catch (error) {
       const message = errorMessage(error);
@@ -44,12 +47,21 @@ Deno.serve(async (request) => {
     }
   }
 
-  return jsonResponse({ ok: true, claimed: data?.length ?? 0, previewed, sent, retried });
+  return jsonResponse({ ok: true, claimed: data?.length ?? 0, previewed, sent, retried, cancelled });
 });
 
-async function processTransactionalEmail(job: TransactionalEmailJob): Promise<'previewed' | 'sent'> {
+async function processTransactionalEmail(job: TransactionalEmailJob): Promise<'previewed' | 'sent' | 'cancelled'> {
   if (!isTransactionalEmailEvent(job.event_type)) throw new Error(`Unsupported transactional event: ${job.event_type}`);
   const eventType = job.event_type as TransactionalEmailEvent;
+  if (eventType === 'renewal_upcoming' && !(await renewalReminderIsCurrent(job))) {
+    const { error } = await createAdminClient()
+      .from('transactional_email_outbox')
+      .update({ status: 'cancelled', locked_until: null, processed_at: new Date().toISOString() })
+      .eq('id', job.id)
+      .eq('status', 'processing');
+    if (error) throw error;
+    return 'cancelled';
+  }
   const rendered = renderTransactionalEmail({
     eventType,
     payload: job.payload ?? {},
@@ -88,9 +100,38 @@ async function processTransactionalEmail(job: TransactionalEmailJob): Promise<'p
   return preview ? 'previewed' : 'sent';
 }
 
-function authorized(request: Request) {
+async function renewalReminderIsCurrent(job: TransactionalEmailJob) {
+  if (!job.member_id) return false;
+  const { data, error } = await createAdminClient()
+    .from('profiles')
+    .select('account_status, subscription_status, subscription_current_period_end, subscription_cancel_at_period_end')
+    .eq('id', job.member_id)
+    .maybeSingle();
+  if (error) throw error;
+  if (!data || data.account_status !== 'annual' || data.subscription_cancel_at_period_end) return false;
+  if (!['active', 'trialing'].includes(data.subscription_status ?? '')) return false;
+  const queuedRenewalAt = new Date(String(job.payload?.renewalAt ?? '')).getTime();
+  const currentRenewalAt = new Date(String(data.subscription_current_period_end ?? '')).getTime();
+  return Number.isFinite(queuedRenewalAt)
+    && Number.isFinite(currentRenewalAt)
+    && queuedRenewalAt === currentRenewalAt;
+}
+
+async function authorized(request: Request) {
+  const authorization = request.headers.get('Authorization');
   const secret = Deno.env.get('WORKER_SECRET');
-  return Boolean(secret && request.headers.get('Authorization') === `Bearer ${secret}`);
+  if (secret && authorization === `Bearer ${secret}`) return true;
+
+  const scheduledToken = authorization?.replace(/^Bearer\s+/i, '') ?? '';
+  if (!/^[a-f0-9]{64}$/.test(scheduledToken)) return false;
+  const { data, error } = await createAdminClient().rpc('verify_transactional_worker_token', {
+    p_token: scheduledToken,
+  });
+  if (error) {
+    console.error('Could not verify scheduled worker token', error);
+    return false;
+  }
+  return data === true;
 }
 
 function retryDelay(attempts: number) {

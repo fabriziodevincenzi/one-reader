@@ -1,6 +1,6 @@
-import { Resend } from 'npm:resend@6.18.1';
 import Stripe from 'npm:stripe@18.5.0';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.55.0';
+import { enqueueMembershipActivatedEmail, syncUpcomingRenewalEmail } from '../_shared/billing-email.ts';
 const requireEnvironment = (name: string) => { const value = Deno.env.get(name)?.trim(); if (!value) throw new Error(`${name} is not configured`); return value; };
 const createAdminClient = () => createClient(requireEnvironment('SUPABASE_URL'), requireEnvironment('SUPABASE_SERVICE_ROLE_KEY'), { auth: { persistSession: false, autoRefreshToken: false } });
 const errorMessage = (error: unknown) => error instanceof Error ? error.message : typeof error === 'string' ? error : JSON.stringify(error);
@@ -50,33 +50,49 @@ Deno.serve(async (request) => {
     if (!subscription) return response({ status: 'free', reconciled: false });
 
     const accountStatus = stripeStatusToAccount(subscription.status);
+    const item = subscription.items.data[0];
+    if (!item) throw new Error('Stripe subscription has no billable item');
+    const renewalAt = new Date(item.current_period_end * 1000).toISOString();
+    const currency = item.price.currency ?? null;
+    const unitAmount = item.price.unit_amount ?? null;
     const { error: updateError } = await admin.from('profiles').update({
       account_status: accountStatus,
       plan: accountStatus === 'annual' ? 'annual' : 'free',
       stripe_subscription_id: subscription.id,
-      subscription_current_period_start: new Date(subscription.items.data[0]?.current_period_start * 1000).toISOString(),
+      subscription_current_period_start: new Date(item.current_period_start * 1000).toISOString(),
       subscription_status: subscription.status,
-      subscription_current_period_end: new Date(subscription.items.data[0]?.current_period_end * 1000).toISOString(),
+      subscription_current_period_end: renewalAt,
       subscription_cancel_at_period_end: Boolean(subscription.cancel_at_period_end),
+      subscription_currency: currency,
+      subscription_unit_amount: unitAmount,
       updated_at: new Date().toISOString(),
     }).eq('id', userData.user.id);
     if (updateError) throw updateError;
-    try {
-      const resend = new Resend(requireEnvironment('RESEND_API_KEY'));
-      await resend.emails.send({
-        from: Deno.env.get('SERVICE_FROM_ADDRESS') ?? 'One Reader <letters@onereader.co>',
-        to: userData.user.email ?? '',
-        subject: 'Your One Reader membership is active',
-        html: '<p>Your One Reader annual membership is now active.</p><p>You can start a new letter every 24 hours. Your next billing date is shown in your account.</p>',
-        text: 'Your One Reader annual membership is now active. You can start a new letter every 24 hours. Your next billing date is shown in your account.',
-        headers: { 'Auto-Submitted': 'auto-generated', 'X-One-Reader-Event': 'membership_activated' },
-      }, { idempotencyKey: `membership-activated/${subscription.id}` });
-    } catch (notificationError) {
-      console.error('Membership confirmation email failed', notificationError);
-    }
+    const emailInput = {
+      memberId: userData.user.id,
+      recipientEmail: userData.user.email ?? '',
+      subscriptionId: subscription.id,
+      status: subscription.status,
+      cancelAtPeriodEnd: Boolean(subscription.cancel_at_period_end),
+      renewalAt,
+      currency,
+      unitAmount,
+    };
+    await enqueueMembershipActivatedEmail(admin, emailInput);
+    await syncUpcomingRenewalEmail(admin, emailInput);
+    triggerTransactionalWorker(supabaseUrl);
     return response({ status: accountStatus, subscription_status: subscription.status, reconciled: true });
   } catch (error) {
     console.error('Billing reconciliation failed', error);
     return response({ error: errorMessage(error) }, 400);
   }
 });
+
+function triggerTransactionalWorker(supabaseUrl: string) {
+  const secret = Deno.env.get('WORKER_SECRET');
+  if (!secret) return;
+  EdgeRuntime.waitUntil(fetch(`${supabaseUrl}/functions/v1/transactional-worker`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${secret}` },
+  }));
+}
