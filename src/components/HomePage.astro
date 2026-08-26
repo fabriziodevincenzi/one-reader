@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import EmailPreview from '../components/EmailPreview.astro';
 import { Button, buttonVariants } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import SiteFooter from './SiteFooter.astro';
@@ -44,19 +43,15 @@ const steps = [
 
   <main id="main-content" class="brand-page brand-home">
     <section class="border-b border-border py-16 sm:py-24 lg:py-32">
-      <div class="shell grid items-end gap-16 lg:grid-cols-[1.08fr_0.78fr] lg:items-center lg:gap-20">
-        <div>
-          <h1 class="display balance">One letter. One reader. Maybe a reply.</h1>
-          <p class="mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
-            Write to someone you do not know, from the quiet of your own inbox. No profiles to perform for. No feed to keep up with.
-          </p>
-          <div class="mt-9 flex flex-wrap items-center gap-3">
-            <a class={buttonVariants({ size: 'large' })} href="#start-free">Start free</a>
-            <a class={buttonVariants({ variant: 'quiet', size: 'large' })} href="#how-it-works">See how it works</a>
-          </div>
+      <div class="shell">
+        <h1 class="display balance">One letter. One reader. Maybe a reply.</h1>
+        <p class="mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
+          Write to someone you do not know, from the quiet of your own inbox. No profiles to perform for. No feed to keep up with.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center gap-3">
+          <a class={buttonVariants({ size: 'large' })} href="#start-free">Start free</a>
+          <a class={buttonVariants({ variant: 'quiet', size: 'large' })} href="#how-it-works">See how it works</a>
         </div>
-
-        <EmailPreview variant="compose" />
       </div>
     </section>
 
@@ -88,11 +83,7 @@ const steps = [
 
     <section class="border-b border-border py-20 sm:py-28" id="start-free">
       <div class="shell">
-        <div class="rounded-2xl bg-surface p-7 sm:p-10">
-          <p class="eyebrow mb-4">Start free</p>
-          <h2 class="section-title max-w-xl">Write to a stranger. Free, once.</h2>
-          <p class="mt-4 max-w-xl text-lg leading-8 text-muted-foreground">Your first letter is free. If they write back, replying is free and unlimited.</p>
-          <form class="relative mt-8 overflow-hidden border-t border-border pt-8" data-start-free-form>
+          <form class="relative overflow-hidden rounded-2xl bg-surface p-7 sm:p-10" data-start-free-form>
             <div data-start-free-fields>
               <h3 class="font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Create your free Reader account</h3>
               <p class="mt-5 max-w-xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. Your first letter is on us.</p>
@@ -128,7 +119,6 @@ const steps = [
               <a class="mt-7 inline-flex text-sm underline underline-offset-4 hover:text-foreground" href="/sign-in/">Already registered? Open your account</a>
             </div>
           </form>
-        </div>
       </div>
     </section>
 
