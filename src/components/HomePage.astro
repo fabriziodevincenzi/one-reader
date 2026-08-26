@@ -38,14 +38,7 @@ const steps = [
       <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">
         One Reader
       </a>
-      <nav class="hidden items-center gap-8 text-sm text-muted-foreground md:flex" aria-label="Main navigation">
-        <a class="underline-offset-4 hover:text-foreground hover:underline" href="#how-it-works">How it works</a>
-        <a class="underline-offset-4 hover:text-foreground hover:underline" href="#start-free">Start free</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <a class="hidden text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline sm:inline" href="/sign-in/">Log in</a>
-        <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="#start-free">Start free</a>
-      </div>
+      <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="/sign-in/">Log in</a>
     </div>
   </header>
 
@@ -63,7 +56,7 @@ const steps = [
           </div>
         </div>
 
-        <EmailPreview />
+        <EmailPreview variant="compose" />
       </div>
     </section>
 
@@ -94,17 +87,12 @@ const steps = [
     </section>
 
     <section class="border-b border-border py-20 sm:py-28" id="start-free">
-      <div class="shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
-        <div>
-          <p class="eyebrow mb-5">Start free</p>
-          <h2 class="section-title balance">Write to a stranger. Free, once.<br /><em>Reply as often as you like, but writing first is the rare part.</em></h2>
-        </div>
-        <div>
-          <div class="max-w-xl space-y-5 text-lg leading-8">
-            <p>Your first letter is free. Write it whenever you're ready, and we'll find someone who reads your language.</p>
-            <p>If they write back, you can always reply. Replying is free and unlimited, for as long as the conversation lasts.</p>
-          </div>
-          <form class="relative mt-8 overflow-hidden border border-accent/60 bg-surface p-6 sm:p-10" data-start-free-form>
+      <div class="shell">
+        <div class="rounded-2xl bg-surface p-7 sm:p-10">
+          <p class="eyebrow mb-4">Start free</p>
+          <h2 class="section-title max-w-xl">Write to a stranger. Free, once.</h2>
+          <p class="mt-4 max-w-xl text-lg leading-8 text-muted-foreground">Your first letter is free. If they write back, replying is free and unlimited.</p>
+          <form class="relative mt-8 overflow-hidden border-t border-border pt-8" data-start-free-form>
             <div data-start-free-fields>
               <h3 class="font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Create your free Reader account</h3>
               <p class="mt-5 max-w-xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. Your first letter is on us.</p>
