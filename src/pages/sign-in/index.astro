@@ -7,13 +7,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <Layout title="Sign in — One Reader" description="Sign in to your private One Reader account with a one-time email link." turnstileSiteKey={turnstileSiteKey} indexable={false}>
-  <header class="border-b border-border">
+  <header class="brand-header border-b border-border">
     <div class="shell flex min-h-20 items-center justify-between gap-6">
       <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
     </div>
   </header>
 
-  <main class="shell min-h-[82vh] max-w-xl py-20 sm:py-28 lg:py-36">
+  <main class="shell brand-page min-h-[82vh] max-w-xl py-20 sm:py-28 lg:py-36">
     <div class="mx-auto max-w-lg">
       <p class="eyebrow mb-6" data-auth-eyebrow>Sign in</p>
       <h1 class="section-title balance" data-auth-heading>Welcome back.</h1>
@@ -37,6 +37,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         )}
         <p class="mt-5 hidden text-sm leading-6 text-accent" data-magic-link-note aria-live="polite"></p>
       </form>
+      <p class="mt-8 text-[0.75rem] leading-5 text-muted-foreground" data-sign-up-link>New to One Reader? <a class="text-foreground underline underline-offset-4" href="/#start-free">Create a free account</a></p>
       <p class="mt-8 hidden text-sm" data-change-email-back><a class="underline underline-offset-4" href="/member/#profile">Return to your account</a></p>
     </div>
   </main>
@@ -57,6 +58,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   const captchaStep = document.querySelector<HTMLElement>('[data-sign-in-captcha-step]');
   const captchaWidget = document.querySelector<HTMLElement>('[data-sign-in-turnstile]');
   const note = document.querySelector<HTMLElement>('[data-magic-link-note]');
+  const signUpLink = document.querySelector<HTMLElement>('[data-sign-up-link]');
   type TurnstileApi = {
     render: (element: HTMLElement, options: Record<string, unknown>) => string;
     reset: (widgetId: string) => void;
@@ -76,6 +78,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     submitLabel!.textContent = 'Send confirmation';
     flowHelper!.textContent = 'For your security, this page only works while you are signed in.';
     changeEmailBack?.classList.remove('hidden');
+    signUpLink?.classList.add('hidden');
   }
   const showNote = (message: string, error = false) => {
     if (!note) return;

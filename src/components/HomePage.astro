@@ -86,7 +86,7 @@ const steps = [
           <form class="relative overflow-hidden rounded-2xl bg-surface p-7 sm:p-10" data-start-free-form>
             <div data-start-free-fields>
               <h3 class="font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Create your free Reader account</h3>
-              <p class="mt-5 max-w-xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. Your first letter is on us.</p>
+              <p class="mt-5 max-w-2xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. We’ll use your address to create your account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>
               <div class="mt-8">
                 <label class="mb-2 block text-sm font-medium" for="start-free-email">Email address</label>
                 <div class="grid gap-3 sm:grid-cols-[1fr_auto]">
@@ -96,13 +96,13 @@ const steps = [
                   </div>
                 </div>
               </div>
-              <label class="mt-6 flex items-start gap-3 text-sm leading-6">
+              <label class="mt-6 flex items-start gap-3 text-[0.75rem] leading-5">
                 <input class="mt-1" type="checkbox" name="termsAccepted" required />
-                <span>I have read and accept the <a class="underline underline-offset-4" href="/terms">Terms of Service</a> and acknowledge the <a class="underline underline-offset-4" href="/privacy">Privacy notice</a>.</span>
+                <span>I agree to the <a class="underline underline-offset-4" href="/terms">Terms of Service</a> and acknowledge the <a class="underline underline-offset-4" href="/privacy">Privacy notice</a>.</span>
               </label>
-              <label class="mt-6 flex items-start gap-3 text-sm leading-6 text-muted-foreground">
+              <label class="mt-5 flex items-start gap-3 text-[0.75rem] leading-5 text-muted-foreground">
                 <input class="mt-1" type="checkbox" name="journalOptIn" value="yes" />
-                <span>Send me occasional Journal notes and product news too. This is optional.</span>
+                <span>Send me occasional Journal notes and product news. Optional; unsubscribe anytime.</span>
               </label>
               <input class="absolute -left-[9999px] h-px w-px opacity-0" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
             </div>
@@ -111,7 +111,7 @@ const steps = [
                 <div class="min-h-[65px] w-full max-w-full" data-turnstile-widget data-sitekey={turnstileSiteKey} aria-label="Security check"></div>
               </div>
             )}
-            <p class="mt-4 text-xs leading-5 text-muted-foreground" id="start-free-note" data-start-free-note>We’ll use your address to create the account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>
+            <p class="mt-4 hidden text-xs leading-5 text-muted-foreground" id="start-free-note" data-start-free-note></p>
             <div class="hidden" data-start-free-success aria-live="polite">
               <p class="eyebrow mb-5">Check your inbox</p>
               <h3 class="max-w-md font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Your first letter starts here.</h3>

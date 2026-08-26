@@ -299,6 +299,12 @@ textarea {
   letter-spacing: 0.02em;
 }
 
+@media (min-width: 561px) {
+  .brand-home .display {
+    max-width: 16ch;
+  }
+}
+
 .brand-page h2,
 .brand-page h3 {
   font-family: var(--font-interface) !important;
