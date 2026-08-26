@@ -33,7 +33,7 @@ const steps = [
 ---
 
 <Layout title="One Reader" description="A private correspondence club where one letter reaches one unknown reader. No profiles, no feed, no judgment." turnstileSiteKey={turnstileSiteKey}>
-  <header class="border-b border-border">
+  <header class="brand-header border-b border-border">
     <div class="shell flex min-h-20 items-center justify-between gap-6">
       <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">
         One Reader
@@ -49,11 +49,10 @@ const steps = [
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" class="brand-page brand-home">
     <section class="border-b border-border py-16 sm:py-24 lg:py-32">
       <div class="shell grid items-end gap-16 lg:grid-cols-[1.08fr_0.78fr] lg:items-center lg:gap-20">
         <div>
-          <p class="eyebrow mb-7">One Reader is open</p>
           <h1 class="display balance">One letter. One reader. Maybe a reply.</h1>
           <p class="mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
             Write to someone you do not know, from the quiet of your own inbox. No profiles to perform for. No feed to keep up with.
@@ -70,12 +69,11 @@ const steps = [
 
     <section class="border-b border-border py-20 sm:py-28" id="how-it-works">
       <div class="shell">
-        <div class="grid gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
+        <div>
           <div>
             <p class="eyebrow mb-5">How it works</p>
             <h2 class="section-title balance">A small ritual, not another platform.</h2>
           </div>
-          <p class="max-w-2xl self-end text-lg leading-8 text-muted-foreground">One Reader carries the letter and protects both addresses. Everything that matters happens between two people, by email.</p>
         </div>
 
         <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
@@ -105,7 +103,6 @@ const steps = [
           <div class="max-w-xl space-y-5 text-lg leading-8">
             <p>Your first letter is free. Write it whenever you're ready, and we'll find someone who reads your language.</p>
             <p>If they write back, you can always reply. Replying is free and unlimited, for as long as the conversation lasts.</p>
-            <p>Want to write first again, to someone new? That's what Writer unlocks: a new letter to send, every day.</p>
           </div>
           <form class="relative mt-8 overflow-hidden border border-accent/60 bg-surface p-6 sm:p-10" data-start-free-form>
             <div data-start-free-fields>

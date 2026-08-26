@@ -91,22 +91,22 @@
 }
 
 :root {
-  --background: #f5f0e7;
-  --surface: #faf7f0;
-  --foreground: #211f1b;
-  --muted: #eae3d7;
-  --muted-foreground: #6c665d;
-  --border: #cec5b7;
-  --input: #bfb5a5;
-  --primary: #25221d;
-  --primary-hover: #484239;
-  --primary-foreground: #fffaf1;
-  --accent: #9b5943;
-  --ring: #9b5943;
-  --radius-control: 0.1875rem;
-  --font-interface: "DM Sans", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-letter: "Libre Baskerville", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --font-metadata: "DM Mono", "SFMono-Regular", Consolas, monospace;
+  --background: #ffffff;
+  --surface: #faf8f3;
+  --foreground: #1a1a18;
+  --muted: #faf8f3;
+  --muted-foreground: #4a4a45;
+  --border: #e4e1d8;
+  --input: #e4e1d8;
+  --primary: #1a1a18;
+  --primary-hover: #4a4a45;
+  --primary-foreground: #ffffff;
+  --accent: #b5502f;
+  --ring: #b5502f;
+  --radius-control: 9999px;
+  --font-interface: "IBM Plex Mono", "SF Mono", "Courier New", monospace;
+  --font-letter: "IBM Plex Serif", Georgia, serif;
+  --font-metadata: "IBM Plex Mono", "SF Mono", "Courier New", monospace;
 }
 
 *,
@@ -173,30 +173,30 @@ textarea {
 .display {
   max-width: 13ch;
   margin: 0;
-  font-family: var(--font-letter);
-  font-size: clamp(3.1rem, 8vw, 6.8rem);
+  font-family: var(--font-interface);
+  font-size: clamp(2.25rem, 5vw, 2.625rem);
   font-weight: 400;
-  letter-spacing: -0.052em;
-  line-height: 0.94;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .section-title {
   margin: 0;
-  font-family: var(--font-letter);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-family: var(--font-interface);
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.04;
+  letter-spacing: -0.005em;
+  line-height: 1.45;
 }
 
 .journal-title {
   max-width: 15ch;
   margin: 0;
-  font-family: var(--font-letter);
-  font-size: clamp(3rem, 6.5vw, 6.25rem);
+  font-family: var(--font-interface);
+  font-size: clamp(2rem, 4vw, 2.25rem);
   font-weight: 400;
-  letter-spacing: -0.048em;
-  line-height: 1.02;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .journal-deck {
@@ -244,7 +244,7 @@ textarea {
 .prose-journal h3 {
   margin: 2.2em 0 0.75em;
   color: var(--foreground);
-  font-family: var(--font-letter);
+  font-family: var(--font-interface);
   font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 1.2;
@@ -270,6 +270,64 @@ textarea {
 
 .prose-journal blockquote p:last-child {
   margin-bottom: 0;
+}
+
+/* The product pages use the compact One Reader editorial grid. */
+.brand-page {
+  width: min(100% - 3.5rem, 720px);
+  margin-inline: auto;
+}
+
+.brand-page .shell {
+  width: 100%;
+}
+
+.brand-home {
+  width: 100%;
+}
+
+.brand-home .shell,
+.brand-header .shell {
+  width: min(100% - 3.5rem, 720px);
+  margin-inline: auto;
+}
+
+.brand-header a[aria-label] {
+  font-family: var(--font-interface) !important;
+  font-size: 1rem !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand-page h2,
+.brand-page h3 {
+  font-family: var(--font-interface) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.005em !important;
+}
+
+.brand-page p:not(.eyebrow):not(.metadata) {
+  font-family: var(--font-letter);
+}
+
+.brand-page .eyebrow {
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.brand-page input,
+.brand-page button,
+.brand-page label,
+.brand-page a {
+  font-family: var(--font-interface);
+}
+
+@media (max-width: 560px) {
+  .brand-page {
+    width: min(100% - 3.5rem, 720px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
