@@ -12,9 +12,9 @@ export const buttonVariants = cva(
         primary:
           'border-primary bg-primary px-6 text-primary-foreground hover:border-primary-hover hover:bg-primary-hover',
         outline:
-          'border-border bg-transparent px-6 text-foreground hover:border-foreground hover:bg-surface',
+          'border-border bg-transparent px-6 text-foreground hover:border-foreground hover:bg-background',
         quiet:
-          'border-transparent bg-transparent px-3 text-foreground hover:bg-muted',
+          'border-transparent bg-transparent px-3 text-foreground hover:bg-background',
       },
       size: {
         default: 'h-11',

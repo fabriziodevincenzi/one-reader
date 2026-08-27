@@ -190,7 +190,7 @@ textarea {
 }
 
 .journal-title {
-  max-width: 15ch;
+  max-width: 24ch;
   margin: 0;
   font-family: var(--font-interface);
   font-size: clamp(2rem, 4vw, 2.25rem);
