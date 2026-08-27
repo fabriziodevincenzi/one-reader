@@ -13,7 +13,10 @@ const supportedPriceCurrencies = new Set([
   'ISK', 'JPY', 'KRW', 'NOK', 'PLN', 'SEK', 'TWD', 'UAH', 'USD',
 ]);
 
-const defaultStripePriceId = 'price_1U6ohsBA5ijGzHgSVgD6vq4g';
+const defaultStripePriceIds = {
+  annual: 'price_1U91xaBA5ijGzHgS2riHa649',
+  monthly: 'price_1U91lyBA5ijGzHgSY5vBt5UV',
+} as const;
 
 const response = (body: Record<string, unknown>, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
@@ -45,12 +48,16 @@ Deno.serve(async (request) => {
     if (preferences.error) throw preferences.error;
     const body = await request.json().catch(() => ({}));
     const requestedCurrency = typeof body.currency === 'string' ? body.currency.toUpperCase() : null;
+    const billingPeriod = body.billingPeriod === 'monthly' ? 'monthly' : 'annual';
     const preferredCurrency = requestedCurrency || preferences.data?.market_currency || 'EUR';
     const currency = supportedPriceCurrencies.has(preferredCurrency) ? preferredCurrency : 'EUR';
     // Price IDs are public identifiers. This Price contains all supported
     // currency_options; the optional environment value allows future swaps
     // without a code deployment.
-    const priceId = Deno.env.get('STRIPE_PRICE_ID')?.trim() || defaultStripePriceId;
+    const priceId = (billingPeriod === 'monthly'
+      ? Deno.env.get('STRIPE_WRITER_PRICE_MONTHLY')?.trim()
+      : Deno.env.get('STRIPE_WRITER_PRICE_ANNUAL')?.trim())
+      || defaultStripePriceIds[billingPeriod];
 
     const stripe = new Stripe(requireEnvironment('STRIPE_SECRET_KEY'), { apiVersion: '2025-03-31.basil' });
     let customerId = profile.stripe_customer_id as string | null;
@@ -72,13 +79,13 @@ Deno.serve(async (request) => {
       client_reference_id: userData.user.id,
       line_items: [{ price: priceId, quantity: 1 }],
       payment_method_types: ['card'],
-      allow_promotion_codes: true,
+      allow_promotion_codes: false,
       success_url: `${siteUrl}/member/?stripe=success`,
       cancel_url: `${siteUrl}/member/?stripe=cancelled`,
       billing_address_collection: 'auto',
       automatic_tax: { enabled: Deno.env.get('STRIPE_AUTOMATIC_TAX') === 'true' },
-      metadata: { supabase_user_id: userData.user.id, currency },
-      subscription_data: { metadata: { supabase_user_id: userData.user.id, currency } },
+      metadata: { supabase_user_id: userData.user.id, currency, billing_period: billingPeriod },
+      subscription_data: { metadata: { supabase_user_id: userData.user.id, currency, billing_period: billingPeriod } },
     });
 
     const { error: pendingError } = await admin.from('profiles').update({ account_status: 'checkout_pending' }).eq('id', userData.user.id).eq('plan', 'free');

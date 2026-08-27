@@ -1,0 +1,9 @@
+---
+import { buttonVariants } from './ui/Button';
+---
+<header class="brand-header border-b border-border">
+  <div class="shell flex min-h-20 items-center justify-between gap-6">
+    <a class="brand-logo no-underline" href="/" aria-label="One Reader, home">One Reader</a>
+    <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="/sign-in/">Log in</a>
+  </div>
+</header>

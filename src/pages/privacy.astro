@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <Layout title="Privacy — One Reader" description="One Reader privacy information.">
-  <main class="shell max-w-4xl min-h-[70vh] py-20 sm:py-28">
+  <SiteHeader />
+  <main id="main-content" class="shell max-w-3xl min-h-[70vh] py-20 sm:py-28">
     <a class="text-sm text-muted-foreground underline underline-offset-4" href="/">← Back home</a>
     <p class="eyebrow mb-5 mt-14">Privacy notice · implementation draft</p>
     <h1 class="section-title">Privacy</h1>
@@ -48,4 +51,5 @@ import Layout from '../layouts/Layout.astro';
       </ul>
     </section>
   </main>
+  <SiteFooter />
 </Layout>

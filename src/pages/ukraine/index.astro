@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { buttonVariants } from '../../components/ui/Button';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { fullAnnualPrice } from '../../lib/product-config';
 ---
 
@@ -8,12 +10,7 @@ import { fullAnnualPrice } from '../../lib/product-config';
   title="One Reader for Ukraine"
   description="A permanent free annual membership for people joining One Reader from Ukraine."
 >
-  <header class="border-b border-border">
-    <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
-      <a class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" href="/">← Back home</a>
-    </div>
-  </header>
+  <SiteHeader />
 
   <main class="shell max-w-4xl py-16 sm:py-24 lg:py-32">
     <p class="eyebrow mb-6">For people joining from Ukraine</p>
@@ -56,4 +53,5 @@ import { fullAnnualPrice } from '../../lib/product-config';
       <a class={buttonVariants({ variant: 'quiet', size: 'large' })} href="/privacy">Read the privacy principles</a>
     </div>
   </main>
+  <SiteFooter />
 </Layout>

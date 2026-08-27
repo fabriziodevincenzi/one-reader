@@ -139,7 +139,7 @@ La casualità deve restare percepibile e reale — niente selezione da catalogo,
 - **Europa**: i paesi dell'Eurozona usano il prezzo in EUR; la Finlandia rientra correttamente in questo gruppo. La Polonia usa un prezzo dedicato in PLN, non EUR.
 - **Ucraina**: UAH disponibile come valuta di presentazione, ma il percorso dedicato applica il coupon al 100%; mostrare comunque il prezzo pieno di riferimento e spiegare chiaramente la concessione.
 - **Cina**: esclusa dalla prima fase commerciale. Il prezzo CNY è comunque presente nella griglia completa di listino, ma non viene mostrato né attivato finché la deliverability verso i provider locali non supera un test dedicato.
-- **Griglia prezzi approvata** (prezzo annuale pieno / prezzo founding applicato ai primi tre anni pagati): EUR 18/12, USD 21/12, GBP 18/12, CAD 29/12, AUD 29,50/12, DKK 145/90, ISK 2.600/1.400, NOK 245/145, SEK 245/145, JPY 3.280/2.186, CNY 140/94, CHF 18/12, TWD 669/445, KRW 3.000/2.000, UAH 800/600, ILS 65/42. L'accesso Ucraina resta un percorso separato con coupon al 100% per la sottoscrizione agevolata.
+- **Griglia prezzi approvata** (prezzo annuale pieno / prezzo founding applicato ai primi tre anni pagati): EUR 18/12, USD 25/12, GBP 18/12, CAD 32/12, AUD 32/12, BRL 30/—, DKK 150/90, ISK 2.800/1.400, NOK 220/145, SEK 220/145, JPY 3.350/2.186, CNY 140/94, CHF 18/12, TWD 700/445, KRW 29.000/2.000, UAH 300/600, ILS 65/42, PLN 50/40. L'accesso Ucraina resta un percorso separato con coupon al 100% per la sottoscrizione agevolata.
 
 ---
 

@@ -23,6 +23,7 @@ export const currencyByCountry: Record<string, string> = Object.fromEntries([
   ['HK', 'HKD'],
   ['PL', 'PLN'],
   ['IN', 'INR'],
+  ['BR', 'BRL'],
 ]);
 
 export const fallbackMarket = {

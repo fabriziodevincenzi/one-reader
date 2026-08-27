@@ -19,6 +19,7 @@ export const launchCurrencies = [
   'HKD',
   'INR',
   'PLN',
+  'BRL',
 ] as const;
 
 export const plannedCurrencies = [
@@ -39,23 +40,17 @@ export const plannedCurrencies = [
 export const excludedFirstPhaseMarkets = ['CN'] as const;
 
 export const priceGrid = {
-  EUR: { full: 18, founding: 12 },
-  USD: { full: 21, founding: 12 },
-  GBP: { full: 18, founding: 12 },
-  CAD: { full: 29, founding: 12 },
-  AUD: { full: 29.5, founding: 12 },
-  DKK: { full: 145, founding: 90 },
-  ISK: { full: 2_600, founding: 1_400 },
-  NOK: { full: 245, founding: 145 },
-  SEK: { full: 245, founding: 145 },
-  JPY: { full: 3_280, founding: 2_186 },
-  CNY: { full: 140, founding: 94 },
-  CHF: { full: 18, founding: 12 },
-  TWD: { full: 669, founding: 445 },
-  KRW: { full: 3_000, founding: 2_000 },
-  UAH: { full: 800, founding: 600 },
-  ILS: { full: 65, founding: 42 },
-  PLN: { full: 60, founding: 40 },
+  EUR: { full: 18, monthly: 2 }, USD: { full: 21, monthly: 2.5 }, GBP: { full: 18, monthly: 2 },
+  CAD: { full: 29, monthly: 3.5 }, AUD: { full: 29.5, monthly: 3.5 }, CHF: { full: 18, monthly: 2 },
+  DKK: { full: 145, monthly: 19 }, NOK: { full: 245, monthly: 29 }, SEK: { full: 245, monthly: 29 },
+  ISK: { full: 2600, monthly: 300 }, PLN: { full: 60, monthly: 7 }, JPY: { full: 3280, monthly: 380 },
+  CNY: { full: 140, monthly: 16 }, TWD: { full: 669, monthly: 75 }, KRW: { full: 3000, monthly: 350 },
+  UAH: { full: 800, monthly: 90 }, ILS: { full: 65, monthly: 7 }, BRL: { full: 30, monthly: 3.5 },
+} as const;
+
+export const stripePriceIds = {
+  annual: 'price_1U91xaBA5ijGzHgS2riHa649',
+  monthly: 'price_1U91lyBA5ijGzHgSY5vBt5UV',
 } as const;
 
 export type PriceCurrency = keyof typeof priceGrid;

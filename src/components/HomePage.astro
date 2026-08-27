@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Button, buttonVariants } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
+import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
@@ -32,14 +33,7 @@ const steps = [
 ---
 
 <Layout title="One Reader" description="A private correspondence club where one letter reaches one unknown reader. No profiles, no feed, no judgment." turnstileSiteKey={turnstileSiteKey}>
-  <header class="brand-header border-b border-border">
-    <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">
-        One Reader
-      </a>
-      <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="/sign-in/">Log in</a>
-    </div>
-  </header>
+  <SiteHeader />
 
   <main id="main-content" class="brand-page brand-home">
     <section class="border-b border-border py-16 sm:py-24 lg:py-32">
@@ -83,7 +77,7 @@ const steps = [
 
     <section class="border-b border-border py-20 sm:py-28" id="start-free">
       <div class="shell">
-          <form class="relative overflow-hidden rounded-2xl bg-surface p-7 sm:p-10" data-start-free-form>
+          <form class="writer-card relative overflow-hidden rounded-2xl p-7 sm:p-10" data-start-free-form>
             <div data-start-free-fields>
               <h3 class="font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Create your free Reader account</h3>
               <p class="mt-5 max-w-2xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. We’ll use your address to create your account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>

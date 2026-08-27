@@ -1,19 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { buttonVariants } from '../../components/ui/Button';
-import JournalFooter from '../../components/JournalFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { formatJournalDate, getJournalDate, getJournalEntries, getJournalSlug } from '../../lib/journal';
 
 const [latestArticle, ...earlierArticles] = await getJournalEntries('en');
 ---
 
 <Layout title="Journal — One Reader" description="Notes on writing to strangers, paying attention, and finding a way to begin.">
-  <header class="border-b border-border">
-    <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
-      <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="/">Write to someone</a>
-    </div>
-  </header>
+  <SiteHeader />
 
   <main id="main-content" class="shell py-20 sm:py-28 lg:py-40">
     <div class="max-w-5xl">
@@ -43,5 +38,5 @@ const [latestArticle, ...earlierArticles] = await getJournalEntries('en');
       </div>
     </section>}
   </main>
-  <JournalFooter />
+  <SiteFooter />
 </Layout>

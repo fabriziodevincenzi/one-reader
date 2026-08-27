@@ -1,15 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { buttonVariants } from '../../components/ui/Button';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 ---
 
 <Layout title="Welcome to One Reader" description="One real reader, with no profile, no audience and no past to perform for." indexable={false}>
-  <header class="brand-header border-b border-border">
-    <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
-      <a class="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline" href="/member/">Your account</a>
-    </div>
-  </header>
+  <SiteHeader />
 
   <main id="main-content" class="shell brand-page py-16 sm:py-24">
     <article class="mx-auto max-w-3xl">
@@ -57,10 +54,10 @@ import { buttonVariants } from '../../components/ui/Button';
               <h3 id="reader-heading" class="font-serif text-3xl font-normal tracking-[-0.035em] text-foreground">Reader</h3>
               <p class="mt-5 text-base leading-7">Receive letters and reply to every conversation that reaches you. You can also write first once—whenever it feels right.</p>
             </section>
-            <section class="bg-surface p-7 sm:p-8" aria-labelledby="writer-heading">
-              <p class="metadata mb-5">Paid · billed annually</p>
+            <section class="writer-card p-7 sm:p-8" aria-labelledby="writer-heading">
+              <p class="metadata mb-5">Paid · monthly or annually</p>
               <h3 id="writer-heading" class="font-serif text-3xl font-normal tracking-[-0.035em] text-foreground">Writer</h3>
-              <p class="mt-5 text-base leading-7">Write first again and again: one new letter every 24 hours. <span data-membership-price>€18 a year, about five cents a day</span>.</p>
+              <p class="mt-5 text-base leading-7">Write first again and again: one new letter every 24 hours. <span data-membership-price>€18 a year or €2 a month</span>.</p>
             </section>
           </div>
           <p class="mt-6 max-w-2xl text-base leading-7">Writing first is different from replying: you choose when to begin, who might receive it, and what to say without being prompted. That is the small, essential act Writer makes possible again.</p>
@@ -83,18 +80,22 @@ import { buttonVariants } from '../../components/ui/Button';
       </footer>
     </article>
   </main>
+  <SiteFooter />
 
   <script>
     import { supabase } from '../../lib/supabase';
     import { marketForCountry } from '../../lib/market-pricing';
+    import { priceGrid } from '../../lib/product-config';
 
     const intentKey = 'dear-someone:signup-intent';
     const priceCopy = document.querySelector<HTMLElement>('[data-membership-price]');
     const countryCode = (navigator.language.split('-')[1] || '').toUpperCase() || undefined;
     const market = marketForCountry(countryCode);
-    const annual = new Intl.NumberFormat(navigator.language || 'en', { style: 'currency', currency: market.currency, maximumFractionDigits: market.currency === 'AUD' ? 2 : 0 }).format(market.amount);
-    const daily = new Intl.NumberFormat(navigator.language || 'en', { style: 'currency', currency: market.currency, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(market.amount / 365);
-    if (priceCopy) priceCopy.textContent = `${annual} a year, about ${daily} a day`;
+    const formatter = new Intl.NumberFormat(navigator.language || 'en', { style: 'currency', currency: market.currency, maximumFractionDigits: market.currency === 'AUD' ? 2 : 0 });
+    const monthlyFormatter = new Intl.NumberFormat(navigator.language || 'en', { style: 'currency', currency: market.currency, minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    const annual = formatter.format(market.amount);
+    const monthly = monthlyFormatter.format(priceGrid[market.currency].monthly);
+    if (priceCopy) priceCopy.textContent = `${annual} a year or ${monthly} a month`;
     const sessionResult = supabase ? await supabase.auth.getSession() : { data: { session: null } };
     const session = sessionResult.data.session;
     if (!session) {

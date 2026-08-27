@@ -50,7 +50,7 @@ const currentYear = new Date().getUTCFullYear();
       <div>
         <p class="eyebrow mb-4">Your access</p>
         <h2 id="membership-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Your plan</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">Reader is free: receive letters, reply freely, and write first once. Writer is the annual plan: start one new correspondence every 24 hours. Receiving letters and replying stay open to everyone.</p>
+        <p class="mt-3 text-sm leading-6 text-muted-foreground">Reader is free: receive letters, reply freely, and write first once. Writer lets you start one new correspondence every 24 hours, monthly or annually. Receiving letters and replying stay open to everyone.</p>
       </div>
       <div class="relative" data-membership-panel aria-busy="true">
         <div class="account-membership-skeleton" data-membership-skeleton role="status" aria-label="Loading your plan">
@@ -451,7 +451,8 @@ const currentYear = new Date().getUTCFullYear();
       if (!supabase) return;
       if (membershipPrimary) membershipPrimary.setAttribute('aria-busy', 'true');
       setNote(membershipNote, 'Opening the secure payment area…');
-      const { data, error } = await supabase.functions.invoke(functionName, { body: {} });
+      const billingPeriod = localStorage.getItem('one-reader:billing-period') === 'monthly' ? 'monthly' : 'annual';
+      const { data, error } = await supabase.functions.invoke(functionName, { body: functionName === 'create-checkout' ? { billingPeriod } : {} });
       if (membershipPrimary) membershipPrimary.removeAttribute('aria-busy');
       if (error || !data?.url) {
         let serverMessage = typeof data?.error === 'string' ? data.error : '';
@@ -464,6 +465,7 @@ const currentYear = new Date().getUTCFullYear();
         setNote(membershipNote, `We could not open the secure payment area.${detail || ' Please try again in a moment.'}`, true);
         return;
       }
+      if (functionName === 'create-checkout') localStorage.removeItem('one-reader:billing-period');
       window.location.assign(data.url);
     };
 
@@ -573,14 +575,14 @@ const currentYear = new Date().getUTCFullYear();
         membershipPrimary.textContent = 'Manage Writer';
         membershipPrimary.href = '#billing-portal';
         membershipRefund?.classList.remove('hidden');
-        if (membershipNote) membershipNote.textContent = 'Writer is billed annually. Manage payment details and cancellation through Stripe; refund requests are reviewed by One Reader.';
+        if (membershipNote) membershipNote.textContent = 'Writer can be billed monthly or annually. Manage payment details and cancellation through Stripe; refund requests are reviewed by One Reader.';
       } else if (status === 'checkout_pending') {
         membershipLabel.textContent = 'Reader';
         membershipCopy.textContent = 'Your Writer payment is waiting to be completed. Until then, your Reader access stays active.';
         membershipPace.textContent = 'Complete payment to start a new correspondence every 24 hours';
         membershipPrimary.textContent = 'Complete payment to become a Writer';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `Complete payment to become a Writer. Writer is ${annualPriceLabel} per year.`;
+        if (membershipNote) membershipNote.textContent = `Complete payment to become a Writer. Annual Writer is ${annualPriceLabel}; monthly billing is also available.`;
       } else if (status === 'closed') {
         membershipLabel.textContent = 'Account closed';
         membershipCopy.textContent = 'Your account is closed and no new letters will be delivered.';
@@ -602,7 +604,7 @@ const currentYear = new Date().getUTCFullYear();
         membershipPace.textContent = freeOpeningAvailable ? 'Your free first opening is still available.' : 'Your free first opening has been used.';
         membershipPrimary.textContent = 'Become a Writer to write again';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `Writer lets you start a new correspondence every 24 hours. The current price is ${annualPriceLabel} per year.`;
+        if (membershipNote) membershipNote.textContent = `Writer lets you start a new correspondence every 24 hours. Choose monthly or annual billing at checkout.`;
       }
     };
 

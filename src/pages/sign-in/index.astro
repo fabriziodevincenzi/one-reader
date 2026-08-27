@@ -2,16 +2,14 @@
 import Layout from '../../layouts/Layout.astro';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <Layout title="Sign in — One Reader" description="Sign in to your private One Reader account with a one-time email link." turnstileSiteKey={turnstileSiteKey} indexable={false}>
-  <header class="brand-header border-b border-border">
-    <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
-    </div>
-  </header>
+  <SiteHeader />
 
   <main class="shell brand-page min-h-[82vh] max-w-xl py-20 sm:py-28 lg:py-36">
     <div class="mx-auto max-w-lg">
@@ -41,6 +39,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       <p class="mt-8 hidden text-sm" data-change-email-back><a class="underline underline-offset-4" href="/member/#profile">Return to your account</a></p>
     </div>
   </main>
+  <SiteFooter />
 </Layout>
 
 <script>

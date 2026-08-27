@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <Layout title="Terms — One Reader" description="One Reader membership terms.">
-  <main class="shell min-h-[70vh] py-20 sm:py-28">
+  <SiteHeader />
+  <main id="main-content" class="shell min-h-[70vh] max-w-3xl py-20 sm:py-28">
     <a class="text-sm text-muted-foreground underline underline-offset-4" href="/">← Back home</a>
     <p class="eyebrow mb-5 mt-14">Legal draft</p>
     <h1 class="section-title">Terms</h1>
     <p class="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-      Membership terms, community rules, and the paid subscription policy apply to the Free and annual plans. Annual payments are processed securely by Stripe.
+      Membership terms, community rules, and the paid subscription policy apply to the Free and Writer plans. Payments are processed securely by Stripe.
     </p>
     <p class="mt-6 max-w-2xl leading-7 text-muted-foreground">
       One Reader is intended for people aged 14 or older. Members aged 14–17 and members aged 18 or older are placed in separate matching pools using the month and year of birth declared in the private account area.
@@ -21,10 +24,11 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section class="mt-14 max-w-3xl border-t border-border pt-10">
-      <h2 class="font-serif text-2xl font-normal tracking-[-0.025em]">Annual membership and refunds</h2>
-      <p class="mt-4 leading-7 text-muted-foreground">Annual membership renews automatically through Stripe unless you cancel it before the renewal date. You can manage or cancel the subscription from your account.</p>
+      <h2 class="font-serif text-2xl font-normal tracking-[-0.025em]">Writer membership and refunds</h2>
+      <p class="mt-4 leading-7 text-muted-foreground">Writer renews automatically through Stripe, monthly or annually, unless you cancel it before the renewal date. You can manage or cancel the subscription from your account.</p>
       <p class="mt-4 leading-7 text-muted-foreground">Where applicable, consumers may exercise the statutory right of withdrawal within 14 days of the service contract. One Reader also accepts commercial refund requests made within 30 days of membership activation. After 30 days, refunds are considered only for a service problem, failure to provide the service, or an incorrect charge. Every request is reviewed; submitting a request does not issue an automatic refund.</p>
       <p class="mt-4 leading-7 text-muted-foreground">If a refund is approved, One Reader processes it through Stripe. Cancelling a subscription stops future renewal but does not by itself create a refund for the current membership period.</p>
     </section>
   </main>
+  <SiteFooter />
 </Layout>

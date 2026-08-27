@@ -101,8 +101,8 @@
   --primary: #1a1a18;
   --primary-hover: #4a4a45;
   --primary-foreground: #ffffff;
-  --accent: #b5502f;
-  --ring: #b5502f;
+  --accent: #26344e;
+  --ring: #26344e;
   --radius-control: 9999px;
   --font-interface: "IBM Plex Mono", "SF Mono", "Courier New", monospace;
   --font-letter: "IBM Plex Serif", Georgia, serif;
@@ -286,8 +286,7 @@ textarea {
   width: 100%;
 }
 
-.brand-home .shell,
-.brand-header .shell {
+.brand-home .shell {
   width: min(100% - 3.5rem, 720px);
   margin-inline: auto;
 }
@@ -297,6 +296,21 @@ textarea {
   font-size: 1rem !important;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.brand-logo {
+  font-family: var(--font-interface) !important;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand-header .shell {
+  width: min(100% - 2rem, 74rem);
+}
+
+.writer-card {
+  background: #f4f5f7;
 }
 
 @media (min-width: 561px) {
