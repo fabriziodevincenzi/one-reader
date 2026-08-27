@@ -156,7 +156,7 @@ textarea {
 }
 
 .shell {
-  width: min(100% - 2rem, 74rem);
+  width: min(100% - 3.5rem, 720px);
   margin-inline: auto;
 }
 
@@ -303,10 +303,6 @@ textarea {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-}
-
-.brand-header .shell {
-  width: min(100% - 2rem, 74rem);
 }
 
 .writer-card {
