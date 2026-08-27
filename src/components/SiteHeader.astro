@@ -1,9 +1,26 @@
 ---
 import { buttonVariants } from './ui/Button';
+
+interface Props {
+  action?: 'login' | 'write';
+  showPricing?: boolean;
+}
+
+const { action = 'login', showPricing = false } = Astro.props;
 ---
 <header class="brand-header border-b border-border">
   <div class="shell flex min-h-20 items-center justify-between gap-6">
     <a class="brand-logo no-underline" href="/" aria-label="One Reader, home">One Reader</a>
-    <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="/sign-in/">Log in</a>
+    <div class="flex items-center gap-5">
+      {showPricing && <a class="hidden text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline sm:inline" href="/pricing/">Pricing</a>}
+      {action === 'write' ? (
+        <>
+          <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="mailto:write@onereader.co" aria-describedby="write-cta-help">Write to someone</a>
+          <span id="write-cta-help" class="sr-only">Opens your email app. If it does not, email write@onereader.co.</span>
+        </>
+      ) : (
+        <a class={buttonVariants({ variant: 'outline', size: 'small' })} href="/sign-in/">Log in</a>
+      )}
+    </div>
   </div>
 </header>

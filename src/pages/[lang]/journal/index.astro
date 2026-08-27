@@ -14,7 +14,7 @@ const [latestArticle, ...earlierArticles] = await getJournalEntries(lang);
 ---
 
 <Layout title={`Journal — One Reader`} description="Notes on writing to strangers, paying attention, and finding a way to begin." locale={lang}>
-  <SiteHeader />
+  <SiteHeader action="write" />
 
   <main id="main-content" class="shell py-20 sm:py-28 lg:py-40">
     <div class="max-w-5xl">
@@ -27,7 +27,7 @@ const [latestArticle, ...earlierArticles] = await getJournalEntries(lang);
 
     {latestArticle && <section class="mt-20 max-w-4xl border-y border-border py-10 sm:mt-28 sm:py-14" aria-labelledby="featured-heading">
       <p class="journal-meta mb-5 text-accent">Featured note · {formatJournalDate(getJournalDate(latestArticle), lang)} · {latestArticle.data.readingTime}</p>
-      <h2 id="featured-heading" class="max-w-3xl font-serif text-[clamp(2.25rem,4.5vw,4.25rem)] font-normal leading-[1.08] tracking-[-0.04em]">{latestArticle.data.title}</h2>
+      <h2 id="featured-heading" class="max-w-3xl font-interface text-[clamp(2.25rem,4.5vw,4.25rem)] font-normal leading-[1.08] tracking-[-0.04em]">{latestArticle.data.title}</h2>
       <p class="journal-deck mt-5 text-muted-foreground">{latestArticle.data['meta-description']}</p>
       <a class="mt-7 inline-block text-sm font-medium text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground" href={`/${lang}/journal/${getJournalSlug(latestArticle)}/`}>Read the note →</a>
     </section>}
@@ -37,7 +37,7 @@ const [latestArticle, ...earlierArticles] = await getJournalEntries(lang);
       <div class="border-t border-border">
         {earlierArticles.map((article) => (
           <a class="grid gap-3 border-b border-border py-7 no-underline transition-colors hover:text-accent sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8" href={`/${lang}/journal/${getJournalSlug(article)}/`}>
-            <span class="font-serif text-2xl font-normal leading-tight tracking-[-0.025em] sm:text-[1.7rem]">{article.data.title}</span>
+            <span class="font-interface text-2xl font-normal leading-tight tracking-[-0.025em] sm:text-[1.7rem]">{article.data.title}</span>
             <time class="journal-meta shrink-0" datetime={getJournalDate(article)}>{formatJournalDate(getJournalDate(article), lang)}</time>
           </a>
         ))}
