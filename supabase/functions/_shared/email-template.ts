@@ -28,14 +28,14 @@ export function renderLetterEmail(input: LetterTemplateInput) {
   <body style="margin:0;padding:0;background:${EMAIL_COLOURS.background};color:${EMAIL_COLOURS.foreground}">
     <div style="display:none;max-height:0;overflow:hidden">${escapeHtml(input.body.slice(0, 120))}</div>
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:${EMAIL_COLOURS.background}">
-      <tr><td align="center" style="padding:42px 22px">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px">
+      <tr><td align="center" style="padding:48px 24px">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:620px">
           <tr><td style="padding:0 0 34px;font-family:${EMAIL_FONTS.interface}">
-            <span style="font-family:${EMAIL_FONTS.letter};font-size:18px;color:${EMAIL_COLOURS.foreground}">One Reader</span>
+            <span style="font-family:${EMAIL_FONTS.letter};font-size:24px;line-height:1.2;letter-spacing:-.03em;color:${EMAIL_COLOURS.foreground}">One Reader</span>
             <span style="float:right;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:${EMAIL_COLOURS.muted}">${input.isReply ? 'A reply' : 'A letter for you'}</span>
           </td></tr>
           <tr><td>${paragraphs}${attachmentNote}</td></tr>
-          <tr><td style="padding:38px 0 0;font-family:${EMAIL_FONTS.interface};font-size:12px;line-height:1.6;color:${EMAIL_COLOURS.muted}">
+          <tr><td style="padding:42px 0 0;font-family:${EMAIL_FONTS.interface};font-size:11px;line-height:1.7;color:${EMAIL_COLOURS.muted}">
             <p style="margin:0">Reply directly from this inbox. Both real addresses remain hidden. The private reply address closes 30 days after the last exchange.</p>
             <p style="margin:14px 0 0"><a href="${escapeHtml(input.stopUrl)}" style="color:${EMAIL_COLOURS.accent};text-decoration:underline;text-underline-offset:3px">End this correspondence</a><span aria-hidden="true"> · </span><a href="${escapeHtml(input.reportUrl)}" style="color:${EMAIL_COLOURS.accent};text-decoration:underline;text-underline-offset:3px">Report this message</a></p>
           </td></tr>

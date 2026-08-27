@@ -39,8 +39,8 @@ test('every MVP transactional event renders complete HTML and plain text', () =>
 
 test('service emails use the minimal shared shell', () => {
   const rendered = renderTransactionalEmail({ eventType: 'opening_delivered' });
-  assert.match(rendered.html, /max-width:560px/);
-  assert.match(rendered.html, /background:#faf7f0/);
+  assert.match(rendered.html, /max-width:620px/);
+  assert.match(rendered.html, /background:#ffffff/);
   assert.doesNotMatch(rendered.html, /background:#e9e2d6|box-shadow|A practical note/);
   assert.doesNotMatch(rendered.html, /font-size:3[4-9]px/);
 });

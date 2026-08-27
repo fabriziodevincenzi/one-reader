@@ -534,6 +534,7 @@ const currentYear = new Date().getUTCFullYear();
 
       const status = profile?.account_status ?? 'free';
       const seasonEnd = formatDate(profile?.founding_season_ends_at);
+      membershipPrimary.classList.remove('hidden');
       membershipPrimary.href = '#checkout';
       membershipPrimary.textContent = 'Become a Writer';
 
@@ -604,7 +605,10 @@ const currentYear = new Date().getUTCFullYear();
         membershipPace.textContent = freeOpeningAvailable ? 'Your free first opening is still available.' : 'Your free first opening has been used.';
         membershipPrimary.textContent = 'Become a Writer to write again';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `Writer lets you start a new correspondence every 24 hours. Choose monthly or annual billing at checkout.`;
+        membershipPrimary.classList.toggle('hidden', freeOpeningAvailable);
+        if (membershipNote) membershipNote.textContent = freeOpeningAvailable
+          ? 'Your first opening is ready when you are. Writer becomes available after you use it.'
+          : 'Writer lets you start a new correspondence every 24 hours. Choose monthly or annual billing at checkout.';
       }
     };
 

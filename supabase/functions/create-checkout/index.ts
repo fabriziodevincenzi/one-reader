@@ -8,11 +8,6 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 
-const supportedPriceCurrencies = new Set([
-  'EUR', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'DKK', 'GBP', 'ILS',
-  'ISK', 'JPY', 'KRW', 'NOK', 'PLN', 'SEK', 'TWD', 'UAH', 'USD',
-]);
-
 const defaultStripePriceIds = {
   annual: 'price_1U91xaBA5ijGzHgS2riHa649',
   monthly: 'price_1U91lyBA5ijGzHgSY5vBt5UV',
@@ -44,20 +39,11 @@ Deno.serve(async (request) => {
     if (profile.account_status === 'closed') return response({ error: 'This account is closed' }, 409);
     if (profile.plan === 'annual' || profile.account_status === 'annual') return response({ error: 'Writer is already active' }, 409);
 
-    const preferences = await admin.from('member_preferences').select('country_code, market_currency').eq('user_id', userData.user.id).maybeSingle();
-    if (preferences.error) throw preferences.error;
     const body = await request.json().catch(() => ({}));
-    const requestedCurrency = typeof body.currency === 'string' ? body.currency.toUpperCase() : null;
     const billingPeriod = body.billingPeriod === 'monthly' ? 'monthly' : 'annual';
-    const preferredCurrency = requestedCurrency || preferences.data?.market_currency || 'EUR';
-    const currency = supportedPriceCurrencies.has(preferredCurrency) ? preferredCurrency : 'EUR';
-    // Price IDs are public identifiers. This Price contains all supported
-    // currency_options; the optional environment value allows future swaps
-    // without a code deployment.
-    const priceId = (billingPeriod === 'monthly'
-      ? Deno.env.get('STRIPE_WRITER_PRICE_MONTHLY')?.trim()
-      : Deno.env.get('STRIPE_WRITER_PRICE_ANNUAL')?.trim())
-      || defaultStripePriceIds[billingPeriod];
+    // Keep checkout pinned to the two active Writer prices. An older
+    // deployment secret must not silently route members to an archived Price.
+    const priceId = defaultStripePriceIds[billingPeriod];
 
     const stripe = new Stripe(requireEnvironment('STRIPE_SECRET_KEY'), { apiVersion: '2025-03-31.basil' });
     let customerId = profile.stripe_customer_id as string | null;
@@ -74,7 +60,6 @@ Deno.serve(async (request) => {
     const siteUrl = (Deno.env.get('SITE_URL') ?? 'https://onereader.co').replace(/\/$/, '');
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
-      currency: currency.toLowerCase() as Stripe.Checkout.SessionCreateParams.Currency,
       customer: customerId,
       client_reference_id: userData.user.id,
       line_items: [{ price: priceId, quantity: 1 }],
@@ -84,8 +69,8 @@ Deno.serve(async (request) => {
       cancel_url: `${siteUrl}/member/?stripe=cancelled`,
       billing_address_collection: 'auto',
       automatic_tax: { enabled: Deno.env.get('STRIPE_AUTOMATIC_TAX') === 'true' },
-      metadata: { supabase_user_id: userData.user.id, currency, billing_period: billingPeriod },
-      subscription_data: { metadata: { supabase_user_id: userData.user.id, currency, billing_period: billingPeriod } },
+      metadata: { supabase_user_id: userData.user.id, billing_period: billingPeriod },
+      subscription_data: { metadata: { supabase_user_id: userData.user.id, billing_period: billingPeriod } },
     });
 
     const { error: pendingError } = await admin.from('profiles').update({ account_status: 'checkout_pending' }).eq('id', userData.user.id).eq('plan', 'free');
