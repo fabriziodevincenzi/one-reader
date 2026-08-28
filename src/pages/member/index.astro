@@ -33,7 +33,7 @@ const currentYear = new Date().getUTCFullYear();
     </div>
   </header>
 
-  <main id="main-content" class="shell py-12 sm:py-16" data-account-main>
+  <main id="main-content" class="account-page shell py-12 sm:py-16" data-account-main>
     <section id="account" class="flex flex-col justify-between gap-8 border-b border-border pb-10 sm:flex-row sm:items-end">
       <div>
         <p class="eyebrow mb-5">Account</p>
@@ -70,7 +70,7 @@ const currentYear = new Date().getUTCFullYear();
           <a class="hidden border-b border-border px-1 pb-1 text-sm underline-offset-4 hover:border-foreground" href="#refund-request" data-membership-refund>Request a refund</a>
           <p class="mt-1 basis-full max-w-xl text-sm leading-6 text-muted-foreground" data-membership-note>Writer opens one new correspondence every 24 hours. The price is shown in your local currency at checkout.</p>
           <form id="refund-request" class="mt-6 hidden max-w-xl border-t border-border pt-6" data-refund-form>
-            <p class="m-0 text-sm font-medium">Refund request</p>
+            <p class="account-interface m-0 text-sm font-medium">Refund request</p>
             <p class="mt-2 text-sm leading-6 text-muted-foreground" data-refund-policy>Choose the reason and tell us what happened. Submitting it does not issue an automatic refund.</p>
             <label class="mt-4 grid gap-2 text-sm"><span>Request type</span><select class="select-control min-h-11 rounded-[var(--radius-control)] border border-input bg-transparent pl-3 text-sm" required data-refund-type><option value="withdrawal_14_day">Right of withdrawal (within 14 days)</option><option value="service_issue">Problem with the service</option><option value="goodwill">Other request</option></select></label>
             <label class="mt-4 grid gap-2 text-sm"><span>Details</span><textarea class="min-h-28 rounded-[var(--radius-control)] border border-input bg-transparent p-3 text-sm" required minlength="10" maxlength="2000" data-refund-reason></textarea></label>
@@ -90,7 +90,7 @@ const currentYear = new Date().getUTCFullYear();
       </div>
       <form class="grid max-w-2xl gap-5" data-profile-form>
         <div class="grid gap-2">
-          <p class="m-0 text-sm font-medium">Email address</p>
+          <p class="account-interface m-0 text-sm font-medium">Email address</p>
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2">
             <p class="m-0 text-sm text-muted-foreground"><span class="account-inline-skeleton account-inline-skeleton-wide" data-profile-email-loading aria-label="Loading email address"></span><span class="hidden" data-profile-email></span></p>
             <a class="text-xs underline underline-offset-4" href="/sign-in/?mode=change-email">Change email</a>
@@ -100,7 +100,7 @@ const currentYear = new Date().getUTCFullYear();
         <fieldset class="border-0 border-t border-border p-0 pt-5" data-birth-details>
           <legend class="sr-only">Month and year of birth</legend>
           <div class="grid gap-4">
-            <p class="m-0 text-sm font-medium">Month and year of birth</p>
+            <p class="account-interface m-0 text-sm font-medium">Month and year of birth</p>
             <div class="grid gap-3 sm:grid-cols-2">
               <label class="grid gap-2 text-xs">
                 <span class="text-muted-foreground">Month</span>
@@ -121,7 +121,7 @@ const currentYear = new Date().getUTCFullYear();
         <fieldset class="border-0 border-t border-border p-0 pt-5">
           <legend class="sr-only">Languages for letters</legend>
           <div class="grid gap-4">
-            <p class="m-0 text-sm font-medium">Languages for letters</p>
+            <p class="account-interface m-0 text-sm font-medium">Languages for letters</p>
             <div class="grid gap-3" data-language-list></div>
             <template data-language-template>
               <div class="grid gap-3 sm:grid-cols-[minmax(0,28rem)_auto] sm:items-center" data-language-row>
@@ -175,15 +175,15 @@ const currentYear = new Date().getUTCFullYear();
       <div class="max-w-2xl">
         <div class="divide-y divide-border border-y border-border">
           <div class="flex items-baseline justify-between gap-6 py-4">
-            <p class="m-0 text-sm font-medium">Correspondences started</p>
+            <p class="account-interface m-0 text-sm font-medium">Correspondences started</p>
             <p class="m-0 font-mono text-xs uppercase tracking-[0.12em]"><span data-stat-started>0</span> total</p>
           </div>
           <div class="flex items-baseline justify-between gap-6 py-4">
-            <p class="m-0 text-sm font-medium">Open now</p>
+            <p class="account-interface m-0 text-sm font-medium">Open now</p>
             <p class="m-0 font-mono text-xs uppercase tracking-[0.12em]"><span data-stat-open>0</span> active</p>
           </div>
           <div class="flex items-baseline justify-between gap-6 py-4">
-            <p class="m-0 text-sm font-medium">Last letter</p>
+            <p class="account-interface m-0 text-sm font-medium">Last letter</p>
             <p class="m-0 text-right font-mono text-xs uppercase tracking-[0.12em]" data-stat-last>None yet</p>
           </div>
         </div>
@@ -200,21 +200,21 @@ const currentYear = new Date().getUTCFullYear();
       <div class="max-w-2xl divide-y divide-border border-y border-border">
         <div class="grid gap-4 py-5 sm:grid-cols-[1fr_auto] sm:items-center">
           <div>
-            <p class="m-0 text-sm font-medium">Your personal data</p>
+            <p class="account-interface m-0 text-sm font-medium">Your personal data</p>
             <p class="mb-0 mt-1 text-xs leading-5 text-muted-foreground">Receive a copy of the information connected to your account.</p>
           </div>
           <button class={buttonVariants({ variant: 'outline', size: 'small' }) + ' w-full sm:w-44'} type="button" data-privacy-request="access">Request data</button>
         </div>
         <div class="grid gap-4 py-5 sm:grid-cols-[1fr_auto] sm:items-center">
           <div>
-            <p class="m-0 text-sm font-medium">Birth details</p>
+            <p class="account-interface m-0 text-sm font-medium">Birth details</p>
             <p class="mb-0 mt-1 text-xs leading-5 text-muted-foreground">Ask us to correct the saved month or year if either is inaccurate.</p>
           </div>
           <button class={buttonVariants({ variant: 'outline', size: 'small' }) + ' w-full sm:w-44'} type="button" data-privacy-request="rectification">Request correction</button>
         </div>
         <div class="grid gap-4 py-5 sm:grid-cols-[1fr_auto] sm:items-center">
           <div>
-            <p class="m-0 text-sm font-medium">Privacy notice</p>
+            <p class="account-interface m-0 text-sm font-medium">Privacy notice</p>
             <p class="mb-0 mt-1 text-xs leading-5 text-muted-foreground">See how One Reader uses, stores and removes personal data.</p>
           </div>
           <a class={buttonVariants({ variant: 'outline', size: 'small' }) + ' w-full sm:w-44'} href="/privacy">Read the notice</a>

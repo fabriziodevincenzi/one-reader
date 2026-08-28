@@ -333,6 +333,25 @@ textarea {
   letter-spacing: 0.06em;
 }
 
+/* Account content is read like a small editorial page: identity and prose use
+ * the letter face, while labels, form controls and actions remain functional. */
+.account-page .section-title,
+.account-page h2,
+.account-page h3,
+.account-page p:not(.eyebrow):not(.metadata):not(.account-interface):not(.font-mono) {
+  font-family: var(--font-letter);
+}
+
+.account-page .account-interface,
+.account-page label,
+.account-page input,
+.account-page select,
+.account-page textarea,
+.account-page button,
+.account-page a {
+  font-family: var(--font-interface);
+}
+
 .brand-page input,
 .brand-page button,
 .brand-page label,
