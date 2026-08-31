@@ -3,10 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Account — One Reader" description="Manage your One Reader account." indexable={false}>
-  <main class="shell min-h-[70vh] max-w-xl py-20">
+  <main id="main-content" class="shell min-h-[70vh] max-w-xl py-20">
     <p class="eyebrow mb-5">Account</p>
     <h1 class="section-title">This account has one home.</h1>
-    <p class="mt-6 text-lg leading-8 text-muted-foreground">Your account controls have moved to one clear page.</p>
+    <p class="brand-prose mt-6 text-lg leading-8 text-muted-foreground">Your account controls have moved to one clear page.</p>
     <a class="mt-8 inline-block border-b border-foreground pb-1 text-sm" href="/member/">Open your account →</a>
   </main>
   <script>window.location.replace('/member/');</script>

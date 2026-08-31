@@ -8,14 +8,14 @@ import SiteFooter from '../../components/SiteFooter.astro';
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
-<Layout title="Sign in — One Reader" description="Sign in to your private One Reader account with a one-time email link." turnstileSiteKey={turnstileSiteKey} indexable={false}>
+<Layout title="Sign in — One Reader" description="Sign in to your private One Reader account with a one-time email link." indexable={false}>
   <SiteHeader />
 
-  <main class="shell brand-page min-h-[82vh] max-w-xl py-20 sm:py-28 lg:py-36">
+  <main id="main-content" class="shell brand-page min-h-[82vh] max-w-xl py-20 sm:py-28 lg:py-36">
     <div class="mx-auto max-w-lg">
       <p class="eyebrow mb-6" data-auth-eyebrow>Sign in</p>
       <h1 class="section-title balance" data-auth-heading>Welcome back.</h1>
-      <p class="mt-8 text-lg leading-8 text-muted-foreground" data-auth-intro>Enter your email and we’ll send a one-time sign-in link. There is no password to remember.</p>
+      <p class="brand-prose mt-8 text-lg leading-8 text-muted-foreground" data-auth-intro>Enter your email and we’ll send a one-time sign-in link. There is no password to remember.</p>
 
       <form class="mt-12" data-magic-link-form>
         <div data-sign-in-fields>
@@ -35,7 +35,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
               <span>I’m human. Continue with the Cloudflare security check.</span>
             </label>
             <div class="mt-5 hidden" data-sign-in-turnstile-panel>
-              <div class="w-full max-w-full" data-sign-in-turnstile data-sitekey={turnstileSiteKey} aria-label="Cloudflare security check"></div>
+              <div class="min-h-[65px] w-full max-w-full" data-sign-in-turnstile data-sitekey={turnstileSiteKey} aria-label="Cloudflare security check"></div>
             </div>
           </div>
         )}
@@ -50,6 +50,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
 <script>
   import { supabase } from '../../lib/supabase';
+  import { getTurnstile, loadTurnstile } from '../../lib/turnstile';
 
   const isChangeEmail = new URLSearchParams(window.location.search).get('mode') === 'change-email';
   const form = document.querySelector<HTMLFormElement>('[data-magic-link-form]')!;
@@ -66,10 +67,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   const turnstilePanel = document.querySelector<HTMLElement>('[data-sign-in-turnstile-panel]');
   const note = document.querySelector<HTMLElement>('[data-magic-link-note]');
   const signUpLink = document.querySelector<HTMLElement>('[data-sign-up-link]');
-  type TurnstileApi = {
-    render: (element: HTMLElement, options: Record<string, unknown>) => string;
-    reset: (widgetId: string) => void;
-  };
   let captchaWidgetId: string | null = null;
   let captchaToken: string | null = null;
   let pendingEmail: string | null = null;
@@ -120,7 +117,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
   const resetCaptcha = () => {
     captchaToken = null;
-    const turnstile = (window as Window & { turnstile?: TurnstileApi }).turnstile;
+    const turnstile = getTurnstile();
     if (turnstile && captchaWidgetId) turnstile.reset(captchaWidgetId);
   };
 
@@ -196,10 +193,19 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     showSuccessState('Your sign-in link is on its way. Check your inbox — it is single-use and will open your private area.');
   };
 
-  const renderCaptcha = () => {
-    const turnstile = (window as Window & { turnstile?: TurnstileApi }).turnstile;
+  const renderCaptcha = async () => {
     const sitekey = captchaWidget?.dataset.sitekey;
-    if (!turnstile || !captchaWidget || !sitekey || captchaWidget.dataset.rendered) return;
+    if (!captchaWidget || !sitekey || captchaWidget.dataset.rendered) return;
+    captchaWidget.dataset.rendered = 'loading';
+    let turnstile;
+    try {
+      turnstile = await loadTurnstile();
+    } catch {
+      delete captchaWidget.dataset.rendered;
+      restoreFields();
+      showNote('The security check could not be loaded. Please try again.', true);
+      return;
+    }
     captchaWidgetId = turnstile.render(captchaWidget, {
       sitekey,
       theme: 'light',
@@ -224,7 +230,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     if (!humanCheckbox.checked) return;
     humanCheckbox.disabled = true;
     turnstilePanel?.classList.remove('hidden');
-    window.setTimeout(renderCaptcha, 0);
+    void renderCaptcha();
   });
 
   const verifyChangeEmailSession = async () => {

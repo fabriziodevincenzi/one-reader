@@ -1,5 +1,7 @@
 # Dear Someone — Brief per il primo mockup
 
+> **Documento storico.** Conserva il contesto del primo mockup, ma non è più la fonte della brand identity attuale. Per logo, tipografia, palette ed email usare `one-reader-brand-guidelines.md`.
+
 **A chi è rivolto:** designer incaricato del primo mockup visivo del prodotto
 **Riferimento:** `dear-someone-project-spec.md` (documento di progetto per gli sviluppatori, versione 1.1)
 
@@ -24,7 +26,7 @@ L'esperienza principale del membro avviene **nella sua normale casella email**, 
 
 **Parola chiave: editoriale e silenzioso.** Pensa più a una rivista di carta ben fatta o a un set di carta da lettere di qualità che a un prodotto digitale "smart".
 
-- **Tipografia**: il sistema tipografico approvato usa **Libre Baskerville** per titoli editoriali, sottotitoli editoriali, citazioni, anteprime di lettere e corpo degli articoli; **DM Sans** per navigazione, interfaccia, CTA, form e testi funzionali; **DM Mono** per categorie, date, tempi di lettura, stati e metadati brevi. Il contrasto tra serif, sans e mono è lo strumento principale per distinguere voce umana, struttura del prodotto e informazioni di orientamento.
+- **Tipografia**: questa indicazione appartiene al primo mockup ed è stata sostituita. Il sistema attuale usa **IBM Plex Mono** per wordmark, titoli di prodotto, interfaccia e metadati; **IBM Plex Serif** per testo editoriale, voce umana e corpo delle lettere. Le specifiche correnti sono in `one-reader-brand-guidelines.md`.
 - **Gerarchia**: i titoli principali sono grandi, con linee compatte e molto spazio intorno. Il testo editoriale usa una colonna di lettura stretta e un'interlinea generosa. I metadati sono piccoli, discreti, in maiuscolo e mai trattati come elementi decorativi.
 - **Palette**: quasi monocroma. Toni caldi e neutri (pensa a carta, inchiostro, non a un dashboard). Un solo colore di accento, usato con estrema parsimonia (es. per un singolo badge di stato "nuovo"), mai diffuso su più elementi contemporaneamente.
 - **Superfici**: un solo bordo sottile per separare i blocchi, zero ombre, zero gradienti. Niente che "urli" o attiri l'occhio con forza — coerente con la promessa di calma.
@@ -34,7 +36,7 @@ L'esperienza principale del membro avviene **nella sua normale casella email**, 
 
 ## 4. Riferimento visivo già validato
 
-È già stato prodotto e approvato un esempio di card che esemplifica questa direzione: una notifica "You have a letter" con badge "New" discreto, titolo in Libre Baskerville, anteprima della lettera in Libre Baskerville corsivo, metadati minimi in DM Mono, interfaccia in DM Sans, singolo bordo sottile e palette pressoché monocroma. Usalo come riferimento diretto per tono e gerarchia.
+L'esempio storico della card resta valido per tono, spaziatura e gerarchia, ma i font sono stati sostituiti dalla coppia IBM Plex descritta nelle linee guida correnti.
 
 ## 5. Schermate da includere nel primo mockup
 

@@ -41,6 +41,7 @@ test('service emails use the minimal shared shell', () => {
   const rendered = renderTransactionalEmail({ eventType: 'opening_delivered' });
   assert.match(rendered.html, /max-width:620px/);
   assert.match(rendered.html, /background:#ffffff/);
+  assert.match(rendered.html, /font-size:16px;font-weight:700;line-height:1\.2;letter-spacing:\.02em[^>]*>One Reader/);
   assert.doesNotMatch(rendered.html, /background:#e9e2d6|box-shadow|A practical note/);
   assert.doesNotMatch(rendered.html, /font-size:3[4-9]px/);
 });

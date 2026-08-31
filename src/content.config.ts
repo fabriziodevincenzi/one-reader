@@ -7,15 +7,22 @@ const dateField = z.preprocess(
 );
 
 const journal = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/journal' }),
+  // Public slugs may legitimately be identical in different languages.
+  // Use the language-qualified file path as the internal collection ID so
+  // one translation can never overwrite another during content sync.
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/journal',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
   schema: z.object({
     lang: z.string(),
     key: z.string().min(1).optional(),
     slug: z.string().min(1),
     title: z.string(),
     'meta-description': z.string(),
-       publishedAt: dateField,
-       updatedAt: dateField,
+    publishedAt: dateField,
+    updatedAt: dateField,
     author: z.string().default('One Reader'),
     readingTime: z.string().default('5 min read'),
     image: z.string().optional(),

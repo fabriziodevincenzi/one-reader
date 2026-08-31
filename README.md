@@ -24,7 +24,7 @@ pnpm build
 
 - Astro 7, Tailwind CSS 4, TypeScript and native Astro i18n scaffolding.
 - React is limited to server-rendered Shadcn-style UI primitives; no client JavaScript is shipped for them by default.
-- Editorial, near-monochrome design tokens live in `src/styles/global.css`. The shared type system uses Libre Baskerville for editorial and human-voice content, DM Sans for product UI, and DM Mono for metadata; font files are self-hosted under `public/fonts/`.
+- Editorial, near-monochrome design tokens live in `src/styles/global.css`. The current type system uses IBM Plex Mono for the wordmark, product headings, interface and metadata, and IBM Plex Serif for editorial and human-voice content. The canonical visual rules live in `one-reader-brand-guidelines.md`.
 - The landing, privacy draft and terms placeholder are implemented.
 - Supabase persistence, passwordless verification and `complete-signup` are connected to the active project.
 - The public waitlist counter is environment-driven and remains hidden until it reaches 100 people (`PUBLIC_WAITLIST_COUNT`).
@@ -67,7 +67,7 @@ Keep Resend click/open tracking disabled for Auth and transactional messages. Co
 
 Required server-only configuration is documented in `.env.example`. Production also needs a scheduled invocation of `mail-worker` as a recovery path for jobs that outlive the immediate background invocation.
 
-Product decisions live in `dear-someone-project-spec.md`; the transactional-message inventory and implementation boundary live in `dear-someone-transactional-email-map.md`; visual direction lives in `dear-someone-design-brief.md`.
+Product decisions live in `dear-someone-project-spec.md`; the transactional-message inventory and implementation boundary live in `dear-someone-transactional-email-map.md`; the current visual identity lives in `one-reader-brand-guidelines.md`. `dear-someone-design-brief.md` remains as historical product-design context.
 
 ## Template attribution
 

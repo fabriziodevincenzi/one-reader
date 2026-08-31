@@ -32,17 +32,17 @@ const steps = [
 
 ---
 
-<Layout title="One Reader" description="A private correspondence club where one letter reaches one unknown reader. No profiles, no feed, no judgment." turnstileSiteKey={turnstileSiteKey}>
+<Layout title="One Reader" description="A private correspondence club where one letter reaches one unknown reader. No profiles, no feed, no judgment.">
   <SiteHeader showPricing />
 
   <main id="main-content" class="brand-page brand-home">
-    <section class="border-b border-border py-16 sm:py-24 lg:py-32">
+    <section class="brand-home-hero border-b border-border py-16 sm:py-24 lg:py-32">
       <div class="shell">
         <h1 class="display balance">One letter. One reader. Maybe a reply.</h1>
-        <p class="mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
+        <p class="brand-home-intro brand-prose mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
           Write to someone you do not know, from the quiet of your own inbox. No profiles to perform for. No feed to keep up with.
         </p>
-        <div class="mt-9 flex flex-wrap items-center gap-3">
+        <div class="brand-home-actions mt-9 flex flex-wrap items-center gap-3">
           <a class={buttonVariants({ size: 'large' })} href="#start-free">Start free</a>
           <a class={buttonVariants({ variant: 'quiet', size: 'large' })} href="#how-it-works">See how it works</a>
         </div>
@@ -67,8 +67,8 @@ const steps = [
                 {step.icon === 'inbox' && <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5.5h16v13H4z"/><path d="m4 7 8 6 8-6M4 15h4l1.5 2h5L16 15h4"/></svg>}
                 {step.icon === 'reply' && <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 8 5 12l4 4"/><path d="M5 12h8a6 6 0 0 1 6 6v1"/></svg>}
               </div>
-              <h3 class="m-0 font-serif text-2xl font-normal tracking-[-0.025em]">{step.title}</h3>
-              <p class="mt-4 m-0 leading-7 text-muted-foreground">{step.body}</p>
+              <h3 class="m-0 text-2xl font-normal tracking-[-0.005em]">{step.title}</h3>
+              <p class="brand-prose mt-4 m-0 leading-7 text-muted-foreground">{step.body}</p>
             </article>
           ))}
         </div>
@@ -79,8 +79,8 @@ const steps = [
       <div class="shell">
           <form class="writer-card relative overflow-hidden rounded-2xl p-7 sm:p-10" data-start-free-form>
             <div data-start-free-fields>
-              <h3 class="font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Create your free Reader account</h3>
-              <p class="mt-5 max-w-2xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. We’ll use your address to create your account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>
+              <h3 class="text-3xl font-normal leading-tight tracking-[-0.005em] sm:text-4xl">Create your free Reader account</h3>
+              <p class="brand-prose mt-5 max-w-2xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. We’ll use your address to create your account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>
               <div class="mt-8">
                 <label class="mb-2 block text-sm font-medium" for="start-free-email">Email address</label>
                 <div class="grid gap-3 sm:grid-cols-[1fr_auto]">
@@ -114,8 +114,8 @@ const steps = [
             <p class="mt-4 hidden text-xs leading-5 text-muted-foreground" id="start-free-note" data-start-free-note></p>
             <div class="hidden" data-start-free-success aria-live="polite">
               <p class="eyebrow mb-5">Check your inbox</p>
-              <h3 class="max-w-md font-serif text-3xl font-normal leading-tight tracking-[-0.03em] sm:text-4xl">Your first letter starts here.</h3>
-              <p class="mt-5 max-w-md leading-7 text-muted-foreground">We sent a one-time link to verify your address. Follow it to open your Reader account.</p>
+              <h3 class="max-w-md text-3xl font-normal leading-tight tracking-[-0.005em] sm:text-4xl">Your first letter starts here.</h3>
+              <p class="brand-prose mt-5 max-w-md leading-7 text-muted-foreground">We sent a one-time link to verify your address. Follow it to open your Reader account.</p>
               <a class="mt-7 inline-flex text-sm underline underline-offset-4 hover:text-foreground" href="/sign-in/">Already registered? Open your account</a>
             </div>
           </form>
@@ -129,7 +129,7 @@ const steps = [
           <h2 class="section-title">Everything important stays in your inbox.</h2>
         </div>
         <div class="self-end">
-          <p class="text-lg leading-8 text-muted-foreground">Your private area is for membership, language details, consents, privacy requests, and account deletion. The correspondence itself remains where it belongs — in your email.</p>
+          <p class="brand-prose text-lg leading-8 text-muted-foreground">Your private area is for membership, language details, consents, privacy requests, and account deletion. The correspondence itself remains where it belongs — in your email.</p>
           <a class={buttonVariants({ variant: 'outline', size: 'small' }) + ' mt-6'} href="/sign-in/">Log in to your account</a>
         </div>
       </div>
@@ -141,20 +141,7 @@ const steps = [
 
 <script>
   import { supabase } from '../lib/supabase';
-
-  type TurnstileApi = {
-    render: (container: HTMLElement, options: {
-      sitekey: string;
-      theme: 'light' | 'dark' | 'auto';
-      size: 'normal' | 'compact' | 'flexible';
-      appearance: 'always' | 'execute' | 'interaction-only';
-      language: string;
-      callback: (token: string) => void;
-      'expired-callback': () => void;
-      'error-callback': () => void;
-    }) => string;
-    reset: (widgetId?: string) => void;
-  };
+  import { getTurnstile, loadTurnstile } from '../lib/turnstile';
 
   const form = document.querySelector<HTMLFormElement>('[data-start-free-form]');
   const note = document.querySelector<HTMLElement>('[data-start-free-note]');
@@ -178,10 +165,19 @@ const steps = [
     note.classList.toggle('text-muted-foreground', !error);
   };
 
-  const renderCaptcha = () => {
-    const turnstile = (window as Window & { turnstile?: TurnstileApi }).turnstile;
+  const renderCaptcha = async () => {
     const sitekey = captchaWidget?.dataset.sitekey;
-    if (!turnstile || !captchaWidget || !sitekey || captchaWidget.dataset.rendered) return;
+    if (!captchaWidget || !sitekey || captchaWidget.dataset.rendered) return;
+    captchaWidget.dataset.rendered = 'loading';
+    let turnstile;
+    try {
+      turnstile = await loadTurnstile();
+    } catch {
+      delete captchaWidget.dataset.rendered;
+      revealCaptcha();
+      showNote('The security check could not be loaded. Please try again.', true);
+      return;
+    }
     captchaWidgetId = turnstile.render(captchaWidget, {
       sitekey,
       theme: 'light',
@@ -214,7 +210,7 @@ const steps = [
     if (!humanCheckbox.checked) return;
     humanCheckbox.disabled = true;
     turnstilePanel?.classList.remove('hidden');
-    window.setTimeout(renderCaptcha, 0);
+    void renderCaptcha();
   });
 
   const finishFreeSignup = async (session: { access_token: string; user?: { user_metadata?: Record<string, unknown> } }) => {
@@ -298,7 +294,7 @@ const steps = [
     if (submitButton) submitButton.disabled = false;
     if (error) {
       captchaToken = null;
-      const turnstile = (window as Window & { turnstile?: TurnstileApi }).turnstile;
+      const turnstile = getTurnstile();
       if (turnstile && captchaWidgetId) turnstile.reset(captchaWidgetId);
       window.localStorage.removeItem(intentKey);
       fields?.classList.remove('hidden');

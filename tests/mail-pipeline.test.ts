@@ -49,6 +49,7 @@ test('escapes member content in the outbound HTML template', () => {
   assert.doesNotMatch(rendered.html, /<h1/);
   assert.doesNotMatch(rendered.text, /^A letter for you/);
   assert.match(rendered.html, /max-width:620px/);
+  assert.match(rendered.html, /font-size:16px;font-weight:700;line-height:1\.2;letter-spacing:\.02em[^>]*>One Reader/);
 });
 
 test('signs letter actions and rejects tampered or expired tokens', async () => {

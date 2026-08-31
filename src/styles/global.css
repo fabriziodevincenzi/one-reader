@@ -1,77 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans-400.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans-500.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans-600.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans-700.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("/fonts/dm-mono-400.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("/fonts/dm-mono-500.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville-400.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville-400-italic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville-700.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -291,11 +219,24 @@ textarea {
   margin-inline: auto;
 }
 
-.brand-header a[aria-label] {
-  font-family: var(--font-interface) !important;
-  font-size: 1rem !important;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+/* Reserve the final copy geometry before the webfonts arrive. This keeps the
+ * hero actions—the element reported by field data—from moving during font load. */
+.brand-home-hero .display {
+  min-block-size: 3.9em;
+}
+
+.brand-home-intro {
+  min-block-size: 10rem;
+}
+
+.brand-home-actions {
+  min-block-size: 3rem;
+}
+
+@media (min-width: 640px) {
+  .brand-home-intro {
+    min-block-size: 6rem;
+  }
 }
 
 .brand-logo {
@@ -306,7 +247,7 @@ textarea {
 }
 
 .writer-card {
-  background: #f4f5f7;
+  background: var(--surface);
 }
 
 @media (min-width: 561px) {
@@ -315,6 +256,7 @@ textarea {
   }
 }
 
+.brand-page h1,
 .brand-page h2,
 .brand-page h3 {
   font-family: var(--font-interface) !important;
@@ -322,7 +264,7 @@ textarea {
   letter-spacing: -0.005em !important;
 }
 
-.brand-page p:not(.eyebrow):not(.metadata) {
+.brand-prose {
   font-family: var(--font-letter);
 }
 
@@ -333,12 +275,17 @@ textarea {
   letter-spacing: 0.06em;
 }
 
-/* Account content is read like a small editorial page: identity and prose use
- * the letter face, while labels, form controls and actions remain functional. */
+/* Account is a product surface. Its hierarchy, state and controls use the
+ * interface face; only explicitly marked narrative passages use the letter face. */
 .account-page .section-title,
 .account-page h2,
-.account-page h3,
-.account-page p:not(.eyebrow):not(.metadata):not(.account-interface):not(.font-mono) {
+.account-page h3 {
+  font-family: var(--font-interface);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+.account-page .account-prose {
   font-family: var(--font-letter);
 }
 

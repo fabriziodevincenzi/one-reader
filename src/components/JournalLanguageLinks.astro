@@ -1,0 +1,36 @@
+---
+import { languageOptions, siteLocales, type SiteLocale } from '../lib/i18n';
+
+interface Props {
+  alternateLocales: Partial<Record<SiteLocale, string>>;
+  currentLocale: SiteLocale;
+}
+
+const { alternateLocales, currentLocale } = Astro.props;
+const languageNames = new Map(languageOptions);
+const availableLocales = siteLocales.filter((locale) => alternateLocales[locale]);
+---
+
+{availableLocales.length > 1 && (
+  <nav class="mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm" aria-label="Available translations">
+    <span class="journal-meta">Read in</span>
+    <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-2 p-0">
+      {availableLocales.map((locale) => (
+        <li>
+          {locale === currentLocale ? (
+            <span class="text-foreground" aria-current="page">{languageNames.get(locale)}</span>
+          ) : (
+            <a
+              class="text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground"
+              href={alternateLocales[locale]}
+              hreflang={locale}
+              lang={locale}
+            >
+              {languageNames.get(locale)}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

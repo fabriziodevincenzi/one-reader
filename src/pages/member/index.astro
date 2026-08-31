@@ -25,7 +25,7 @@ const currentYear = new Date().getUTCFullYear();
 <Layout title="Your account — One Reader" description="Manage your One Reader membership, practical details, consents and privacy choices." indexable={false}>
   <header class="border-b border-border">
     <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
+      <a class="brand-logo no-underline" href="/" aria-label="One Reader, home">One Reader</a>
       <div class="flex items-center gap-4 text-sm">
         <p class="max-w-[12rem] truncate text-muted-foreground"><span class="account-inline-skeleton" data-account-email-loading aria-label="Loading account"></span><span class="hidden" data-account-email></span></p>
         <button class="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline" type="button" data-sign-out>Log out</button>
@@ -38,7 +38,7 @@ const currentYear = new Date().getUTCFullYear();
       <div>
         <p class="eyebrow mb-5">Account</p>
         <h1 class="section-title balance max-w-3xl">Everything practical, in one place.</h1>
-        <p class="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Your letters stay in your inbox. This is the small account space for your pace, preferences, consents, payments and privacy.</p>
+        <p class="account-prose mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">Your letters stay in your inbox. This is the small account space for your pace, preferences, consents, payments and privacy.</p>
       </div>
       <div class="account-action-slot">
         <div class="account-action-skeleton" data-account-action-loading aria-hidden="true"></div>
@@ -49,8 +49,8 @@ const currentYear = new Date().getUTCFullYear();
     <section id="membership" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="membership-heading">
       <div>
         <p class="eyebrow mb-4">Your access</p>
-        <h2 id="membership-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Your plan</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">Reader is free: receive letters, reply freely, and write first once. Writer lets you start one new correspondence every 24 hours, monthly or annually. Receiving letters and replying stay open to everyone.</p>
+        <h2 id="membership-heading" class="text-3xl font-normal tracking-[-0.005em]">Your plan</h2>
+        <p class="account-prose mt-3 text-sm leading-6 text-muted-foreground">Reader is free: receive letters, reply freely, and write first once. Writer lets you start one new correspondence every 24 hours, monthly or annually. Receiving letters and replying stay open to everyone.</p>
       </div>
       <div class="relative" data-membership-panel aria-busy="true">
         <div class="account-membership-skeleton" data-membership-skeleton role="status" aria-label="Loading your plan">
@@ -59,8 +59,8 @@ const currentYear = new Date().getUTCFullYear();
         </div>
         <div class="hidden" data-membership-content>
           <div class="border-b border-border pb-6">
-          <p class="m-0 font-serif text-3xl tracking-[-0.04em]" data-membership-label>Reader</p>
-          <p class="mt-3 max-w-xl text-lg leading-8 text-muted-foreground" data-membership-copy>One first opening is included. You can always receive letters from strangers and reply to conversations already open.</p>
+          <p class="account-interface m-0 text-3xl font-normal tracking-[-0.005em]" data-membership-label>Reader</p>
+          <p class="account-prose mt-3 max-w-xl text-lg leading-8 text-muted-foreground" data-membership-copy>One first opening is included. You can always receive letters from strangers and reply to conversations already open.</p>
           <p class="mt-4 text-sm leading-6" data-membership-pace>You still have your free first opening.</p>
           <p class="mt-3 hidden text-sm leading-6 text-muted-foreground" data-membership-period></p>
         </div>
@@ -85,8 +85,8 @@ const currentYear = new Date().getUTCFullYear();
     <section id="profile" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="profile-heading">
       <div>
         <p class="eyebrow mb-4">Practical details</p>
-        <h2 id="profile-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Delivery details</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">Your email stays private. Your age group and languages help us make a suitable match.</p>
+        <h2 id="profile-heading" class="text-3xl font-normal tracking-[-0.005em]">Delivery details</h2>
+        <p class="account-prose mt-3 text-sm leading-6 text-muted-foreground">Your email stays private. Your age group and languages help us make a suitable match.</p>
       </div>
       <form class="grid max-w-2xl gap-5" data-profile-form>
         <div class="grid gap-2">
@@ -148,8 +148,8 @@ const currentYear = new Date().getUTCFullYear();
     <section id="messages" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="messages-heading">
       <div>
         <p class="eyebrow mb-4">Your choices</p>
-        <h2 id="messages-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Messages and consents</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">The service messages you need come first. Optional Journal notes remain your choice.</p>
+        <h2 id="messages-heading" class="text-3xl font-normal tracking-[-0.005em]">Messages and consents</h2>
+        <p class="account-prose mt-3 text-sm leading-6 text-muted-foreground">The service messages you need come first. Optional Journal notes remain your choice.</p>
       </div>
       <form class="grid gap-5 text-sm leading-6" data-consent-form>
         <div class="border-b border-border pb-5">
@@ -170,7 +170,7 @@ const currentYear = new Date().getUTCFullYear();
     <section id="letters" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="letters-heading">
       <div>
         <p class="eyebrow mb-4">Email-first by design</p>
-        <h2 id="letters-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Your letters stay in your inbox.</h2>
+        <h2 id="letters-heading" class="text-3xl font-normal tracking-[-0.005em]">Your letters stay in your inbox.</h2>
       </div>
       <div class="max-w-2xl">
         <div class="divide-y divide-border border-y border-border">
@@ -187,15 +187,15 @@ const currentYear = new Date().getUTCFullYear();
             <p class="m-0 text-right font-mono text-xs uppercase tracking-[0.12em]" data-stat-last>None yet</p>
           </div>
         </div>
-        <p class="mt-5 max-w-xl text-sm leading-6 text-muted-foreground">Letters remain in the email account you already use. You can stop a conversation from its first letter whenever you want.</p>
+        <p class="account-prose mt-5 max-w-xl text-sm leading-6 text-muted-foreground">Letters remain in the email account you already use. You can stop a conversation from its first letter whenever you want.</p>
       </div>
     </section>
 
     <section id="privacy" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="privacy-heading">
       <div>
         <p class="eyebrow mb-4">Control</p>
-        <h2 id="privacy-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Privacy</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">You don't need to email support to exercise your rights — use the buttons below to request your data or read how it's handled.</p>
+        <h2 id="privacy-heading" class="text-3xl font-normal tracking-[-0.005em]">Privacy</h2>
+        <p class="account-prose mt-3 text-sm leading-6 text-muted-foreground">You don't need to email support to exercise your rights — use the buttons below to request your data or read how it's handled.</p>
       </div>
       <div class="max-w-2xl divide-y divide-border border-y border-border">
         <div class="grid gap-4 py-5 sm:grid-cols-[1fr_auto] sm:items-center">
@@ -226,7 +226,7 @@ const currentYear = new Date().getUTCFullYear();
     <section id="close-account" class="grid gap-8 border-b border-border py-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16" aria-labelledby="close-heading">
       <div>
         <p class="eyebrow mb-4">Permanent action</p>
-        <h2 id="close-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">Close your account</h2>
+        <h2 id="close-heading" class="text-3xl font-normal tracking-[-0.005em]">Close your account</h2>
       </div>
       <form data-delete-account>
         <p class="m-0 max-w-xl text-sm leading-6 text-muted-foreground">Your service access and incoming deliveries stop immediately. We retain only the minimum records needed for up to 30 days to handle the request or a related dispute, then remove them unless a longer legal obligation applies.</p>
@@ -244,9 +244,8 @@ const currentYear = new Date().getUTCFullYear();
     .account-action-skeleton,
     .account-membership-skeleton {
       overflow: hidden;
-      background: linear-gradient(105deg, #e5ddd0 18%, #f6f1e8 42%, #e5ddd0 66%);
-      background-size: 240% 100%;
-      animation: account-shimmer 2.8s ease-in-out infinite;
+      background: var(--surface);
+      animation: account-pulse 2.2s ease-in-out infinite;
     }
 
     .account-inline-skeleton {
@@ -298,8 +297,8 @@ const currentYear = new Date().getUTCFullYear();
       position: relative;
       aspect-ratio: 4 / 5;
       overflow: hidden;
-      border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
-      background: #d9ccbc;
+      border: 1px solid var(--border);
+      background: var(--background);
     }
 
     .account-skeleton-art::before,
@@ -317,17 +316,16 @@ const currentYear = new Date().getUTCFullYear();
       border-radius: 50%;
       top: -2.4rem;
       right: -2.2rem;
-      background: #f4e8d3;
-      box-shadow: 0 0 3rem 1rem rgba(255, 249, 237, 0.62);
-      animation: account-light 3.6s ease-in-out infinite;
+      border: 1px solid var(--border);
+      background: var(--surface);
     }
 
     .account-skeleton-art::after {
       inset: auto -2.2rem -3.1rem 1.8rem;
       height: 8rem;
       border-radius: 50% 50% 0 0;
-      background: #a96b53;
-      opacity: 0.74;
+      background: var(--accent);
+      opacity: 0.08;
     }
 
     .account-skeleton-art span {
@@ -336,9 +334,8 @@ const currentYear = new Date().getUTCFullYear();
       height: 3.6rem;
       top: 45%;
       left: 16%;
-      border: 1px solid rgba(88, 64, 51, 0.22);
-      background: #f8f2e7;
-      box-shadow: 0 0.55rem 1.1rem rgba(87, 60, 43, 0.13);
+      border: 1px solid var(--border);
+      background: var(--background);
       transform: rotate(-7deg);
     }
 
@@ -348,8 +345,7 @@ const currentYear = new Date().getUTCFullYear();
       height: 1px;
       top: 58%;
       left: 29%;
-      background: #bba998;
-      box-shadow: 0 0.5rem 0 #bba998, 0 1rem 0 #bba998;
+      background: var(--border);
       transform: rotate(-7deg);
     }
 
@@ -375,14 +371,9 @@ const currentYear = new Date().getUTCFullYear();
       display: none;
     }
 
-    @keyframes account-shimmer {
-      0%, 100% { background-position: 100% 50%; }
-      50% { background-position: 0% 50%; }
-    }
-
-    @keyframes account-light {
-      0%, 100% { opacity: 0.52; transform: scale(0.88); }
-      50% { opacity: 1; transform: scale(1.08); }
+    @keyframes account-pulse {
+      0%, 100% { opacity: 0.58; }
+      50% { opacity: 1; }
     }
 
     @media (max-width: 40rem) {
@@ -392,8 +383,7 @@ const currentYear = new Date().getUTCFullYear();
     @media (prefers-reduced-motion: reduce) {
       .account-inline-skeleton,
       .account-action-skeleton,
-      .account-membership-skeleton,
-      .account-skeleton-art::before { animation: none; }
+      .account-membership-skeleton { animation: none; }
     }
   </style>
 

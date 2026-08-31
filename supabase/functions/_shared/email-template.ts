@@ -31,7 +31,7 @@ export function renderLetterEmail(input: LetterTemplateInput) {
       <tr><td align="center" style="padding:48px 24px">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:620px">
           <tr><td style="padding:0 0 34px;font-family:${EMAIL_FONTS.interface}">
-            <span style="font-family:${EMAIL_FONTS.letter};font-size:24px;line-height:1.2;letter-spacing:-.03em;color:${EMAIL_COLOURS.foreground}">One Reader</span>
+            <span style="font-family:${EMAIL_FONTS.interface};font-size:16px;font-weight:700;line-height:1.2;letter-spacing:.02em;color:${EMAIL_COLOURS.foreground}">One Reader</span>
             <span style="float:right;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:${EMAIL_COLOURS.muted}">${input.isReply ? 'A reply' : 'A letter for you'}</span>
           </td></tr>
           <tr><td>${paragraphs}${attachmentNote}</td></tr>

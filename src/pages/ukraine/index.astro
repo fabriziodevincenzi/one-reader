@@ -12,19 +12,19 @@ import { fullAnnualPrice } from '../../lib/product-config';
 >
   <SiteHeader />
 
-  <main class="shell max-w-4xl py-16 sm:py-24 lg:py-32">
+  <main id="main-content" class="shell max-w-4xl py-16 sm:py-24 lg:py-32">
     <p class="eyebrow mb-6">For people joining from Ukraine</p>
     <h1 class="section-title balance max-w-3xl">A free place for your letters.</h1>
-    <p class="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
+    <p class="brand-prose mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
       The annual One Reader membership is free for people who declare that they are joining from Ukraine. It is the same private correspondence service, with no document checks and no IP block.
     </p>
 
     <section class="mt-14 grid gap-10 border-t border-border py-10 md:grid-cols-[0.7fr_1.3fr]" aria-labelledby="offer-heading">
       <div>
         <p class="eyebrow mb-4">The offer</p>
-        <h2 id="offer-heading" class="font-serif text-3xl font-normal tracking-[-0.03em]">100% off, for the life of your subscription.</h2>
+        <h2 id="offer-heading" class="text-3xl font-normal tracking-[-0.005em]">100% off, for the life of your subscription.</h2>
       </div>
-      <div class="text-lg leading-8 text-muted-foreground">
+      <div class="brand-prose text-lg leading-8 text-muted-foreground">
         <p class="m-0">The reference price is {fullAnnualPrice.label}; after the dedicated promotion is applied, the amount due is €0. The subscription remains a normal annual Stripe subscription, so you can manage or close it whenever you choose.</p>
         <p class="mt-5 text-base leading-7">The concession is reviewed every 12 months for new activations. If you already received it, the promise remains in place for as long as that subscription stays active.</p>
       </div>
@@ -33,18 +33,18 @@ import { fullAnnualPrice } from '../../lib/product-config';
     <section class="grid gap-8 border-t border-border py-10 sm:grid-cols-3" aria-label="How access works">
       <div>
         <p class="eyebrow mb-3">01</p>
-        <h2 class="font-serif text-2xl font-normal">Declare your market</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">Choose Ukraine in the launch flow. This is a statement of access, not a document or residence check.</p>
+        <h2 class="text-2xl font-normal tracking-[-0.005em]">Declare your market</h2>
+        <p class="brand-prose mt-3 text-sm leading-6 text-muted-foreground">Choose Ukraine in the launch flow. This is a statement of access, not a document or residence check.</p>
       </div>
       <div>
         <p class="eyebrow mb-3">02</p>
-        <h2 class="font-serif text-2xl font-normal">Join the first group</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">Create your free account from the home page, then use the dedicated promotion when you are ready for annual membership.</p>
+        <h2 class="text-2xl font-normal tracking-[-0.005em]">Join the first group</h2>
+        <p class="brand-prose mt-3 text-sm leading-6 text-muted-foreground">Create your free account from the home page, then use the dedicated promotion when you are ready for annual membership.</p>
       </div>
       <div>
         <p class="eyebrow mb-3">03</p>
-        <h2 class="font-serif text-2xl font-normal">Write without a bill</h2>
-        <p class="mt-3 text-sm leading-6 text-muted-foreground">When the service opens, the dedicated promotion is applied without asking you to add a card for a zero balance.</p>
+        <h2 class="text-2xl font-normal tracking-[-0.005em]">Write without a bill</h2>
+        <p class="brand-prose mt-3 text-sm leading-6 text-muted-foreground">When the service opens, the dedicated promotion is applied without asking you to add a card for a zero balance.</p>
       </div>
     </section>
 

@@ -63,7 +63,7 @@ export function renderServiceEmail(content: ServiceEmailContent): RenderedEmailB
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:${EMAIL_COLOURS.background}">
       <tr><td align="center" style="padding:48px 24px">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:620px">
-          <tr><td style="padding:0 0 38px;font-family:${EMAIL_FONTS.letter};font-size:24px;font-weight:400;line-height:1.2;letter-spacing:-.03em;color:${EMAIL_COLOURS.foreground}">One Reader</td></tr>
+          <tr><td style="padding:0 0 38px;font-family:${EMAIL_FONTS.interface};font-size:16px;font-weight:700;line-height:1.2;letter-spacing:.02em;color:${EMAIL_COLOURS.foreground}">One Reader</td></tr>
           <tr><td>${heading}${paragraphs}${details}${action}${secondary}</td></tr>
           <tr><td style="padding:42px 0 0;font-family:${EMAIL_FONTS.interface};font-size:11px;line-height:1.7;color:${EMAIL_COLOURS.muted}">${escapeHtml(footer)}</td></tr>
         </table>

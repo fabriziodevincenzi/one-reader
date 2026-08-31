@@ -11,9 +11,15 @@ export function getStaticPaths() {
 
 const { lang } = Astro.props as { lang: SiteLocale };
 const [latestArticle, ...earlierArticles] = await getJournalEntries(lang);
+const alternateLocales = Object.fromEntries(
+  siteLocales.map((locale) => [
+    locale,
+    new URL(locale === 'en' ? '/journal/' : `/${locale}/journal/`, Astro.site ?? Astro.url.origin).toString(),
+  ]),
+);
 ---
 
-<Layout title={`Journal — One Reader`} description="Notes on writing to strangers, paying attention, and finding a way to begin." locale={lang}>
+<Layout title={`Journal — One Reader`} description="Notes on writing to strangers, paying attention, and finding a way to begin." locale={lang} alternateLocales={alternateLocales}>
   <SiteHeader action="write" />
 
   <main id="main-content" class="shell py-20 sm:py-28 lg:py-40">

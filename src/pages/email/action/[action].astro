@@ -19,7 +19,7 @@ const canSubmit = action === 'stop' || action === 'report';
   indexable={false}
 >
   <main id="main-content" class="shell min-h-[78vh] max-w-3xl py-16 sm:py-24 lg:py-32" data-letter-action={action}>
-    <a class="text-sm text-muted-foreground underline underline-offset-4" href="/">← One Reader</a>
+    <a class="brand-logo no-underline" href="/" aria-label="One Reader, home">One Reader</a>
     <div class="pt-24 sm:pt-32">
       <p class="eyebrow mb-6">{copy.label}</p>
       <h1 class="section-title balance">{copy.title}</h1>

@@ -6,23 +6,23 @@ import { buttonVariants } from '../../components/ui/Button';
 <Layout title="Your inbox — One Reader" description="One Reader keeps correspondence in your email inbox." indexable={false}>
   <header class="border-b border-border">
     <div class="shell flex min-h-20 items-center justify-between gap-6">
-      <a class="font-serif text-[1.35rem] tracking-[-0.025em] no-underline" href="/" aria-label="One Reader, home">One Reader</a>
+      <a class="brand-logo no-underline" href="/" aria-label="One Reader, home">One Reader</a>
       <a class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" href="/member">← Your account</a>
     </div>
   </header>
 
-  <main class="shell min-h-[70vh] py-14 sm:py-20">
+  <main id="main-content" class="shell min-h-[70vh] py-14 sm:py-20">
     <p class="eyebrow mb-5">Email-first by design</p>
     <h1 class="section-title">Your letters stay in your inbox.</h1>
-    <p class="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">One Reader does not build a second archive of your correspondence. Read, reply and keep your letters in the email account you already use.</p>
+    <p class="brand-prose mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">One Reader does not build a second archive of your correspondence. Read, reply and keep your letters in the email account you already use.</p>
     <div class="mt-12 grid gap-8 border-t border-border pt-8 md:grid-cols-2 md:gap-16">
       <div>
         <p class="eyebrow mb-4">What the account area is for</p>
-        <p class="leading-7 text-muted-foreground">Membership, language details, consents, payment actions, privacy requests and permanent account deletion.</p>
+        <p class="brand-prose leading-7 text-muted-foreground">Membership, language details, consents, payment actions, privacy requests and permanent account deletion.</p>
       </div>
       <div>
         <p class="eyebrow mb-4">What it is not</p>
-        <p class="leading-7 text-muted-foreground">A feed, a scorecard, a conversation archive or a record of how often you write.</p>
+        <p class="brand-prose leading-7 text-muted-foreground">A feed, a scorecard, a conversation archive or a record of how often you write.</p>
       </div>
     </div>
     <a class={buttonVariants({ variant: 'outline', size: 'small' }) + ' mt-10'} href="/member/">Open your account</a>
