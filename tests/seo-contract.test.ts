@@ -6,6 +6,8 @@ import test from 'node:test';
 const contentRoot = new URL('../src/content/journal/', import.meta.url);
 const redirects = readFileSync(new URL('../public/_redirects', import.meta.url), 'utf8');
 const notFoundPage = readFileSync(new URL('../src/pages/404.astro', import.meta.url), 'utf8');
+const aboutPage = readFileSync(new URL('../src/pages/about/index.astro', import.meta.url), 'utf8');
+const siteFooter = readFileSync(new URL('../src/components/SiteFooter.astro', import.meta.url), 'utf8');
 
 const field = (source: string, name: string) =>
   source.match(new RegExp(`^${name}:\\s*(.+?)\\s*$`, 'm'))?.[1]?.trim().replace(/^(['"])(.*)\1$/, '$2');
@@ -49,4 +51,11 @@ test('every historical Journal slug has a permanent redirect', () => {
 test('the custom not-found page is excluded from indexing', () => {
   assert.match(notFoundPage, /indexable=\{false\}/);
   assert.match(notFoundPage, /id="main-content"/);
+});
+
+test('the public About page is linked first and contains no member-only writing address', () => {
+  assert.match(aboutPage, /title="About — One Reader"/);
+  assert.doesNotMatch(aboutPage, /indexable=\{false\}/);
+  assert.doesNotMatch(aboutPage, /write@onereader\.co|mailto:|href="\/member\//i);
+  assert.match(siteFooter, /href="\/about\/">About<\/a>[\s\S]*href="\/journal\/">Journal<\/a>/);
 });

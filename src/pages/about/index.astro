@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { buttonVariants } from '../../components/ui/Button';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<Layout
+  title="About — One Reader"
+  description="One Reader is a private correspondence club where one letter reaches one unknown reader—without profiles, feeds or an audience."
+>
+  <SiteHeader showPricing />
+
+  <main id="main-content" class="shell brand-page py-16 sm:py-24">
+    <article class="mx-auto max-w-3xl">
+      <header class="border-b border-border pb-14 sm:pb-20">
+        <p class="eyebrow mb-5">About One Reader</p>
+        <h1 class="section-title max-w-3xl balance">Write to one person. Be unknown again.</h1>
+        <p class="brand-prose mt-8 max-w-2xl text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">
+          One Reader is a private correspondence club for letters between strangers. Not a message to yourself, and not a post for a crowd—just words sent to one real reader.
+        </p>
+      </header>
+
+      <div class="brand-prose space-y-16 py-14 text-lg leading-8 text-muted-foreground sm:space-y-20 sm:py-20">
+        <section aria-labelledby="why-heading">
+          <p class="eyebrow mb-4">Why it exists</p>
+          <h2 id="why-heading" class="max-w-2xl text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Some things need a reader—but not an audience.</h2>
+          <div class="mt-6 max-w-2xl space-y-5">
+            <p>A diary has only one reader: you. A social network has too many, and your face or familiar name stays attached to every word. Both can make it hard to say what you actually mean.</p>
+            <p>One Reader sits in between. Someone real is there to read you, but no public identity, follower count or visible history stands beside the letter. That freedom is the point—before any reply arrives.</p>
+          </div>
+        </section>
+
+        <section class="border-y border-border py-10 sm:py-12" aria-labelledby="how-heading">
+          <p class="eyebrow mb-4">How it works</p>
+          <h2 id="how-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Every correspondence starts clean.</h2>
+          <ol class="mt-10 grid gap-8 sm:gap-10">
+            <li class="grid gap-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
+              <span class="metadata pt-1">01 / One letter</span>
+              <p class="m-0">A letter is matched with one available person who has chosen to receive the language detected in its text. It is delivered once, not published or distributed to a group.</p>
+            </li>
+            <li class="grid gap-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
+              <span class="metadata pt-1">02 / No profile</span>
+              <p class="m-0">Each correspondence uses a fresh name and private reply addresses. Real email addresses remain hidden, and an identity from one conversation does not follow someone into the next.</p>
+            </li>
+            <li class="grid gap-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
+              <span class="metadata pt-1">03 / A choice</span>
+              <p class="m-0">A reply can begin a quiet exchange, but it is never owed. Either person can end or report a correspondence, and inactive conversations close permanently after 30 days.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="different-heading">
+          <p class="eyebrow mb-4">What is different</p>
+          <h2 id="different-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">The service stops where the correspondence begins.</h2>
+          <div class="mt-10 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
+            <section class="bg-background p-7 sm:p-8" aria-labelledby="present-heading">
+              <p class="metadata mb-5">What is here</p>
+              <h3 id="present-heading" class="text-2xl font-normal tracking-[-0.005em] text-foreground">One reader</h3>
+              <p class="mt-5 text-base leading-7">A private letter, an unknown person and enough space for a considered reply.</p>
+            </section>
+            <section class="bg-background p-7 sm:p-8" aria-labelledby="absent-heading">
+              <p class="metadata mb-5">What is absent</p>
+              <h3 id="absent-heading" class="text-2xl font-normal tracking-[-0.005em] text-foreground">The audience</h3>
+              <p class="mt-5 text-base leading-7">No public profiles, feed, likes, follower counts, recommendations or searchable archive of conversations.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="max-w-2xl" aria-labelledby="principles-heading">
+          <p class="eyebrow mb-4">Designed with restraint</p>
+          <h2 id="principles-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground">Privacy is part of the shape, not an extra setting.</h2>
+          <div class="mt-6 space-y-5">
+            <p>One Reader collects only the account information needed to operate matching, delivery and safety. Letters travel through private addresses, and neither reader is shown the other person’s real address.</p>
+            <p>The service keeps images and remote content out of received letters, offers clear ways to end or report an exchange, and treats attention—not engagement—as the thing worth protecting.</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="flex flex-wrap items-center gap-5 border-t border-border pt-8">
+        <a class={buttonVariants({ size: 'large' })} href="/">Visit One Reader</a>
+        <a class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" href="/journal/">Read the Journal</a>
+      </footer>
+    </article>
+  </main>
+
+  <SiteFooter />
+</Layout>
