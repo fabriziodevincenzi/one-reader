@@ -102,13 +102,7 @@ const steps = [
             </div>
             {turnstileSiteKey && (
               <div class="hidden mt-8 rounded-sm bg-background p-5 sm:p-8" data-start-free-captcha-step>
-                <label class="flex items-start gap-3 text-sm leading-6" data-start-free-human-confirmation>
-                  <input class="mt-1" type="checkbox" data-start-free-human-checkbox />
-                  <span>I’m human. Continue with the Cloudflare security check.</span>
-                </label>
-                <div class="mt-5 hidden" data-start-free-turnstile-panel>
-                  <div class="min-h-[65px] w-full max-w-full" data-turnstile-widget data-sitekey={turnstileSiteKey} aria-label="Cloudflare security check"></div>
-                </div>
+                <div class="min-h-[65px] w-full max-w-full" data-turnstile-widget data-sitekey={turnstileSiteKey} aria-label="Cloudflare security check"></div>
               </div>
             )}
             <p class="mt-4 hidden text-xs leading-5 text-muted-foreground" id="start-free-note" data-start-free-note></p>
@@ -156,8 +150,6 @@ const steps = [
   const captchaStep = document.querySelector<HTMLElement>('[data-start-free-captcha-step]');
   const success = document.querySelector<HTMLElement>('[data-start-free-success]');
   const captchaWidget = document.querySelector<HTMLElement>('[data-turnstile-widget]');
-  const humanCheckbox = document.querySelector<HTMLInputElement>('[data-start-free-human-checkbox]');
-  const turnstilePanel = document.querySelector<HTMLElement>('[data-start-free-turnstile-panel]');
   let captchaToken: string | null = null;
   let captchaWidgetId: string | null = null;
   let pendingSignup: FormData | null = null;
@@ -205,20 +197,9 @@ const steps = [
     if (!captchaStep) return;
     fields?.classList.add('hidden');
     note?.classList.add('hidden');
-    if (humanCheckbox) {
-      humanCheckbox.checked = false;
-      humanCheckbox.disabled = false;
-    }
-    turnstilePanel?.classList.add('hidden');
     captchaStep.classList.remove('hidden');
-  };
-
-  humanCheckbox?.addEventListener('change', () => {
-    if (!humanCheckbox.checked) return;
-    humanCheckbox.disabled = true;
-    turnstilePanel?.classList.remove('hidden');
     void renderCaptcha();
-  });
+  };
 
   const finishFreeSignup = async (session: { access_token: string; user?: { user_metadata?: Record<string, unknown> } }) => {
     const supabase = await loadSupabase();
@@ -315,11 +296,6 @@ const steps = [
       window.localStorage.removeItem(intentKey);
       fields?.classList.remove('hidden');
       captchaStep?.classList.add('hidden');
-      if (humanCheckbox) {
-        humanCheckbox.checked = false;
-        humanCheckbox.disabled = false;
-      }
-      turnstilePanel?.classList.add('hidden');
       showNote(error.message || 'We could not send the link. Please try again.', true);
       return;
     }

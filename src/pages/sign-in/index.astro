@@ -30,13 +30,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         </p>
         {turnstileSiteKey && (
           <div class="mt-6 hidden rounded-sm bg-muted/40 p-5" data-sign-in-captcha-step>
-            <label class="flex items-start gap-3 text-sm leading-6" data-sign-in-human-confirmation>
-              <input class="mt-1" type="checkbox" data-sign-in-human-checkbox />
-              <span>I’m human. Continue with the Cloudflare security check.</span>
-            </label>
-            <div class="mt-5 hidden" data-sign-in-turnstile-panel>
-              <div class="min-h-[65px] w-full max-w-full" data-sign-in-turnstile data-sitekey={turnstileSiteKey} aria-label="Cloudflare security check"></div>
-            </div>
+            <div class="min-h-[65px] w-full max-w-full" data-sign-in-turnstile data-sitekey={turnstileSiteKey} aria-label="Cloudflare security check"></div>
           </div>
         )}
         <p class="mt-5 hidden text-sm leading-6 text-accent" data-magic-link-note aria-live="polite"></p>
@@ -70,8 +64,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   const changeEmailBack = document.querySelector<HTMLElement>('[data-change-email-back]');
   const captchaStep = document.querySelector<HTMLElement>('[data-sign-in-captcha-step]');
   const captchaWidget = document.querySelector<HTMLElement>('[data-sign-in-turnstile]');
-  const humanCheckbox = document.querySelector<HTMLInputElement>('[data-sign-in-human-checkbox]');
-  const turnstilePanel = document.querySelector<HTMLElement>('[data-sign-in-turnstile-panel]');
   const note = document.querySelector<HTMLElement>('[data-magic-link-note]');
   const signUpLink = document.querySelector<HTMLElement>('[data-sign-up-link]');
   let captchaWidgetId: string | null = null;
@@ -132,11 +124,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     fields?.classList.remove('hidden');
     flowHelper?.classList.remove('hidden');
     captchaStep?.classList.add('hidden');
-    if (humanCheckbox) {
-      humanCheckbox.checked = false;
-      humanCheckbox.disabled = false;
-    }
-    turnstilePanel?.classList.add('hidden');
     pendingEmail = null;
   };
 
@@ -239,13 +226,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     captchaWidget.dataset.rendered = 'true';
   };
 
-  humanCheckbox?.addEventListener('change', () => {
-    if (!humanCheckbox.checked) return;
-    humanCheckbox.disabled = true;
-    turnstilePanel?.classList.remove('hidden');
-    void renderCaptcha();
-  });
-
   const verifyChangeEmailSession = async () => {
     if (!isChangeEmail) return;
     const supabase = await loadSupabase();
@@ -316,11 +296,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     pendingEmail = email;
     fields?.classList.add('hidden');
     flowHelper?.classList.add('hidden');
-    if (humanCheckbox) {
-      humanCheckbox.checked = false;
-      humanCheckbox.disabled = false;
-    }
-    turnstilePanel?.classList.add('hidden');
     captchaStep?.classList.remove('hidden');
+    void renderCaptcha();
   });
 </script>
