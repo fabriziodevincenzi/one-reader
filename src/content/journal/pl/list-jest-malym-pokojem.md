@@ -1,5 +1,6 @@
 ---
 lang: pl
+key: a-letter-is-a-small-room
 slug: list-jest-małym-pokojem
 title: List jest małym pokojem
 meta-description: Listy wracają nie tylko z nostalgii, lecz także jako sposób bycia blisko bez ciągłej dostępności.

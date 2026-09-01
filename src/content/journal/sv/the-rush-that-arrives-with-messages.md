@@ -1,5 +1,6 @@
 ---
 lang: sv
+key: the-rush-that-arrives-with-messages
 slug: bradskan-som-kommer-med-meddelanden
 title: Brådskan som kommer med meddelanden
 meta-description: Kommunikation tar inte bara tid; den förändrar också den takt vi känner att vi förväntas leva i.

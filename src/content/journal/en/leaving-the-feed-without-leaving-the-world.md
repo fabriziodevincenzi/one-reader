@@ -1,5 +1,6 @@
 ---
 lang: en
+key: leaving-the-feed-without-leaving-the-world
 slug: leaving-the-feed-without-leaving-the-world
 title: Leaving the feed without leaving the world
 meta-description: Social fatigue may be less a rejection of connection than a rejection of constant visibility.

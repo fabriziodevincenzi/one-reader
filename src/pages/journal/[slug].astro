@@ -4,17 +4,16 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import JournalLanguageLinks from '../../components/JournalLanguageLinks.astro';
-import { getJournalEntries, getJournalDate, getJournalKey, getJournalSlug, formatJournalDate, getJournalLocale, type JournalEntry } from '../../lib/journal';
+import { getJournalEntries, getJournalDate, getJournalKey, getJournalLegacySlugs, getJournalSlug, formatJournalDate, getJournalLocale, type JournalEntry } from '../../lib/journal';
 import { siteLocales } from '../../lib/i18n';
 
 export async function getStaticPaths() {
   const entries = await getJournalEntries('en');
   return entries.flatMap((entry) => {
     const slug = getJournalSlug(entry);
-    const legacySlug = getJournalKey(entry);
     return [
       { params: { slug }, props: { entry } },
-      ...(legacySlug !== slug ? [{ params: { slug: legacySlug }, props: { entry, redirectTo: `/journal/${slug}/` } }] : []),
+      ...getJournalLegacySlugs(entry).map((legacySlug) => ({ params: { slug: legacySlug }, props: { entry, redirectTo: `/journal/${slug}/` } })),
     ];
   });
 }

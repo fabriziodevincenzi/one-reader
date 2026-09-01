@@ -1,5 +1,6 @@
 ---
 lang: en
+key: one-reader-vs-slowly-vs-lettre
 slug: one-reader-vs-slowly-vs-lettre
 title: "One Reader vs. Slowly vs. Lettre: which pen-pal app actually fits you?"
 meta-description: "Slowly, Lettre, and One Reader all make room for slower correspondence — but they are built for very different kinds of connection."

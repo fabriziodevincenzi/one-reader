@@ -1,5 +1,6 @@
 ---
 lang: en
+key: a-letter-is-a-small-room
 slug: a-letter-is-a-small-room
 title: A letter is a small room
 meta-description: Letter writing is returning not only as nostalgia, but as a way to connect without being continuously available.

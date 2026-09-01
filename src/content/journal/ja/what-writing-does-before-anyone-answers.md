@@ -1,5 +1,6 @@
 ---
 lang: ja
+key: what-writing-does-before-anyone-answers
 slug: 誰かか-答える前に-書くことか-していること
 title: 誰かが答える前に、書くことがしていること
 meta-description: 返事が来る前に——あるいは来なくても——書くという行為そのものに価値がある理由についてのノート。

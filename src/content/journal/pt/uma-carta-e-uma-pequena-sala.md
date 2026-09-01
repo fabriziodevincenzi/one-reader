@@ -1,5 +1,6 @@
 ---
 lang: pt
+key: a-letter-is-a-small-room
 slug: uma-carta-e-uma-pequena-sala
 title: Uma carta é uma pequena sala
 meta-description: As cartas voltam não apenas como nostalgia, mas como uma maneira de estar perto sem estar sempre disponível.

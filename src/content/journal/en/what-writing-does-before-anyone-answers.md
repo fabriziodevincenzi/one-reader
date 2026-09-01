@@ -1,5 +1,6 @@
 ---
 lang: en
+key: what-writing-does-before-anyone-answers
 slug: what-writing-does-before-anyone-answers
 title: What writing does, before anyone answers
 meta-description: A note on why the act of writing carries its own value, long before a reply arrives — or doesn't.

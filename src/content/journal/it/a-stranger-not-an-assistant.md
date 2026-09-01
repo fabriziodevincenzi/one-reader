@@ -1,5 +1,6 @@
 ---
 lang: it
+key: a-stranger-not-an-assistant
 slug: uno-sconosciuto-non-un-assistente
 title: Uno sconosciuto, non un assistente
 meta-description: Un’analisi sulla comunicazione umana e privata.

@@ -1,5 +1,6 @@
 ---
 lang: it
+key: the-rush-that-arrives-with-messages
 slug: la-fretta-che-arriva-insieme-ai-messaggi
 title: La fretta che arriva insieme ai messaggi
 meta-description: La comunicazione non richiede solo tempo; cambia anche la velocità alla quale sentiamo di dover vivere.

@@ -1,5 +1,6 @@
 ---
 lang: en
+key: when-social-media-becomes-television
 slug: when-social-media-becomes-television
 title: When social media becomes television
 meta-description: "Social platforms promised conversation, but much of the time they now work like personalized television: a few accounts produce, and many people watch."

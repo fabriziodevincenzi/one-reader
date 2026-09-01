@@ -1,5 +1,6 @@
 ---
 lang: nl
+key: leaving-the-feed-without-leaving-the-world
 slug: de-feed-verlaten-zonder-de-wereld-te-verlaten
 title: De feed verlaten zonder de wereld te verlaten
 meta-description: One Reader Journal.

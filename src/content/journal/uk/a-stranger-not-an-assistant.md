@@ -1,5 +1,6 @@
 ---
 lang: uk
+key: a-stranger-not-an-assistant
 slug: незнаиомець-а-не-асистент
 title: Незнайомець, а не асистент
 meta-description: One Reader Journal.

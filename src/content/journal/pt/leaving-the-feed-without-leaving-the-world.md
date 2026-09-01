@@ -1,5 +1,6 @@
 ---
 lang: pt
+key: leaving-the-feed-without-leaving-the-world
 slug: sair-do-feed-sem-sair-do-mundo
 title: Sair do feed sem sair do mundo
 meta-description: One Reader Journal.

@@ -1,5 +1,6 @@
 ---
 lang: pl
+key: the-part-of-reading-that-cannot-be-automated
 slug: ta-czesc-czytania-ktorej-nie-da-sie-zautomatyzowac
 title: Ta część czytania, której nie da się zautomatyzować
 meta-description: W epoce streszczeń i natychmiastowych odpowiedzi czytanie nadal pozwala pozostawać w kontakcie z własnym myśleniem.

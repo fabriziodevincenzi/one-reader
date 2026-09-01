@@ -1,5 +1,6 @@
 ---
 lang: pl
+key: leaving-the-feed-without-leaving-the-world
 slug: odejsc-od-feedu-nie-od-swiata
 title: Odejść od feedu, nie od świata
 meta-description: One Reader Journal.

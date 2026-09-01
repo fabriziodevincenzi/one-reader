@@ -1,5 +1,6 @@
 ---
 lang: nl
+key: a-stranger-not-an-assistant
 slug: een-vreemde-geen-assistent
 title: Een vreemde, geen assistent
 meta-description: One Reader Journal.

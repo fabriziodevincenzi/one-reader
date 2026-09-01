@@ -1,5 +1,6 @@
 ---
 lang: ja
+key: the-rush-that-arrives-with-messages
 slug: メッセーシ-と一緒にやってくる焦り
 title: メッセージと一緒にやってくる焦り
 meta-description: コミュニケーションは時間を使うだけでなく、私たちが生きるよう求められていると感じる速度も変えてしまいます。

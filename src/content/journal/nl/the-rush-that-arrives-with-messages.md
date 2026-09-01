@@ -1,5 +1,6 @@
 ---
 lang: nl
+key: the-rush-that-arrives-with-messages
 slug: de-haast-die-met-berichten-aankomt
 title: De haast die met berichten aankomt
 meta-description: Communicatie kost niet alleen tijd; ze verandert ook het tempo waarin we denken te moeten leven.

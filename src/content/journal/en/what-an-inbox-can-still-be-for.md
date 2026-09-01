@@ -1,5 +1,6 @@
 ---
 lang: en
+key: what-an-inbox-can-still-be-for
 slug: what-an-inbox-can-still-be-for
 title: What an inbox can still be for
 meta-description: A note on the quiet possibilities of an email that has no commercial reason to exist.

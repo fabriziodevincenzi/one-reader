@@ -1,5 +1,6 @@
 ---
 lang: fr
+key: the-rush-that-arrives-with-messages
 slug: la-hate-qui-arrive-avec-les-messages
 title: La hâte qui arrive avec les messages
 meta-description: "Communiquer ne prend pas seulement du temps : cela change aussi la vitesse à laquelle nous nous sentons tenus de vivre."

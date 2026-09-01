@@ -1,5 +1,6 @@
 ---
 lang: no
+key: a-letter-is-a-small-room
 slug: et-brev-er-et-lite-rom
 title: Et brev er et lite rom
 meta-description: Brevet kommer tilbake, ikke bare av nostalgi, men som en måte å være nær uten å være tilgjengelig hele tiden.

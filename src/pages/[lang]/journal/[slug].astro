@@ -9,6 +9,7 @@ import {
   getJournalDate,
   getJournalEntries,
   getJournalKey,
+  getJournalLegacySlugs,
   getJournalLocale,
   getJournalSlug,
   type JournalEntry,
@@ -22,8 +23,7 @@ export async function getStaticPaths() {
     for (const entry of entries) {
       const slug = getJournalSlug(entry);
       paths.push({ params: { lang, slug }, props: { entry, lang } });
-      const legacySlug = getJournalKey(entry);
-      if (legacySlug !== slug) {
+      for (const legacySlug of getJournalLegacySlugs(entry)) {
         paths.push({ params: { lang, slug: legacySlug }, props: { entry, lang, redirectTo: `/${lang}/journal/${slug}/` } });
       }
     }

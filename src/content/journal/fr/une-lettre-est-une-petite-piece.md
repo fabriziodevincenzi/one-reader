@@ -1,5 +1,6 @@
 ---
 lang: fr
+key: a-letter-is-a-small-room
 slug: une-lettre-est-une-petite-piece
 title: Une lettre est une petite pièce
 meta-description: La correspondance revient non seulement par nostalgie, mais comme une manière d’être proche sans être constamment disponible.

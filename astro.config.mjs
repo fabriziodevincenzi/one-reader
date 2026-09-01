@@ -21,10 +21,13 @@ const journalRedirectPaths = new Set(
       if (!entry.isFile() || !entry.name.endsWith('.md')) return [];
       const source = readFileSync(new URL(entry.name, localeUrl), 'utf8');
       const slug = readFrontmatterField(source, 'slug');
-      const legacySlug = readFrontmatterField(source, 'key') ?? entry.name.replace(/\.md$/, '');
-      if (!slug || slug === legacySlug) return [];
+      const translationKey = readFrontmatterField(source, 'key');
+      const fileSlug = entry.name.replace(/\.md$/, '');
+      if (!slug) return [];
       const localePrefix = localeDirectory.name === 'en' ? '' : `/${localeDirectory.name}`;
-      return [`${localePrefix}/journal/${legacySlug}/`];
+      return [...new Set([translationKey, fileSlug])]
+        .filter((legacySlug) => legacySlug && legacySlug !== slug)
+        .map((legacySlug) => `${localePrefix}/journal/${legacySlug}/`);
     });
   }),
 );
@@ -48,7 +51,7 @@ export default defineConfig({
       // intended for authenticated/email flows.
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        const isPrivateOrFunctional = ['/blog', '/email', '/member', '/sign-in', '/welcome'].some(
+        const isPrivateOrFunctional = ['/404', '/blog', '/email', '/member', '/sign-in', '/welcome'].some(
           (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
         );
         const isLegacyRedirect = journalRedirectPaths.has(decodeURI(pathname));

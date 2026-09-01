@@ -1,5 +1,6 @@
 ---
 lang: de
+key: the-part-of-reading-that-cannot-be-automated
 slug: der-teil-des-lesens-der-nicht-automatisiert-werden-kann
 title: Der Teil des Lesens, der nicht automatisiert werden kann
 meta-description: Im Zeitalter von Zusammenfassungen und sofortigen Antworten bleibt Lesen eine Verbindung zum eigenen Denken.

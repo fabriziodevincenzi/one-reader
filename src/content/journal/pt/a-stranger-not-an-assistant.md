@@ -1,5 +1,6 @@
 ---
 lang: pt
+key: a-stranger-not-an-assistant
 slug: um-desconhecido-nao-um-assistente
 title: Um desconhecido, não um assistente
 meta-description: One Reader Journal.

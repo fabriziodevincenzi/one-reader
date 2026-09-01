@@ -1,5 +1,6 @@
 ---
 lang: no
+key: the-rush-that-arrives-with-messages
 slug: travelheten-som-kommer-med-meldinger
 title: Travelheten som kommer med meldinger
 meta-description: Kommunikasjon tar ikke bare tid; den endrer også tempoet vi føler at vi forventes å leve i.

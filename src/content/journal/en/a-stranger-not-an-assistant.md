@@ -1,5 +1,6 @@
 ---
 lang: en
+key: a-stranger-not-an-assistant
 slug: a-stranger-not-an-assistant
 title: A stranger, not an assistant
 meta-description: Why a real stranger can offer something that an always-available artificial companion cannot.

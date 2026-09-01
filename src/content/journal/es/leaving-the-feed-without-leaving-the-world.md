@@ -1,5 +1,6 @@
 ---
 lang: es
+key: leaving-the-feed-without-leaving-the-world
 slug: salir-del-feed-sin-salir-del-mundo
 title: Salir del feed sin salir del mundo
 meta-description: Una nota sulla fatica da feed e sulla connessione privata.

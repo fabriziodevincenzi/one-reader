@@ -1,5 +1,6 @@
 ---
 lang: es
+key: a-letter-is-a-small-room
 slug: una-carta-es-una-pequena-habitacion
 title: Una carta es una pequeña habitación
 meta-description: Escribir cartas vuelve no solo por nostalgia, sino como una forma de estar cerca sin estar siempre disponible.

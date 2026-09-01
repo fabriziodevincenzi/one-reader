@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { buttonVariants } from '../components/ui/Button';
+---
+
+<Layout
+  title="Page not found — One Reader"
+  description="This page does not exist. Return to One Reader or continue reading the Journal."
+  indexable={false}
+>
+  <SiteHeader />
+  <main id="main-content" class="shell brand-page min-h-[70vh] py-20 sm:py-28 lg:py-36">
+    <p class="eyebrow mb-6">404</p>
+    <h1 class="section-title balance">This page has gone quiet.</h1>
+    <p class="brand-prose mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
+      The address may be old or incomplete. You can return home or continue with the Journal.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a class={buttonVariants({ size: 'large' })} href="/">Return home</a>
+      <a class={buttonVariants({ variant: 'outline', size: 'large' })} href="/journal/">Open the Journal</a>
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>

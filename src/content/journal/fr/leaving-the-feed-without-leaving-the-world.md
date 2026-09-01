@@ -1,5 +1,6 @@
 ---
 lang: fr
+key: leaving-the-feed-without-leaving-the-world
 slug: quitter-le-fil-sans-quitter-le-monde
 title: Quitter le fil sans quitter le monde
 meta-description: Una nota sulla fatica da feed e sulla connessione privata.

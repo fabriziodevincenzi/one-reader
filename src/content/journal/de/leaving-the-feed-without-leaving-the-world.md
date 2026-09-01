@@ -1,5 +1,6 @@
 ---
 lang: de
+key: leaving-the-feed-without-leaving-the-world
 slug: den-feed-verlassen-ohne-die-welt-zu-verlassen
 title: Den Feed verlassen, ohne die Welt zu verlassen
 meta-description: Una nota sulla fatica da feed e sulla connessione privata.

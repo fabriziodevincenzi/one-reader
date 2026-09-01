@@ -1,5 +1,6 @@
 ---
 lang: sv
+key: a-letter-is-a-small-room
 slug: ett-brev-ar-ett-litet-rum
 title: Ett brev är ett litet rum
 meta-description: Brevskrivandet återkommer inte bara av nostalgi, utan som ett sätt att vara nära utan att ständigt vara tillgänglig.

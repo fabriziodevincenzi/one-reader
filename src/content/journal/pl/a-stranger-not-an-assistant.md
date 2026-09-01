@@ -1,5 +1,6 @@
 ---
 lang: pl
+key: a-stranger-not-an-assistant
 slug: nie-asystent-lecz-nieznajomy
 title: Nie asystent, lecz nieznajomy
 meta-description: One Reader Journal.

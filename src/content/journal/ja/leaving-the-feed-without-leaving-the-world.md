@@ -1,5 +1,6 @@
 ---
 lang: ja
+key: leaving-the-feed-without-leaving-the-world
 slug: 世界を離れす-にフィート-を離れる
 title: 世界を離れずにフィードを離れる
 meta-description: One Reader Journal.

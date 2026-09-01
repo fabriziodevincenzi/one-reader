@@ -1,5 +1,6 @@
 ---
 lang: sv
+key: a-stranger-not-an-assistant
 slug: en-framling-inte-en-assistent
 title: En främling, inte en assistent
 meta-description: One Reader Journal.

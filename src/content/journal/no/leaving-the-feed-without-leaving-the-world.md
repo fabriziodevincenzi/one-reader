@@ -1,5 +1,6 @@
 ---
 lang: no
+key: leaving-the-feed-without-leaving-the-world
 slug: forlate-feeden-uten-a-forlate-verden
 title: Forlate feeden uten å forlate verden
 meta-description: One Reader Journal.

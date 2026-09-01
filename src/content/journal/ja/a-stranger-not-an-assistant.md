@@ -1,5 +1,6 @@
 ---
 lang: ja
+key: a-stranger-not-an-assistant
 slug: アシスタントて-はなく-見知らぬ人
 title: アシスタントではなく、見知らぬ人
 meta-description: One Reader Journal.

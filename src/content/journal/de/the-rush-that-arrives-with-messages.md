@@ -1,5 +1,6 @@
 ---
 lang: de
+key: the-rush-that-arrives-with-messages
 slug: die-eile-die-mit-nachrichten-kommt
 title: Die Eile, die mit Nachrichten kommt
 meta-description: Kommunikation kostet nicht nur Zeit; sie verändert auch das Tempo, in dem wir zu leben glauben müssen.

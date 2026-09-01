@@ -1,5 +1,6 @@
 ---
 lang: en
+key: the-rush-that-arrives-with-messages
 slug: the-rush-that-arrives-with-messages
 title: The rush that arrives with messages
 meta-description: Communication does not only take time; it changes the speed at which we feel expected to live.

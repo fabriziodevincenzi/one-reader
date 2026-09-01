@@ -1,5 +1,6 @@
 ---
 lang: nl
+key: a-letter-is-a-small-room
 slug: een-brief-is-een-kleine-kamer
 title: Een brief is een kleine kamer
 meta-description: Brieven keren terug, niet alleen uit nostalgie, maar als manier om verbonden te zijn zonder voortdurend beschikbaar te zijn.

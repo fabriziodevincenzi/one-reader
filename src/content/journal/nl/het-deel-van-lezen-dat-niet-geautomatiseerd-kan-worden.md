@@ -1,5 +1,6 @@
 ---
 lang: nl
+key: the-part-of-reading-that-cannot-be-automated
 slug: het-deel-van-lezen-dat-niet-geautomatiseerd-kan-worden
 title: Het deel van lezen dat niet geautomatiseerd kan worden
 meta-description: In een tijd van samenvattingen en directe antwoorden blijft lezen een manier om contact te houden met je eigen denken.

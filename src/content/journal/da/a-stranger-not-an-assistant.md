@@ -1,5 +1,6 @@
 ---
 lang: da
+key: a-stranger-not-an-assistant
 slug: en-fremmed-ikke-en-assistent
 title: En fremmed, ikke en assistent
 meta-description: One Reader Journal.

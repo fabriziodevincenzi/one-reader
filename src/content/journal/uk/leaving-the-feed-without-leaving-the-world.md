@@ -1,5 +1,6 @@
 ---
 lang: uk
+key: leaving-the-feed-without-leaving-the-world
 slug: виити-з-фіду-не-виходячи-зі-світу
 title: Вийти з фіду, не виходячи зі світу
 meta-description: One Reader Journal.

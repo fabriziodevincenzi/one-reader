@@ -1,5 +1,6 @@
 ---
 lang: pt
+key: the-part-of-reading-that-cannot-be-automated
 slug: a-parte-da-leitura-que-nao-pode-ser-automatizada
 title: A parte da leitura que não pode ser automatizada
 meta-description: Em uma época de resumos e respostas instantâneas, ler continua sendo uma forma de permanecer em contato com o próprio pensamento.

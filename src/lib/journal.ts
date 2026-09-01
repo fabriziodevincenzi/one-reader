@@ -12,6 +12,13 @@ export const getJournalKey = (entry: JournalEntry) => entry.data.key ?? entry.id
 
 export const getJournalSlug = (entry: JournalEntry) => entry.data.slug;
 
+export const getJournalLegacySlugs = (entry: JournalEntry) => {
+  const fileSlug = entry.id.split('/').pop()?.replace(/\.md$/, '');
+  return [...new Set([getJournalKey(entry), fileSlug])].filter(
+    (legacySlug): legacySlug is string => Boolean(legacySlug && legacySlug !== getJournalSlug(entry)),
+  );
+};
+
 export const getJournalDate = (entry: JournalEntry) => entry.data.publishedAt ?? '2026-08-15';
 
 export async function getJournalEntries(locale?: SiteLocale) {

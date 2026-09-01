@@ -1,5 +1,6 @@
 ---
 lang: pt
+key: the-rush-that-arrives-with-messages
 slug: a-pressa-que-chega-com-as-mensagens
 title: A pressa que chega com as mensagens
 meta-description: Comunicar não só toma tempo; também muda a velocidade à qual sentimos que se espera que vivamos.

@@ -1,5 +1,6 @@
 ---
 lang: da
+key: the-part-of-reading-that-cannot-be-automated
 slug: den-del-af-læsningen-der-ikke-kan-automatiseres
 title: Den del af læsningen, der ikke kan automatiseres
 meta-description: I en tid med resuméer og øjeblikkelige svar er læsning stadig en måde at være i kontakt med sin egen tænkning.

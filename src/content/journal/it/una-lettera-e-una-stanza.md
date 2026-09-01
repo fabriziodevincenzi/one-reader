@@ -1,5 +1,6 @@
 ---
 lang: it
+key: a-letter-is-a-small-room
 slug: una-lettera-e-una-piccola-stanza
 title: Una lettera è una piccola stanza
 meta-description: La scrittura epistolare torna non solo come nostalgia, ma come modo di essere vicini senza essere sempre disponibili.

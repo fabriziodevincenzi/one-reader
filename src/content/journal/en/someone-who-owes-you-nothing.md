@@ -1,5 +1,6 @@
 ---
 lang: en
+key: someone-who-owes-you-nothing
 slug: someone-who-owes-you-nothing
 title: Someone who owes you nothing
 meta-description: A note on why a stranger's attention can feel clearer than a friend's.

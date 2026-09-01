@@ -1,5 +1,6 @@
 ---
 lang: es
+key: the-rush-that-arrives-with-messages
 slug: la-prisa-que-llega-con-los-mensajes
 title: La prisa que llega con los mensajes
 meta-description: Comunicarse no solo lleva tiempo; también cambia la velocidad a la que sentimos que se espera que vivamos.

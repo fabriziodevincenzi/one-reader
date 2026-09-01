@@ -1,5 +1,6 @@
 ---
 lang: de
+key: a-letter-is-a-small-room
 slug: ein-brief-ist-ein-kleiner-raum
 title: Ein Brief ist ein kleiner Raum
 meta-description: Briefe kehren nicht nur aus Nostalgie zurück, sondern als Möglichkeit, verbunden zu sein, ohne ständig verfügbar zu bleiben.

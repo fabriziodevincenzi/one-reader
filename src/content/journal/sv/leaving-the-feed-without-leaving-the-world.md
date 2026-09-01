@@ -1,5 +1,6 @@
 ---
 lang: sv
+key: leaving-the-feed-without-leaving-the-world
 slug: lamna-flodet-utan-att-lamna-varlden
 title: Lämna flödet utan att lämna världen
 meta-description: One Reader Journal.

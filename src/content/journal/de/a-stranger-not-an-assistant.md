@@ -1,5 +1,6 @@
 ---
 lang: de
+key: a-stranger-not-an-assistant
 slug: ein-fremder-kein-assistent
 title: Ein Fremder, kein Assistent
 meta-description: Un’analisi sulla comunicazione umana e privata.

@@ -1,5 +1,6 @@
 ---
 lang: da
+key: the-rush-that-arrives-with-messages
 slug: travlheden-der-kommer-med-beskeder
 title: Travlheden, der kommer med beskeder
 meta-description: Kommunikation tager ikke kun tid; den ændrer også det tempo, vi føler, at vi forventes at leve i.

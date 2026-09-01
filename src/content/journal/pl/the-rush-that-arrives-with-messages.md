@@ -1,5 +1,6 @@
 ---
 lang: pl
+key: the-rush-that-arrives-with-messages
 slug: pospiech-ktory-przychodzi-z-wiadomosciami
 title: Pośpiech, który przychodzi z wiadomościami
 meta-description: Komunikacja nie tylko zajmuje czas; zmienia też tempo, w jakim czujemy, że powinniśmy żyć.

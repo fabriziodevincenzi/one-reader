@@ -1,5 +1,6 @@
 ---
 lang: en
+key: why-leaving-social-media-feels-lonely
 slug: why-leaving-social-media-feels-lonely
 title: Why leaving social media can feel lonelier, not freer
 meta-description: "Leaving a social feed can bring calm — and also reveal the quieter forms of connection it had been carrying."

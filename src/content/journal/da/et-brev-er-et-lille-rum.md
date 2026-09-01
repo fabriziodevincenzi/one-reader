@@ -1,5 +1,6 @@
 ---
 lang: da
+key: a-letter-is-a-small-room
 slug: et-brev-er-et-lille-rum
 title: Et brev er et lille rum
 meta-description: Breve vender tilbage, ikke kun af nostalgi, men som en måde at være tæt på uden hele tiden at være tilgængelig.

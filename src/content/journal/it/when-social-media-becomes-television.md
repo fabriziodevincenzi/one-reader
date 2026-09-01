@@ -1,5 +1,6 @@
 ---
 lang: it
+key: when-social-media-becomes-television
 slug: quando-i-social-diventano-televisione
 title: Quando i social diventano televisione
 meta-description: "I social promettevano conversazioni, ma spesso funzionano come una televisione personalizzata: pochi producono e molti guardano."

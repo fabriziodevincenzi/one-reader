@@ -1,5 +1,6 @@
 ---
 lang: fr
+key: a-stranger-not-an-assistant
 slug: un-inconnu-pas-un-assistant
 title: Un inconnu, pas un assistant
 meta-description: Un’analisi sulla comunicazione umana e privata.

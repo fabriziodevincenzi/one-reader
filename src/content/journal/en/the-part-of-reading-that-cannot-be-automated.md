@@ -1,5 +1,6 @@
 ---
 lang: en
+key: the-part-of-reading-that-cannot-be-automated
 slug: the-part-of-reading-that-cannot-be-automated
 title: The part of reading that cannot be automated
 meta-description: In an age of summaries and instant answers, reading remains a way to stay in contact with your own thinking.
