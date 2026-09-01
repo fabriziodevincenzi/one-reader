@@ -15,6 +15,8 @@ export const TRANSACTIONAL_EMAIL_EVENTS = [
   'cadence_limited_daily',
   'letter_body_missing',
   'letter_too_long',
+  'letter_language_too_short',
+  'letter_language_unsupported',
   'attachments_removed',
   'opening_waiting_for_reader',
   'opening_failed',
@@ -195,6 +197,26 @@ function emailCopy(eventType: TransactionalEmailEvent, payload: Record<string, u
         preheader: `The current limit is ${characterLimit} characters.`,
         heading: 'Please make this letter a little shorter.',
         paragraphs: [`The current limit is ${characterLimit} characters. We did not truncate, keep, or forward your letter. Shorten it and send it again.`],
+      };
+    case 'letter_language_too_short':
+      return {
+        subject: 'Please add a little more to your letter',
+        preheader: 'We need a few more words to find a reader who can understand it.',
+        heading: 'Your letter is too short to identify its language.',
+        paragraphs: [
+          'We did not keep or forward this letter. Please write a few complete sentences, then send it again from this inbox.',
+          'That gives us enough text to find one reader who can understand the language you used.',
+        ],
+      };
+    case 'letter_language_unsupported':
+      return {
+        subject: 'We could not find a supported language for your letter',
+        preheader: 'This letter was not kept or forwarded.',
+        heading: 'We could not match this letter by language.',
+        paragraphs: [
+          'One Reader currently matches letters written in English, Italian, Spanish, French, German, Swedish, Danish, Norwegian, Ukrainian, Japanese, Polish, Portuguese, or Dutch.',
+          'We did not keep or forward this letter. Please write again in one of these languages.',
+        ],
       };
     case 'attachments_removed':
       return {

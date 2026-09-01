@@ -37,6 +37,7 @@ pnpm-debug.log*
 .vercel/*
 .netlify/*
 supabase/.temp/
+supabase/.branches/
 
 # testing
 test-results/

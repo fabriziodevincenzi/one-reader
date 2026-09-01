@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { hasCompatibleLanguage, isEligibleCandidate, weightedRandomCandidate } from '../src/lib/matching.ts';
+import { canReceiveLanguage, isEligibleCandidate, weightedRandomCandidate } from '../src/lib/matching.ts';
 
 const member = (overrides: Record<string, unknown> = {}) => ({
   id: 'member-a',
@@ -10,38 +10,38 @@ const member = (overrides: Record<string, unknown> = {}) => ({
   availableToReceive: true,
   receivedLast30Days: 0,
   blockedMemberIds: [],
-  languages: [{ code: 'en', willingToWrite: true, willingToRead: true }],
+  languages: [{ code: 'en', willingToRead: true }],
   ...overrides,
 });
 
-test('requires a compatible writable and readable language', () => {
-  assert.equal(hasCompatibleLanguage(member(), member({ id: 'member-b' })), true);
-  assert.equal(hasCompatibleLanguage(member(), member({
+test('matches the opening language only against the recipient receiving languages', () => {
+  assert.equal(canReceiveLanguage(member({ languages: [{ code: 'fr', willingToRead: true }] }), 'fr'), true);
+  assert.equal(canReceiveLanguage(member({
     id: 'member-b',
-    languages: [{ code: 'it', willingToWrite: true, willingToRead: true }],
-  })), false);
-  assert.equal(hasCompatibleLanguage(member(), member({
+    languages: [{ code: 'it', willingToRead: true }],
+  }), 'fr'), false);
+  assert.equal(canReceiveLanguage(member({
     id: 'member-b',
-    languages: [{ code: 'en', willingToWrite: true, willingToRead: false }],
-  })), false);
+    languages: [{ code: 'fr', willingToRead: false }],
+  }), 'fr'), false);
 });
 
 test('rejects self matches, blocks, unavailable members and recent pairs', () => {
   const sender = member();
-  assert.equal(isEligibleCandidate(sender, sender), false);
-  assert.equal(isEligibleCandidate(sender, member({ id: 'member-b', availableToReceive: false })), false);
-  assert.equal(isEligibleCandidate(member({ blockedMemberIds: ['member-b'] }), member({ id: 'member-b' })), false);
-  assert.equal(isEligibleCandidate(sender, member({ id: 'member-b' }), ['member-b']), false);
+  assert.equal(isEligibleCandidate(sender, sender, 'en'), false);
+  assert.equal(isEligibleCandidate(sender, member({ id: 'member-b', availableToReceive: false }), 'en'), false);
+  assert.equal(isEligibleCandidate(member({ blockedMemberIds: ['member-b'] }), member({ id: 'member-b' }), 'en'), false);
+  assert.equal(isEligibleCandidate(sender, member({ id: 'member-b' }), 'en', ['member-b']), false);
 });
 
 test('keeps 14–17 and adult members in separate pools', () => {
   const adult = member({ id: 'adult', agePool: 'adult' });
   const minor = member({ id: 'minor', agePool: 'minor' });
   const minorPeer = member({ id: 'minor-peer', agePool: 'minor' });
-  assert.equal(isEligibleCandidate(adult, minor), false);
-  assert.equal(isEligibleCandidate(minor, adult), false);
-  assert.equal(isEligibleCandidate(minor, minorPeer), true);
-  assert.equal(isEligibleCandidate(minor, member({ id: 'too-young', agePool: 'minor', ageEligible: false })), false);
+  assert.equal(isEligibleCandidate(adult, minor, 'en'), false);
+  assert.equal(isEligibleCandidate(minor, adult, 'en'), false);
+  assert.equal(isEligibleCandidate(minor, minorPeer, 'en'), true);
+  assert.equal(isEligibleCandidate(minor, member({ id: 'too-young', agePool: 'minor', ageEligible: false }), 'en'), false);
 });
 
 test('inverse-frequency selection gives a larger interval to less-used readers', () => {

@@ -1,4 +1,5 @@
 import { Resend } from 'npm:resend@6.18.1';
+import { franc } from 'npm:franc@6.2.0';
 import { createLetterActionToken } from '../_shared/action-token.ts';
 import { deriveAliasToken, encryptLetter, hashAliasToken } from '../_shared/crypto.ts';
 import {
@@ -14,6 +15,7 @@ import {
   enqueueTransactionalEmail,
   type EnqueueTransactionalEmailInput,
 } from '../_shared/transactional-outbox.ts';
+import { detectLetterLanguage } from '../_shared/language-detection.ts';
 
 type MailJob = {
   id: number;
@@ -167,6 +169,30 @@ async function processInbound(job: MailJob) {
     });
     throw new JobOutcome('The letter exceeds the character limit', 'complete');
   }
+
+  let openingLanguageCode: string | null = null;
+  if (route.kind === 'opening') {
+    const detection = detectLetterLanguage(prepared.text, franc);
+    if (detection.kind === 'too_short') {
+      await enqueueNotice({
+        eventType: 'letter_language_too_short',
+        recipientEmail: senderEmail,
+        memberId: sender.id,
+        dedupeKey: `letter-language-too-short/${providerEmailId}`,
+      });
+      throw new JobOutcome('The opening letter is too short to identify its language', 'complete');
+    }
+    if (detection.kind === 'unsupported') {
+      await enqueueNotice({
+        eventType: 'letter_language_unsupported',
+        recipientEmail: senderEmail,
+        memberId: sender.id,
+        dedupeKey: `letter-language-unsupported/${providerEmailId}`,
+      });
+      throw new JobOutcome('The opening letter language is not supported', 'complete');
+    }
+    openingLanguageCode = detection.languageCode;
+  }
   const encrypted = await encryptLetter(prepared.text, requireEnvironment('LETTER_CONTENT_KEK'));
   const attachmentCount = Math.min(email.attachments?.length ?? 0, 32_767);
 
@@ -181,6 +207,7 @@ async function processInbound(job: MailJob) {
       messageId: email.message_id ?? null,
       sender: sender as SenderProfile,
       attempt: job.attempts,
+      languageCode: openingLanguageCode,
     });
   } else if (!letter && route.kind === 'reply') {
     letter = await reserveReply({
@@ -292,6 +319,7 @@ async function reserveOpening(input: {
   messageId: string | null;
   sender: SenderProfile;
   attempt: number;
+  languageCode: string | null;
 }): Promise<ExistingLetter> {
   const admin = createAdminClient();
 
@@ -334,7 +362,7 @@ async function reserveOpening(input: {
     p_sender_id: input.senderId,
     p_provider_inbound_id: input.providerEmailId,
     p_subject: 'A letter for you',
-    p_language_code: null,
+    p_language_code: input.languageCode,
     p_sender_alias_hash: senderAliasHash,
     p_recipient_alias_hash: recipientAliasHash,
     p_content_ciphertext: input.encrypted.ciphertext,
@@ -609,7 +637,6 @@ async function ensureSenderCanWrite(
       .from('member_languages')
       .select('id')
       .eq('user_id', sender.id)
-      .eq('willing_to_write', true)
       .limit(1);
     if (error) throw error;
     if (!data?.length) eventType = 'profile_incomplete';

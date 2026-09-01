@@ -1,6 +1,5 @@
 export interface LanguageAbility {
   code: string;
-  willingToWrite: boolean;
   willingToRead: boolean;
 }
 
@@ -15,18 +14,18 @@ export interface MatchingMember {
   languages: LanguageAbility[];
 }
 
-export function hasCompatibleLanguage(sender: MatchingMember, candidate: MatchingMember) {
-  return sender.languages.some((senderLanguage) =>
-    candidate.languages.some(
-      (candidateLanguage) =>
-        senderLanguage.code === candidateLanguage.code &&
-        senderLanguage.willingToWrite &&
-        candidateLanguage.willingToRead,
-    ),
+export function canReceiveLanguage(candidate: MatchingMember, languageCode: string) {
+  return candidate.languages.some(
+    (candidateLanguage) => candidateLanguage.code === languageCode && candidateLanguage.willingToRead,
   );
 }
 
-export function isEligibleCandidate(sender: MatchingMember, candidate: MatchingMember, recentPairIds: string[] = []) {
+export function isEligibleCandidate(
+  sender: MatchingMember,
+  candidate: MatchingMember,
+  languageCode: string,
+  recentPairIds: string[] = [],
+) {
   return (
     sender.id !== candidate.id &&
     sender.ageEligible &&
@@ -37,7 +36,7 @@ export function isEligibleCandidate(sender: MatchingMember, candidate: MatchingM
     !sender.blockedMemberIds.includes(candidate.id) &&
     !candidate.blockedMemberIds.includes(sender.id) &&
     !recentPairIds.includes(candidate.id) &&
-    hasCompatibleLanguage(sender, candidate)
+    canReceiveLanguage(candidate, languageCode)
   );
 }
 

@@ -86,7 +86,7 @@ const currentYear = new Date().getUTCFullYear();
       <div>
         <p class="eyebrow mb-4">Practical details</p>
         <h2 id="profile-heading" class="text-3xl font-normal tracking-[-0.005em]">Delivery details</h2>
-        <p class="account-prose mt-3 text-sm leading-6 text-muted-foreground">Your email stays private. Your age group and languages help us make a suitable match.</p>
+        <p class="account-prose mt-3 text-sm leading-6 text-muted-foreground">Your email stays private. Your age group and the languages you can receive help us make a suitable match.</p>
       </div>
       <form class="grid max-w-2xl gap-5" data-profile-form>
         <div class="grid gap-2">
@@ -119,9 +119,10 @@ const currentYear = new Date().getUTCFullYear();
         </fieldset>
 
         <fieldset class="border-0 border-t border-border p-0 pt-5">
-          <legend class="sr-only">Languages for letters</legend>
+          <legend class="sr-only">Languages you can receive</legend>
           <div class="grid gap-4">
-            <p class="account-interface m-0 text-sm font-medium">Languages for letters</p>
+            <p class="account-interface m-0 text-sm font-medium">Languages you can receive</p>
+            <p class="m-0 text-xs leading-5 text-muted-foreground">When you send a first letter, we use the language detected in its text. Choose every language in which you would be happy to receive a letter.</p>
             <div class="grid gap-3" data-language-list></div>
             <template data-language-template>
               <div class="grid gap-3 sm:grid-cols-[minmax(0,28rem)_auto] sm:items-center" data-language-row>

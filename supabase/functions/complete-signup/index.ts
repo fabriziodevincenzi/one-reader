@@ -121,7 +121,6 @@ Deno.serve(async (request) => {
   const { error: languageError } = await admin.from('member_languages').upsert({
     user_id: user.id,
     language_code: languageCode,
-    willing_to_write: true,
     willing_to_read: true,
     sort_order: 0,
   }, { onConflict: 'user_id,language_code' });
