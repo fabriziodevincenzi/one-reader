@@ -21,6 +21,7 @@
 :root {
   --background: #ffffff;
   --surface: #faf8f3;
+  --card-surface: #dce3ef;
   --foreground: #1a1a18;
   --muted: #faf8f3;
   --muted-foreground: #4a4a45;
@@ -247,7 +248,7 @@ textarea {
 }
 
 .writer-card {
-  background: var(--surface);
+  background: var(--card-surface);
   min-block-size: 31rem;
 }
 

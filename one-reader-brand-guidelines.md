@@ -40,6 +40,7 @@ Nel codice, i passaggi narrativi usano `.brand-prose`; nell'Account usano la var
 | Muted ink | `#4a4a45` |
 | Rule | `#e4e1d8` |
 | Accent | `#26344e` |
+| Card surface | `#dce3ef` |
 
 L'identità è quasi monocroma: niente ombre, gradienti o colori decorativi. L'accento serve per orientamento e stati, non per riempire la pagina.
 
