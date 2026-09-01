@@ -49,8 +49,15 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 </Layout>
 
 <script>
-  import { supabase } from '../../lib/supabase';
   import { getTurnstile, loadTurnstile } from '../../lib/turnstile';
+
+  type SupabaseClient = typeof import('../../lib/supabase')['supabase'];
+
+  let supabasePromise: Promise<SupabaseClient> | null = null;
+  const loadSupabase = () => {
+    supabasePromise ??= import('../../lib/supabase').then(({ supabase }) => supabase);
+    return supabasePromise;
+  };
 
   const isChangeEmail = new URLSearchParams(window.location.search).get('mode') === 'change-email';
   const form = document.querySelector<HTMLFormElement>('[data-magic-link-form]')!;
@@ -146,7 +153,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   };
 
   const sendSignInLink = async () => {
-    if (!pendingEmail || !supabase || signInRequestInFlight) return;
+    if (!pendingEmail || signInRequestInFlight) return;
+    const supabase = await loadSupabase();
+    if (!supabase) {
+      restoreFields();
+      showNote('The sign-in service is not configured right now.', true);
+      return;
+    }
     if (hasRecentSignInRequest()) {
       resetCaptcha();
       showSuccessState('A sign-in link was just requested. Please use the most recent email, or wait a minute before requesting another.');
@@ -234,7 +247,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   });
 
   const verifyChangeEmailSession = async () => {
-    if (!isChangeEmail || !supabase) return;
+    if (!isChangeEmail) return;
+    const supabase = await loadSupabase();
+    if (!supabase) return;
     const { data, error } = await supabase.auth.getSession();
     if (error || !data.session) {
       fields?.classList.add('hidden');
@@ -245,27 +260,33 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
   void verifyChangeEmailSession();
 
-  supabase?.auth.onAuthStateChange((event, session) => {
-    const hasCallbackToken = window.location.hash.includes('access_token');
-    if (session && (event === 'SIGNED_IN' || (event === 'INITIAL_SESSION' && hasCallbackToken))) {
-      if (hasCallbackToken) window.history.replaceState({}, document.title, '/sign-in/');
-      if (!isChangeEmail) window.location.assign('/member/');
-    }
-  });
+  if (window.location.hash.includes('access_token')) {
+    void loadSupabase().then((supabase) => {
+      supabase?.auth.onAuthStateChange((event, session) => {
+        if (session && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
+          window.history.replaceState({}, document.title, '/sign-in/');
+          if (!isChangeEmail) window.location.assign('/member/');
+        }
+      });
+    });
+  }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const email = String(new FormData(form).get('email') || '').trim().toLowerCase();
-    if (!email || !supabase) {
-      if (!supabase) showNote('Supabase is not configured in this environment.', true);
-      return;
-    }
+    if (!email) return;
 
     const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
     if (submitButton) submitButton.disabled = true;
     showNote(isChangeEmail ? 'Sending the confirmation…' : 'Complete the security check to continue.');
 
     if (isChangeEmail) {
+      const supabase = await loadSupabase();
+      if (!supabase) {
+        if (submitButton) submitButton.disabled = false;
+        showNote('The sign-in service is not configured right now.', true);
+        return;
+      }
       const { data } = await supabase.auth.getSession();
       if (!data.session) {
         if (submitButton) submitButton.disabled = false;

@@ -248,6 +248,13 @@ textarea {
 
 .writer-card {
   background: var(--surface);
+  min-block-size: 31rem;
+}
+
+@media (min-width: 640px) {
+  .writer-card {
+    min-block-size: 26rem;
+  }
 }
 
 @media (min-width: 561px) {

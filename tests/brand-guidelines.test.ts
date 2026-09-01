@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 
 const accountPage = readFileSync(new URL('../src/pages/member/index.astro', import.meta.url), 'utf8');
+const homePage = readFileSync(new URL('../src/components/HomePage.astro', import.meta.url), 'utf8');
+const signInPage = readFileSync(new URL('../src/pages/sign-in/index.astro', import.meta.url), 'utf8');
 const globalStyles = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
 const socialCard = readFileSync(new URL('../src/pages/og/[slug].png.ts', import.meta.url), 'utf8');
 const sourceRoot = fileURLToPath(new URL('../src', import.meta.url));
@@ -42,6 +44,19 @@ test('identity styles contain no active legacy font or decorative effects', () =
   assert.doesNotMatch(globalStyles, /DM Sans|DM Mono|Libre Baskerville/);
   assert.doesNotMatch(globalStyles, /linear-gradient|box-shadow/);
   assert.match(globalStyles, /\.writer-card \{\s*background: var\(--surface\)/);
+});
+
+test('public entry pages defer the Supabase client until an auth interaction', () => {
+  for (const source of [homePage, signInPage]) {
+    assert.doesNotMatch(source, /import \{ supabase \} from/);
+    assert.match(source, /import\([^)]*lib\/supabase[^)]*\)/);
+  }
+});
+
+test('the home page reserves space for async and font-dependent content', () => {
+  assert.match(globalStyles, /\.brand-home-hero \.display \{\s*min-block-size:/);
+  assert.match(globalStyles, /\.brand-home-intro \{\s*min-block-size:/);
+  assert.match(globalStyles, /\.writer-card \{[\s\S]*?min-block-size:/);
 });
 
 test('journal social cards use the current typography and palette', () => {

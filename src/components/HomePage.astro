@@ -140,8 +140,15 @@ const steps = [
 </Layout>
 
 <script>
-  import { supabase } from '../lib/supabase';
   import { getTurnstile, loadTurnstile } from '../lib/turnstile';
+
+  type SupabaseClient = typeof import('../lib/supabase')['supabase'];
+
+  let supabasePromise: Promise<SupabaseClient> | null = null;
+  const loadSupabase = () => {
+    supabasePromise ??= import('../lib/supabase').then(({ supabase }) => supabase);
+    return supabasePromise;
+  };
 
   const form = document.querySelector<HTMLFormElement>('[data-start-free-form]');
   const note = document.querySelector<HTMLElement>('[data-start-free-note]');
@@ -214,6 +221,7 @@ const steps = [
   });
 
   const finishFreeSignup = async (session: { access_token: string; user?: { user_metadata?: Record<string, unknown> } }) => {
+    const supabase = await loadSupabase();
     if (!supabase) return;
     const rawIntent = window.localStorage.getItem(intentKey);
     let intent: Record<string, unknown> | null = null;
@@ -245,16 +253,24 @@ const steps = [
     window.location.assign('/welcome/');
   };
 
-  supabase?.auth.onAuthStateChange((event, session) => {
-    const hasCallbackToken = window.location.hash.includes('access_token');
-    if (session && hasCallbackToken && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
-      window.history.replaceState({}, document.title, '/welcome/');
-      window.setTimeout(() => void finishFreeSignup(session), 0);
-    }
-  });
+  if (window.location.hash.includes('access_token')) {
+    void loadSupabase().then((supabase) => {
+      supabase?.auth.onAuthStateChange((event, session) => {
+        if (session && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
+          window.history.replaceState({}, document.title, '/welcome/');
+          window.setTimeout(() => void finishFreeSignup(session), 0);
+        }
+      });
+    });
+  }
 
   const sendSignupRequest = async (data: FormData, email: string) => {
-    if (!form || !supabase) return;
+    if (!form) return;
+    const supabase = await loadSupabase();
+    if (!supabase) {
+      showNote('The free signup is not connected right now. Please try again shortly.', true);
+      return;
+    }
     const lastSubmittedAt = Number(window.localStorage.getItem(lastSignupKey) || '0');
     if (Date.now() - lastSubmittedAt < 60_000) {
       showNote('A confirmation link was just requested. Please wait a moment before trying again.', true);
@@ -326,10 +342,7 @@ const steps = [
     const data = new FormData(form);
     const email = String(data.get('email') || '').trim().toLowerCase();
     const honeypot = String(data.get('website') || '').trim();
-    if (!email || !supabase) {
-      showNote('The free signup is not connected right now. Please try again shortly.', true);
-      return;
-    }
+    if (!email) return;
     if (honeypot) return;
     if (captchaWidget && !captchaToken) {
       pendingSignup = data;
