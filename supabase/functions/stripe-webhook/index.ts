@@ -1,6 +1,7 @@
 import Stripe from 'npm:stripe@18.5.0';
 import { enqueueMembershipActivatedEmail, syncUpcomingRenewalEmail } from '../_shared/billing-email.ts';
 import { createAdminClient, errorMessage, jsonResponse, requireEnvironment } from '../_shared/runtime.ts';
+import { recordAnalyticsEvent } from '../_shared/analytics.ts';
 
 const stripeStatusToAccount = (status: Stripe.Subscription.Status) =>
   ['active', 'trialing'].includes(status) ? 'annual' : ['incomplete', 'past_due', 'unpaid'].includes(status) ? 'checkout_pending' : 'free';
@@ -41,6 +42,11 @@ Deno.serve(async (request) => {
           subscription_unit_amount: deleted ? null : item!.price.unit_amount ?? null,
         }).eq('id', userId);
         if (error) throw error;
+        try {
+          await recordAnalyticsEvent(admin, deleted ? 'subscription_cancelled' : 'subscription_started', { userId, source: 'product' });
+        } catch (analyticsError) {
+          console.warn('Could not record subscription analytics event', analyticsError);
+        }
         const recipientEmail = await findMemberEmail(admin, userId);
         if (recipientEmail) {
           await syncUpcomingRenewalEmail(admin, {
@@ -77,6 +83,11 @@ Deno.serve(async (request) => {
           subscription_unit_amount: item.price.unit_amount ?? null,
         }).eq('id', userId);
         if (error) throw error;
+        try {
+          await recordAnalyticsEvent(admin, 'subscription_started', { userId, source: 'product' });
+        } catch (analyticsError) {
+          console.warn('Could not record subscription analytics event', analyticsError);
+        }
         const recipientEmail = await findMemberEmail(admin, userId);
         if (recipientEmail) {
           const emailInput = {
