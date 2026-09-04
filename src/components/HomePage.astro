@@ -10,13 +10,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 const steps = [
   {
     icon: 'write',
-    title: 'Write a pen-pal letter',
-    body: 'Write anonymously to a possible pen pal, without exposing your real email address.',
+    title: 'Write a letter',
+    body: 'Write anonymously to someone who could become a pen pal, without exposing your real email address.',
   },
   {
     icon: 'match',
     title: 'We find one reader',
-    body: 'We choose one person who can read your language and might become your pen pal. Your address stays private.',
+    body: 'We choose one person who can read your language. Your address stays private.',
   },
   {
     icon: 'inbox',
@@ -38,9 +38,9 @@ const steps = [
   <main id="main-content" class="brand-page brand-home">
     <section class="brand-home-hero border-b border-border py-16 sm:py-24 lg:py-32">
       <div class="shell">
-        <h1 class="display balance">A modern pen pal, one letter at a time.</h1>
+        <h1 class="display balance">One letter. One reader. Maybe a reply.</h1>
         <p class="brand-home-intro brand-prose mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
-          Write anonymously to someone you do not know, from the quiet of your own inbox. If they reply, a private pen-pal correspondence can begin. Your real email address stays hidden. No profiles to perform for. No feed to keep up with.
+          A pen-pal service for people who want correspondence without profiles, followers, or a public archive. Write anonymously to someone you do not know, from the quiet of your own inbox. Your real email address stays hidden.
         </p>
         <div class="brand-home-actions mt-9 flex flex-wrap items-center gap-3">
           <a class={buttonVariants({ size: 'large' })} href="#start-free">Start free</a>
