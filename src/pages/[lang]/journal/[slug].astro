@@ -38,7 +38,8 @@ const { Content } = await render(entry);
 const slug = getJournalSlug(entry);
 const publishedAt = getJournalDate(entry);
 const articleUrl = new URL(`/${lang}/journal/${slug}/`, Astro.site ?? Astro.url.origin);
-const socialImage = new URL(`/og/${slug}.png`, Astro.site ?? Astro.url.origin).toString();
+const socialImage = new URL(entry.data.image ?? `/og/${slug}.png`, Astro.site ?? Astro.url.origin).toString();
+const featuredImage = entry.data.image ? new URL(entry.data.image, Astro.site ?? Astro.url.origin).pathname : undefined;
 const alternateLocales = Object.fromEntries(
   allEntries
     .filter((candidate) => getJournalKey(candidate) === getJournalKey(entry))
@@ -87,6 +88,16 @@ const articleStructuredData = {
     </header>
 
     <article class="prose-journal mx-auto mt-16 max-w-[42rem] border-t border-border pt-12 sm:mt-20 sm:pt-16">
+      {featuredImage && (
+        <figure class="not-prose mb-12 overflow-hidden rounded-sm">
+          <img
+            class="aspect-[16/10] w-full object-cover"
+            src={featuredImage}
+            alt={entry.data.imageAlt ?? ''}
+            loading="eager"
+          />
+        </figure>
+      )}
       <Content />
       <div class="mt-14 flex flex-wrap items-center justify-between gap-5 border-t border-border pt-6">
         <a class="text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground" href={`/${lang}/journal/`}>Back to Journal</a>
