@@ -21,7 +21,7 @@ export const GET: APIRoute = async ({ site }) => {
 <rss version="2.0">
   <channel>
     <title>One Reader Journal</title>
-    <description>Notes on writing to strangers, paying attention, and finding a way to begin.</description>
+    <description>Notes on pen pals, writing to strangers, paying attention, and finding a way to begin.</description>
     <link>${baseUrl}/journal/</link>
     <language>en</language>${items}
   </channel>
