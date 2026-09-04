@@ -4,7 +4,7 @@ key: person-at-the-edge-of-the-room
 slug: person-at-the-edge-of-the-room
 title: The Person at the Edge of the Room
 meta-description: "Why One Reader exists: a side door for the people who want to say something online without speaking into a crowd."
-publishedAt: '2026-09-04'
+publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min read
 image: /images/person-edge-concert.png

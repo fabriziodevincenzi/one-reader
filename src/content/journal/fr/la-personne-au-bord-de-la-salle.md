@@ -4,7 +4,7 @@ key: person-at-the-edge-of-the-room
 slug: la-personne-au-bord-de-la-salle
 title: La personne au bord de la salle
 meta-description: "Pourquoi One Reader existe : une porte de côté pour celles et ceux qui veulent dire quelque chose en ligne sans parler à une foule."
-publishedAt: '2026-09-04'
+publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min de lecture
 image: /images/person-edge-concert.png

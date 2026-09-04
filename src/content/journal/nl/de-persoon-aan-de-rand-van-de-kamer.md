@@ -4,7 +4,7 @@ key: person-at-the-edge-of-the-room
 slug: de-persoon-aan-de-rand-van-de-kamer
 title: De persoon aan de rand van de kamer
 meta-description: "Waarom One Reader bestaat: een zijdeur voor mensen die online iets willen zeggen zonder een menigte toe te spreken."
-publishedAt: '2026-09-04'
+publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min lezen
 image: /images/person-edge-concert.png

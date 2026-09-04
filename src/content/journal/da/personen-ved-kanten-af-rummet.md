@@ -4,7 +4,7 @@ key: person-at-the-edge-of-the-room
 slug: personen-ved-kanten-af-rummet
 title: Personen ved kanten af rummet
 meta-description: "Hvorfor One Reader findes: en sidedør for mennesker, der vil sige noget online uden at tale ind i en menneskemængde."
-publishedAt: '2026-09-04'
+publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min læsning
 image: /images/person-edge-concert.png

@@ -4,7 +4,7 @@ key: person-at-the-edge-of-the-room
 slug: die-person-am-rand-des-raums
 title: Die Person am Rand des Raums
 meta-description: "Warum es One Reader gibt: eine Seitentür für Menschen, die online etwas sagen möchten, ohne in eine Menge hineinzusprechen."
-publishedAt: '2026-09-04'
+publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 Min. Lesezeit
 image: /images/person-edge-concert.png
