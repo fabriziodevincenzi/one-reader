@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.55.0';
+import { recordAnalyticsEvent } from '../_shared/analytics.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -178,6 +179,24 @@ Deno.serve(async (request) => {
     if (payload.journalOptIn) await recordConsent('journal_marketing', true);
   } catch (error) {
     return response({ error: error instanceof Error ? error.message : 'Could not record consent' }, 500);
+  }
+
+  // Analytics is best-effort: a reporting outage must never block signup.
+  try {
+    await recordAnalyticsEvent(admin, 'signup_completed', {
+      userId: user.id,
+      source: source === 'waitlist' ? 'product' : 'direct',
+      metadata: { plan: nextPlan, waitlist: source === 'waitlist' },
+    });
+  } catch (error) {
+    console.warn('Could not record signup analytics event', error);
+  }
+  if (user.email_confirmed_at) {
+    try {
+      await recordAnalyticsEvent(admin, 'email_verified', { userId: user.id, source: 'product' });
+    } catch (error) {
+      console.warn('Could not record email verification analytics event', error);
+    }
   }
 
   return response({ ok: true, status: nextStatus, alreadyWaitlisted });

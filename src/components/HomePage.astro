@@ -10,13 +10,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 const steps = [
   {
     icon: 'write',
-    title: 'Write a letter',
-    body: 'Write anonymously to someone you do not know, without exposing your real email address.',
+    title: 'Write a pen-pal letter',
+    body: 'Write anonymously to a possible pen pal, without exposing your real email address.',
   },
   {
     icon: 'match',
-    title: 'We find a reader',
-    body: 'We choose one person who can read your language. Your address stays private.',
+    title: 'We find one reader',
+    body: 'We choose one person who can read your language and might become your pen pal. Your address stays private.',
   },
   {
     icon: 'inbox',
@@ -32,15 +32,15 @@ const steps = [
 
 ---
 
-<Layout title="One Reader" description="A private correspondence club where one letter reaches one unknown reader. No profiles, no feed, no judgment.">
+<Layout title="One Reader" description="A private pen-pal correspondence club where one letter reaches one unknown reader. No profiles, no feed, no judgment.">
   <SiteHeader showPricing />
 
   <main id="main-content" class="brand-page brand-home">
     <section class="brand-home-hero border-b border-border py-16 sm:py-24 lg:py-32">
       <div class="shell">
-        <h1 class="display balance">One letter. One reader. Maybe a reply.</h1>
+        <h1 class="display balance">A modern pen pal, one letter at a time.</h1>
         <p class="brand-home-intro brand-prose mt-8 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
-          Write anonymously to someone you do not know, from the quiet of your own inbox. Your real email address stays hidden. No profiles to perform for. No feed to keep up with.
+          Write anonymously to someone you do not know, from the quiet of your own inbox. If they reply, a private pen-pal correspondence can begin. Your real email address stays hidden. No profiles to perform for. No feed to keep up with.
         </p>
         <div class="brand-home-actions mt-9 flex flex-wrap items-center gap-3">
           <a class={buttonVariants({ size: 'large' })} href="#start-free">Start free</a>
@@ -80,7 +80,7 @@ const steps = [
           <form class="writer-card relative overflow-hidden rounded-2xl p-7 sm:p-10" data-start-free-form>
             <div data-start-free-fields>
               <h3 class="text-3xl font-normal leading-tight tracking-[-0.005em] sm:text-4xl">Create your free Reader account</h3>
-              <p class="brand-prose mt-5 max-w-2xl leading-7 text-muted-foreground">Your email stays private from whoever you write to. We’ll use your address to create your account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>
+              <p class="brand-prose mt-5 max-w-2xl leading-7 text-muted-foreground">Your email stays private from the possible pen pal you write to. We’ll use your address to create your account, verify your mailbox and operate the service. Optional Journal messages are separate and can be withdrawn later.</p>
               <div class="mt-8">
                 <label class="mb-2 block text-sm font-medium" for="start-free-email">Email address</label>
                 <div class="grid gap-3 sm:grid-cols-[1fr_auto]">
@@ -123,7 +123,7 @@ const steps = [
           <h2 class="section-title">Everything important stays in your inbox.</h2>
         </div>
         <div class="self-end">
-          <p class="brand-prose text-lg leading-8 text-muted-foreground">Your private area is for membership, language details, consents, privacy requests, and account deletion. The correspondence itself remains where it belongs — in your email.</p>
+          <p class="brand-prose text-lg leading-8 text-muted-foreground">Your private area is for membership, language details, consents, privacy requests, and account deletion. The pen-pal correspondence itself remains where it belongs — in your email.</p>
           <a class={buttonVariants({ variant: 'outline', size: 'small' }) + ' mt-6'} href="/sign-in/">Log in to your account</a>
         </div>
       </div>
