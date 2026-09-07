@@ -17,4 +17,4 @@ Eine Nachricht mit klarem Zweck ist etwas anderes als eine endlose Folge von Emp
 
 Das Ziel ist nicht der perfekte Nutzer, sondern ein digitaler Raum, den man aus einem Grund betritt und wieder verlassen kann.
 
-Quellen: [Studie zu absichtsvoller und passiver Nutzung](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Was am Lesen nicht automatisiert werden kann](/journal/the-part-of-reading-that-cannot-be-automated/).
+Quellen: [Studie zu absichtsvoller und passiver Nutzung](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Was am Lesen nicht automatisiert werden kann](/de/journal/der-teil-des-lesens-der-nicht-automatisiert-werden-kann/).

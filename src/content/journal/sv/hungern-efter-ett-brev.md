@@ -17,4 +17,4 @@ Ett brev har en avgränsad mottagare, visar inte om det har öppnats och kräver
 
 Vissa relationer behöver lägre hastighet för att bli mer närvarande.
 
-Källa: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [Att lämna flödet utan att lämna världen](/journal/leaving-the-feed-without-leaving-the-world/).
+Källa: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [Att lämna flödet utan att lämna världen](/sv/journal/lamna-flodet-utan-att-lamna-varlden/).

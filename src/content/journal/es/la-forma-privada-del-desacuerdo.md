@@ -17,7 +17,7 @@ Escribir permite revisar una idea, pero también congela una frase y puede conve
 
 El intercambio privado tiene otra geometría. Hay menos incentivo para ganar una sala y más espacio para admitir que la primera reacción era incompleta. La privacidad no garantiza generosidad, pero elimina una fuerza que hace que cambiar parezca una derrota.
 
-One Reader empieza con ese límite: una persona escribe a una desconocida. No promete acuerdo ni elimina la incomodidad. Solo permite que el desacuerdo siga siendo un encuentro. Véase también [Un desconocido, no un asistente](/journal/a-stranger-not-an-assistant/).
+One Reader empieza con ese límite: una persona escribe a una desconocida. No promete acuerdo ni elimina la incomodidad. Solo permite que el desacuerdo siga siendo un encuentro. Véase también [Un desconocido, no un asistente](/es/journal/un-desconocido-no-un-asistente/).
 
 El futuro de la conversación civil quizá dependa menos de enseñar a todos a discutir mejor que de ofrecer más lugares donde los argumentos puedan empezar en privado.
 

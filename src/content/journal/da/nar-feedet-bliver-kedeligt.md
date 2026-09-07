@@ -13,7 +13,7 @@ Folk forlader ikke sociale medier kun på grund af mængden af indhold. De går 
 
 Et studie i *BMC Psychology* kalder det overbelastning af informationslighed: brugere kan trække sig, når informationen bliver for ens. [Studiet](https://link.springer.com/article/10.1186/s40359-026-04384-x) forbinder oplevelsen med tilbagetrækning fra sociale netværk. Man kan stadig ønske kontakt og kultur uden at ønske det feed, der påstår at levere dem.
 
-Feedet fjerner pausen mellem tingene og giver os mere af det, der allerede fangede os. Et brev er anderledes: en afsender har en grund til at skrive, og et svar kommer fra en person, der valgte at give tid. One Reader skaber dette begrænsede rum. Se også [At forlade feedet uden at forlade verden](/journal/leaving-the-feed-without-leaving-the-world/).
+Feedet fjerner pausen mellem tingene og giver os mere af det, der allerede fangede os. Et brev er anderledes: en afsender har en grund til at skrive, og et svar kommer fra en person, der valgte at give tid. One Reader skaber dette begrænsede rum. Se også [At forlade feedet uden at forlade verden](/da/journal/forlad-feedet-uden-at-forlade-verden/).
 
 Spørgsmålet er ikke, om vi kan holde endnu et feed ud, men om vi vil have et digitalt liv bygget af ting, der ligner det, der allerede fastholdt os.
 

@@ -17,4 +17,4 @@ Privébrieven beginnen ergens anders. Niemand hoeft eerst zichtbaar te worden vo
 
 Een relatie wordt niet echter omdat meer mensen haar zien. Soms wordt zij echter wanneer minder mensen meekijken.
 
-Bronnen: [onderzoek naar maker-zichtbaarheid](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [Een vreemde, geen assistent](/journal/a-stranger-not-an-assistant/).
+Bronnen: [onderzoek naar maker-zichtbaarheid](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [Een vreemde, geen assistent](/nl/journal/een-vreemde-geen-assistent/).

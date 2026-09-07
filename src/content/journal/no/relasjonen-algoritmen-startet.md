@@ -17,4 +17,4 @@ Brev begynner annerledes. En person trenger ikke først å bli synlig for tusenv
 
 En relasjon blir ikke mer virkelig fordi flere ser den. Noen ganger blir den mer virkelig når færre følger med.
 
-Kilder: [Studien av skaperes eksponering](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [En fremmed, ikke en assistent](/journal/a-stranger-not-an-assistant/).
+Kilder: [Studien av skaperes eksponering](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [En fremmed, ikke en assistent](/no/journal/en-fremmed-ikke-en-assistent/).

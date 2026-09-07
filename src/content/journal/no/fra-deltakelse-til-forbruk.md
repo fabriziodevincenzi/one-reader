@@ -17,4 +17,4 @@ Feedet gjør skapere og influensere mer synlige enn vanlige deltakere. En studie
 
 One Reader begynner et annet sted. Et brev har ingen rekkeviddemåling. Det er én person som skriver til én annen. Spørsmålet er hvilken sosialitet som gjenstår når de fleste har blitt tilskuere.
 
-Kilder: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [Studien av skapere](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Et brev er et lite rom](/journal/a-letter-is-a-small-room/).
+Kilder: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [Studien av skapere](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Et brev er et lite rom](/no/journal/et-brev-er-et-lite-rom/).

@@ -17,4 +17,4 @@ Flödet gör kreatörer och influencers synligare än vanliga deltagare. En stud
 
 One Reader börjar någon annanstans. Ett brev har ingen räckviddsmätning. En person skriver till en annan. Frågan är vilken socialitet som återstår när de flesta har blivit åskådare.
 
-Källor: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [studien om kreatörer](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ett brev är ett litet rum](/journal/a-letter-is-a-small-room/).
+Källor: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [studien om kreatörer](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ett brev är ett litet rum](/sv/journal/ett-brev-ar-ett-litet-rum/).

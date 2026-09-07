@@ -15,7 +15,7 @@ Une étude de *BMC Psychology* parle de surcharge de similarité informationnell
 
 Cela explique pourquoi l'on peut encore désirer le contact et la culture sans vouloir le fil qui prétend les fournir. Lorsque la pensée d'un ami, la performance d'un créateur et la campagne d'une marque arrivent dans le même flux, l'abondance devient répétition.
 
-Le fil supprime la pause entre les choses. Il apprend ce qui retient notre attention et en fournit davantage. La pertinence devient alors une clôture. [Quitter le fil sans quitter le monde](/journal/leaving-the-feed-without-leaving-the-world/) demande ce qu'une telle sortie peut préserver.
+Le fil supprime la pause entre les choses. Il apprend ce qui retient notre attention et en fournit davantage. La pertinence devient alors une clôture. [Quitter le fil sans quitter le monde](/fr/journal/quitter-le-fil-sans-quitter-le-monde/) demande ce qu'une telle sortie peut préserver.
 
 Une lettre fonctionne autrement : un expéditeur a une raison précise d'écrire et une réponse vient d'une personne qui a choisi de donner du temps. One Reader ne propose pas davantage de contenu à consommer, mais un espace limité où une personne écrit à une autre.
 

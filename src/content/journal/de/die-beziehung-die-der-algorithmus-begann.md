@@ -17,4 +17,4 @@ Private Briefe beginnen anders. Niemand muss zuerst für Tausende sichtbar werde
 
 Eine Beziehung wird nicht wirklicher, weil mehr Menschen sie sehen. Manchmal wird sie wirklicher, wenn weniger zuschauen.
 
-Quellen: [Studie zur Creator-Sichtbarkeit](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [Ein Fremder, kein Assistent](/journal/a-stranger-not-an-assistant/).
+Quellen: [Studie zur Creator-Sichtbarkeit](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [Ein Fremder, kein Assistent](/de/journal/ein-fremder-kein-assistent/).

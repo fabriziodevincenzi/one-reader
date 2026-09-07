@@ -17,4 +17,4 @@ De feed maakt makers en influencers zichtbaarder dan gewone deelnemers. Een stud
 
 One Reader begint anders. Een brief heeft geen bereikstatistiek. Eén persoon schrijft aan één ander. De vraag is welke vorm van sociale verbondenheid overblijft wanneer de meesten toeschouwers zijn geworden.
 
-Bronnen: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [studie over makers](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Een brief is een kleine kamer](/journal/a-letter-is-a-small-room/).
+Bronnen: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [studie over makers](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Een brief is een kleine kamer](/nl/journal/een-brief-is-een-kleine-kamer/).

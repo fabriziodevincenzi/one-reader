@@ -17,7 +17,7 @@ L'écrit donne le temps de réfléchir, mais il fige aussi une phrase et peut tr
 
 L'échange privé a une autre géométrie. Il laisse davantage de place pour reconnaître qu'une première réaction était incomplète. La vie privée ne garantit pas la générosité, mais elle retire une force qui fait du changement une défaite.
 
-One Reader commence par cette limite : une personne écrit à une inconnue. Cela ne promet ni accord ni absence de maladresse. Cela permet seulement au désaccord de rester une rencontre. Voir aussi [Un inconnu, pas un assistant](/journal/a-stranger-not-an-assistant/).
+One Reader commence par cette limite : une personne écrit à une inconnue. Cela ne promet ni accord ni absence de maladresse. Cela permet seulement au désaccord de rester une rencontre. Voir aussi [Un inconnu, pas un assistant](/fr/journal/un-inconnu-pas-un-assistant/).
 
 La conversation civile dépend peut-être moins de meilleurs arguments que de lieux où les arguments peuvent commencer en privé.
 
