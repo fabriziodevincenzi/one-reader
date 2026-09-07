@@ -35,6 +35,7 @@ const canonicalPaths = new Set(articles.map(({ locale, slug }) => articlePath(lo
 const redirects = new Map([
   ['/blog/', '/journal/'],
   ['/blog/what-an-inbox-can-still-be-for/', '/journal/what-an-inbox-can-still-be-for/'],
+  ['/launch/', '/'],
   ['/waitlist/', '/'],
 ]);
 
