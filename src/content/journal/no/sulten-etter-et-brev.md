@@ -17,4 +17,4 @@ Et brev har en avgrenset mottaker. Det viser ikke om det er åpnet og krever ikk
 
 Noen relasjoner trenger lavere hastighet for å bli mer nærværende.
 
-Kilde: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [Å forlate feeden uten å forlate verden](/journal/leaving-the-feed-without-leaving-the-world/).
+Kilde: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [Å forlate feeden uten å forlate verden](/no/journal/forlate-feeden-uten-a-forlate-verden/).

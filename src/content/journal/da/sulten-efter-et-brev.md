@@ -17,4 +17,4 @@ Et brev har en afgrænset modtager. Det viser ikke, om det er åbnet, og det kr�
 
 Nogle relationer har brug for mindre hastighed for at blive mere nærværende.
 
-Kilde: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [At forlade feedet uden at forlade verden](/journal/leaving-the-feed-without-leaving-the-world/).
+Kilde: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [At forlade feedet uden at forlade verden](/da/journal/forlad-feedet-uden-at-forlade-verden/).

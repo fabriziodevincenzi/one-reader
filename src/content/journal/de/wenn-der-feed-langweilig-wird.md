@@ -15,7 +15,7 @@ Eine Studie in *BMC Psychology* beschreibt dies als Überlastung durch Informati
 
 Das erklärt, warum jemand weiterhin Kontakt und Kultur wünschen kann, aber nicht mehr den Feed, der beides angeblich liefert. Ein voller Feed muss nicht lebendig sein. Wenn der Gedanke eines Freundes, die Inszenierung eines Creators und die Kampagne einer Marke im selben endlosen Strom erscheinen, wird Vielfalt in bloße Sättigung verwandelt.
 
-Ein Feed entfernt die Pause zwischen den Dingen. Er liefert mehr von dem, was bereits Aufmerksamkeit gehalten hat. Relevanz wird so zu einer Einfriedung: Das System kennt unsere Klicks und gibt uns weniger Gründe, etwas anderes zu entdecken. [Leaving the feed without leaving the world](/journal/leaving-the-feed-without-leaving-the-world/) beschreibt, was eine solche Abkehr bewahren kann.
+Ein Feed entfernt die Pause zwischen den Dingen. Er liefert mehr von dem, was bereits Aufmerksamkeit gehalten hat. Relevanz wird so zu einer Einfriedung: Das System kennt unsere Klicks und gibt uns weniger Gründe, etwas anderes zu entdecken. [Leaving the feed without leaving the world](/de/journal/den-feed-verlassen-ohne-die-welt-zu-verlassen/) beschreibt, was eine solche Abkehr bewahren kann.
 
 Ein Brief funktioniert anders. Er hat einen Absender mit einem bestimmten Grund zu schreiben; eine Antwort kommt von einer Person, die sich entschieden hat, Zeit zu geben. One Reader verspricht nicht mehr Dinge zum Konsumieren, sondern einen begrenzten Raum, in dem eine Person einer anderen schreibt.
 

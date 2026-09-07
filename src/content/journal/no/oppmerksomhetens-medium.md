@@ -17,4 +17,4 @@ En melding med et klart formål er noe annet enn en endeløs rekke anbefalinger.
 
 Målet er ikke å bli en perfekt bruker, men å kunne gå inn i et digitalt rom med en grunn og gå ut igjen.
 
-Kilder: [Studien om tilsiktet og passiv teknologibruk](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Den delen av lesingen som ikke kan automatiseres](/journal/the-part-of-reading-that-cannot-be-automated/).
+Kilder: [Studien om tilsiktet og passiv teknologibruk](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Den delen av lesingen som ikke kan automatiseres](/no/journal/den-delen-av-lesingen-som-ikke-kan-automatiseres/).

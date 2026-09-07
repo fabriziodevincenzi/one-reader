@@ -13,6 +13,6 @@ Uenighet blir destruktiv når den må skje i en forestillings hastighet og skala
 
 En studie i *Nature Communications* fant at muntlig uenighet var mer konstruktiv enn skriftlig i situasjonene som ble undersøkt. [Forskningen](https://doi.org/10.1038/s41467-026-71669-5) viser at mediet endrer samtalens vilkår.
 
-En privat utveksling gir mer plass til å endre en første reaksjon. Privathet garanterer ikke vennlighet, men reduserer presset for alltid å ha rett. One Reader begynner med denne grensen: én person skriver til en fremmed. Se også [En fremmed, ikke en assistent](/journal/a-stranger-not-an-assistant/).
+En privat utveksling gir mer plass til å endre en første reaksjon. Privathet garanterer ikke vennlighet, men reduserer presset for alltid å ha rett. One Reader begynner med denne grensen: én person skriver til en fremmed. Se også [En fremmed, ikke en assistent](/no/journal/en-fremmed-ikke-en-assistent/).
 
 Kilder: [Nature Communications](https://doi.org/10.1038/s41467-026-71669-5); [University of British Columbia](https://news.ubc.ca/2026/04/texting-with-a-stranger-beats-a-chatbot-at-easing-loneliness/).

@@ -17,4 +17,4 @@ Er hat einen begrenzten Empfänger, zeigt nicht, ob er geöffnet wurde, und verl
 
 Manche Beziehungen brauchen weniger Geschwindigkeit, um gegenwärtiger zu werden.
 
-Quelle: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [Den Feed verlassen, ohne die Welt zu verlassen](/journal/leaving-the-feed-without-leaving-the-world/).
+Quelle: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [Den Feed verlassen, ohne die Welt zu verlassen](/de/journal/den-feed-verlassen-ohne-die-welt-zu-verlassen/).

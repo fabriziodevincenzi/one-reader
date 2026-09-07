@@ -17,4 +17,4 @@ Privata brev börjar annorlunda. Ingen behöver först bli synlig för tusentals
 
 En relation blir inte verkligare för att fler ser den. Ibland blir den verkligare när färre tittar.
 
-Källor: [studien om kreatörers synlighet](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [En främling, inte en assistent](/journal/a-stranger-not-an-assistant/).
+Källor: [studien om kreatörers synlighet](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [En främling, inte en assistent](/sv/journal/en-framling-inte-en-assistent/).

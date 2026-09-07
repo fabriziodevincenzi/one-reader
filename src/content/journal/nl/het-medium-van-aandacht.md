@@ -17,4 +17,4 @@ Een bericht met een duidelijk doel is iets anders dan een eindeloze reeks aanbev
 
 Het doel is niet een perfecte gebruiker, maar een digitale ruimte die je met een reden betreedt en weer kunt verlaten.
 
-Bronnen: [onderzoek naar doelgericht en passief gebruik](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Het deel van lezen dat niet geautomatiseerd kan worden](/journal/the-part-of-reading-that-cannot-be-automated/).
+Bronnen: [onderzoek naar doelgericht en passief gebruik](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Het deel van lezen dat niet geautomatiseerd kan worden](/nl/journal/het-deel-van-lezen-dat-niet-geautomatiseerd-kan-worden/).

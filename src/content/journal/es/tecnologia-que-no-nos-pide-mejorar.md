@@ -15,7 +15,7 @@ La posibilidad más interesante es una tecnología que no pide mejorar. Un artí
 
 Un temporizador puede ayudar a quedarse quieto, pero también convertir la quietud en un objetivo. Una app recuerda respirar y transforma la respiración en una notificación. Un proyecto de TU Wien estudia una caja con llave para crear distancia de los dispositivos; su valor está en la fricción, no en una puntuación. [El proyecto](https://repositum.tuwien.at/handle/20.500.12708/227618) vuelve concreta la pregunta.
 
-La tecnología lenta no es solo tecnología con menos alertas. Parte de otra idea de la persona: el tiempo no tiene que medirse por completo, la actividad no debe producir siempre datos y una herramienta puede tener un final. One Reader sigue ese principio. Escribir una carta no es una métrica y esperar una respuesta no es una racha. [La parte de la lectura que no se puede automatizar](/journal/the-part-of-reading-that-cannot-be-automated/) apunta en la misma dirección.
+La tecnología lenta no es solo tecnología con menos alertas. Parte de otra idea de la persona: el tiempo no tiene que medirse por completo, la actividad no debe producir siempre datos y una herramienta puede tener un final. One Reader sigue ese principio. Escribir una carta no es una métrica y esperar una respuesta no es una racha. [La parte de la lectura que no se puede automatizar](/es/journal/la-parte-de-leer-que-no-se-puede-automatizar/) apunta en la misma dirección.
 
 La tecnología se vuelve humana cuando sostiene una práctica sin apropiarse de su significado. La mejor herramienta para la atención puede ser la que nos ayuda a notar algo y después no nos pide demostrar qué bien lo hemos notado.
 

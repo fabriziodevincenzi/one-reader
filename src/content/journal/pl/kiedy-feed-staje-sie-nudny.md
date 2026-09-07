@@ -13,7 +13,7 @@ Ludzie nie opuszczają mediów społecznościowych tylko dlatego, że jest w nic
 
 Badanie opublikowane w *BMC Psychology* opisuje przeciążenie podobieństwem informacji: użytkownicy mogą wycofywać się, gdy otrzymywane informacje stają się nadmiernie jednorodne. [Badanie](https://link.springer.com/article/10.1186/s40359-026-04384-x) łączy to z wycofaniem z sieci społecznościowych.
 
-Feed usuwa przerwę między rzeczami i podaje więcej tego, co już przyciągnęło uwagę. List działa inaczej: nadawca ma konkretny powód, a odpowiedź pochodzi od osoby, która postanowiła poświęcić czas. One Reader tworzy taką ograniczoną przestrzeń. Zobacz też [Opuszczając feed bez opuszczania świata](/journal/leaving-the-feed-without-leaving-the-world/).
+Feed usuwa przerwę między rzeczami i podaje więcej tego, co już przyciągnęło uwagę. List działa inaczej: nadawca ma konkretny powód, a odpowiedź pochodzi od osoby, która postanowiła poświęcić czas. One Reader tworzy taką ograniczoną przestrzeń. Zobacz też [Opuszczając feed bez opuszczania świata](/pl/journal/odejsc-od-feedu-nie-od-swiata/).
 
 Pytanie nie brzmi, czy wytrzymamy kolejny feed, lecz czy chcemy cyfrowego życia złożonego głównie z rzeczy podobnych do tych, które już nas zatrzymały.
 

@@ -17,7 +17,7 @@ Schreiben gibt Zeit zum Überlegen, friert einen Satz aber auch ein und kann ein
 
 Ein privater Austausch hat eine andere Geometrie. Es gibt weniger Anreiz, einen Raum zu gewinnen, und mehr Platz dafür, eine erste Reaktion zu revidieren. Privatheit garantiert keine Freundlichkeit, aber sie nimmt eine Kraft weg, die Änderung wie Niederlage aussehen lässt.
 
-One Reader beginnt mit dieser Grenze: Eine Person schreibt einer fremden Person. Das beseitigt keine Ungeschicklichkeit und verspricht keine Einigung. Es schafft nur einen Ort, an dem ein Widerspruch eine Begegnung bleiben kann. Siehe auch [Ein Fremder, kein Assistent](/journal/a-stranger-not-an-assistant/).
+One Reader beginnt mit dieser Grenze: Eine Person schreibt einer fremden Person. Das beseitigt keine Ungeschicklichkeit und verspricht keine Einigung. Es schafft nur einen Ort, an dem ein Widerspruch eine Begegnung bleiben kann. Siehe auch [Ein Fremder, kein Assistent](/de/journal/ein-fremder-kein-assistent/).
 
 Eine zivile Gesprächskultur braucht vielleicht nicht vor allem bessere Argumentation. Sie braucht mehr Orte, an denen Argumente privat beginnen dürfen.
 

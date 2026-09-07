@@ -17,7 +17,7 @@ Scrivere dà tempo per rileggere, ma congela anche una frase e può trasformare 
 
 Lo scambio privato ha un'altra geometria. Lascia più spazio per ammettere che la prima reazione era incompleta. La privacy non garantisce generosità, ma toglie una delle forze che fanno sembrare il cambiamento una sconfitta.
 
-One Reader comincia da questo confine: una persona scrive a una sconosciuta. Non promette accordo né elimina l'imbarazzo. Permette soltanto al disaccordo di restare un incontro. Vedi anche [Uno sconosciuto, non un assistente](/journal/a-stranger-not-an-assistant/).
+One Reader comincia da questo confine: una persona scrive a una sconosciuta. Non promette accordo né elimina l'imbarazzo. Permette soltanto al disaccordo di restare un incontro. Vedi anche [Uno sconosciuto, non un assistente](/it/journal/uno-sconosciuto-non-un-assistente/).
 
 Una conversazione civile forse ha bisogno meno di argomenti migliori che di luoghi in cui gli argomenti possano iniziare in privato.
 

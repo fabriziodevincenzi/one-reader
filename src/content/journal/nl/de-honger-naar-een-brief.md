@@ -17,4 +17,4 @@ Een brief heeft een beperkte ontvanger, laat niet zien of hij geopend is en vraa
 
 Sommige relaties hebben minder snelheid nodig om meer aanwezig te worden.
 
-Bron: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [De feed verlaten zonder de wereld te verlaten](/journal/leaving-the-feed-without-leaving-the-world/).
+Bron: [Associated Press](https://apnews.com/article/bc87e1b9c229665bafd368e19751d6ca); [De feed verlaten zonder de wereld te verlaten](/nl/journal/de-feed-verlaten-zonder-de-wereld-te-verlaten/).

@@ -17,4 +17,4 @@ Ett meddelande med ett tydligt syfte är något annat än en oändlig rad rekomm
 
 Målet är inte att bli en perfekt användare, utan att kunna gå in i ett digitalt rum med en anledning och lämna det igen.
 
-Källor: [studien om avsiktlig och passiv användning](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Den del av läsningen som inte kan automatiseras](/journal/the-part-of-reading-that-cannot-be-automated/).
+Källor: [studien om avsiktlig och passiv användning](https://pmc.ncbi.nlm.nih.gov/articles/PMC13076720/); [Den del av läsningen som inte kan automatiseras](/sv/journal/den-del-av-lasningen-som-inte-kan-automatiseras/).

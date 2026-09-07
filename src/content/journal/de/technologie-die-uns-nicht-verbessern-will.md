@@ -15,7 +15,7 @@ Die interessantere Möglichkeit ist Technologie, die keine Verbesserung verlangt
 
 Ein Timer kann beim Still­sitzen helfen, aber Still­sitzen auch zu einem Ziel machen. Eine App erinnert ans Atmen und verwandelt den Atem zugleich in eine Benachrichtigung. Ein Projekt der TU Wien untersucht eine abschließbare Box, die Abstand zu Geräten schaffen soll; ihr Wert liegt in der Reibung, nicht in einer Erfolgszahl. [Das Projekt](https://repositum.tuwien.at/handle/20.500.12708/227618) macht die Frage konkret.
 
-Langsame Technologie ist deshalb nicht nur Technologie mit weniger Alarmen. Sie geht von einem anderen Menschenbild aus: Zeit muss nicht vollständig vermessen werden, Aktivität nicht immer Daten erzeugen, und ein Werkzeug darf ein Ende haben. One Reader folgt diesem bescheidenen Prinzip. Ein Brief ist keine Kennzahl und das Warten auf eine Antwort keine Serie. [Was am Lesen nicht automatisiert werden kann](/journal/the-part-of-reading-that-cannot-be-automated/) weist in dieselbe Richtung.
+Langsame Technologie ist deshalb nicht nur Technologie mit weniger Alarmen. Sie geht von einem anderen Menschenbild aus: Zeit muss nicht vollständig vermessen werden, Aktivität nicht immer Daten erzeugen, und ein Werkzeug darf ein Ende haben. One Reader folgt diesem bescheidenen Prinzip. Ein Brief ist keine Kennzahl und das Warten auf eine Antwort keine Serie. [Was am Lesen nicht automatisiert werden kann](/de/journal/der-teil-des-lesens-der-nicht-automatisiert-werden-kann/) weist in dieselbe Richtung.
 
 Technologie wird menschlicher, wenn sie eine Praxis unterstützt, ohne ihre Bedeutung zu besetzen. Das beste Werkzeug für Aufmerksamkeit hilft uns vielleicht, etwas wahrzunehmen — und verlangt danach keinen Bericht darüber, wie gut wir es wahrgenommen haben.
 

@@ -17,4 +17,4 @@ Feedet gør creators og influencere mere synlige end almindelige deltagere. En u
 
 One Reader begynder et andet sted. Et brev har ingen rækkevidde eller publikumsstatistik. Det er én person, der skriver til én anden. Spørgsmålet er ikke, om sociale medier stadig er sociale, men hvilken socialitet der er tilbage, når de fleste er blevet tilskuere.
 
-Kilder: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [creator-undersøgelsen](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Et brev er et lille rum](/journal/a-letter-is-a-small-room/).
+Kilder: [Ofcom](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles); [creator-undersøgelsen](https://www.sciencedirect.com/science/article/pii/S0306457326000695); [Et brev er et lille rum](/da/journal/et-brev-er-et-lille-rum/).
