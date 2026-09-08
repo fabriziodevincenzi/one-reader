@@ -7,6 +7,8 @@ meta-description: "Om det som händer medan vi skriver, innan någon läser. Tan
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minuters läsning"
+image: /images/writing-pause-window.webp
+imageAlt: "En person tar paus från skrivandet och tittar ut genom fönstret, med ett utkast öppet på den bärbara datorn framför sig."
 ---
 
 Något av det märkligaste med att skriva är att vi kan ändra uppfattning medan vi försöker förklara den vi har. Vi börjar övertygade om att vi vet vad vi vill säga, kanske till och med lite irriterade över att någon inte har förstått det. Några rader senare upptäcker vi att svårigheten började tidigare: vi hade inte heller själva riktigt förstått.
@@ -27,7 +29,7 @@ Kanske börjar sambandet mellan skrivandet och det inre livet med denna möjligh
 
 Studierna gäller särskilda övningar under särskilda förhållanden. De ger oss inte grund för att tillskriva en dagbok, ett mejl eller en brevväxling samma effekter. Däremot ger de oss anledning att ta en aktivitet på allvar som vi utanför litteraturen och arbetslivet ofta betraktar som något underordnat: att avsätta tid för att skriva något även när det saknas ett praktiskt behov.
 
-Det är här jag tycker det är intressant att föra in Ole Ditlev Nielsens arbete, med utgångspunkt i [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), en dansk text vars titel betyder ”Resan in i dig själv”. Tanken på en inre resa lämnar mig med en fråga värd att stanna vid: hur mycket vet vi egentligen om det som händer oss om vi genast går vidare till nästa upplevelse?
+Det är här jag tycker det är intressant att föra in Ole Ditlev Nielsens arbete, med utgångspunkt i [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (Resan in i dig själv). Tanken på en inre resa lämnar mig med en fråga värd att stanna vid: hur mycket vet vi egentligen om det som händer oss om vi genast går vidare till nästa upplevelse?
 
 Jag tror inte att varje dag behöver bli material för analys. Det skulle bli ännu en uppgift bland de andra, och vi skulle förmodligen till slut också mäta hur bra vi reflekterar. Jag är mer intresserad av möjligheten att stanna vid något som fortsätter att återkomma: ett möte, en oro, något fint som vi inte lyckades berätta om medan det hände.
 

@@ -7,6 +7,8 @@ meta-description: "Wat er gebeurt terwijl we schrijven, voordat iemand ons leest
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minuten leestijd"
+image: /images/writing-pause-window.webp
+imageAlt: "Een persoon neemt een schrijfpauze en kijkt uit het raam, met een concepttekst open op de laptop op tafel."
 ---
 
 Een van de vreemdste dingen aan schrijven is dat we van mening kunnen veranderen terwijl we proberen uit te leggen wat we vinden. We beginnen ervan overtuigd dat we weten wat we willen zeggen, misschien zelfs een beetje geërgerd dat iemand het niet heeft begrepen. Een paar regels later merken we dat de moeilijkheid al eerder begon: we hadden het zelf ook nog niet helemaal begrepen.
@@ -27,7 +29,7 @@ Ook de psychologie heeft onderzocht wat er gebeurt wanneer mensen over hun ervar
 
 Deze onderzoeken gaan over specifieke oefeningen onder specifieke omstandigheden. Ze geven ons geen grond om dezelfde effecten toe te schrijven aan een dagboek, een e-mail of een briefwisseling. Wel geven ze een reden om een bezigheid serieus te nemen die we buiten literatuur en werk vaak als bijkomstig beschouwen: tijd vrijmaken om iets te schrijven zonder dat daar een praktische noodzaak voor is.
 
-Op dit punt vind ik het interessant het werk van Ole Ditlev Nielsen erbij te betrekken, te beginnen met [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), een Deense tekst waarvan de titel ‘De reis naar binnen’ betekent. Het idee van zo'n innerlijke reis laat me achter met een vraag om bij stil te staan: hoeveel weten we werkelijk van wat ons overkomt als we meteen doorgaan naar de volgende ervaring?
+Op dit punt vind ik het interessant het werk van Ole Ditlev Nielsen erbij te betrekken, te beginnen met [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (De reis naar binnen). Het idee van zo'n innerlijke reis laat me achter met een vraag om bij stil te staan: hoeveel weten we werkelijk van wat ons overkomt als we meteen doorgaan naar de volgende ervaring?
 
 Ik denk niet dat elke dag materiaal voor analyse moet worden. Dat zou nog een taak naast alle andere zijn, en waarschijnlijk zouden we uiteindelijk ook meten hoe goed we nadenken. Mij gaat het eerder om de mogelijkheid stil te staan bij iets dat blijft terugkomen: een ontmoeting, een zorg, iets moois dat we niet konden vertellen terwijl het gebeurde.
 

@@ -7,6 +7,8 @@ meta-description: "Om det, der sker, mens vi skriver, før nogen læser med. Tan
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minutters læsning"
+image: /images/writing-pause-window.webp
+imageAlt: "En person holder pause fra at skrive og ser ud ad vinduet med et udkast åbent på den bærbare computer foran sig."
 ---
 
 Noget af det mærkeligste ved at skrive er, at vi kan ændre mening, mens vi forsøger at forklare den mening, vi har. Vi begynder overbeviste om, at vi ved, hvad vi vil sige, måske endda lidt irriterede over, at en anden ikke har forstået det. Efter nogle få linjer opdager vi, at vanskeligheden opstod tidligere: Vi havde heller ikke selv helt forstået det.
