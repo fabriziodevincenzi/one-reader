@@ -1,88 +1,77 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { buttonVariants } from '../../components/ui/Button';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 ---
 
 <Layout
   title="About — One Reader"
-  description="One Reader is a private pen-pal correspondence club where one letter reaches one unknown reader—without profiles, feeds or an audience."
+  description="The idea behind One Reader: a private pen-pal correspondence club where a letter finds one unknown reader and a conversation can begin by email."
 >
   <SiteHeader showPricing />
 
   <main id="main-content" class="shell brand-page py-16 sm:py-24">
-    <article class="mx-auto max-w-3xl">
-      <header class="border-b border-border pb-14 sm:pb-20">
-        <p class="eyebrow mb-5">About One Reader</p>
-        <h1 class="section-title max-w-3xl balance">Write to one person. Be unknown again.</h1>
-        <p class="brand-prose mt-8 max-w-2xl text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">
-          One Reader is a private pen-pal correspondence club for letters between strangers. Not a message to yourself, and not a post for a crowd—just words sent to one real reader.
-        </p>
-      </header>
+    <article class="mx-auto max-w-2xl">
+      <h1 class="section-title balance">About One Reader</h1>
 
-      <div class="brand-prose space-y-16 py-14 text-lg leading-8 text-muted-foreground sm:space-y-20 sm:py-20">
-        <section aria-labelledby="why-heading">
-          <p class="eyebrow mb-4">Why it exists</p>
-          <h2 id="why-heading" class="max-w-2xl text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Some things need a reader—but not an audience.</h2>
-          <div class="mt-6 max-w-2xl space-y-5">
-            <p>A diary has only one reader: you. A social network has too many, and your face or familiar name stays attached to every word. Both can make it hard to say what you actually mean.</p>
-            <p>One Reader sits in between. Someone real is there to read you, but no public identity, follower count or visible history stands beside the letter. That freedom is the point—before any reply arrives.</p>
-          </div>
-        </section>
+      <div class="about-story brand-prose mt-10 text-lg leading-8 text-muted-foreground sm:mt-12 sm:text-xl sm:leading-9">
+        <p>Sometimes you have something to say, and what you want is for one person to read it. Perhaps it is a memory that came back while you were walking home, a question you have been carrying for a while, or a small detail from an otherwise ordinary day. You begin to put it into words, imagining someone on the other side taking a moment to listen.</p>
 
-        <section class="border-y border-border py-10 sm:py-12" aria-labelledby="how-heading">
-          <p class="eyebrow mb-4">How it works</p>
-          <h2 id="how-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Every correspondence starts clean.</h2>
-          <ol class="mt-10 grid gap-8 sm:gap-10">
-            <li class="grid gap-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
-              <span class="metadata pt-1">01 / One letter</span>
-              <p class="m-0">A letter is matched with one available person who has chosen to receive the language detected in its text. It is delivered once, not published or distributed to a group.</p>
-            </li>
-            <li class="grid gap-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
-              <span class="metadata pt-1">02 / No profile</span>
-              <p class="m-0">Each correspondence uses a fresh name and private reply addresses. Real email addresses remain hidden, and an identity from one conversation does not follow someone into the next.</p>
-            </li>
-            <li class="grid gap-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
-              <span class="metadata pt-1">03 / A choice</span>
-              <p class="m-0">A reply can begin a quiet exchange, but it is never owed. Either person can end or report a correspondence, and inactive conversations close permanently after 30 days.</p>
-            </li>
-          </ol>
-        </section>
+        <p>One Reader began with that possibility. It is a private pen-pal correspondence club where you can write a letter to someone you do not know. Your words reach one real reader, in their email inbox, and they can choose to write back. A correspondence may grow from there, at whatever pace the two of you find.</p>
 
-        <section aria-labelledby="different-heading">
-          <p class="eyebrow mb-4">What is different</p>
-          <h2 id="different-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">The service stops where the correspondence begins.</h2>
-          <div class="mt-10 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
-            <section class="bg-background p-7 sm:p-8" aria-labelledby="present-heading">
-              <p class="metadata mb-5">What is here</p>
-              <h3 id="present-heading" class="text-2xl font-normal tracking-[-0.005em] text-foreground">One reader</h3>
-              <p class="mt-5 text-base leading-7">A private letter, an unknown person and enough space for a considered reply.</p>
-            </section>
-            <section class="bg-background p-7 sm:p-8" aria-labelledby="absent-heading">
-              <p class="metadata mb-5">What is absent</p>
-              <h3 id="absent-heading" class="text-2xl font-normal tracking-[-0.005em] text-foreground">The audience</h3>
-              <p class="mt-5 text-base leading-7">No public profiles, feed, likes, follower counts, recommendations or searchable archive of conversations.</p>
-            </section>
-          </div>
-        </section>
+        <h2>A little room to be unknown</h2>
 
-        <section class="max-w-2xl" aria-labelledby="principles-heading">
-          <p class="eyebrow mb-4">Designed with restraint</p>
-          <h2 id="principles-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground">Privacy is part of the shape, not an extra setting.</h2>
-          <div class="mt-6 space-y-5">
-            <p>One Reader collects only the account information needed to operate matching, delivery and safety. Letters travel through private addresses, and neither reader is shown the other person’s real address.</p>
-            <p>The service keeps images and remote content out of received letters, offers clear ways to end or report an exchange, and treats attention—not engagement—as the thing worth protecting.</p>
-          </div>
-        </section>
+        <p>Writing changes when you know who will see it. Among people who know you, a familiar version of yourself can arrive before the first sentence does. In public, you may find yourself thinking about how your words will look, who will agree, or whether anyone will notice. It can be difficult to hear what you meant to say underneath all of that.</p>
+
+        <p>A stranger brings a different kind of possibility. They meet you through the letter itself, with room to be curious about what is on the page. Each correspondence on One Reader begins with a fresh name and private reply addresses. Your real email address stays hidden from the other person, and the identity you use in one exchange does not follow you into the next. What you choose to share about yourself is up to you.</p>
+
+        <p>There are no public profiles to fill in, follower counts to watch, or feeds to keep up with. Your letters have no public archive. The space is deliberately small, so that the person reading and the words between you can have your attention.</p>
+
+        <h2>From your inbox to someone else’s</h2>
+
+        <p>Once you have created your account and verified your email address, you can begin from your own inbox. One Reader matches your letter with one available person who has chosen to receive letters in the language you have written. It is delivered to that person alone. You do not need to browse profiles or decide how to introduce yourself to a room full of people; you can simply begin with what you wanted to say.</p>
+
+        <p>If your reader replies, their words come back to your inbox, and you can continue from there. Email leaves room for a letter to wait until there is time to read it properly. You can think about an answer while doing something else, return to it later, and write when you have found the words.</p>
+
+        <p>A reply is always a choice. Some letters may become an exchange that lasts; others may be read and left unanswered. Either person can end a correspondence or report it, and conversations close permanently after thirty days without an exchange. The invitation to write comes with the freedom to stop.</p>
+
+        <h2>Care for the space between you</h2>
+
+        <p>Privacy shapes how One Reader works from the beginning. The service collects the account information needed to arrange matches, deliver letters, and operate safely. Correspondence passes through private addresses so that neither person is shown the other’s real email address. Images and remote content are kept out of delivered letters, keeping the experience focused on the words. You can read more about how information is handled in the <a href="/privacy/">privacy notice</a>.</p>
+
+        <p>The hope behind One Reader is modest: that an inbox can still hold something personal, and that writing to someone unfamiliar can make a little more room for honesty, curiosity, and care. You do not need an extraordinary story or a polished opening. Something you noticed today may be enough to begin.</p>
+
+        <p>If you would like to try, you can <a href="/">create your free Reader account</a> and start a letter. If you would rather spend a little longer with the idea, the <a href="/journal/">Journal</a> is where we write about correspondence, attention, and finding a way to begin.</p>
       </div>
-
-      <footer class="flex flex-wrap items-center gap-5 border-t border-border pt-8">
-        <a class={buttonVariants({ size: 'large' })} href="/">Visit One Reader</a>
-        <a class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" href="/journal/">Read the Journal</a>
-      </footer>
     </article>
   </main>
 
   <SiteFooter />
 </Layout>
+
+<style>
+  .about-story p + p {
+    margin-top: 1.5rem;
+  }
+
+  .about-story h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+
+  .about-story a {
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .about-story a:hover {
+    color: var(--foreground);
+  }
+</style>
