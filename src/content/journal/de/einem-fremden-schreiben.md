@@ -7,7 +7,7 @@ meta-description: "Was beim Schreiben geschieht, bevor uns jemand liest. Über G
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 Minuten Lesezeit"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "Eine Person macht beim Schreiben eine Pause und schaut aus dem Fenster, vor sich einen Laptop mit einem geöffneten Entwurf."
 ---
 

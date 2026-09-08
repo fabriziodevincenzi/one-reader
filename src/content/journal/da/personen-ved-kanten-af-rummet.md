@@ -7,8 +7,8 @@ meta-description: "Hvorfor One Reader findes: en sidedør for mennesker, der vil
 publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min læsning
-image: /images/person-edge-concert.png
-imageAlt: En ung kvinde set bagfra ved kanten af et udendørs koncertpublikum om aftenen.
+image: /images/person-at-the-edge-editorial.webp
+imageAlt: "En kvinde står adskilt fra en menneskemængde ved en dør på klem med en smal blækblå åbning."
 ---
 
 Jeg har altid tænkt på sociale medier som et fyldt rum.

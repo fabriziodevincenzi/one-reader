@@ -7,7 +7,7 @@ meta-description: "Ce qui se passe quand nous écrivons, avant même d’être l
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 min de lecture"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "Une personne interrompt son écriture pour regarder par la fenêtre, un brouillon ouvert sur l’ordinateur portable devant elle."
 ---
 

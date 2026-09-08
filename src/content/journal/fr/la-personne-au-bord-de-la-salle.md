@@ -7,8 +7,8 @@ meta-description: "Pourquoi One Reader existe : une porte de côté pour celles 
 publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min de lecture
-image: /images/person-edge-concert.png
-imageAlt: Une jeune femme vue de dos au bord d'une foule lors d'un concert en plein air le soir.
+image: /images/person-at-the-edge-editorial.webp
+imageAlt: "Une femme se tient à l’écart d’un groupe, près d’une porte entrouverte laissant apparaître une étroite bande bleu encre."
 ---
 
 J'ai toujours pensé aux réseaux sociaux comme à une salle bondée.

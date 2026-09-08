@@ -7,7 +7,7 @@ meta-description: "Wat er gebeurt terwijl we schrijven, voordat iemand ons leest
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minuten leestijd"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "Een persoon neemt een schrijfpauze en kijkt uit het raam, met een concepttekst open op de laptop op tafel."
 ---
 

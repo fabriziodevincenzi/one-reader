@@ -7,7 +7,7 @@ meta-description: "Co dzieje się, kiedy piszemy, zanim ktoś nas przeczyta. O m
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minut czytania"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "Osoba robi przerwę w pisaniu i patrzy przez okno, z otwartym szkicem tekstu na laptopie przed sobą."
 ---
 

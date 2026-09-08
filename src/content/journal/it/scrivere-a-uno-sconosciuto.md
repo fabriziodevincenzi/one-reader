@@ -7,7 +7,7 @@ meta-description: "Cosa accade mentre scriviamo, prima che qualcuno ci legga. Un
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minuti di lettura"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "Una persona in pausa dalla scrittura guarda fuori dalla finestra, con una bozza aperta sul portatile davanti a sé."
 ---
 

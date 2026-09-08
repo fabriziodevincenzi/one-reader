@@ -7,7 +7,7 @@ meta-description: "Om det som händer medan vi skriver, innan någon läser. Tan
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minuters läsning"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "En person tar paus från skrivandet och tittar ut genom fönstret, med ett utkast öppet på den bärbara datorn framför sig."
 ---
 

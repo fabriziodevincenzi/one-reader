@@ -7,7 +7,7 @@ meta-description: "O que acontece enquanto escrevemos, antes que alguém nos lei
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 min de leitura"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "Uma pessoa faz uma pausa na escrita e olha pela janela, com um rascunho aberto no computador portátil à sua frente."
 ---
 
