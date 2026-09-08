@@ -7,6 +7,8 @@ meta-description: "O que acontece enquanto escrevemos, antes que alguém nos lei
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 min de leitura"
+image: /images/writing-pause-window.webp
+imageAlt: "Uma pessoa faz uma pausa na escrita e olha pela janela, com um rascunho aberto no computador portátil à sua frente."
 ---
 
 Uma das coisas mais estranhas da escrita é que podemos mudar de ideia enquanto tentamos explicar a que temos. Começamos convencidos de saber o que queremos dizer, talvez até um pouco irritados porque alguém não entendeu, e algumas linhas depois percebemos que a dificuldade vinha de antes: nós também não tínhamos entendido inteiramente.
@@ -27,7 +29,7 @@ A psicologia também procurou estudar o que acontece quando as pessoas escrevem 
 
 Essas pesquisas tratam de exercícios e condições específicos. Não permitem atribuir os mesmos efeitos a um diário, um e-mail ou uma correspondência. Oferecem, porém, um motivo para levar a sério uma atividade que, fora da literatura e do trabalho, costumamos considerar secundária: dedicar tempo a escrever alguma coisa mesmo sem necessidade prática.
 
-É neste ponto que me interessa trazer o trabalho de Ole Ditlev Nielsen, a partir de [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), um texto em dinamarquês cujo título significa “A viagem para dentro de si”. A ideia de uma viagem interior me deixa uma pergunta que vale guardar: quanto sabemos de fato sobre o que nos acontece se passamos imediatamente à experiência seguinte?
+É neste ponto que me interessa trazer o trabalho de Ole Ditlev Nielsen, a partir de [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (A viagem para dentro de si). A ideia de uma viagem interior me deixa uma pergunta que vale guardar: quanto sabemos de fato sobre o que nos acontece se passamos imediatamente à experiência seguinte?
 
 Não acredito que cada dia deva virar material de análise. Seria mais uma tarefa entre tantas, e provavelmente acabaríamos medindo também nossa capacidade de refletir. Interessa-me mais a possibilidade de parar diante de algo que insiste em voltar: um encontro, uma preocupação, uma coisa bonita que não soubemos contar enquanto acontecia.
 

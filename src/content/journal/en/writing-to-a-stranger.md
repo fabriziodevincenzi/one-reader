@@ -7,6 +7,8 @@ meta-description: "What happens while we write, before anyone reads us. On thoug
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 min read"
+image: /images/writing-pause-window.webp
+imageAlt: "A person pauses from writing to look out of a window, with a draft open on the laptop in front of them."
 ---
 
 One of the stranger things about writing is that we can change our minds while trying to explain what we think. We begin certain we know what we want to say, perhaps a little irritated that someone else has failed to understand it, and a few lines later we realise the difficulty started earlier. We hadn't quite understood it ourselves.
@@ -27,7 +29,7 @@ Psychology, too, has tried to study what happens when people write about their e
 
 These studies concern particular exercises and conditions. They do not allow us to attribute the same effects to a diary, an email or a correspondence. They do, however, give us a reason to take seriously an activity we tend to treat as marginal outside literature and work: setting aside time to write something when there is no practical need to do so.
 
-This is where I find it interesting to bring in Ole Ditlev Nielsen's work, starting with [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), an essay in Danish whose title means “The journey into yourself”. That idea of an inward journey leaves me with a question worth keeping: how much do we really know about what happens to us if we move straight on to the next experience?
+This is where I find it interesting to bring in Ole Ditlev Nielsen's work, starting with [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (The journey into yourself). That idea of an inward journey leaves me with a question worth keeping: how much do we really know about what happens to us if we move straight on to the next experience?
 
 I don't think every day needs to become material for analysis. That would be another task to add to the others, and we would probably end up measuring how well we reflect, too. What interests me is the possibility of staying with something that keeps returning: an encounter, a worry, something good we didn't manage to describe while it was happening.
 

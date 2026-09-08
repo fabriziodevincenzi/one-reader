@@ -7,6 +7,8 @@ meta-description: "Cosa accade mentre scriviamo, prima che qualcuno ci legga. Un
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minuti di lettura"
+image: /images/writing-pause-window.webp
+imageAlt: "Una persona in pausa dalla scrittura guarda fuori dalla finestra, con una bozza aperta sul portatile davanti a sé."
 ---
 
 Una delle cose più strane della scrittura è che possiamo cambiare idea mentre stiamo cercando di spiegare quella che abbiamo. Partiamo convinti di sapere cosa vogliamo dire, magari anche un po’ infastiditi dal fatto che qualcuno non l’abbia capito, e dopo qualche riga ci accorgiamo che il problema era precedente: non l’avevamo capito fino in fondo nemmeno noi.
@@ -27,7 +29,7 @@ Anche la psicologia ha cercato di studiare cosa accade quando le persone scrivon
 
 Queste ricerche riguardano esercizi e condizioni specifiche. Non ci autorizzano ad attribuire gli stessi effetti a un diario, a un’email o a una corrispondenza. Offrono però un motivo per prendere sul serio un’attività che, fuori dalla letteratura e dal lavoro, tendiamo a considerare marginale: dedicare del tempo a scrivere qualcosa anche quando non c’è nessuna necessità pratica di farlo.
 
-È in questa parte del discorso che mi interessa incontrare il lavoro di Ole Ditlev Nielsen, a partire da [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/). Il tema del viaggio dentro di sé porta con sé una domanda che vale la pena trattenere: quanto conosciamo davvero di quello che ci accade, se passiamo subito all’esperienza successiva?
+È in questa parte del discorso che mi interessa incontrare il lavoro di Ole Ditlev Nielsen, a partire da [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (Il viaggio dentro di sé). Il tema del viaggio dentro di sé porta con sé una domanda che vale la pena trattenere: quanto conosciamo davvero di quello che ci accade, se passiamo subito all’esperienza successiva?
 
 Non credo che ogni giornata debba diventare materiale da analizzare. Sarebbe un’altra occupazione da aggiungere alle altre, e probabilmente finiremmo per misurare anche quanto bene sappiamo riflettere. Mi interessa piuttosto la possibilità di fermarsi su qualcosa che continua a tornare: un incontro, una preoccupazione, una cosa bella che non abbiamo saputo raccontare mentre succedeva.
 

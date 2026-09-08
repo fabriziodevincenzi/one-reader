@@ -7,6 +7,8 @@ meta-description: "Om det som skjer mens vi skriver, før noen leser. Tanker om 
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minutters lesing"
+image: /images/writing-pause-window.webp
+imageAlt: "En person tar en pause fra skrivingen og ser ut av vinduet, med et utkast åpent på den bærbare datamaskinen foran seg."
 ---
 
 Noe av det merkeligste ved å skrive er at vi kan endre mening mens vi prøver å forklare den vi har. Vi begynner overbevist om at vi vet hva vi vil si, kanskje til og med litt irritert over at noen ikke har forstått det. Etter noen få linjer oppdager vi at vanskeligheten oppsto tidligere: Vi hadde heller ikke selv helt forstått det.
@@ -27,7 +29,7 @@ Psykologien har også forsøkt å undersøke hva som skjer når mennesker skrive
 
 Disse undersøkelsene gjelder bestemte øvelser under bestemte forhold. De gir ikke grunnlag for å tilskrive en dagbok, en e-post eller en brevveksling de samme virkningene. Men de gir oss en grunn til å ta en aktivitet alvorlig som vi utenfor litteraturen og arbeidslivet ofte betrakter som underordnet: å sette av tid til å skrive noe uten at det finnes noen praktisk nødvendighet.
 
-Det er her jeg synes det er interessant å trekke inn arbeidet til Ole Ditlev Nielsen, med utgangspunkt i [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), en dansk tekst med tittelen «Reisen inn i deg selv». Tanken om en indre reise etterlater et spørsmål det er verdt å dvele ved: Hvor mye vet vi egentlig om det som skjer med oss, hvis vi straks går videre til den neste opplevelsen?
+Det er her jeg synes det er interessant å trekke inn arbeidet til Ole Ditlev Nielsen, med utgangspunkt i [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (Reisen inn i deg selv). Tanken om en indre reise etterlater et spørsmål det er verdt å dvele ved: Hvor mye vet vi egentlig om det som skjer med oss, hvis vi straks går videre til den neste opplevelsen?
 
 Jeg mener ikke at hver dag skal bli materiale for analyse. Det ville bli enda en oppgave blant de andre, og vi ville trolig ende med å måle hvor flinke vi er til å reflektere også. Jeg er mer opptatt av muligheten til å stoppe ved noe som stadig vender tilbake: et møte, en bekymring, noe fint vi ikke klarte å fortelle om mens det skjedde.
 

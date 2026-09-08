@@ -7,6 +7,8 @@ meta-description: "Ce qui se passe quand nous écrivons, avant même d’être l
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 min de lecture"
+image: /images/writing-pause-window.webp
+imageAlt: "Une personne interrompt son écriture pour regarder par la fenêtre, un brouillon ouvert sur l’ordinateur portable devant elle."
 ---
 
 L’une des choses les plus étranges dans l’écriture, c’est que nous pouvons changer d’avis en essayant d’expliquer celui que nous avons. Nous commençons persuadés de savoir ce que nous voulons dire, peut-être même un peu agacés que quelqu’un ne l’ait pas compris, et quelques lignes plus tard nous découvrons que la difficulté était antérieure : nous ne l’avions pas tout à fait compris nous-mêmes.
@@ -27,7 +29,7 @@ La psychologie a elle aussi cherché à étudier ce qui se passe lorsque les gen
 
 Ces recherches concernent des exercices et des conditions spécifiques. Elles ne permettent pas d’attribuer les mêmes effets à un journal intime, à un courriel ou à une correspondance. Elles donnent néanmoins une raison de prendre au sérieux une activité que nous considérons souvent comme secondaire en dehors de la littérature et du travail : consacrer du temps à écrire quelque chose sans nécessité pratique.
 
-C’est à cet endroit de la réflexion que j’ai envie de faire entrer le travail d’Ole Ditlev Nielsen, à partir de [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), un texte danois dont le titre signifie « Le voyage en soi ». Cette idée de voyage intérieur me laisse une question à retenir : que savons-nous réellement de ce qui nous arrive si nous passons aussitôt à l’expérience suivante ?
+C’est à cet endroit de la réflexion que j’ai envie de faire entrer le travail d’Ole Ditlev Nielsen, à partir de [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (Le voyage en soi). Cette idée de voyage intérieur me laisse une question à retenir : que savons-nous réellement de ce qui nous arrive si nous passons aussitôt à l’expérience suivante ?
 
 Je ne crois pas que chaque journée doive devenir matière à analyse. Ce serait une occupation de plus, et nous finirions probablement par mesurer aussi notre aptitude à réfléchir. Ce qui m’intéresse, c’est plutôt la possibilité de s’arrêter sur quelque chose qui revient : une rencontre, une inquiétude, un moment heureux que nous n’avons pas su raconter lorsqu’il se produisait.
 

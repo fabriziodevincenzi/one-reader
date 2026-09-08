@@ -7,6 +7,8 @@ meta-description: "Co dzieje się, kiedy piszemy, zanim ktoś nas przeczyta. O m
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minut czytania"
+image: /images/writing-pause-window.webp
+imageAlt: "Osoba robi przerwę w pisaniu i patrzy przez okno, z otwartym szkicem tekstu na laptopie przed sobą."
 ---
 
 Jedną z najdziwniejszych rzeczy w pisaniu jest to, że możemy zmienić zdanie, próbując wyjaśnić to, które mamy. Zaczynamy przekonani, że wiemy, co chcemy powiedzieć, może nawet trochę zirytowani, że ktoś tego nie zrozumiał. Po kilku linijkach odkrywamy, że trudność pojawiła się wcześniej: sami też nie do końca to rozumieliśmy.
@@ -27,7 +29,7 @@ Psychologia również próbowała zbadać, co się dzieje, gdy ludzie piszą o s
 
 Badania te dotyczą określonych ćwiczeń i warunków. Nie pozwalają przypisywać takich samych efektów dziennikowi, e-mailowi czy korespondencji. Dają jednak powód, by poważnie potraktować czynność, którą poza literaturą i pracą zwykle uważamy za drugorzędną: poświęcenie czasu na napisanie czegoś, nawet jeśli nie ma ku temu praktycznej potrzeby.
 
-W tym miejscu chciałbym przywołać twórczość Olego Ditleva Nielsena, zaczynając od [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), duńskiego tekstu, którego tytuł oznacza „Podróż w głąb siebie”. Myśl o takiej podróży pozostawia mi pytanie, przy którym warto się zatrzymać: ile naprawdę wiemy o tym, co nas spotyka, jeśli od razu przechodzimy do następnego doświadczenia?
+W tym miejscu chciałbym przywołać twórczość Olego Ditleva Nielsena, zaczynając od [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (Podróż w głąb siebie). Myśl o takiej podróży pozostawia mi pytanie, przy którym warto się zatrzymać: ile naprawdę wiemy o tym, co nas spotyka, jeśli od razu przechodzimy do następnego doświadczenia?
 
 Nie sądzę, żeby każdy dzień musiał stawać się materiałem do analizy. Byłoby to kolejne zajęcie obok pozostałych i zapewne skończylibyśmy na mierzeniu także tego, jak dobrze potrafimy się zastanawiać. Bardziej interesuje mnie możliwość zatrzymania się przy czymś, co wciąż powraca: spotkaniu, zmartwieniu, czymś pięknym, czego nie umieliśmy opowiedzieć, kiedy się działo.
 

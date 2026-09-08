@@ -7,6 +7,8 @@ meta-description: "Was beim Schreiben geschieht, bevor uns jemand liest. Über G
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 Minuten Lesezeit"
+image: /images/writing-pause-window.webp
+imageAlt: "Eine Person macht beim Schreiben eine Pause und schaut aus dem Fenster, vor sich einen Laptop mit einem geöffneten Entwurf."
 ---
 
 Das Merkwürdige am Schreiben ist, dass wir unsere Meinung ändern können, während wir versuchen, sie zu erklären. Wir beginnen in der Überzeugung, genau zu wissen, was wir sagen wollen, vielleicht sogar etwas verärgert darüber, dass jemand es nicht verstanden hat. Ein paar Zeilen später merken wir, dass die Schwierigkeit früher angefangen hat: Auch wir selbst hatten es noch nicht ganz verstanden.
@@ -27,7 +29,7 @@ Auch die Psychologie hat untersucht, was geschieht, wenn Menschen über ihre Erf
 
 Diese Untersuchungen betreffen bestimmte Übungen unter bestimmten Bedingungen. Sie erlauben uns nicht, einem Tagebuch, einer E-Mail oder einem Briefwechsel dieselben Wirkungen zuzuschreiben. Sie geben uns aber einen Grund, eine Tätigkeit ernst zu nehmen, die wir außerhalb von Literatur und Beruf oft für nebensächlich halten: sich Zeit zu nehmen, etwas zu schreiben, auch wenn keine praktische Notwendigkeit besteht.
 
-An dieser Stelle interessiert mich die Arbeit von Ole Ditlev Nielsen, ausgehend von [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), einem dänischen Text, dessen Titel »Die Reise in dich selbst« bedeutet. Der Gedanke einer Reise nach innen lässt mich bei einer Frage verweilen: Wie viel wissen wir wirklich von dem, was uns widerfährt, wenn wir sofort zur nächsten Erfahrung übergehen?
+An dieser Stelle interessiert mich die Arbeit von Ole Ditlev Nielsen, ausgehend von [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (Die Reise in dich selbst). Der Gedanke einer Reise nach innen lässt mich bei einer Frage verweilen: Wie viel wissen wir wirklich von dem, was uns widerfährt, wenn wir sofort zur nächsten Erfahrung übergehen?
 
 Ich glaube nicht, dass jeder Tag zum Gegenstand einer Analyse werden muss. Das wäre eine weitere Aufgabe neben all den anderen, und vermutlich würden wir am Ende auch noch messen, wie gut wir nachdenken. Mich interessiert eher die Möglichkeit, bei etwas zu bleiben, das immer wiederkehrt: einer Begegnung, einer Sorge, etwas Schönem, das wir nicht erzählen konnten, während es geschah.
 

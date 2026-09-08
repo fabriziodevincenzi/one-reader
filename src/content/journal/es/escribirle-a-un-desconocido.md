@@ -7,6 +7,8 @@ meta-description: "Lo que ocurre mientras escribimos, antes de que alguien nos l
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 min de lectura"
+image: /images/writing-pause-window.webp
+imageAlt: "Una persona hace una pausa al escribir y mira por la ventana, con un borrador abierto en el portátil que tiene delante."
 ---
 
 Una de las cosas más extrañas de escribir es que podemos cambiar de opinión mientras intentamos explicar la que tenemos. Empezamos convencidos de saber lo que queremos decir, quizá incluso algo molestos porque alguien no lo haya entendido, y unas líneas después descubrimos que el problema venía de antes: tampoco nosotros lo habíamos entendido del todo.
@@ -27,7 +29,7 @@ La psicología también ha tratado de estudiar qué ocurre cuando las personas e
 
 Estas investigaciones se refieren a ejercicios y condiciones específicos. No permiten atribuir esos mismos efectos a un diario, un correo electrónico o una correspondencia. Sí ofrecen una razón para tomarnos en serio una actividad que, fuera de la literatura y el trabajo, solemos considerar secundaria: dedicar tiempo a escribir algo cuando no existe ninguna necesidad práctica de hacerlo.
 
-Es en este punto donde me interesa incorporar el trabajo de Ole Ditlev Nielsen, a partir de [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/), un texto en danés cuyo título significa «El viaje hacia uno mismo». Esa idea de un viaje interior me deja una pregunta que merece atención: ¿cuánto sabemos realmente de lo que nos ocurre si pasamos de inmediato a la siguiente experiencia?
+Es en este punto donde me interesa incorporar el trabajo de Ole Ditlev Nielsen, a partir de [*Rejsen ind i dig selv*](https://www.20skridt.dk/rejsen-ind-i-dig-selv/) (El viaje hacia uno mismo). Esa idea de un viaje interior me deja una pregunta que merece atención: ¿cuánto sabemos realmente de lo que nos ocurre si pasamos de inmediato a la siguiente experiencia?
 
 No creo que cada día deba convertirse en material de análisis. Sería otra tarea que añadir a las demás, y probablemente acabaríamos midiendo también lo bien que reflexionamos. Me interesa más la posibilidad de detenernos en algo que vuelve una y otra vez: un encuentro, una preocupación, algo hermoso que no supimos contar mientras sucedía.
 
