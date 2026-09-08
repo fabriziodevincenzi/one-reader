@@ -7,8 +7,8 @@ meta-description: "Warum es One Reader gibt: eine Seitentür für Menschen, die 
 publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 Min. Lesezeit
-image: /images/person-edge-concert.png
-imageAlt: Eine junge Frau von hinten am Rand einer Menschenmenge bei einem Abendkonzert im Freien.
+image: /images/person-at-the-edge-editorial.webp
+imageAlt: "Eine Frau steht abseits einer Menschenmenge neben einer angelehnten Tür mit einem schmalen tintenblauen Spalt."
 ---
 
 Ich habe soziale Medien immer als überfüllten Raum gesehen.

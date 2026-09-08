@@ -7,8 +7,8 @@ meta-description: "Varför One Reader finns: en sidodörr för människor som vi
 publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min läsning
-image: /images/person-edge-concert.png
-imageAlt: En ung kvinna sedd bakifrån vid kanten av en utomhuskonsert på kvällen.
+image: /images/person-at-the-edge-editorial.webp
+imageAlt: "En kvinna står en bit från en folksamling vid en dörr på glänt med en smal bläckblå öppning."
 ---
 
 Jag har alltid tänkt på sociala medier som ett fullsatt rum.

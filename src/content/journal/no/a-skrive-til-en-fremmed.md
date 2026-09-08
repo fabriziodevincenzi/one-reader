@@ -7,7 +7,7 @@ meta-description: "Om det som skjer mens vi skriver, før noen leser. Tanker om 
 publishedAt: '2026-09-07'
 author: One Reader
 readingTime: "5 minutters lesing"
-image: /images/writing-pause-window.webp
+image: /images/writing-to-a-stranger-editorial.webp
 imageAlt: "En person tar en pause fra skrivingen og ser ut av vinduet, med et utkast åpent på den bærbare datamaskinen foran seg."
 ---
 

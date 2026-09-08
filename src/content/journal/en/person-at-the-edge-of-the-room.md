@@ -7,8 +7,8 @@ meta-description: "Why One Reader exists: a side door for the people who want to
 publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min read
-image: /images/person-edge-concert.png
-imageAlt: A young woman seen from behind at the edge of an outdoor concert crowd at night.
+image: /images/person-at-the-edge-editorial.webp
+imageAlt: "A woman stands apart from a crowd beside a partly open door with a narrow ink-blue opening."
 ---
 
 I've always thought of social media as a crowded room.

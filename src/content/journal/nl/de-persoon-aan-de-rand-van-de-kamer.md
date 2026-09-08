@@ -7,8 +7,8 @@ meta-description: "Waarom One Reader bestaat: een zijdeur voor mensen die online
 publishedAt: '2026-09-05'
 author: One Reader
 readingTime: 4 min lezen
-image: /images/person-edge-concert.png
-imageAlt: Een jonge vrouw van achteren gezien aan de rand van een buitenconcert in de avond.
+image: /images/person-at-the-edge-editorial.webp
+imageAlt: "Een vrouw staat apart van een groep naast een deur op een kier met een smalle inktblauwe opening."
 ---
 
 Ik heb sociale media altijd gezien als een volle kamer.
