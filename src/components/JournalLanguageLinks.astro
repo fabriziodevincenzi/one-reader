@@ -1,5 +1,6 @@
 ---
-import { languageOptions, siteLocales, type SiteLocale } from '../lib/i18n';
+import { siteLocales, type SiteLocale } from '../lib/i18n';
+import { journalLanguageNames, journalUiCopy } from '../lib/journal-ui';
 
 interface Props {
   alternateLocales: Partial<Record<SiteLocale, string>>;
@@ -7,18 +8,18 @@ interface Props {
 }
 
 const { alternateLocales, currentLocale } = Astro.props;
-const languageNames = new Map(languageOptions);
+const copy = journalUiCopy[currentLocale];
 const availableLocales = siteLocales.filter((locale) => alternateLocales[locale]);
 ---
 
 {availableLocales.length > 1 && (
-  <nav class="mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm" aria-label="Available translations">
-    <span class="journal-meta">Read in</span>
+  <nav class="mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm" aria-label={copy.translationsLabel}>
+    <span class="journal-meta">{copy.readIn}</span>
     <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-2 p-0">
       {availableLocales.map((locale) => (
         <li>
           {locale === currentLocale ? (
-            <span class="text-foreground" aria-current="page">{languageNames.get(locale)}</span>
+            <span class="text-foreground" aria-current="page">{journalLanguageNames[locale]}</span>
           ) : (
             <a
               class="text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground"
@@ -26,7 +27,7 @@ const availableLocales = siteLocales.filter((locale) => alternateLocales[locale]
               hreflang={locale}
               lang={locale}
             >
-              {languageNames.get(locale)}
+              {journalLanguageNames[locale]}
             </a>
           )}
         </li>
