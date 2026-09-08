@@ -15,6 +15,7 @@ import {
   type JournalEntry,
 } from '../../../lib/journal';
 import { siteLocales, type SiteLocale } from '../../../lib/i18n';
+import { journalUiCopy } from '../../../lib/journal-ui';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -32,6 +33,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, lang, redirectTo } = Astro.props as { entry: JournalEntry; lang: SiteLocale; redirectTo?: string };
+const copy = journalUiCopy[lang];
 if (redirectTo) return Astro.redirect(encodeURI(redirectTo), 301);
 const allEntries: JournalEntry[] = (await Promise.all(siteLocales.map((locale) => getJournalEntries(locale)))).flat();
 const { Content } = await render(entry);
@@ -74,7 +76,7 @@ const articleStructuredData = {
   socialImageAlt={entry.data.title}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleStructuredData)} />
-  <SiteHeader action="write" />
+  <SiteHeader action="write" locale={lang} />
 
   <main id="main-content" class="shell py-20 sm:py-28 lg:py-40">
     <header class="mx-auto max-w-[50rem]">
@@ -100,10 +102,10 @@ const articleStructuredData = {
       )}
       <Content />
       <div class="mt-14 flex flex-wrap items-center justify-between gap-5 border-t border-border pt-6">
-        <a class="text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground" href={`/${lang}/journal/`}>Back to Journal</a>
-        <a class="text-sm font-medium text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground" href="/">Write to someone</a>
+        <a class="text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground" href={`/${lang}/journal/`}>{copy.backToJournal}</a>
+        <a class="text-sm font-medium text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground" href="/">{copy.writeToSomeone}</a>
       </div>
     </article>
   </main>
-  <SiteFooter />
+  <SiteFooter locale={lang} />
 </Layout>

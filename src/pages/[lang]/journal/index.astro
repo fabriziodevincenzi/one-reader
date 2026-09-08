@@ -5,12 +5,14 @@ import SiteFooter from '../../../components/SiteFooter.astro';
 import JournalLanguageLinks from '../../../components/JournalLanguageLinks.astro';
 import { formatJournalDate, getJournalDate, getJournalEntries, getJournalSlug } from '../../../lib/journal';
 import { siteLocales, type SiteLocale } from '../../../lib/i18n';
+import { journalUiCopy } from '../../../lib/journal-ui';
 
 export function getStaticPaths() {
   return siteLocales.filter((locale) => locale !== 'en').map((lang) => ({ params: { lang }, props: { lang } }));
 }
 
 const { lang } = Astro.props as { lang: SiteLocale };
+const copy = journalUiCopy[lang];
 const [latestArticle, ...earlierArticles] = await getJournalEntries(lang);
 const alternateLocales = Object.fromEntries(
   siteLocales.map((locale) => [
@@ -20,28 +22,26 @@ const alternateLocales = Object.fromEntries(
 );
 ---
 
-<Layout title={`Journal — One Reader`} description="Notes on pen pals, writing to strangers, paying attention, and finding a way to begin." locale={lang} alternateLocales={alternateLocales}>
-  <SiteHeader action="write" />
+<Layout title={`Journal — One Reader`} description={copy.description} locale={lang} alternateLocales={alternateLocales}>
+  <SiteHeader action="write" locale={lang} />
 
   <main id="main-content" class="shell py-20 sm:py-28 lg:py-40">
     <div class="max-w-5xl">
       <p class="eyebrow mb-7 text-accent">One Reader · Journal</p>
-      <h1 class="journal-title balance">Notes on pen pals, attention, and finding a way to begin.</h1>
-      <p class="journal-deck mt-9 text-muted-foreground">
-        Thoughts on pen-pal correspondence, attention, and the strange, hopeful work of beginning a conversation with someone you do not know.
-      </p>
+      <h1 class="journal-title balance">{copy.title}</h1>
+      <p class="journal-deck mt-9 text-muted-foreground">{copy.description}</p>
       <JournalLanguageLinks alternateLocales={alternateLocales} currentLocale={lang} />
     </div>
 
     {latestArticle && <section class="mt-20 max-w-4xl border-y border-border py-10 sm:mt-28 sm:py-14" aria-labelledby="featured-heading">
-      <p class="journal-meta mb-5 text-accent">Featured note · {formatJournalDate(getJournalDate(latestArticle), lang)} · {latestArticle.data.readingTime}</p>
+      <p class="journal-meta mb-5 text-accent">{copy.featuredNote} · {formatJournalDate(getJournalDate(latestArticle), lang)} · {latestArticle.data.readingTime}</p>
       <h2 id="featured-heading" class="max-w-3xl font-interface text-[clamp(2.25rem,4.5vw,4.25rem)] font-normal leading-[1.08] tracking-[-0.04em]">{latestArticle.data.title}</h2>
       <p class="journal-deck mt-5 text-muted-foreground">{latestArticle.data['meta-description']}</p>
-      <a class="mt-7 inline-block text-sm font-medium text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground" href={`/${lang}/journal/${getJournalSlug(latestArticle)}/`}>Read the note →</a>
+      <a class="mt-7 inline-block text-sm font-medium text-accent underline decoration-accent/50 underline-offset-4 hover:text-foreground" href={`/${lang}/journal/${getJournalSlug(latestArticle)}/`}>{copy.readNote} →</a>
     </section>}
 
     {earlierArticles.length > 0 && <section class="mt-20 max-w-4xl sm:mt-28" aria-labelledby="earlier-heading">
-      <p id="earlier-heading" class="eyebrow mb-5">Earlier notes</p>
+      <p id="earlier-heading" class="eyebrow mb-5">{copy.earlierNotes}</p>
       <div class="border-t border-border">
         {earlierArticles.map((article) => (
           <a class="grid gap-3 border-b border-border py-7 no-underline transition-colors hover:text-accent sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8" href={`/${lang}/journal/${getJournalSlug(article)}/`}>
@@ -52,5 +52,5 @@ const alternateLocales = Object.fromEntries(
       </div>
     </section>}
   </main>
-  <SiteFooter />
+  <SiteFooter locale={lang} />
 </Layout>
