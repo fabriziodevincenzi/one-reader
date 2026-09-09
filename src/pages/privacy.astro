@@ -4,50 +4,129 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout title="Privacy — One Reader" description="One Reader privacy information.">
+<Layout title="Privacy — One Reader" description="How One Reader collects, uses, stores and removes personal data.">
   <SiteHeader />
   <main id="main-content" class="shell max-w-3xl min-h-[70vh] py-20 sm:py-28">
-    <p class="eyebrow mb-5">Privacy notice · implementation draft</p>
+    <p class="eyebrow mb-5">Privacy notice · updated 9 September 2026</p>
     <h1 class="section-title">Privacy</h1>
     <p class="brand-prose mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-      One Reader is designed to collect as little as possible. This notice makes the consent choices visible for the free account and the separate optional Journal messages.
+      One Reader is designed to support private correspondence while collecting only the information needed to operate the service, keep it safe and manage memberships.
     </p>
 
-    <div class="mt-16 grid gap-10 border-t border-border pt-10 sm:grid-cols-2 sm:gap-x-12">
-      <section>
-        <h2 class="text-2xl font-normal tracking-[-0.005em]">What we collect</h2>
-        <p class="brand-prose mt-4 leading-7 text-muted-foreground">Your email address, month and year of birth, languages, account and subscription status, and the communication preferences you selected. We do not ask for your day of birth, and the Journal preference is stored separately from service registration.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-normal tracking-[-0.005em]">Why we use it</h2>
-        <p class="brand-prose mt-4 leading-7 text-muted-foreground">To operate the account, match members who can correspond in the same language, and keep the 14–17 and adult matching pools separate. Journal notes and product news are sent only when you choose the separate optional checkbox.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-normal tracking-[-0.005em]">Legal bases</h2>
-        <p class="brand-prose mt-4 leading-7 text-muted-foreground">The service account is needed to operate correspondence. Journal notes and product news use a separate optional consent, and these purposes are never bundled into one required acceptance.</p>
-      </section>
-      <section id="rights">
-        <h2 class="text-2xl font-normal tracking-[-0.005em]">Your controls</h2>
-        <p class="brand-prose mt-4 leading-7 text-muted-foreground">You can withdraw optional Journal consent, request access, correct inaccurate information or ask for deletion. Birth details are locked in the account to protect the matching pools, but you can request a correction if they are inaccurate.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-normal tracking-[-0.005em]">When a letter is reported</h2>
-        <p class="brand-prose mt-4 leading-7 text-muted-foreground">The correspondence is closed and the reported letter, already stored in encrypted form, can be made available to One Reader for a separate human review. We record the reporting member, the letter and the selected category; the form does not ask for additional free-text details.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-normal tracking-[-0.005em]">When you close your account</h2>
-        <p class="brand-prose mt-4 leading-7 text-muted-foreground">Your service access and incoming deliveries stop as soon as you request deletion. We retain only the minimum records needed to process the request or handle a related dispute for up to 30 days. Records subject to a longer legal obligation, such as billing evidence, remain only for that obligation and are then removed.</p>
-      </section>
-    </div>
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Who is responsible</h2>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        The data controller is Fabrizio De Vincenzi, resident in Negrar di Valpolicella (Verona), Italy, operating the One Reader service. Privacy questions and requests can be sent to <a class="text-foreground underline underline-offset-4" href="mailto:customers@onereader.co">customers@onereader.co</a>.
+      </p>
+    </section>
 
-    <section class="mt-16 border-t border-border pt-10">
-      <h2 class="text-2xl font-normal tracking-[-0.005em]">Operational principles</h2>
-      <ul class="brand-prose mt-5 grid gap-3 leading-7 text-muted-foreground sm:grid-cols-2 sm:gap-x-12">
-        <li>Mailbox ownership may be confirmed with a double opt-in link.</li>
-        <li>No tracking pixels or open tracking in correspondence emails.</li>
-        <li>Consent records are purpose-specific, versioned and timestamped.</li>
-        <li>Data is deleted when its purpose and retention period end.</li>
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Information we process</h2>
+      <div class="mt-6 grid gap-8 sm:grid-cols-2 sm:gap-x-12">
+        <div>
+          <h3 class="text-lg font-medium">Account and eligibility</h3>
+          <p class="brand-prose mt-3 leading-7 text-muted-foreground">Email address, account identifier and status, verification and sign-in activity, month and year of birth, age-pool eligibility dates, country, currency, languages and availability to receive letters. We do not ask for the day of birth.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium">Correspondence</h3>
+          <p class="brand-prose mt-3 leading-7 text-muted-foreground">The letter text, its detected language, sender and recipient account identifiers, private reply aliases, delivery state, dates, message identifiers and the number of removed attachments. Letter text is encrypted in our database. Resend necessarily processes the readable message to receive and deliver it.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium">Safety and requests</h3>
+          <p class="brand-prose mt-3 leading-7 text-muted-foreground">Blocks, reported letters, the reporting member, selected report category, privacy requests and their status. A reported encrypted letter may be made available to an authorised operator for review.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium">Membership and payments</h3>
+          <p class="brand-prose mt-3 leading-7 text-muted-foreground">Plan and subscription status, renewal dates, amount, currency and Stripe customer and subscription identifiers. Stripe receives the payment details and any billing address; One Reader does not store complete card details.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium">Communications and consent</h3>
+          <p class="brand-prose mt-3 leading-7 text-muted-foreground">Service-email recipients and delivery results, consent purpose, choice, wording, policy version, source and time. Optional Journal messages and product news are recorded separately from service registration.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium">Minimal product events</h3>
+          <p class="brand-prose mt-3 leading-7 text-muted-foreground">For verified accounts we record a limited set of events such as completed registration, email verification and subscription activation or cancellation. These events contain the account identifier, time and minimal service context. We do not add page views, browsing paths, device profiles or letter content to product analytics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">How email correspondence is handled</h2>
+      <div class="brand-prose mt-5 grid gap-4 leading-7 text-muted-foreground">
+        <p>One Reader uses Resend to receive and send letters, replies, account verification messages and other service emails. Resend therefore processes the sender and recipient addresses, message headers, delivery information and readable message content while receiving or delivering an email. One Reader receives delivery and bounce events, but does not record whether a message was opened or whether a link was clicked.</p>
+        <p>Incoming HTML is converted to plain text. Executable and remote content, quoted message history and signatures are removed where detected, and attachments are not forwarded. The resulting letter is delivered through a private reply address, so the two correspondents are not shown each other’s real email address.</p>
+        <p>One Reader does not add open-tracking pixels and does not rewrite links for click tracking. Letters and service messages are sent with both a minimal HTML version and a plain-text version.</p>
+        <p>Letter content stored in the One Reader database is protected with <strong class="text-foreground">envelope encryption</strong>: each letter is encrypted with a separate AES-256-GCM data key, and that key is wrapped with a separate AES-KW key. This is encryption at rest, not end-to-end encryption. Resend and One Reader’s authorised server-side processing necessarily handle readable content while receiving and delivering the message.</p>
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Why we process it</h2>
+      <div class="brand-prose mt-5 grid gap-4 leading-7 text-muted-foreground">
+        <p><strong class="text-foreground">Contract and requested steps.</strong> We use account, eligibility, correspondence and membership data to create and secure the account, match members, deliver letters and provide paid features.</p>
+        <p><strong class="text-foreground">Consent.</strong> We send optional Journal messages and product news only when you select the separate checkbox. You can withdraw this choice from your account at any time.</p>
+        <p><strong class="text-foreground">Legitimate interests.</strong> We prevent abuse, protect members, diagnose delivery failures and use limited product events to understand whether the service works. We minimise these records and do not use them for advertising or cross-site profiling.</p>
+        <p><strong class="text-foreground">Legal obligations and claims.</strong> We keep and use records where required for tax, accounting, consumer-protection or legal-claims purposes and to respond to privacy requests.</p>
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Cookies and browser storage</h2>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        One Reader does not use advertising cookies or analytics cookies and does not load a general visitor-analytics script. The service uses local browser storage only for necessary functions: keeping a signed-in Supabase session, completing registration across the email-verification step, limiting repeated sign-in requests and remembering the selected billing period. This storage is not used to follow visitors across websites.
+      </p>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        Cloudflare Turnstile is loaded when a person starts registration or sign-in. It processes browser and request signals needed to distinguish people from automated abuse. A Cloudflare clearance cookie may be issued only if pre-clearance or a related Cloudflare security challenge is enabled. Necessary security storage does not require an advertising or analytics choice.
+      </p>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Service providers and international transfers</h2>
+      <ul class="brand-prose mt-5 grid gap-3 leading-7 text-muted-foreground">
+        <li><strong class="text-foreground">Supabase</strong> provides authentication, database and server-side functions.</li>
+        <li><strong class="text-foreground">Resend</strong> receives and delivers letters and service emails, and processes message content, addresses, headers and delivery information.</li>
+        <li><strong class="text-foreground">Stripe</strong> processes payments, subscriptions, billing details and refunds.</li>
+        <li><strong class="text-foreground">Cloudflare</strong> provides network security and the Turnstile anti-abuse check.</li>
       </ul>
+      <p class="brand-prose mt-5 leading-7 text-muted-foreground">
+        These providers act under their respective data-processing terms. Some processing may take place outside the European Economic Area, including in the United States. Where required, transfers are covered by an adequacy decision, standard contractual clauses or another lawful transfer mechanism.
+      </p>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">How long information is kept</h2>
+      <ul class="brand-prose mt-5 grid gap-3 leading-7 text-muted-foreground">
+        <li>Account, preference, correspondence and consent records are kept while the account is active and for as long as needed to provide and protect the service.</li>
+        <li>Private reply aliases expire 30 days after the last exchange.</li>
+        <li>Resend ordinarily retains email and log data for 30 days under its standard service retention.</li>
+        <li>When account deletion is requested, service access and incoming deliveries stop immediately, and any active subscription is cancelled. The account and its identifiable Supabase records are permanently removed no later than 30 days after the request.</li>
+        <li>After deletion, product events remain only without an account identifier for aggregate statistics. A receipt containing the request identifier and completion dates is retained for a further 90 days to verify that deletion occurred.</li>
+        <li>Stripe and any records needed for tax, accounting, consumer protection, fraud prevention or legal claims may be retained for the period required by law. Backups may persist temporarily until their normal secure rotation completes.</li>
+      </ul>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10" id="rights">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Your choices and rights</h2>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        You may ask for access to your personal data, correction, deletion, restriction, portability where applicable, or object to processing based on legitimate interests. You may withdraw Journal consent at any time without affecting earlier lawful processing. These controls are available in the private account area or by emailing <a class="text-foreground underline underline-offset-4" href="mailto:customers@onereader.co">customers@onereader.co</a>.
+      </p>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        You may also lodge a complaint with the Italian Data Protection Authority, the <a class="text-foreground underline underline-offset-4" href="https://www.garanteprivacy.it/" rel="noreferrer">Garante per la protezione dei dati personali</a>, or with the authority where you live or work.
+      </p>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Children and correspondence safety</h2>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        One Reader is available from age 14. Members aged 14–17 and adults are kept in separate matching pools. Letters should not include contact details, sensitive information or information that identifies the writer or another person. Recipients can stop a correspondence or report a letter using the private links in the message.
+      </p>
+    </section>
+
+    <section class="mt-14 border-t border-border pt-10">
+      <h2 class="text-2xl font-normal tracking-[-0.005em]">Security</h2>
+      <p class="brand-prose mt-4 leading-7 text-muted-foreground">
+        One Reader uses one-time sign-in links, access controls, private reply aliases and envelope encryption for letter content stored in its database. Email remains readable in the sender’s and recipient’s inboxes and may also be processed according to the policies of their respective email providers.
+      </p>
     </section>
   </main>
   <SiteFooter />
