@@ -230,7 +230,7 @@ const currentYear = new Date().getUTCFullYear();
         <h2 id="close-heading" class="text-3xl font-normal tracking-[-0.005em]">Close your account</h2>
       </div>
       <form data-delete-account>
-        <p class="m-0 max-w-xl text-sm leading-6 text-muted-foreground">Your service access and incoming deliveries stop immediately. We retain only the minimum records needed for up to 30 days to handle the request or a related dispute, then remove them unless a longer legal obligation applies.</p>
+        <p class="m-0 max-w-xl text-sm leading-6 text-muted-foreground">Your service access and incoming deliveries stop immediately, and any active subscription is cancelled. We remove your identifiable account data within 30 days. Payment records required by law remain with Stripe for the applicable period.</p>
         <button class={buttonVariants({ variant: 'outline', size: 'small' }) + ' mt-5 border-accent text-accent hover:border-accent hover:bg-transparent'} type="submit">Request account deletion</button>
         <p class="mt-4 hidden text-sm leading-6 text-accent" data-delete-note></p>
       </form>
@@ -728,7 +728,7 @@ const currentYear = new Date().getUTCFullYear();
           deleteButton.disabled = true;
           deleteButton.textContent = 'Deletion request recorded';
         }
-        setNote(deleteNote, 'Your account is closed and new deliveries are stopped. We will retain only the minimum records needed for up to 30 days, then remove them unless a longer legal obligation applies.');
+        setNote(deleteNote, 'Your account is closed, new deliveries are stopped and any active subscription is being cancelled. Your identifiable account data will be removed within 30 days.');
         void client.functions.invoke('privacy-request', { body: { request_type: 'deletion' } });
       }
 
@@ -831,8 +831,8 @@ const currentYear = new Date().getUTCFullYear();
           deleteButton.textContent = 'Deletion request recorded';
         }
         setNote(deleteNote, data?.already_recorded
-          ? 'Your account is closed and new deliveries are stopped. We will retain only the minimum records needed for up to 30 days, then remove them unless a longer legal obligation applies.'
-          : 'Your account is now closed and new deliveries are stopped. We will retain only the minimum records needed for up to 30 days, then remove them unless a longer legal obligation applies.');
+          ? 'Your account is closed, new deliveries are stopped and any active subscription is being cancelled. Your identifiable account data will be removed within 30 days.'
+          : 'Your account is now closed, new deliveries are stopped and any active subscription is being cancelled. Your identifiable account data will be removed within 30 days.');
       });
     }
 

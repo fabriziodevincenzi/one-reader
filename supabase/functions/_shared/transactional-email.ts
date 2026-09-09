@@ -275,7 +275,7 @@ function emailCopy(eventType: TransactionalEmailEvent, payload: Record<string, u
         paragraphs: [
           `Request: ${requestType}. Reference: ${requestId}.`,
           string(payload.requestType) === 'deletion'
-            ? 'Your account is now closed and new deliveries are stopped. We retain only the minimum records needed for up to 30 days to handle the request or a related dispute, unless a longer legal obligation applies.'
+            ? 'Your account is now closed, new deliveries are stopped and any active subscription is being cancelled. Your identifiable account data will be removed within 30 days. Payment records required by law remain with Stripe for the applicable period.'
             : 'You can follow its status in your account. We will contact you if identity verification or more information is needed.',
         ],
         action: { label: 'View privacy requests', href: `${memberUrl}#privacy` },

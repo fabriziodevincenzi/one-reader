@@ -1,3 +1,4 @@
+import Stripe from 'npm:stripe@18.5.0';
 import { Resend } from 'npm:resend@6.18.1';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.55.0';
 import { renderTransactionalEmail } from '../_shared/transactional-email.ts';
@@ -90,6 +91,27 @@ Deno.serve(async (request) => {
     }
 
     if (requestType === 'deletion') {
+      const { data: billingProfile, error: billingProfileError } = await admin
+        .from('profiles')
+        .select('stripe_subscription_id')
+        .eq('id', userData.user.id)
+        .maybeSingle();
+      if (billingProfileError) throw billingProfileError;
+      if (billingProfile?.stripe_subscription_id) {
+        try {
+          const stripe = new Stripe(requireEnvironment('STRIPE_SECRET_KEY'), { apiVersion: '2025-03-31.basil' });
+          const subscription = await stripe.subscriptions.retrieve(billingProfile.stripe_subscription_id);
+          if (subscription.status !== 'canceled') {
+            await stripe.subscriptions.cancel(billingProfile.stripe_subscription_id);
+          }
+        } catch (stripeError) {
+          // A payment-provider outage must not prevent a member from exercising
+          // the right to deletion. The deletion worker checks again before the
+          // final account purge.
+          console.error('Could not cancel subscription during deletion request', stripeError);
+        }
+      }
+
       const { error: closeError } = await admin
         .from('profiles')
         .update({ account_status: 'closed', updated_at: new Date().toISOString() })
