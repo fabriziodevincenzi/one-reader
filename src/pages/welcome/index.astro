@@ -9,73 +9,69 @@ import SiteFooter from '../../components/SiteFooter.astro';
   <SiteHeader />
 
   <main id="main-content" class="shell brand-page py-16 sm:py-24">
-    <article class="mx-auto max-w-3xl">
-      <header class="border-b border-border pb-14 sm:pb-20">
+    <article class="mx-auto max-w-2xl">
+      <header>
         <p class="eyebrow mb-5">Welcome to One Reader</p>
-        <h1 class="section-title max-w-3xl balance">Write to one person. Be unknown again.</h1>
-        <p class="brand-prose mt-8 max-w-2xl text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">One Reader is a place to find a pen pal by writing letters to strangers by email. Not to yourself, and not to a crowd—just to one real reader.</p>
+        <h1 class="section-title balance">Write to one person. Be unknown again.</h1>
+        <p class="brand-prose mt-8 text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">One Reader is a place to find a pen pal by writing letters to strangers by email. Your words reach one real reader, with room for a correspondence to begin.</p>
       </header>
 
-      <div class="brand-prose space-y-16 py-14 text-lg leading-8 text-muted-foreground sm:space-y-20 sm:py-20">
-        <section aria-labelledby="why-heading">
-          <p class="eyebrow mb-4">Why it exists</p>
-          <h2 id="why-heading" class="max-w-2xl text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Some things need a reader—but not an audience.</h2>
-          <div class="mt-6 max-w-2xl space-y-5">
-            <p>A diary has only one reader: you. A social network has too many, and your face or familiar name stays attached to every word. Both can make it hard to say what you actually mean.</p>
-            <p>One Reader sits in between. Someone real is there to read you, but no one knows you, no history follows you and no future needs protecting. That freedom is the point—before any reply arrives.</p>
-          </div>
-        </section>
+      <div class="welcome-story brand-prose mt-10 text-lg leading-8 text-muted-foreground sm:mt-12 sm:text-xl sm:leading-9">
+        <h2>Some things need a reader—but not an audience.</h2>
 
-        <section class="border-y border-border py-10 sm:py-12" aria-labelledby="how-heading">
-          <p class="eyebrow mb-4">How it works</p>
-          <h2 id="how-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Every correspondence starts clean.</h2>
-          <ol class="mt-10 grid gap-8 sm:gap-10">
-            <li class="grid gap-3 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
-              <span class="metadata pt-1">01 / Write</span>
-              <p class="m-0">Send your letter to <a class="text-foreground underline underline-offset-4" href="mailto:write@onereader.co">write@onereader.co</a>. We find one available person who can read the language you chose.</p>
-            </li>
-            <li class="grid gap-3 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
-              <span class="metadata pt-1">02 / Be unknown</span>
-              <p class="m-0">Each conversation uses a new name and a private reply address. The person who knows you from one letter cannot trace you into another. Your real email address stays private.</p>
-            </li>
-            <li class="grid gap-3 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
-              <span class="metadata pt-1">03 / Continue, or let go</span>
-              <p class="m-0">If they reply, a correspondence begins: letter, reply, letter, reply. It closes permanently after 30 days without a reply, or sooner if either person chooses <em>End this conversation</em> in the email.</p>
-            </li>
-          </ol>
-        </section>
+        <p>A diary has only one reader: you. A social network has too many, and your face or familiar name stays attached to every word. Both can make it hard to say what you actually mean.</p>
 
-        <section aria-labelledby="plans-heading">
-          <p class="eyebrow mb-4">Two ways to belong</p>
-          <h2 id="plans-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground sm:text-4xl">Reading and replying are always open.</h2>
-          <div class="mt-10 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
-            <section class="bg-background p-7 sm:p-8" aria-labelledby="reader-heading">
-              <p class="metadata mb-5">Free</p>
-              <h3 id="reader-heading" class="text-3xl font-normal tracking-[-0.005em] text-foreground">Reader</h3>
-              <p class="mt-5 text-base leading-7">Receive letters and reply to every conversation that reaches you. You can also write first once—whenever it feels right.</p>
-            </section>
-            <section class="writer-card p-7 sm:p-8" aria-labelledby="writer-heading">
-              <p class="metadata mb-5">Paid · monthly or annually</p>
-              <h3 id="writer-heading" class="text-3xl font-normal tracking-[-0.005em] text-foreground">Writer</h3>
-              <p class="mt-5 text-base leading-7">Write first again and again: one new letter every 24 hours. <span data-membership-price>€18 a year or €2 a month</span>.</p>
-            </section>
-          </div>
-          <p class="mt-6 max-w-2xl text-base leading-7">Writing first is different from replying: you choose when to begin, who might receive it, and what to say without being prompted. That is the small, essential act Writer makes possible again.</p>
-        </section>
+        <p>One Reader sits in between. Someone real is there to read you, meeting you through the words you choose to share. You can begin without having to live up to a familiar version of yourself. That freedom matters even before a reply arrives.</p>
 
-        <section class="max-w-2xl" aria-labelledby="before-heading">
-          <p class="eyebrow mb-4">Before your first letter</p>
-          <h2 id="before-heading" class="text-3xl font-normal leading-tight tracking-[-0.005em] text-foreground">Keep the room kind and safe.</h2>
-          <ul class="mt-6 grid gap-4 text-base leading-7">
-            <li><strong class="font-medium text-foreground">A reply is never owed.</strong> Write when you have something to say, and give the other person the same freedom.</li>
-            <li><strong class="font-medium text-foreground">Keep personal details personal.</strong> Do not share passwords, financial details, exact addresses, or requests for someone else's private information.</li>
-            <li><strong class="font-medium text-foreground">Use the email links if you need them.</strong> You can end or report a correspondence without replying.</li>
-          </ul>
-        </section>
+        <h2>Take your time.</h2>
+
+        <p>Email moves more slowly than instant messaging. Thankfully. A letter can sit in your drafts while you go for a walk, make dinner, or discover what you were really trying to say. Give yourself time to write it, leave it alone for a while, and read it again before you send it.</p>
+
+        <h2>Give your first letter a little care.</h2>
+
+        <p>If you have just joined, you probably still have the first conversation included with your free Reader account: one chance to write first to someone new. You can keep replying in that conversation, and receive and reply to letters from other people too.</p>
+
+        <p>There is no hurry to use that first opening. Give it something of yourself, beyond a quick hello. It does not need to be long or beautifully written. A few honest paragraphs can give another person somewhere to begin.</p>
+
+        <p>You might try putting words to what keeps tumbling around your head, what knots your stomach, or what has been pressing against your chest. You do not have to understand it completely before you start. Sometimes writing is how you find out.</p>
+
+        <p>And it can be something lighter: a small joy, an odd memory, something you noticed on the way home. Share only what you feel comfortable sharing. You do not have to tell a stranger everything to say something real.</p>
+
+        <h2>Leave room for the person reading.</h2>
+
+        <p>Your letter will reach one person, with a life and a pace of their own. Give them a little context. A question you genuinely wonder about can leave a door open for their experience too.</p>
+
+        <p>When you have sent it, let it travel at the speed of email. The other person may need time to read, think, and find their words, just as you did. A reply is always a choice. Some letters become a correspondence; others remain a single letter. You can give either outcome room.</p>
+
+        <h2>When you feel ready.</h2>
+
+        <p>First, <a href="/member/">complete your account details</a>, including your birth month and year and the languages you can read. These help us find an appropriate reader.</p>
+
+        <p>Then write from the email address you registered with and send your letter to <a href="mailto:write@onereader.co">write@onereader.co</a>. Put your words in the body of the email; attachments do not travel with the letter. We will find one available person who can read the language you wrote in.</p>
+
+        <h2>Every correspondence starts clean.</h2>
+
+        <p>Each conversation uses a new name and a private reply address. The identity you use in one correspondence does not follow you into another, and your real email address stays hidden. Any identifying details you include in your own words are still yours to share, so choose them with care.</p>
+
+        <p>If they write back, use Reply on the letter you receive to continue with that person: letter, reply, letter, reply. That exchange can develop at whatever pace the two of you find.</p>
+
+        <h2>Keep the room kind and safe.</h2>
+
+        <p>A reply is never owed. Write when you have something to say, and give the other person the same freedom. Keep exact addresses, passwords, and financial details out of your letters, and do not ask someone else for their private information.</p>
+
+        <p>You can end or report a correspondence using the links in its emails, without having to reply. Either person can end it, and it also closes permanently after thirty days without an exchange. There is room to keep writing, and room to stop.</p>
+
+        <h2>Two ways to belong.</h2>
+
+        <p>Reader is free. You can receive letters and reply to every conversation that reaches you, and write first once, whenever it feels right. Reading and replying remain open after you have used that first opening.</p>
+
+        <p>Writer lets you begin a new conversation every twenty-four hours, for <span data-membership-price>€18 a year or €2 a month</span>. Writing first is different from replying: you choose when to begin and what to say without waiting for someone else to reach out. Writer makes that possible again and again. You can decide whether you want that later.</p>
+
+        <p class="welcome-signoff">For now, open a draft.<br />See what comes.</p>
       </div>
 
-      <footer class="flex flex-wrap items-center gap-5 border-t border-border pt-8">
-        <a class={buttonVariants({ size: 'large' })} href="/member/">Set up my account</a>
+      <footer class="mt-12 flex flex-wrap items-center gap-5 border-t border-border pt-8">
+        <a class={buttonVariants({ variant: 'outline', size: 'large' })} href="/member/">Go to my account</a>
         <a class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" href="/terms">Read the full terms</a>
       </footer>
     </article>
@@ -132,3 +128,31 @@ import SiteFooter from '../../components/SiteFooter.astro';
     }
   </script>
 </Layout>
+
+<style>
+  .welcome-story p + p {
+    margin-top: 1.5rem;
+  }
+
+  .welcome-story h2 {
+    margin: 3rem 0 1.5rem;
+    color: var(--foreground);
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+
+  .welcome-story a {
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    color: var(--foreground);
+  }
+
+  .welcome-story .welcome-signoff {
+    margin-top: 3rem;
+    color: var(--foreground);
+  }
+</style>
