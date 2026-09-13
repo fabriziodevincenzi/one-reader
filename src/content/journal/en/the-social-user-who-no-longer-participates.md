@@ -16,11 +16,11 @@ Social media is becoming less social not because people have stopped wanting con
 
 ## From participants to audiences
 
-Ofcom’s 2026 research on UK adults describes a clear behavioural change. Only 49% of adult social-media users now actively post, share or comment, down from 61% in 2024. At the same time, fewer people are exploring new websites, and more are deleting apps, setting limits or leaving their phones behind.
+[Ofcom’s 2026 research](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles-uk-adults-media-and-online-lives-revealed) on UK adults describes a clear behavioural change. Only 49% of adult social-media users now actively post, share or comment, down from 61% in 2024. At the same time, fewer people are exploring new websites, and more are deleting apps, setting limits or leaving their phones behind.
 
 The important point is not simply that people post less. It is that the social user is being separated from the social object. A person opens a platform to see what large accounts, creators and institutions have made. Their occasional reaction takes place inside a stream whose main function is distribution, not mutual exchange.
 
-This is how a network starts to resemble television. The screen is interactive, but the structure is increasingly one-to-many. A small number of accounts produce the material; everyone else watches, reacts and moves on. The comment box remains, but it does not make the relationship reciprocal.
+This is how a network starts to resemble television. The screen is interactive, but the structure is increasingly one-to-many. A small number of accounts produce the material; everyone else watches, reacts and moves on. The comment box remains, but it does not make the relationship reciprocal. [When Social Media Becomes Television](/journal/when-social-media-becomes-television/) explores this shift.
 
 The [2026 Digital News Report](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary) makes the same structure visible in news. Forty-six percent of respondents get some news from creators of any type, while 30% say social and video networks are their main source of news. Most people still combine creators with traditional media, but the place where they encounter information is increasingly a third-party feed.
 

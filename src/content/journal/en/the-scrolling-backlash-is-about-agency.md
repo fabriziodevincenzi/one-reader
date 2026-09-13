@@ -18,9 +18,9 @@ The current backlash against scrolling is not mainly a campaign to use technolog
 
 The language of digital wellbeing usually begins with subtraction: fewer hours, fewer notifications, fewer apps. But the most interesting part of the backlash is the question underneath it. People are not only asking how to stop looking at a screen. They are asking why the screen keeps deciding what looking should mean.
 
-Ofcom’s 2026 study found that 67% of UK online adults sometimes spend too long on their devices, while 40% say this happens most days. The proportion who believe that the benefits of being online outweigh the risks fell from 72% to 59% in one year. These figures do not prove that every platform harms every user, but they show a widening gap between being connected and feeling in control.
+[Ofcom’s 2026 study](https://www.ofcom.org.uk/media-use-and-attitudes/media-habits-adults/passive-social-media-use-ai-companionship-and-online-side-hustles-uk-adults-media-and-online-lives-revealed) found that 67% of UK online adults sometimes spend too long on their devices, while 40% say this happens most days. The proportion who believe that the benefits of being online outweigh the risks fell from 72% to 59% in one year. These figures do not prove that every platform harms every user, but they show a widening gap between being connected and feeling in control.
 
-The Atlantic’s August 2026 report on the “scrolling backlash” describes the cultural side of the same movement: people leaving phones at concerts, trying to rebuild their attention and feeling uneasy about the time that disappears inside a feed. The important shift is from “I should have more discipline” to “this environment is designed to make my attention available.”
+[The Atlantic’s August 2026 conversation on the “scrolling backlash”](https://www.theatlantic.com/podcasts/2026/08/welcome-to-the-scrolling-backlash/688446/) describes the cultural side of the same movement: people renegotiating their relationship with their phones, trying to rebuild their attention and feeling uneasy about the time that disappears inside a feed. The important shift is from “I should have more discipline” to “this environment is designed to make my attention available.”
 
 ## The feed has no natural ending
 
