@@ -66,6 +66,22 @@ const currentYear = new Date().getUTCFullYear();
         </div>
 
           <div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6" data-membership-actions>
+          <fieldset class="hidden basis-full max-w-xl border-0 p-0" data-billing-choice>
+            <legend class="account-interface m-0 text-sm font-medium">Choose your billing</legend>
+            <div class="mt-3 grid gap-3 sm:grid-cols-2">
+              <label class="billing-choice-option">
+                <input class="sr-only" type="radio" name="writerBilling" value="monthly" data-billing-period="monthly" />
+                <span>Monthly</span>
+                <span class="text-xs text-muted-foreground" data-monthly-price>€2 / month</span>
+              </label>
+              <label class="billing-choice-option">
+                <input class="sr-only" type="radio" name="writerBilling" value="annual" data-billing-period="annual" />
+                <span>Annual</span>
+                <span class="text-xs text-muted-foreground" data-annual-price>€18 / year</span>
+              </label>
+            </div>
+            <p class="m-0 mt-3 text-xs leading-5 text-muted-foreground" data-billing-detail></p>
+          </fieldset>
           <a class={buttonVariants({ size: 'small' })} href="#checkout" data-membership-primary>Become a Writer</a>
           <a class="hidden border-b border-border px-1 pb-1 text-sm underline-offset-4 hover:border-foreground" href="#refund-request" data-membership-refund>Request a refund</a>
           <p class="mt-1 basis-full max-w-xl text-sm leading-6 text-muted-foreground" data-membership-note>Writer opens one new correspondence every 24 hours. The price is shown in your local currency at checkout.</p>
@@ -366,6 +382,34 @@ const currentYear = new Date().getUTCFullYear();
     .account-skeleton-lines span:nth-child(2) { width: 92%; }
     .account-skeleton-lines span:nth-child(3) { width: 66%; }
 
+    .billing-choice-option {
+      display: flex;
+      min-height: 4rem;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.2rem;
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      transition: border-color 150ms ease, background-color 150ms ease;
+    }
+
+    .billing-choice-option:hover {
+      border-color: var(--foreground);
+    }
+
+    .billing-choice-option:has(input:checked) {
+      border-color: var(--foreground);
+      background: var(--card-surface);
+    }
+
+    .billing-choice-option:has(input:focus-visible) {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+
     .account-inline-skeleton.account-loader-hidden,
     .account-action-skeleton.account-loader-hidden,
     .account-membership-skeleton.account-loader-hidden {
@@ -390,7 +434,8 @@ const currentYear = new Date().getUTCFullYear();
 
   <script>
     import { supabase } from '../../lib/supabase';
-    import { fallbackMarket, formatAnnualPrice, marketForCountry } from '../../lib/market-pricing';
+    import { fallbackMarket, marketForCountry } from '../../lib/market-pricing';
+    import { priceGrid, type PriceCurrency } from '../../lib/product-config';
 
     const accountEmail = document.querySelector<HTMLElement>('[data-account-email]');
     const profileEmail = document.querySelector<HTMLElement>('[data-profile-email]');
@@ -399,6 +444,11 @@ const currentYear = new Date().getUTCFullYear();
     const membershipPace = document.querySelector<HTMLElement>('[data-membership-pace]');
     const membershipPeriod = document.querySelector<HTMLElement>('[data-membership-period]');
     const membershipPrimary = document.querySelector<HTMLAnchorElement>('[data-membership-primary]');
+    const billingChoice = document.querySelector<HTMLFieldSetElement>('[data-billing-choice]');
+    const billingInputs = Array.from(document.querySelectorAll<HTMLInputElement>('[data-billing-period]'));
+    const monthlyPrice = document.querySelector<HTMLElement>('[data-monthly-price]');
+    const annualPrice = document.querySelector<HTMLElement>('[data-annual-price]');
+    const billingDetail = document.querySelector<HTMLElement>('[data-billing-detail]');
     const membershipRefund = document.querySelector<HTMLAnchorElement>('[data-membership-refund]');
     const refundForm = document.querySelector<HTMLFormElement>('[data-refund-form]');
     const refundType = document.querySelector<HTMLSelectElement>('[data-refund-type]');
@@ -427,7 +477,36 @@ const currentYear = new Date().getUTCFullYear();
     const membershipPanel = document.querySelector<HTMLElement>('[data-membership-panel]');
     const membershipSkeleton = document.querySelector<HTMLElement>('[data-membership-skeleton]');
     const membershipContent = document.querySelector<HTMLElement>('[data-membership-content]');
-    let annualPriceLabel = formatAnnualPrice(fallbackMarket.amount, fallbackMarket.currency);
+    const billingStorageKey = 'one-reader:billing-period';
+    let selectedBillingPeriod: 'monthly' | 'annual' = localStorage.getItem(billingStorageKey) === 'monthly' ? 'monthly' : 'annual';
+    let billingCurrency: PriceCurrency = fallbackMarket.currency;
+
+    const formatPrice = (amount: number, currency: string) => new Intl.NumberFormat(navigator.language || 'en', {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+    }).format(amount);
+
+    const renderBillingChoice = () => {
+      const prices = priceGrid[billingCurrency];
+      const monthlyLabel = formatPrice(prices.monthly, billingCurrency);
+      const annualLabel = formatPrice(prices.full, billingCurrency);
+      const annualMonthlyLabel = formatPrice(prices.full / 12, billingCurrency);
+      const saving = Math.round((1 - prices.full / (prices.monthly * 12)) * 100);
+      if (monthlyPrice) monthlyPrice.textContent = `${monthlyLabel} / month`;
+      if (annualPrice) annualPrice.textContent = `${annualLabel} / year`;
+      billingInputs.forEach((input) => { input.checked = input.value === selectedBillingPeriod; });
+      if (billingDetail) billingDetail.textContent = selectedBillingPeriod === 'monthly'
+        ? `You’ll continue to Stripe for ${monthlyLabel} per month.`
+        : `You’ll continue to Stripe for ${annualLabel} per year — about ${annualMonthlyLabel} per month, saving ${saving}%.`;
+    };
+
+    billingInputs.forEach((input) => input.addEventListener('change', () => {
+      selectedBillingPeriod = input.value === 'monthly' ? 'monthly' : 'annual';
+      localStorage.setItem(billingStorageKey, selectedBillingPeriod);
+      renderBillingChoice();
+    }));
 
     const finishAccountLoading = () => {
       document.querySelectorAll<HTMLElement>('[data-account-email-loading], [data-profile-email-loading], [data-account-action-loading]').forEach((element) => element.classList.add('account-loader-hidden'));
@@ -442,8 +521,7 @@ const currentYear = new Date().getUTCFullYear();
       if (!supabase) return;
       if (membershipPrimary) membershipPrimary.setAttribute('aria-busy', 'true');
       setNote(membershipNote, 'Opening the secure payment area…');
-      const billingPeriod = localStorage.getItem('one-reader:billing-period') === 'monthly' ? 'monthly' : 'annual';
-      const { data, error } = await supabase.functions.invoke(functionName, { body: functionName === 'create-checkout' ? { billingPeriod } : {} });
+      const { data, error } = await supabase.functions.invoke(functionName, { body: functionName === 'create-checkout' ? { billingPeriod: selectedBillingPeriod } : {} });
       if (membershipPrimary) membershipPrimary.removeAttribute('aria-busy');
       if (error || !data?.url) {
         let serverMessage = typeof data?.error === 'string' ? data.error : '';
@@ -456,7 +534,6 @@ const currentYear = new Date().getUTCFullYear();
         setNote(membershipNote, `We could not open the secure payment area.${detail || ' Please try again in a moment.'}`, true);
         return;
       }
-      if (functionName === 'create-checkout') localStorage.removeItem('one-reader:billing-period');
       window.location.assign(data.url);
     };
 
@@ -505,8 +582,8 @@ const currentYear = new Date().getUTCFullYear();
               : canStartOpening
                 ? { href: 'mailto:write@onereader.co?subject=One%20Reader', label: 'Write a letter' }
                 : status === 'checkout_pending'
-                  ? { href: '#checkout', label: 'Complete payment to become a Writer' }
-                  : { href: '#checkout', label: 'Become a Writer to write again' };
+                  ? { href: '#membership', label: 'Complete payment to become a Writer' }
+                  : { href: '#membership', label: 'Become a Writer to write again' };
       document.querySelectorAll<HTMLAnchorElement>('[data-write-letter]').forEach((link) => {
         link.href = action.href;
         link.textContent = action.label;
@@ -520,6 +597,7 @@ const currentYear = new Date().getUTCFullYear();
     const setMembership = (profile: { account_status?: string; plan?: string; founding_season_ends_at?: string | null; subscription_renews_at?: string | null; subscription_current_period_start?: string | null; subscription_current_period_end?: string | null } | null | undefined, startedCount = 0) => {
       membershipRefund?.classList.add('hidden');
       membershipPeriod?.classList.add('hidden');
+      billingChoice?.classList.add('hidden');
       membershipCopy?.classList.remove('hidden');
       if (!membershipLabel || !membershipCopy || !membershipPace || !membershipPrimary) return;
 
@@ -574,7 +652,8 @@ const currentYear = new Date().getUTCFullYear();
         membershipPace.textContent = 'Complete payment to start a new correspondence every 24 hours';
         membershipPrimary.textContent = 'Complete payment to become a Writer';
         membershipPrimary.href = '#checkout';
-        if (membershipNote) membershipNote.textContent = `Complete payment to become a Writer. Annual Writer is ${annualPriceLabel}; monthly billing is also available.`;
+        billingChoice?.classList.remove('hidden');
+        if (membershipNote) membershipNote.textContent = 'Choose monthly or annual billing above, then continue to the secure payment area.';
       } else if (status === 'closed') {
         membershipLabel.textContent = 'Account closed';
         membershipCopy.textContent = 'Your account is closed and no new letters will be delivered.';
@@ -597,9 +676,10 @@ const currentYear = new Date().getUTCFullYear();
         membershipPrimary.textContent = 'Become a Writer to write again';
         membershipPrimary.href = '#checkout';
         membershipPrimary.classList.toggle('hidden', freeOpeningAvailable);
+        billingChoice?.classList.toggle('hidden', freeOpeningAvailable);
         if (membershipNote) membershipNote.textContent = freeOpeningAvailable
           ? 'Your first opening is ready when you are. Writer becomes available after you use it.'
-          : 'Writer lets you start a new correspondence every 24 hours. Choose monthly or annual billing at checkout.';
+          : 'Choose monthly or annual billing above, then continue to the secure payment area.';
       }
     };
 
@@ -707,7 +787,8 @@ const currentYear = new Date().getUTCFullYear();
         || (profile?.account_status === 'free' && (stats?.correspondences_started_count ?? 0) === 0);
       const marketCountry = preferences?.country_code || navigator.language.split('-')[1] || '';
       const market = marketForCountry(marketCountry);
-      annualPriceLabel = formatAnnualPrice(market.amount, market.currency, navigator.language || 'en');
+      billingCurrency = market.currency;
+      renderBillingChoice();
       setMembership(profile, stats?.correspondences_started_count ?? 0);
       setWritingReady(birthDetailsSaved, profile?.account_status ?? 'free', canStartOpening);
       if (languageList && savedLanguages?.length) {
