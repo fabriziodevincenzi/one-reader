@@ -34,6 +34,10 @@ const currentYear = new Date().getUTCFullYear();
   </header>
 
   <main id="main-content" class="account-page shell py-12 sm:py-16" data-account-main>
+    <div class="hidden mb-8" data-account-setup-error role="alert">
+      <p data-account-setup-message></p>
+      <p class="mt-3"><a href="/member/" class="underline underline-offset-4">Try again</a> · <a href="/#start-free" class="underline underline-offset-4">Return to registration</a></p>
+    </div>
     <section id="account" class="flex flex-col justify-between gap-8 border-b border-border pb-10 sm:flex-row sm:items-end">
       <div>
         <p class="eyebrow mb-5">Account</p>
@@ -433,6 +437,7 @@ const currentYear = new Date().getUTCFullYear();
   </style>
 
   <script>
+    import { ensureMemberProfile } from '../../lib/ensure-member-profile';
     import { supabase } from '../../lib/supabase';
     import { fallbackMarket, marketForCountry } from '../../lib/market-pricing';
     import { priceGrid, type PriceCurrency } from '../../lib/product-config';
@@ -766,6 +771,20 @@ const currentYear = new Date().getUTCFullYear();
       window.location.assign('/sign-in/');
     } else {
       const client = supabase;
+      let accountReady = false;
+      if (profileForm) profileForm.inert = true;
+      try {
+        await ensureMemberProfile(client, session);
+        accountReady = true;
+        if (profileForm) profileForm.inert = false;
+      } catch (error) {
+        finishAccountLoading();
+        document.querySelector('[data-account-setup-error]')?.classList.remove('hidden');
+        const message = document.querySelector('[data-account-setup-message]');
+        if (message) message.textContent = error instanceof Error ? error.message : 'Account setup failed. Please try again.';
+        document.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>('[data-account-main] input, [data-account-main] select, [data-account-main] button').forEach((control) => { control.disabled = true; });
+      }
+      if (accountReady) {
       const email = session.user.email || 'your verified email';
       if (accountEmail) accountEmail.textContent = email;
       if (profileEmail) profileEmail.textContent = email;
@@ -915,6 +934,8 @@ const currentYear = new Date().getUTCFullYear();
           ? 'Your account is closed, new deliveries are stopped and any active subscription is being cancelled. Your identifiable account data will be removed within 30 days.'
           : 'Your account is now closed, new deliveries are stopped and any active subscription is being cancelled. Your identifiable account data will be removed within 30 days.');
       });
+    }
+
     }
 
     document.querySelector<HTMLButtonElement>('[data-sign-out]')?.addEventListener('click', async () => {
