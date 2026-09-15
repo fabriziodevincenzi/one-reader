@@ -8,23 +8,31 @@ const stripeStatusToAccount = (status: Stripe.Subscription.Status) =>
 
 Deno.serve(async (request) => {
   if (request.method !== 'POST') return jsonResponse({ error: 'Method not allowed' }, 405);
+  let verifiedEventId: string | null = null;
   try {
     const payload = await request.text();
     const stripe = new Stripe(requireEnvironment('STRIPE_SECRET_KEY'), { apiVersion: '2025-03-31.basil' });
     const signature = request.headers.get('stripe-signature');
     if (!signature) return jsonResponse({ error: 'Missing Stripe signature' }, 401);
     const event = await stripe.webhooks.constructEventAsync(payload, signature, requireEnvironment('STRIPE_WEBHOOK_SECRET'));
+    verifiedEventId = event.id;
     const admin = createAdminClient();
     let processTransactionalOutbox = false;
     const { error: insertError } = await admin.from('stripe_events').insert({ event_id: event.id, event_type: event.type });
-    if (insertError?.code === '23505') return jsonResponse({ ok: true, duplicate: true });
-    if (insertError) throw insertError;
+    if (insertError?.code === '23505') {
+      const { data: previous, error } = await admin.from('stripe_events').select('processed_at').eq('event_id', event.id).single();
+      if (error) throw error;
+      if (previous.processed_at) return jsonResponse({ ok: true, duplicate: true });
+      // A recorded but unfinished event must be retried, not acknowledged as done.
+    } else if (insertError) throw insertError;
 
     if (event.type.startsWith('customer.subscription.')) {
-      const subscription = event.data.object as Stripe.Subscription;
+      // Webhooks can arrive out of order; use Stripe's current state.
+      const snapshot = event.data.object as Stripe.Subscription;
+      const subscription = await stripe.subscriptions.retrieve(snapshot.id);
       const userId = subscription.metadata.supabase_user_id || await findUserId(admin, String(subscription.customer), stripe);
       if (userId) {
-        const deleted = event.type === 'customer.subscription.deleted';
+        const deleted = ['canceled', 'incomplete_expired'].includes(subscription.status);
         const accountStatus = deleted ? 'free' : stripeStatusToAccount(subscription.status);
         const item = subscription.items.data[0];
         if (!deleted && !item) throw new Error('Stripe subscription has no billable item');
@@ -106,11 +114,15 @@ Deno.serve(async (request) => {
         }
       }
     }
-    await admin.from('stripe_events').update({ processed_at: new Date().toISOString() }).eq('event_id', event.id);
+    const { error: completionError } = await admin.from('stripe_events').update({ processed_at: new Date().toISOString(), error: null }).eq('event_id', event.id);
+    if (completionError) throw completionError;
     if (processTransactionalOutbox) triggerTransactionalWorker();
     return jsonResponse({ received: true });
   } catch (error) {
     console.error('Stripe webhook failed', error);
+    if (verifiedEventId) {
+      await createAdminClient().from('stripe_events').update({ error: errorMessage(error) }).eq('event_id', verifiedEventId);
+    }
     return jsonResponse({ error: errorMessage(error) }, 400);
   }
 });

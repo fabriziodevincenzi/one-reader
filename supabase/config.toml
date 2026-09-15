@@ -1,0 +1,3 @@
+[functions.stripe-webhook]
+# Stripe authenticates callbacks with Stripe-Signature, checked on the raw body.
+verify_jwt = false
