@@ -1,6 +1,7 @@
 import Stripe from 'npm:stripe@18.5.0';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.55.0';
 import { enqueueMembershipActivatedEmail, syncUpcomingRenewalEmail } from '../_shared/billing-email.ts';
+import { inactiveSubscriptionFields } from '../_shared/billing-state.ts';
 const requireEnvironment = (name: string) => { const value = Deno.env.get(name)?.trim(); if (!value) throw new Error(`${name} is not configured`); return value; };
 const createAdminClient = () => createClient(requireEnvironment('SUPABASE_URL'), requireEnvironment('SUPABASE_SERVICE_ROLE_KEY'), { auth: { persistSession: false, autoRefreshToken: false } });
 const errorMessage = (error: unknown) => error instanceof Error ? error.message : typeof error === 'string' ? error : JSON.stringify(error);
@@ -34,7 +35,7 @@ Deno.serve(async (request) => {
     const admin = createAdminClient();
     const { data: profile, error: profileError } = await admin
       .from('profiles')
-      .select('id, account_status, stripe_customer_id')
+      .select('id, account_status, stripe_customer_id, stripe_subscription_id')
       .eq('id', userData.user.id)
       .single();
     if (profileError) throw profileError;
@@ -43,11 +44,24 @@ Deno.serve(async (request) => {
     }
 
     const stripe = new Stripe(requireEnvironment('STRIPE_SECRET_KEY'), { apiVersion: '2025-03-31.basil' });
-    const subscriptions = await stripe.subscriptions.list({ customer: profile.stripe_customer_id, status: 'all', limit: 20 });
-    const subscription = subscriptions.data
+    const subscriptions = await stripe.subscriptions.list({ customer: profile.stripe_customer_id, status: 'all', limit: 100 }).autoPagingToArray({ limit: 10000 });
+    const subscription = subscriptions
       .filter((item) => ['active', 'trialing', 'incomplete', 'past_due', 'unpaid'].includes(item.status))
       .sort((a, b) => b.created - a.created)[0];
-    if (!subscription) return response({ status: 'free', reconciled: false });
+    if (!subscription) {
+      // Founding access is not a Stripe subscription and must be preserved.
+      if (profile.account_status === 'founding') return response({ status: 'founding', reconciled: false });
+      const { error } = await admin.from('profiles').update({
+        ...inactiveSubscriptionFields(), updated_at: new Date().toISOString(),
+      }).eq('id', userData.user.id);
+      if (error) throw error;
+      await syncUpcomingRenewalEmail(admin, {
+        memberId: userData.user.id, recipientEmail: userData.user.email ?? '',
+        subscriptionId: profile.stripe_subscription_id ?? '', status: 'canceled',
+        cancelAtPeriodEnd: true, renewalAt: null,
+      });
+      return response({ status: 'free', subscription_status: 'canceled', reconciled: true });
+    }
 
     const accountStatus = stripeStatusToAccount(subscription.status);
     const item = subscription.items.data[0];
