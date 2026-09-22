@@ -1,0 +1,29 @@
+---
+lang: nl
+key: when-mail-stops-being-read
+slug: wanneer-post-niet-meer-gelezen-wordt
+title: Wanneer post niet meer gelezen wordt
+meta-description: Wat blijft er van correspondentie over wanneer meer dan de helft van de inboxgebruikers hun mail aan een agent toevertrouwt, en duizenden mensen weer brieven aan vreemden schrijven.
+publishedAt: '2026-09-22'
+author: One Reader
+readingTime: 7 min leestijd
+tags: [journal, email, correspondence, attention]
+---
+
+Op 25 juni 2026 kondigde Notion de sluiting van Notion Mail aan. Niet wegens gebrek aan gebruik: omdat, schreef het bedrijf, «meer dan de helft van de gebruikers e-mail beheert zonder ooit de inbox te openen». Interne agenten waren goed genoeg geworden om te lezen, te labelen, te antwoorden en te plannen in plaats van de persoon. De inbox, ooit een plek waar je verbleef, werd infrastructuur die je verlaat. Op dezelfde dag dat die notitie circuleerde, lanceerde Fireflies.ai een Email Assistant voor twintig miljoen gebruikers. Microsoft had in de Work Trend Index 2025 al 117 e-mails per dag voor de gemiddelde werknemer geteld. Het industriële antwoord op dat getal was niet «lees minder»: het was «lees niet zelf».
+
+Dit is een faseverschuiving, geen productupdate. E-mail bleef decennialang het laatste netwerkprotocol waarin twee adressen spraken zonder feed, zonder rankingalgoritme, zonder publiek. Het was traag van ontwerp: asynchroon, tekstueel, privé. Wat nu gebeurt, is dat de traagheid in het protocol blijft en in de praktijk verdwijnt. Wie ontvangt, is niet langer per se wie leest. Wie schrijft, weet niet of hij met een persoon spreekt of met een systeem dat de stem van die persoon imiteert.
+
+In dezelfde maanden gebeurt het tegenovergestelde, en niet in een lab. Het [Sunday Letter Project](https://people.com/global-pen-pal-project-is-bringing-handwritten-letters-back-12057620), gestart in september 2025 vanuit een kantoorboekhandel in Gloucestershire, telt in september 2026 meer dan 15.000 mensen die elke zondag een brief schrijven — vaak aan iemand die ze nooit hebben ontmoet. Pinterest registreerde in de prognose 2026 ongeveer 45% meer interesse in handgeschreven brieven en zo'n 90% voor penvriend-ideeën. Papier verkocht meer dan 14,7 miljoen kaarten en briefpapier, met notecards die in 2025 met 33% stegen. Dit is geen etalagenostalgie: het is een herverdeling van tijd. In een omgeving waarin het bericht meteen aankomt en even snel verdwijnt, wordt de kosten van aanwezigheid het signaal.
+
+De twee bewegingen lijken alleen onverenigbaar als je naar het medium kijkt. Kijk je naar de functie, dan zeggen ze hetzelfde. Massacorrespondentie is een last geworden die je op een agent afwentelt. Correspondentie die ertoe doet wordt weer een gebaar dat je niet kunt delegeren, omdat de waarde niet in de tekst zit maar in het feit dat iemand ervoor koos daar te blijven zolang het schrijven duurde. Het is hetzelfde patroon dat al te zien was toen informatie versnelde en een deel van de uitgeverij koos om te vertragen: Stripe Press, Works in Progress, het Slow Media-manifest. Daar ging het er niet om het digitale af te wijzen. Het ging erom snelheid als enige maatstaf van kwaliteit af te wijzen.
+
+Een derde gegeven houdt de eerste twee bijeen. Een [Incogni-enquête](https://blog.incogni.com/digital-fatigue-and-burnout/) van juni 2026 onder een representatieve steekproef van Amerikaanse volwassenen vond dat 55% minder post dan vijf jaar geleden, 53% selectiever is over wie hun posts mag zien, en 47% een sociale of berichtenapp verwijderde wegens stress of angst. Vrede is de eerste genoemde emotie na disconnectie (27%), maar meer dan één op de vijf voelt ook angst. Dit is geen schone uittocht. Het is vermoeidheid die een kanaal zoekt waar aanwezigheid geen werk is en afwezigheid geen schuld.
+
+Privé-e-mail is in dit beeld geen technisch detail. Het is betwist terrein. Apple draaide in augustus 2026 de beslissing terug om Hide My Email naar een herkenbaar domein te verplaatsen en liet aliassen op `@icloud.com`, na protesten van mensen die dat masker precies gebruikten omdat het ononderscheidbaar was. [Buttondown](https://buttondown.com/blog/hide-your-email) verdedigde in dezelfde maand verborgen adressen op nieuwsbrieflijsten: alleen in juni 2026 al 78 miljoen gecompromitteerde adressen. Het adres dat je weggeeft is geen stabiele identiteit meer. Het is een risico. Wie nog om correspondentie geeft, begint het te behandelen als een sleutel, niet als een bijnaam.
+
+Hier opent zich de vraag die One Reader aangaat en, breder, iedereen die nog publiceert voor één lezer en niet voor een feed. Als de werk-inbox door een agent wordt gelezen, en de sociale feed wordt verlaten door mensen die moe zijn van presteren, waar vindt dan het gesprek plaats dat noch werk noch spektakel is? De brief aan een vreemde is een ambachtelijk antwoord. De nieuwsbrief zonder tracking, de wegwerpalias, de statische site, het protocol dat niet classificeert: dat zijn infrastructurele antwoorden. Ze vallen niet samen, maar delen een hypothese: communicatie is iets waard als iemand kan kiezen niet bereikbaar te zijn, en als de schrijver accepteert niet meteen te weten of hij is gelezen.
+
+Dit is geen terugkeer naar de twintigste eeuw. Het is een selectie. De industrie optimaliseert de post zodat niemand hem opent. Een minderheid leert opnieuw hem te schrijven zodat iemand ergens hem echt opent. Tussen die twee uitersten ligt de ruimte waarin een langzaam journal, één-op-ééncorrespondentie en een tekst die niet in een agent komt voordat hij door een mens is gegaan, nog zin hebben.
+
+De echte drempel vanaf hier is niet «digitaal of analoog». Het is «gelezen door iemand of verwerkt door iets». Zolang dat verschil zichtbaar blijft, blijft schrijven — ook schrijven dat in een inbox aankomt, ook schrijven dat in een envelop aankomt — een handeling, geen stroom.
